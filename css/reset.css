@@ -1,0 +1,119 @@
+@charset "UTF-8";
+/*=================중단점=================*/
+/*=================톤앤매너=================*/
+/*=================폰트패밀리=================*/
+/*=================여백=================*/
+/*=================중단점=================*/
+/*=================톤앤매너=================*/
+/*=================폰트패밀리=================*/
+/*=================여백=================*/
+/*=================중단점=================*/
+/*=================톤앤매너=================*/
+/*=================폰트패밀리=================*/
+/*=================여백=================*/
+/*=================중단점=================*/
+/*=================톤앤매너=================*/
+/*=================폰트패밀리=================*/
+/*=================여백=================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "ImcreSoojin";
+}
+
+body {
+  background-color: #000620;
+  color: white;
+}
+.under_320 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.under_320 .under_320_contents {
+  text-align: center;
+}
+@media screen and (min-width: 320px) {
+  .under_320 .under_320_contents {
+    display: none;
+  }
+}
+.under_320 .under_320_contents h2 {
+  font-size: calc(10px + 1vw);
+  color: #e87d9e;
+}
+.under_320 .under_320_contents .img_320 {
+  width: 50%;
+  margin: 0 auto;
+}
+.under_320 .under_320_contents .img_320 img {
+  display: block;
+  width: 100%;
+}
+.under_320 .under_320_contents p {
+  font-size: calc(8px + 1vw);
+  color: white;
+}
+
+.bighead {
+  display: none;
+  overflow: hidden;
+}
+@media screen and (min-width: 320px) {
+  .bighead {
+    display: block;
+  }
+}
+
+.nyan_zone {
+  margin: 0 auto;
+  position: relative;
+  width: 95%;
+}
+@media screen and (min-width: 768px) {
+  .nyan_zone {
+    width: 96.3541666667%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .nyan_zone {
+    width: 100%;
+    max-width: 1180px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .nyan_zone {
+    width: 100%;
+    max-width: 1580px;
+  }
+}
+
+h1 {
+  font-family: "ImcreSoojin";
+  color: #e87d9e;
+}
+
+h2 {
+  font-family: "ImcreSoojin";
+  color: #e87d9e;
+}
+
+h3 {
+  color: #e87d9e;
+}
+
+ul, ol, li {
+  list-style-type: none;
+}
+
+p {
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+}

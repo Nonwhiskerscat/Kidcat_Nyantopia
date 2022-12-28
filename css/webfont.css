@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/*제목 전용 폰트*/
+@font-face {
+  font-family: "ImcreSoojin";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.3/ImcreSoojin.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/*본문 전용 폰트*/
+@font-face {
+  font-family: "GoyangIlsan";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GoyangIlsan.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}

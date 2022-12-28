@@ -1,0 +1,278 @@
+@import './style.scss';
+@import './responsive.scss';
+
+@mixin nyan_petit_margin {
+    margin-top: $petit_margin_p;
+
+    @include responsive(tablet-cat) {
+        margin-top: $petit_margin_t;
+    }
+
+    @include responsive(semi-cat) {
+        margin-top: $petit_margin_s;
+    }
+
+    @include responsive(huge-cat) {
+        margin-top: $petit_margin_h;
+    }
+}
+
+@mixin nyan_tiny_margin {
+    margin-top: $tiny_margin_p;
+
+    @include responsive(tablet-cat) {
+        margin-top: $tiny_margin_t;
+    }
+
+    @include responsive(semi-cat) {
+        margin-top: $tiny_margin_s;
+    }
+
+    @include responsive(huge-cat) {
+        margin-top: $tiny_margin_h;
+    }
+}
+
+@mixin nyan_small_margin {
+    margin-top: $small_margin_p;
+
+    @include responsive(tablet-cat) {
+        margin-top: $small_margin_t;
+    }
+
+    @include responsive(semi-cat) {
+        margin-top: $small_margin_s;
+    }
+
+    @include responsive(huge-cat) {
+        margin-top: $small_margin_h;
+    }
+}
+
+@mixin nyan_regular_margin {
+    margin-top: $regular_margin_p;
+
+    @include responsive(tablet-cat) {
+        margin-top: $regular_margin_t;
+    }
+
+    @include responsive(semi-cat) {
+        margin-top: $regular_margin_s;
+    }
+
+    @include responsive(huge-cat) {
+        margin-top: $regular_margin_h;
+    }
+}
+
+@mixin nyan_mezo_margin {
+    margin-top: $mezo_margin_p;
+
+    @include responsive(tablet-cat) {
+        margin-top: $mezo_margin_t;
+    }
+
+    @include responsive(semi-cat) {
+        margin-top: $mezo_margin_s;
+    }
+
+    @include responsive(huge-cat) {
+        margin-top: $mezo_margin_h;
+    }
+}
+
+@mixin nyan_mid_margin {
+    margin-top: $mid_margin_p;
+
+    @include responsive(tablet-cat) {
+        margin-top: $mid_margin_t;
+    }
+
+    @include responsive(semi-cat) {
+        margin-top: $mid_margin_s;
+    }
+
+    @include responsive(huge-cat) {
+        margin-top: $mid_margin_h;
+    }
+}
+
+@mixin nyan_big_margin {
+    margin-top: $big_margin_p;
+
+    @include responsive(tablet-cat) {
+        margin-top: $big_margin_t;
+    }
+
+    @include responsive(semi-cat) {
+        margin-top: $big_margin_s;
+    }
+
+    @include responsive(huge-cat) {
+        margin-top: $big_margin_h;
+    }
+}
+
+@mixin nyan_large_margin {
+    margin-top: $large_margin_p;
+
+    @include responsive(tablet-cat) {
+        margin-top: $large_margin_t;
+    }
+
+    @include responsive(semi-cat) {
+        margin-top: $large_margin_s;
+    }
+
+    @include responsive(huge-cat) {
+        margin-top: $large_margin_h;
+    }
+}
+
+@mixin nyan_common_h2 {
+    .main_h2 {
+        .nyan_zone_h2 {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+
+            @include responsive(tablet-cat) {
+                flex-direction: row;
+            }
+
+            @include responsive(semi-cat) {
+                //
+            }
+    
+            @include responsive(huge-cat) {
+                //
+            }
+            
+            .title_trace_area {
+                position: relative;
+                width: calc(15px + 3vw);
+                margin: 0 auto;
+
+
+                @include responsive(tablet-cat) {
+                    margin: 0;
+                    width: calc(30px + 2vw);
+                    height: calc(20px + 2vw);
+                    margin-right: $tiny_margin_t;
+                }
+
+                @include responsive(semi-cat) {
+                    width: 50px;
+                    height: 40px;
+                }
+
+                @include responsive(huge-cat) {
+                    width: 60px;
+                    height: 48px;
+
+                }
+
+                &>img {
+
+                    width: 100%;
+
+                    @include responsive(tablet-cat) {
+                        margin: 0;
+                        position: absolute;
+                        width: 40%;
+                    }
+
+                    @include responsive(semi-cat) {
+                        width: 20px;
+                    }
+
+                    @include responsive(huge-cat) {
+                        width: 24px;
+                    }
+
+                    &:nth-child(1) {
+
+                        @include responsive(tablet-cat) {
+                            bottom: 0;
+                        }
+
+                        @include responsive(semi-cat) {
+                    
+                        }
+        
+                        @include responsive(huge-cat) {
+                            
+                        }
+                    }
+
+                    &:nth-child(2) {
+
+                        display: none;
+
+                        @include responsive(tablet-cat) {
+                            display: block;
+                            left: 45%;
+                            transform: translateX(-50%);
+                        }
+
+                        @include responsive(semi-cat) {
+                    
+                        }
+        
+                        @include responsive(huge-cat) {
+                            
+                        }
+                    }
+
+                    &:nth-child(3) {
+
+                        display: none;
+
+                        @include responsive(tablet-cat) {
+                            display: block;
+                            right: 0%;
+                            top: 60%;
+                            transform: translateY(-50%);
+                        }
+
+                        @include responsive(semi-cat) {
+                    
+                        }
+        
+                        @include responsive(huge-cat) {
+                            
+                        }
+                    }
+                }
+            }
+
+            .title_text_area {
+
+                h2 {
+                    text-align: center;
+                    font-size: calc(16px + 2vw);
+                    margin-top: $petit_margin_p;
+
+                    @include responsive(tablet-cat) {
+                        margin-top: 0;
+                    }
+
+                    @include responsive(semi-cat) {
+                        font-size: 36px;
+                    
+                    }
+    
+                    @include responsive(huge-cat) {
+                        font-size: 40px;
+                    }
+                }
+
+            }
+        }
+
+        
+
+    }
+}
+

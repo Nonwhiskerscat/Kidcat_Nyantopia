@@ -1,0 +1,133 @@
+@import './style.scss';
+@import './mixin.scss';
+@import './responsive.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+html, body {
+  font-family: $common;
+}
+
+body {
+  background-color: $background;
+  color: white;
+
+  &::after {
+    // position: absolute;
+    // content: '';
+    // top: 0;
+    // left: 0;
+    // width: 100%;
+    // height: 100%;
+    // background-color: black;
+    // opacity: 0.5;
+  }
+}
+
+.under_320 {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  .under_320_contents {
+    text-align: center;
+
+    @include responsive(mobile-cat) {
+      display: none;
+    }
+
+    h2 {
+      font-size: calc(10px + 1vw);
+      color: $identity;
+    }
+
+    .img_320 {
+      width: 50%;
+      margin: 0 auto;
+
+      img {
+        display: block;
+        width: 100%;
+      }
+
+    }
+
+    p {
+      font-size: calc(8px + 1vw);
+      color: white;
+    }
+  }
+
+}
+
+.bighead {
+  display: none;
+  overflow: hidden;
+
+  @include responsive(mobile-cat) {
+    display: block;
+  }
+}
+
+.nyan_zone {
+  margin: 0 auto;
+  position: relative;
+  width: 95%;
+  // background-color: tan;
+
+  @include responsive(tablet-cat) {
+    width: 96.35416666666667%; // 75*8 사이 여백 20, 양끝 여백 14
+    // background-color: lavender;
+  }
+
+  @include responsive(semi-cat) {
+    width: 100%;
+    max-width: 1180px;
+    // background-color: darkviolet;
+  }
+
+  @include responsive(huge-cat) {
+    width: 100%;
+    max-width: 1580px;
+    // background-color: red;
+
+  }
+}
+
+h1 { 
+  font-family: $common; 
+  color: $identity;
+} 
+
+h2 {
+  font-family: $common;
+  color: $identity;
+}
+
+h3 {
+  color: $identity;
+}
+
+ul, ol, li {
+  list-style-type: none;
+
+}
+
+// table, th, tr, td {
+  
+// }
+
+p {
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+}

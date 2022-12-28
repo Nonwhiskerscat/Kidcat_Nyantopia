@@ -1,0 +1,42 @@
+@import './style.scss';
+@import './responsive.scss';
+
+.no {
+    display: none;
+}
+
+.on {
+    color: $identity;
+}
+
+// .not_scroll {
+//     height: 100%;
+//     overflow: auto;
+// }
+
+// .gnb_scroll {
+//     overflow: initial!important;
+// }
+
+
+
+.header_fix {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba($color: $background, $alpha: 0.3);
+
+    @include responsive(tablet-cat) {
+    }
+
+    @include responsive(semi-cat) {
+    }
+    
+    @include responsive(huge-cat) {
+        //
+    }
+}
+
