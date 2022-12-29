@@ -14,7 +14,7 @@ html {
 
     &::-webkit-scrollbar-thumb
     {
-        background-color: #000;
+        background: rgb(31,31,31);
         border-radius: 8px;
         background-image: -webkit-linear-gradient(-90deg,
         transparent 0%,
@@ -45,8 +45,7 @@ html {
     
         &::-webkit-scrollbar-thumb
         {
-            background-color: #000;
-            border-radius: 8px;
+            background: rgb(31,31,31);
             background-image: -webkit-linear-gradient(-90deg,
             transparent 0%,
             transparent 5%,

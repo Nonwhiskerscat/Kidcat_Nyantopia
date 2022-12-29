@@ -9,7 +9,7 @@ html::-webkit-scrollbar {
   width: 8px;
 }
 html::-webkit-scrollbar-thumb {
-  background-color: #000;
+  background: rgb(31, 31, 31);
   border-radius: 8px;
   background-image: -webkit-linear-gradient(-90deg, transparent 0%, transparent 5%, #e87d9e 5%, #e87d9e 15%, transparent 15%, transparent 20%, #e87d9e 20%, #e87d9e 30%, transparent 30%, transparent);
 }
@@ -24,7 +24,6 @@ html .gnb_nyan::-webkit-scrollbar {
   width: 8px;
 }
 html .gnb_nyan::-webkit-scrollbar-thumb {
-  background-color: #000;
-  border-radius: 8px;
+  background: rgb(31, 31, 31);
   background-image: -webkit-linear-gradient(-90deg, transparent 0%, transparent 5%, #e87d9e 5%, #e87d9e 15%, transparent 15%, transparent 20%, #e87d9e 20%, #e87d9e 30%, transparent 30%, transparent);
 }

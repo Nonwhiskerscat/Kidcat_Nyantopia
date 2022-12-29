@@ -1644,6 +1644,21 @@ main .main_myskills .my_skills_gnb .mk_gnb_flex {
   justify-content: space-between;
   align-items: flex-end;
 }
+@media screen and (min-width: 768px) {
+  main .main_myskills .my_skills_gnb .mk_gnb_flex {
+    width: 30%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_myskills .my_skills_gnb .mk_gnb_flex {
+    width: 480px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_myskills .my_skills_gnb .mk_gnb_flex {
+    width: 510px;
+  }
+}
 main .main_myskills .my_skills_gnb .mk_gnb_flex li {
   font-size: calc(12px + 2vw);
   display: flex;
@@ -1674,6 +1689,30 @@ main .main_myskills .my_skills_gnb .mk_gnb_flex li .mk_gnb_kitty img {
   width: calc(20px + 5vw);
   display: block;
   animation: cat_jump ease-in 1s infinite;
+}
+main .main_myskills .mk_main .mk_skills_kitty {
+  margin: 0 auto;
+  margin-top: 40px;
+  width: 80%;
+}
+@media screen and (min-width: 768px) {
+  main .main_myskills .mk_main .mk_skills_kitty {
+    width: 60%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main .mk_skills_kitty {
+    width: 500px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_myskills .mk_main .mk_skills_kitty {
+    width: 600px;
+  }
+}
+main .main_myskills .mk_main .mk_skills_kitty img {
+  display: block;
+  width: 100%;
 }
 main .main_projects {
   height: 1000px;

@@ -1429,6 +1429,20 @@ main {
                 justify-content: space-between;
                 align-items: flex-end;
 
+                @include responsive(tablet-cat) {
+                    width: 30%;
+                } 
+
+                @include responsive(semi-cat) {
+                    width: 480px;
+
+                }
+
+                @include responsive(huge-cat) {
+                    width: 510px;
+
+                }
+
                 li {
                     font-size: calc(12px + 2vw);
                     display: flex;
@@ -1462,13 +1476,38 @@ main {
                         }
                     }
 
-                    .mk_main {
-                        
-                    }
+
                 }
 
 
             }
+        }
+
+        .mk_main {
+
+            .mk_skills_kitty {
+                margin: 0 auto;
+                margin-top: $regular_margin_p;
+                width: 80%;
+
+                @include responsive(tablet-cat) {
+                    width: 60%;
+                }
+
+                @include responsive(semi-cat) {
+                    width: 500px;
+                }
+
+                @include responsive(huge-cat) {
+                    width: 600px;
+                }
+
+                img {
+                    display: block;
+                    width: 100%;
+                }
+            }
+            
         }
 
     }
