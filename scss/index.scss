@@ -1038,12 +1038,438 @@ main {
     .main_myspecs {
         @include nyan_large_margin;
         @include nyan_common_h2;
+        overflow: hidden;
+
+
+        .my_specs_back {
+            display: none;
+            position: relative;
+            z-index: -1;
+            &>div {
+                position: absolute;
+                width: calc(500px + 50vw);
+
+                &>img {
+
+                    &:first-child {
+
+                    }
+
+                    &:last-child {
+                        position: absolute;
+                        top: 5%;
+                        left: 0;
+                    }
+                }
+            }
+
+            .n1 {
+
+                img {
+                    //
+                }
+            }
+
+            .n2 {
+
+                img {
+                    //
+                }
+            }
+
+            .n3 {
+
+
+                img {
+                    //
+                }
+            }
+
+            .ms_back {
+
+
+            }
+        }
+
+        .my_specs_contents {
+            margin: 0 auto;
+            @include nyan_mid_margin;
+            width: 90%;
+            
+
+            @include responsive(tablet-cat) {
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+
+            }
+            
+            .ms_contents_grp {
+                position: relative;
+
+                width: 55%;
+                max-width: 300px;
+
+                @include responsive(tablet-cat) {
+                    width: 26%;
+                    max-width: none;
+                }
+
+                @include responsive(semi-cat) {
+                    margin: 0 auto;
+                    width: 33.333333333333%;
+                }
+
+                &:nth-child(even) {
+                    margin-left: auto;
+
+                    @include responsive(tablet-cat) {
+                        margin-left: 0;
+                    }
+
+                    @include responsive(semi-cat) {
+                        //
+                    }
+
+                    @include responsive(huge-cat) {
+                        //
+                    }
+                }
+
+                &:nth-child(n+4) {
+                    @include nyan_mezo_margin;
+                }
+
+                &:nth-child(3n+2) {
+                    
+                    @include responsive(tablet-cat) {
+                        top: 80px;
+                    }
+
+                    @include responsive(semi-cat) {
+                        top: 0
+                    }
+
+                    @include responsive(huge-cat) {
+                        //
+                    }
+                }
+
+                &:nth-child(1) {
+
+                    @include responsive(semi-cat) {
+                        top: -3em;
+                        left: -5em;
+                    }
+
+                    @include responsive(huge-cat) {
+                        top: -4.5em;
+                        left: -7.5em;
+                    }
+
+                }
+
+                &:nth-child(2) {
+
+                    @include responsive(semi-cat) {
+                        top: 3em;
+                        left: -5em;
+                    }
+
+                    @include responsive(huge-cat) {
+                        top: 4.5em;
+                        left: -7.5em;
+                    }
+
+                }
+
+                &:nth-child(3) {
+
+                    @include responsive(semi-cat) {
+                        top:  0;
+                        left: -7em;
+                    }
+
+                    @include responsive(huge-cat) {
+                        left: -10.5em;
+                    }
+
+                }
+
+                &:nth-child(4) {
+
+                    @include responsive(semi-cat) {
+                        top:  -2em;
+                        left: 4em;
+                    }
+
+                    @include responsive(huge-cat) {
+                        top: -3em;
+                        left: 6em;
+                    }
+
+                }
+
+                &:nth-child(5) {
+
+                    @include responsive(semi-cat) {
+                        top:  3em;
+                        left: 6em;
+                    }
+
+                    @include responsive(huge-cat) {
+                        top: 4.5em;
+                        left: 9em;
+                    
+                    }
+
+                }
+
+                &:nth-child(6) {
+                    @include responsive(semi-cat) {
+                        top:  -3em;
+                        left: 3.5em;
+                    }
+
+                    @include responsive(huge-cat) {
+                        top: -4.5em;
+                        left: 5.25em;
+                    }
+                }
+                
+                img {
+                    width: 100%;
+                    
+                    @include responsive(tablet-cat) {
+                        //
+                    }
+
+                    @include responsive(semi-cat) {
+                        width: 250px;
+                        display: block;
+                        margin: 0 auto;
+                    }
+
+                    @include responsive(huge-cat) {
+                        width: 300px;
+                    }
+                }
+
+
+
+                .ms_contents_txt {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    text-align: center;
+                    width: 100%;
+
+                    @include responsive(tablet-cat) {
+                        //
+                    }
+
+                    @include responsive(semi-cat) {
+                        width: 250px;
+                        margin: 0 auto;
+
+                    }
+
+                    @include responsive(huge-cat) {
+                        //
+                    }
+
+                    h4 {
+                        font-size: calc(6px + 3vw);
+
+                        @include responsive(tablet-cat) {
+                            font-size: calc(12px + 1vw);
+                        }
+    
+                        @include responsive(semi-cat) {
+                            font-size: 24px;
+
+                        }
+    
+                        @include responsive(huge-cat) {
+                            font-size: 28px;
+                        }
+
+                        
+
+                        &.h4_even {
+                            margin-top: 20px;
+                            
+                            @include responsive(tablet-cat) {
+                                //
+    
+                            }
+        
+                            @include responsive(semi-cat) {
+                                //
+                            }
+
+                            @include responsive(huge-cat) {
+                                margin-top: 25px;
+                            }
+
+                        }
+
+                    }
+
+                    h5 {
+                        @include nyan_petit_margin;
+                        font-size: calc(7px + 2vw);
+                        color: $identity;
+
+                        @include responsive(tablet-cat) {
+                            font-size: calc(8px + 1vw);
+                        }
+    
+                        @include responsive(semi-cat) {
+                            font-size: 18px;
+
+                        }
+    
+                        @include responsive(huge-cat) {
+                            font-size: 21px;
+                        }
+
+                    }
+
+                    p {
+                        @include nyan_tiny_margin;
+                        
+                        font-size: calc(7px + 2vw);
+
+                        @include responsive(tablet-cat) {
+                            font-size: calc(8px + 1vw);
+                        }
+    
+                        @include responsive(semi-cat) {
+                            font-size: 21px;
+                            margin-top: 15px;
+
+                        }
+    
+                        @include responsive(huge-cat) {
+                            margin-top: 20px;
+                            font-size: 24px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .my_specs_urban {
+            position: relative;
+            width: 100%;
+            max-width: 3000px;
+            margin: 0 auto;
+            margin-top: 150px;
+
+
+            @include responsive(tablet-cat) {
+                margin-top: 200px;
+            }
+
+            @include responsive(semi-cat) {
+                margin-top: 200px;
+            }
+
+            @include responsive(huge-cat) {
+                margin-top: 300px;
+            }
+
+
+            &>img {
+                width: 100%;
+            }
+
+            .urban_gradient {
+                position: absolute;
+                bottom: 5%;
+                width: 100%;
+                height: 200px;
+                display: block;
+                background: rgb(232,125,158);
+                background: linear-gradient(180deg, rgba(232,125,158,0) 0%, rgba(232,125,158,1) 100%);
+                z-index: -1;
+
+                @include responsive(tablet-cat) {
+                    height: 300px;
+                }
+
+                @include responsive(semi-cat) {
+                    height: 400px;
+                }
+
+                @include responsive(huge-cat) {
+                    height: 500px;
+                }
+            }
+        }
 
     }
 
     .main_myskills {
-        height: 1000px;
-        background-color: rgb(0, 142, 19);
+        @include nyan_big_margin;
+        @include nyan_common_h2;
+
+        .my_skills_gnb {
+            @include nyan_small_margin;
+
+            .mk_gnb_flex {
+                width: 50%;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+
+                li {
+                    font-size: calc(12px + 2vw);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    cursor: pointer;
+                    
+
+                    @include responsive(tablet-cat) {
+                        font-size: calc(16px + 1vw);
+                    } 
+
+                    @include responsive(semi-cat) {
+                        font-size: 36px;
+
+                    }
+
+                    @include responsive(huge-cat) {
+                        font-size: 40px;
+
+                    }
+
+                    .mk_gnb_kitty {
+                        display: block;
+                        margin-bottom: 5px;
+
+                        img {
+                            width: calc(20px + 5vw);
+                            display: block;
+                            animation: cat_jump ease-in 1s infinite;
+                        }
+                    }
+
+                    .mk_main {
+                        
+                    }
+                }
+
+
+            }
+        }
 
     }
 
@@ -1056,6 +1482,5 @@ main {
     .main_contactme {
         height: 1000px;
         background-color: rgb(226, 223, 0);
-
     }
 }

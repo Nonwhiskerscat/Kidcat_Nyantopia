@@ -66,6 +66,11 @@ window.addEventListener('load', () => {
     let intro_title_h2 = document.querySelector('.intro_h2 h2');
     let intro_title_h1 = document.querySelector('.intro_h1 h1');
 
+    //main(my_specs)
+
+    let my_specs_urban_img=document.querySelector('.my_specs_urban img')
+
+
     //===========resize에 따라 변하는 요소==========//
     window.addEventListener('resize', ()=> {
         bighead_width=bighead$.offsetWidth;
@@ -650,6 +655,27 @@ window.addEventListener('load', () => {
 
         
 
-    }, intro_title_letter.length*50+1300)
+    }, intro_title_letter.length*50+1300);
+
+
+
+
+    //화면 너비에 따른 도시 야경 사진 변화
+
+    const spec_urban = () => {
+        if(bighead_width<semi_cat) my_specs_urban_img.src='../img/main/my_specs_urban.png';
+        else my_specs_urban_img.src='../img/main/my_specs_urban_pc.png';
+    } 
+
+    spec_urban();
+
+
+    window.addEventListener('resize', () => {
+        spec_urban();
+
+    })
+
+
+
 
 });
