@@ -157,5 +157,15 @@
     }
 }
 
+@keyframes line {
+    from {
+        stroke-dasharray: calc(200 * 0.8 * 3.1415926535);
+    }
+
+    to {
+        stroke-dashoffset: calc(200 * 0.8 * 0.07 * 3.1415926535);
+    }
+}
+
 // 
 

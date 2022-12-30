@@ -37,6 +37,14 @@
     transform: translateY(0%);
   }
 }
+@keyframes line {
+  from {
+    stroke-dasharray: 502.65482456;
+  }
+  to {
+    stroke-dashoffset: 35.1858377192;
+  }
+}
 main .main_intro .nyan_1 .first_flex {
   position: relative;
 }
@@ -93,17 +101,17 @@ main .main_intro .nyan_1 .first_flex .intro_images .intro_lines img {
 main .main_intro .nyan_1 .first_flex .intro_images .intro_lines img:nth-child(1) {
   left: 20%;
   top: -10%;
-  transform: rotateZ(10deg);
+  rotate: 10deg;
 }
 main .main_intro .nyan_1 .first_flex .intro_images .intro_lines img:nth-child(2) {
   top: 93%;
   left: 10%;
-  transform: rotateZ(245deg);
+  rotate: 245deg;
 }
 main .main_intro .nyan_1 .first_flex .intro_images .intro_lines img:nth-child(3) {
   top: 50%;
   left: 88%;
-  transform: rotateZ(150deg);
+  rotate: 150deg;
 }
 main .main_intro .nyan_1 .first_flex .intro_images .intro_click .intro_click_hi {
   color: #9ea0a4;
@@ -1477,7 +1485,7 @@ main .main_myspecs .my_specs_urban > img {
 }
 main .main_myspecs .my_specs_urban .urban_gradient {
   position: absolute;
-  bottom: 5%;
+  bottom: 8%;
   width: 100%;
   height: 200px;
   display: block;
@@ -1690,7 +1698,22 @@ main .main_myskills .my_skills_gnb .mk_gnb_flex li .mk_gnb_kitty img {
   display: block;
   animation: cat_jump ease-in 1s infinite;
 }
+main .main_myskills .mk_main {
+  position: relative;
+}
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main {
+    width: 960px;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_myskills .mk_main {
+    width: 1080px;
+  }
+}
 main .main_myskills .mk_main .mk_skills_kitty {
+  position: relative;
   margin: 0 auto;
   margin-top: 40px;
   width: 80%;
@@ -1702,17 +1725,442 @@ main .main_myskills .mk_main .mk_skills_kitty {
 }
 @media screen and (min-width: 1200px) {
   main .main_myskills .mk_main .mk_skills_kitty {
-    width: 500px;
+    width: 480px;
+    padding: 200px 0;
+    margin-top: 0;
+    margin: 0 auto;
   }
 }
 @media screen and (min-width: 1600px) {
   main .main_myskills .mk_main .mk_skills_kitty {
     width: 600px;
+    padding: 250px 0;
   }
 }
-main .main_myskills .mk_main .mk_skills_kitty img {
+main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big {
+  width: 90%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big {
+    width: 80%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big {
+    width: 480px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big {
+    width: 540px;
+  }
+}
+main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_skills_img {
+  display: block;
+  margin: 0 auto;
+}
+main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_skills_img img {
+  width: 100%;
+}
+main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -46%);
+  text-align: center;
+}
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail {
+    width: 480px;
+  }
+}
+main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail h4 {
+  color: #e54d26;
+  font-size: calc(12px + 2vw);
+}
+@media screen and (min-width: 768px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail h4 {
+    font-size: calc(14px + 2vw);
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail h4 {
+    font-size: 36px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail h4 {
+    font-size: 40px;
+  }
+}
+main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_gauge {
+  text-align: justify;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 7px;
+  margin-top: calc(-4px + 4vw);
+}
+@media screen and (min-width: 768px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_gauge {
+    margin-top: 10px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_gauge {
+    margin-top: 12px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_gauge {
+    margin-top: 15px;
+  }
+}
+@media screen and (min-width: 768px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_gauge {
+    width: 70%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_gauge {
+    width: 320px;
+    margin-top: 20px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_gauge {
+    margin-top: 25px;
+  }
+}
+main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_gauge > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_gauge > div:nth-child(2) {
+  margin-top: 5px;
+}
+@media screen and (min-width: 768px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_gauge > div:nth-child(2) {
+    margin-top: 6px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_gauge > div:nth-child(2) {
+    margin-top: 10px;
+  }
+}
+main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_gauge > div p {
+  font-size: calc(1px + 3vw);
+}
+@media screen and (min-width: 768px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_gauge > div p {
+    font-size: calc(2px + 1.5vw);
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_gauge > div p {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_gauge > div p {
+    font-size: 21px;
+  }
+}
+main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_gauge > div .gauge_entire {
+  position: relative;
+  width: 60%;
+  height: 5px;
+  border-radius: 2.5px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+@media screen and (min-width: 768px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_gauge > div .gauge_entire {
+    height: 6px;
+    border-radius: 3px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_gauge > div .gauge_entire {
+    width: 70%;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_gauge > div .gauge_entire {
+    height: 7px;
+    border-radius: 3.5px;
+  }
+}
+main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_gauge > div .gauge_entire .gauge_colored {
+  position: absolute;
+  display: block;
+  width: 90%;
+  height: inherit;
+  border-radius: inherit;
+  top: 0;
+  left: 0;
+  background-color: #e54d26;
+}
+main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_descri {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 7px;
+}
+@media screen and (min-width: 768px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_descri {
+    margin-top: 10px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_descri {
+    margin-top: 12px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_descri {
+    margin-top: 15px;
+  }
+}
+@media screen and (min-width: 768px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_descri {
+    width: 70%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_descri {
+    width: 336px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_descri {
+    width: 378px;
+  }
+}
+main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_descri h5 {
+  font-size: calc(8px + 2vw);
+  margin-top: calc(-1px + 3vw);
+}
+@media screen and (min-width: 768px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_descri h5 {
+    margin-top: calc(-12px + 3vw);
+    font-size: calc(6px + 2vw);
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_descri h5 {
+    font-size: 24px;
+    margin-top: 16px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_descri h5 {
+    font-size: 28px;
+    margin-top: 20px;
+  }
+}
+main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_descri p {
+  margin-top: 7px;
+  font-size: calc(1px + 2.5vw);
+  text-align: center;
+  line-height: 1.5em;
+}
+@media screen and (min-width: 768px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_descri p {
+    margin-top: 10px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_descri p {
+    margin-top: 12px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_descri p {
+    margin-top: 15px;
+  }
+}
+@media screen and (min-width: 768px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_descri p {
+    font-size: calc(1px + 1.5vw);
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_descri p {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_descri p {
+    font-size: 20px;
+  }
+}
+main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_descri .mk_works {
+  margin-top: calc(-1px + 3vw);
+}
+@media screen and (min-width: 768px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_descri .mk_works {
+    margin-top: calc(-12px + 3vw);
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_descri .mk_works {
+    margin-top: 20px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_descri .mk_works {
+    margin-top: 25px;
+  }
+}
+main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_descri .mk_summary {
+  margin-top: calc(-1px + 3vw);
+}
+@media screen and (min-width: 768px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_descri .mk_summary {
+    margin-top: calc(-12px + 3vw);
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_descri .mk_summary {
+    margin-top: 20px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_descri .mk_summary {
+    margin-top: 25px;
+  }
+}
+main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_descri .mk_summary p {
+  text-align: justify;
+}
+main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .mk_close {
+  cursor: pointer;
+  font-size: calc(8px + 2vw);
+  margin-top: 15px;
+  margin-top: calc(-4px + 4vw);
+}
+@media screen and (min-width: 768px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .mk_close {
+    margin-top: 20px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .mk_close {
+    margin-top: 25px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .mk_close {
+    margin-top: 30px;
+  }
+}
+@media screen and (min-width: 768px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .mk_close {
+    margin-top: calc(-12px + 3vw);
+    font-size: calc(6px + 2vw);
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .mk_close {
+    font-size: 28px;
+    margin-top: 20px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .mk_close {
+    font-size: 32px;
+    margin-top: 25px;
+  }
+}
+main .main_myskills .mk_main .mk_skills_kitty img.mk_skills_kitty {
+  position: absolute;
+  left: 0;
+  top: 0;
   display: block;
   width: 100%;
+}
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main .mk_skills_kitty img.mk_skills_kitty {
+    scale: 1.25;
+    top: 90px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_myskills .mk_main .mk_skills_kitty img.mk_skills_kitty {
+    top: 60px;
+  }
+}
+main .main_myskills .mk_main .mk_icons {
+  margin-top: 60px;
+}
+@media screen and (min-width: 768px) {
+  main .main_myskills .mk_main .mk_icons {
+    margin-top: 80px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main .mk_icons {
+    margin-top: 100px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_myskills .mk_main .mk_icons {
+    margin-top: 120px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main .mk_icons {
+    position: absolute;
+    top: 0;
+    margin: 0;
+  }
+}
+main .main_myskills .mk_main .mk_icons .icons_flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+main .main_myskills .mk_main .mk_icons .icons_flex .mk_skill {
+  width: 33%;
+  position: relative;
+}
+main .main_myskills .mk_main .mk_icons .icons_flex .mk_skill img {
+  width: 100%;
+}
+main .main_myskills .mk_main .mk_icons .icons_flex .mk_skill .mk_chart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -46%);
+}
+main .main_myskills .mk_main .mk_icons .icons_flex .mk_skill .mk_chart .chart {
+  position: relative;
+}
+main .main_myskills .mk_main .mk_icons .icons_flex .mk_skill .mk_chart .chart svg {
+  width: 200px;
+  height: 200px;
+}
+main .main_myskills .mk_main .mk_icons .icons_flex .mk_skill .mk_chart .chart svg circle {
+  fill: transparent;
+  stroke-width: 20;
+  stroke-dasharray: 502.65482456;
+  stroke-dashoffset: 502.65482456;
+  stroke: #bcff04;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  stroke-linecap: round;
+  animation: line 3s forwards;
+}
+main .main_myskills .mk_main .mk_icons .icons_flex .mk_skill .mk_chart .chart .chart_data {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+main .main_myskills .mk_main .mk_icons .icons_flex .mk_skill .mk_chart .chart .chart_data h4 {
+  font-size: calc(8px + 2vw);
 }
 main .main_projects {
   height: 1000px;

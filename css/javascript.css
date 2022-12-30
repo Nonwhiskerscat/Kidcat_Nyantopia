@@ -24,3 +24,6 @@
   width: 100%;
   background-color: rgba(0, 6, 32, 0.3);
 }
+span.mk_highlight {
+  color: #e54d26;
+}

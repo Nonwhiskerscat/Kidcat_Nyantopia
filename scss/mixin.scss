@@ -276,3 +276,19 @@
     }
 }
 
+@mixin my_skills_works_margin {
+
+    margin-top: calc(-1px + 3vw);
+
+    @include responsive(tablet-cat) {
+        margin-top: calc(-12px + 3vw);
+    }
+
+    @include responsive(semi-cat) {
+        margin-top: 20px;
+    }
+
+    @include responsive(huge-cat) {
+        margin-top: 25px;
+    }
+}

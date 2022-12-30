@@ -119,19 +119,19 @@ main {
                             &:nth-child(1) {
                                 left: 20%;
                                 top: -10%;
-                                transform: rotateZ(10deg);
+                                rotate:10deg;
                             }
         
                             &:nth-child(2) {
                                 top: 93%;
                                 left: 10%;
-                                transform: rotateZ(245deg);
+                                rotate: 245deg;
                             }
         
                             &:nth-child(3) {
                                 top: 50%;
                                 left: 88%;
-                                transform: rotateZ(150deg);
+                                rotate: 150deg;
                             }
                         }
                     }
@@ -998,12 +998,7 @@ main {
                                         //
                                     }
                                 }
-
                             }
-                            
-
-
-
                         }
 
                         .rest_num {
@@ -1025,14 +1020,9 @@ main {
                             }
                         }
                     }
-
                 }
-                
             }
-        }
-
-    
-
+        }  
     }
 
     .main_myspecs {
@@ -1391,7 +1381,7 @@ main {
 
             .urban_gradient {
                 position: absolute;
-                bottom: 5%;
+                bottom: 8%;
                 width: 100%;
                 height: 200px;
                 display: block;
@@ -1485,7 +1475,23 @@ main {
 
         .mk_main {
 
+            position: relative;
+
+            @include responsive(tablet-cat) {
+                //
+            }
+
+            @include responsive(semi-cat) {
+                width: 960px;
+                margin: 0 auto;
+            }
+
+            @include responsive(huge-cat) {
+                width: 1080px;
+            }
+
             .mk_skills_kitty {
+                position: relative;
                 margin: 0 auto;
                 margin-top: $regular_margin_p;
                 width: 80%;
@@ -1495,20 +1501,430 @@ main {
                 }
 
                 @include responsive(semi-cat) {
-                    width: 500px;
+                    width: 480px;
+                    padding: 200px 0;
+                    margin-top: 0;
+                    margin: 0 auto;
+
                 }
 
                 @include responsive(huge-cat) {
                     width: 600px;
+                    padding: 250px 0;
+
                 }
 
-                img {
+                .mk_skills_big {
+                    width: 90%;
+                    margin: 0 auto;
+
+                    @include responsive(tablet-cat) {
+                        width: 80%;
+                    }
+    
+                    @include responsive(semi-cat) {
+                        width: 480px;
+                    }
+    
+                    @include responsive(huge-cat) {
+                        width: 540px;
+                        
+                    }
+
+                    .mk_skills_img {
+                        display: block;
+                        margin: 0 auto;
+
+                        @include responsive(tablet-cat) {
+                            //
+                        }
+        
+                        @include responsive(semi-cat) {
+                        }
+        
+                        @include responsive(huge-cat) {
+                            
+                        }
+
+                        img {
+                            width: 100%;
+
+                            @include responsive(tablet-cat) {
+                                //
+                            }
+            
+                            @include responsive(semi-cat) {
+                                //
+                            }
+            
+                            @include responsive(huge-cat) {
+                                
+                            }
+                        }
+                    }
+
+                    .mk_detail {
+                        width: 80%;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -46%);
+                        text-align: center;
+
+                        @include responsive(tablet-cat) {
+                            //
+                        }
+        
+                        @include responsive(semi-cat) {
+                            width: 480px;
+                        }
+        
+                        @include responsive(huge-cat) {
+                            
+                        }
+
+                        h4 {
+                            color: $html;
+                            font-size: calc(12px + 2vw);
+
+                            @include responsive(tablet-cat) {
+                                font-size: calc(14px + 2vw);
+                            }
+
+                            @include responsive(semi-cat) {
+                                font-size: 36px;
+                            }
+
+                            @include responsive(huge-cat) {
+                                font-size: 40px;
+
+                            }
+                        }
+
+                        .skills_gauge {
+                            text-align: justify;
+                            width: 80%;
+                            margin: 0 auto;
+                            @include nyan_petit_margin;
+                            margin-top: calc(-4px + 4vw);
+
+                            @include responsive(tablet-cat) {
+                                width: 70%;
+                            }
+
+                            @include responsive(semi-cat) {
+                                width: 320px;
+                                margin-top: 20px;
+                            }
+
+                            @include responsive(huge-cat) {
+                                margin-top: 25px;
+                            }
+
+                            &>div {
+                                
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+
+                                &:nth-child(2) {
+                                    margin-top: 5px;
+
+                                    @include responsive(tablet-cat) {
+                                        margin-top: 6px;
+                                    }
+
+                                    @include responsive(semi-cat) {
+                                        //
+                                    }
+
+                                    @include responsive(huge-cat) {
+                                        margin-top: 10px;
+                                    }
+                                }
+
+
+
+                                p {
+                                    font-size: calc(1px + 3vw);
+
+                                    @include responsive(tablet-cat) {
+                                        font-size: calc(2px + 1.5vw);
+                                    }
+
+                                    @include responsive(semi-cat) {
+                                        font-size: 18px;
+                                    }
+
+                                    @include responsive(huge-cat) {
+                                        font-size: 21px;
+                                    }
+
+                                }
+
+                                .gauge_entire {
+                                    position: relative;
+                                    width: 60%;
+                                    height: 5px;
+                                    border-radius: 2.5px;
+                                    background-color: rgba($color: #fff, $alpha: 0.5);
+
+                                    @include responsive(tablet-cat) {
+                                        height: 6px;
+                                        border-radius: 3px;
+                                    }
+
+                                    @include responsive(semi-cat) {
+                                        width: 70%;
+                                    }
+
+                                    @include responsive(huge-cat) {
+                                        height: 7px;
+                                        border-radius: 3.5px;
+                                    }
+
+                                    .gauge_colored {
+                                        position: absolute;
+                                        display: block;
+                                        width: 90%;
+                                        height: inherit;
+                                        border-radius: inherit;
+                                        top: 0;
+                                        left: 0;
+                                        background-color: $html;
+
+                                        @include responsive(tablet-cat) {
+                                            //
+                                        }
+    
+                                        @include responsive(semi-cat) {
+                                            //
+                                        }
+    
+                                        @include responsive(huge-cat) {
+                                            //
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
+
+                        .skills_descri {
+                            width: 80%;
+                            margin: 0 auto;
+                            @include nyan_petit_margin;
+
+                            @include responsive(tablet-cat) {
+                                width: 70%;
+                            }
+
+                            @include responsive(semi-cat) {
+                                width: calc(480px * 0.7);
+                            }
+
+                            @include responsive(huge-cat) {
+                                width: calc(540px * 0.7);
+                            }
+
+
+                            h5 {
+                                font-size: calc(8px + 2vw);
+                                margin-top: calc(-1px + 3vw);
+
+                                @include responsive(tablet-cat) {
+                                    margin-top: calc(-12px + 3vw);
+                                    font-size: calc(6px + 2vw);
+                                }
+    
+                                @include responsive(semi-cat) {
+                                    font-size: 24px;
+                                    margin-top: 16px;
+                                }
+    
+                                @include responsive(huge-cat) {
+                                    font-size: 28px;
+                                    margin-top: 20px;
+
+                                }
+                            }
+
+                            p {
+                                @include nyan_petit_margin;
+                                font-size: calc(1px + 2.5vw);
+                                text-align: center;
+                                line-height: 1.5em;
+
+                                @include responsive(tablet-cat) {
+                                    font-size: calc(1px + 1.5vw)
+                                }
+    
+                                @include responsive(semi-cat) {
+                                    font-size: 18px;
+                                }
+    
+                                @include responsive(huge-cat) {
+                                    font-size: 20px;
+                                }
+                            }
+
+                            .mk_works {
+
+                                @include my_skills_works_margin;
+
+                            }
+
+                            .mk_summary {
+
+                                @include my_skills_works_margin;
+
+                                p {
+                                    text-align: justify;
+                                }
+                            }
+                        }
+
+                        .mk_close {
+                            cursor: pointer;
+                            font-size: calc(8px + 2vw);
+                            @include nyan_tiny_margin;
+                            margin-top: calc(-4px + 4vw);
+
+                            @include responsive(tablet-cat) {
+                                margin-top: calc(-12px + 3vw);
+                                font-size: calc(6px + 2vw);
+
+                            }
+
+                            @include responsive(semi-cat) {
+                                font-size: 28px;
+                                margin-top: 20px;
+                            }
+
+                            @include responsive(huge-cat) {
+                                font-size: 32px;
+                                margin-top: 25px;
+                            }
+                        }
+                    }
+
+                }
+
+                img.mk_skills_kitty {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
                     display: block;
                     width: 100%;
+                    // display: none;
+
+                    @include responsive(tablet-cat) {
+                        //
+                    }
+
+                    @include responsive(semi-cat) {
+                        scale: 1.25;
+                        top: 90px;
+
+                    }
+
+                    @include responsive(huge-cat) {
+                        top: 60px;
+                    }
+
                 }
             }
-            
+
+            .mk_icons {
+
+                @include nyan_mezo_margin;
+
+                @include responsive(tablet-cat) {
+
+                }
+
+                @include responsive(semi-cat) {
+                    position: absolute;
+                    top: 0;
+                    margin: 0;
+                }
+
+                @include responsive(huge-cat) {
+                    //
+                }
+
+                .icons_flex {
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    @include responsive(tablet-cat) {
+
+                    }
+    
+                    @include responsive(semi-cat) {
+                        
+                    }
+    
+                    @include responsive(huge-cat) {
+                        //
+                    }
+
+                    .mk_skill {
+                        width: 33%;
+                        position: relative;
+
+                        img {
+                            width: 100%;
+                        }
+
+                        .mk_chart {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -46%);
+
+                            .chart {
+                                position: relative;
+
+                                svg {
+                                    width: 200px;
+                                    height: 200px;
+
+                                    circle {
+                                        fill: transparent;
+                                        stroke-width: 20;
+                                        stroke-dasharray: calc(200 * 0.8 * 3.1415926535);
+                                        stroke-dashoffset: calc(200 * 0.8 * 3.1415926535);
+                                        stroke: #bcff04;
+                                        transform: rotate(-90deg);
+                                        transform-origin: center;
+                                        stroke-linecap: round;
+                                        animation: line 3s forwards;
+                                    }
+                                }
+
+                                .chart_data {
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%);
+                                    text-align: center;
+
+                                    h4 {
+                                        font-size: calc(8px + 2vw);
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+
+
+            }
         }
+
+
 
     }
 

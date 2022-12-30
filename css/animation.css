@@ -20,3 +20,11 @@
     transform: translateY(0%);
   }
 }
+@keyframes line {
+  from {
+    stroke-dasharray: 502.65482456;
+  }
+  to {
+    stroke-dashoffset: 35.1858377192;
+  }
+}
