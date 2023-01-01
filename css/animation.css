@@ -1,3 +1,8 @@
+@charset "UTF-8";
+/*=================중단점=================*/
+/*=================톤앤매너=================*/
+/*=================폰트패밀리=================*/
+/*=================여백=================*/
 @keyframes cursor_blink {
   0% {
     opacity: 0;
@@ -22,9 +27,15 @@
 }
 @keyframes line {
   from {
-    stroke-dasharray: 502.65482456;
+    stroke-dasharray: calc((-20px + 30vw) * 0.8 * 3.1415926535);
+    @media screen and (min-width: 768px) {
+      stroke-dasharray: calc((-10px + 20vw) * 0.8 * 3.1415926535);
+    }
   }
   to {
-    stroke-dashoffset: 35.1858377192;
+    stroke-dashoffset: calc((-20px + 30vw) * 0.8 * 0.07 * 3.1415926535);
+    @media screen and (min-width: 768px) {
+      stroke-dashoffset: calc((-10px + 20vw) * 0.8 * 0.07 * 3.1415926535);
+    }
   }
 }

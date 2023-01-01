@@ -1,3 +1,4 @@
+@import './responsive.scss';
 //헤더 로고 애니메이션
 
 // @keyframes header_logo {
@@ -159,11 +160,21 @@
 
 @keyframes line {
     from {
-        stroke-dasharray: calc(200 * 0.8 * 3.1415926535);
+        stroke-dasharray: calc(calc(-20px + 30vw) * 0.8 * 3.1415926535);
+
+        @include responsive(tablet-cat) {
+            stroke-dasharray: calc(calc(-10px + 20vw) * 0.8 * 3.1415926535);
+        }
+        
     }
 
     to {
-        stroke-dashoffset: calc(200 * 0.8 * 0.07 * 3.1415926535);
+        stroke-dashoffset: calc(calc(-20px + 30vw) * 0.8 * 0.07 * 3.1415926535);
+
+        @include responsive(tablet-cat) {
+            stroke-dashoffset: calc(calc(-10px + 20vw) * 0.8 * 0.07 * 3.1415926535);
+
+        }
     }
 }
 

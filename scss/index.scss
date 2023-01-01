@@ -1130,7 +1130,23 @@ main {
                 }
 
                 &:nth-child(n+4) {
-                    @include nyan_mezo_margin;
+
+                    //
+
+                    @include responsive(tablet-cat) {
+                        margin-top: $mezo_margin_t;
+                    }
+
+                    @include responsive(semi-cat) {
+                        margin-top: $mezo_margin_s;
+
+                    }
+
+                    @include responsive(huge-cat) {
+                        margin-top: $mezo_margin_h;
+
+                    }
+
                 }
 
                 &:nth-child(3n+2) {
@@ -1857,12 +1873,13 @@ main {
                     display: flex;
                     flex-wrap: wrap;
 
-                    @include responsive(tablet-cat) {
 
+                    @include responsive(tablet-cat) {
+                        //
                     }
     
                     @include responsive(semi-cat) {
-                        
+
                     }
     
                     @include responsive(huge-cat) {
@@ -1873,33 +1890,84 @@ main {
                         width: 33%;
                         position: relative;
 
+                        @include responsive(tablet-cat) {
+                            width: 25%;
+                        }
+
+
+
+                        &:nth-child(n+4) {
+                            margin-top: $petit_margin_p;
+
+                            @include responsive(tablet-cat) {
+                                margin-top: 0;
+                            }
+                        }
+
+                        &:nth-child(n+5) {
+                            //
+                            @include responsive(tablet-cat) {
+                                margin-top: $petit_margin_t;
+                            }
+
+                            @include responsive(semi-cat) {
+                                margin-top: 0;
+                            }
+                        }
+
+                        &:last-child {
+                            //
+                            @include responsive(tablet-cat) {
+                                display: none;
+                            }
+
+                        }
+
                         img {
-                            width: 100%;
+                            width: 80%;
+                            margin: 0 auto;
+                            display: block;
                         }
 
                         .mk_chart {
                             position: absolute;
                             top: 50%;
                             left: 50%;
-                            transform: translate(-50%, -46%);
+                            transform: translate(-50%, -45%);
+
+                            @include responsive(tablet-cat) {
+                                transform: translate(-50%, -45%);
+                            }
 
                             .chart {
                                 position: relative;
 
                                 svg {
-                                    width: 200px;
-                                    height: 200px;
+                                    width: calc(-20px + 30vw);
+                                    height: calc(-20px + 30vw);
+
+                                    @include responsive(tablet-cat) {
+                                        width: calc(-10px + 20vw);
+                                        height: calc(-10px + 20vw);
+
+                                    }
 
                                     circle {
                                         fill: transparent;
-                                        stroke-width: 20;
-                                        stroke-dasharray: calc(200 * 0.8 * 3.1415926535);
-                                        stroke-dashoffset: calc(200 * 0.8 * 3.1415926535);
-                                        stroke: #bcff04;
+                                        stroke-width: calc(4px + 1vw);
+                                        stroke-dasharray: calc(calc(-20px + 30vw) * 0.8 * 3.1415926535);
+                                        stroke-dashoffset: calc(calc(-20px + 30vw) * 0.8 * 3.1415926535);
+                                        stroke: $html;
                                         transform: rotate(-90deg);
                                         transform-origin: center;
                                         stroke-linecap: round;
                                         animation: line 3s forwards;
+
+                                        @include responsive(tablet-cat) {
+                                            stroke-width: calc(5px + 1vw);
+                                            stroke-dasharray: calc(calc(-10px + 20vw) * 0.8 * 3.1415926535);
+                                            stroke-dashoffset: calc(calc(-10px + 20vw) * 0.8 * 3.1415926535);
+                                        }
                                     }
                                 }
 
@@ -1911,7 +1979,22 @@ main {
                                     text-align: center;
 
                                     h4 {
-                                        font-size: calc(8px + 2vw);
+                                        font-size: calc(-4px + 4vw);
+
+                                        @include responsive(tablet-cat) {
+                                            font-size: calc(4px + 2vw)
+                                        }
+                                    }
+                                    
+
+                                    p {
+                                        @include nyan_petit_margin;
+                                        font-size: calc(4px + 4vw);
+
+                                        @include responsive(tablet-cat) {
+                                            font-size: calc(2px + 3vw);
+                                        }
+
                                     }
                                 }
 
