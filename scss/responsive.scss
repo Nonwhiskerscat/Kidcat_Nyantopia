@@ -7,6 +7,12 @@
         }
     }
 
+    @if $break == m450-cat { // 중단점 450px
+        @media screen and (min-width: $break-450) {
+            @content;
+        }
+    }
+
     @if $break == tablet-cat { // 중단점 768px
         @media screen and (min-width: $break-tablet) {
             @content;

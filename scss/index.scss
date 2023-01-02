@@ -40,7 +40,8 @@ main {
             .first_flex {
                 position: relative;
 
-    
+
+
                 .intro_images {
                     margin: 0 auto;
                     position: relative;
@@ -158,6 +159,21 @@ main {
                             }
         
                         }
+                    }
+
+                    .intro_wave {
+                        display: block;
+                        position: absolute;
+                        width: 500px;
+                        height: 500px;
+                        background-color: #fff;
+                        opacity: 0.5;
+                        border-radius: 250px;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        z-index: -2;
+                        display: none
                     }
                     
                 }
@@ -806,13 +822,15 @@ main {
                         p {
                             @include nyan_petit_margin;
                             margin-top: $tiny_margin_p;
-                            font-size: calc(6px + 2vw);
+                            font-size: calc(8px + 2vw);
+                            line-height: 2em;
 
                             @include responsive(tablet-cat) {
                                 font-size: calc(8px + 1vw);
                             }
 
                             @include responsive(semi-cat) {
+                                line-height: 1.5em;
                                 font-size: 21px;
                                 
                             }
@@ -820,6 +838,14 @@ main {
                             @include responsive(huge-cat) {
                                 font-size: 24px;
 
+                            }
+
+                            br {
+                                //
+
+                                @include responsive(m450-cat) {
+                                    display: none;
+                                }
                             }
 
                         }
@@ -854,19 +880,23 @@ main {
                                     display: block;
                                     text-align: center;
                                     font-size: 2em;
+                                    margin-bottom: $petit_margin_p;
 
                                     @include responsive(tablet-cat) {
                                         display: inline;
                                         text-align: justify;
                                         font-size: 1.5em;
+                                        margin-bottom: $petit_margin_t;
                                     }
             
                                     @include responsive(semi-cat) {
                                         font-size: 36px;
+                                        margin-bottom: $petit_margin_s;
                                     }
             
                                     @include responsive(huge-cat) {
                                         font-size: 40px;
+                                        margin-bottom: $petit_margin_h;
                                     }
                                 }
                             }
@@ -1034,7 +1064,7 @@ main {
         .my_specs_back {
             display: none;
             position: relative;
-            z-index: -1;
+            z-index: -2;
             &>div {
                 position: absolute;
                 width: calc(500px + 50vw);
@@ -1403,7 +1433,7 @@ main {
                 display: block;
                 background: rgb(232,125,158);
                 background: linear-gradient(180deg, rgba(232,125,158,0) 0%, rgba(232,125,158,1) 100%);
-                z-index: -1;
+                z-index: -2;
 
                 @include responsive(tablet-cat) {
                     height: 300px;
@@ -1424,6 +1454,7 @@ main {
     .main_myskills {
         @include nyan_big_margin;
         @include nyan_common_h2;
+
 
         .my_skills_gnb {
             @include nyan_small_margin;
@@ -1479,6 +1510,18 @@ main {
                             width: calc(20px + 5vw);
                             display: block;
                             animation: cat_jump ease-in 1s infinite;
+
+                            @include responsive(tablet-cat) {
+                                width: calc(18px + 5vw);
+                            } 
+        
+                            @include responsive(semi-cat) {
+                                width: 80px;
+                            }
+        
+                            @include responsive(huge-cat) {
+                                width: 100px;
+                            }
                         }
                     }
 
@@ -1493,6 +1536,7 @@ main {
 
             position: relative;
 
+
             @include responsive(tablet-cat) {
                 //
             }
@@ -1500,13 +1544,18 @@ main {
             @include responsive(semi-cat) {
                 width: 960px;
                 margin: 0 auto;
+                margin-top: $mezo_margin_s;
+                display: flex;
+                align-items: center;
             }
 
             @include responsive(huge-cat) {
                 width: 1080px;
+                margin-top: $mezo_margin_h;
             }
 
             .mk_skills_kitty {
+                z-index: 3;
                 position: relative;
                 margin: 0 auto;
                 margin-top: $regular_margin_p;
@@ -1517,17 +1566,15 @@ main {
                 }
 
                 @include responsive(semi-cat) {
-                    width: 480px;
-                    padding: 200px 0;
+                    width: 440px;
                     margin-top: 0;
                     margin: 0 auto;
-
+                    padding: calc(440px / 3) 0;
                 }
 
                 @include responsive(huge-cat) {
-                    width: 600px;
-                    padding: 250px 0;
-
+                    width:540px;
+                    padding: calc(540px / 3) 0;
                 }
 
                 .mk_skills_big {
@@ -1539,7 +1586,8 @@ main {
                     }
     
                     @include responsive(semi-cat) {
-                        width: 480px;
+                        width: 440px;
+                        
                     }
     
                     @include responsive(huge-cat) {
@@ -1592,11 +1640,11 @@ main {
                         }
         
                         @include responsive(semi-cat) {
-                            width: 480px;
+                            width: 440px;
                         }
         
                         @include responsive(huge-cat) {
-                            
+                            width: 540px;
                         }
 
                         h4 {
@@ -1608,11 +1656,11 @@ main {
                             }
 
                             @include responsive(semi-cat) {
-                                font-size: 36px;
+                                font-size: 32px;
                             }
 
                             @include responsive(huge-cat) {
-                                font-size: 40px;
+                                font-size: 36px;
 
                             }
                         }
@@ -1629,12 +1677,13 @@ main {
                             }
 
                             @include responsive(semi-cat) {
-                                width: 320px;
-                                margin-top: 20px;
+                                width: 280px;
+                                margin-top: 10px;
                             }
 
                             @include responsive(huge-cat) {
-                                margin-top: 25px;
+                                width: 360px;
+                                margin-top: 15px;
                             }
 
                             &>div {
@@ -1651,7 +1700,7 @@ main {
                                     }
 
                                     @include responsive(semi-cat) {
-                                        //
+                                        margin-top: 8px;
                                     }
 
                                     @include responsive(huge-cat) {
@@ -1669,7 +1718,7 @@ main {
                                     }
 
                                     @include responsive(semi-cat) {
-                                        font-size: 18px;
+                                        font-size: 16px;
                                     }
 
                                     @include responsive(huge-cat) {
@@ -1740,7 +1789,7 @@ main {
                             }
 
                             @include responsive(huge-cat) {
-                                width: calc(540px * 0.7);
+                                width: calc(580px * 0.7);
                             }
 
 
@@ -1754,8 +1803,8 @@ main {
                                 }
     
                                 @include responsive(semi-cat) {
-                                    font-size: 24px;
-                                    margin-top: 16px;
+                                    font-size: 21px;
+                                    margin-top: 12px;
                                 }
     
                                 @include responsive(huge-cat) {
@@ -1776,11 +1825,11 @@ main {
                                 }
     
                                 @include responsive(semi-cat) {
-                                    font-size: 18px;
+                                    font-size: 16px;
                                 }
     
                                 @include responsive(huge-cat) {
-                                    font-size: 20px;
+                                    font-size: 21px;
                                 }
                             }
 
@@ -1813,7 +1862,7 @@ main {
                             }
 
                             @include responsive(semi-cat) {
-                                font-size: 28px;
+                                font-size: 24px;
                                 margin-top: 20px;
                             }
 
@@ -1832,6 +1881,7 @@ main {
                     top: 0;
                     display: block;
                     width: 100%;
+
                     // display: none;
 
                     @include responsive(tablet-cat) {
@@ -1845,19 +1895,13 @@ main {
                     }
 
                     @include responsive(huge-cat) {
-                        top: 60px;
+                        top: 120px;
                     }
 
                 }
             }
 
-            .mk_icons {
-
-                @include nyan_mezo_margin;
-
-                @include responsive(tablet-cat) {
-
-                }
+            .nyan_zone {
 
                 @include responsive(semi-cat) {
                     position: absolute;
@@ -1865,141 +1909,323 @@ main {
                     margin: 0;
                 }
 
-                @include responsive(huge-cat) {
-                    //
-                }
 
-                .icons_flex {
-                    display: flex;
-                    flex-wrap: wrap;
+                .mk_icons {
 
-
+                    @include nyan_mezo_margin;
+    
                     @include responsive(tablet-cat) {
-                        //
+    
                     }
     
                     @include responsive(semi-cat) {
-
+                        margin-top: 0;
                     }
     
                     @include responsive(huge-cat) {
                         //
                     }
-
-                    .mk_skill {
-                        width: 33%;
+    
+                    .icons_flex {
+                        display: flex;
+                        flex-wrap: wrap;
                         position: relative;
-
+    
+    
                         @include responsive(tablet-cat) {
-                            width: 25%;
-                        }
-
-
-
-                        &:nth-child(n+4) {
-                            margin-top: $petit_margin_p;
-
-                            @include responsive(tablet-cat) {
-                                margin-top: 0;
-                            }
-                        }
-
-                        &:nth-child(n+5) {
                             //
+                        }
+        
+                        @include responsive(semi-cat) {
+                            width: 720px;
+                            height: 720px;
+                            display: block;
+                            margin: 0 auto;
+                            // background-color: rgb(255, 221, 221);
+
+                        }
+        
+                        @include responsive(huge-cat) {
+                            width: 900px;
+                            height: 900px;
+                        }
+    
+                        .mk_skill {
+                            width: 33%;
+                            position: relative;
+    
                             @include responsive(tablet-cat) {
-                                margin-top: $petit_margin_t;
+                                width: 25%;
                             }
 
                             @include responsive(semi-cat) {
-                                margin-top: 0;
-                            }
-                        }
-
-                        &:last-child {
-                            //
-                            @include responsive(tablet-cat) {
-                                display: none;
+                                @include ferris_wheel;
+                                width: 150px;
+                                position: absolute;
                             }
 
-                        }
+                            @include responsive(huge-cat) {
+                                width: 200px;
+                            }
+    
+    
+    
+                            &:nth-child(n+4) {
+                                margin-top: $petit_margin_p;
+    
+                                @include responsive(tablet-cat) {
+                                    margin-top: 0;
+                                }
+                            }
+    
+                            &:nth-child(n+5) {
+                                //
+                                @include responsive(tablet-cat) {
+                                    margin-top: $petit_margin_t;
+                                }
+    
+                                @include responsive(semi-cat) {
+                                    margin-top: 0;
+                                }
+                            }
+    
+                            &:last-child {
+                                //
+                                @include responsive(tablet-cat) {
+                                    display: none;
+                                }
+    
+                            }
 
-                        img {
-                            width: 80%;
-                            margin: 0 auto;
+
+
+
+    
+                            img {
+                                width: 80%;
+                                margin: 0 auto;
+                                display: block;
+                            }
+    
+                            .mk_chart {
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -45%);
+    
+                                @include responsive(tablet-cat) {
+                                    transform: translate(-50%, -45%);
+                                }
+    
+                                .chart {
+                                    position: relative;
+    
+                                    svg {
+                                        width: calc(-20px + 30vw);
+                                        height: calc(-20px + 30vw);
+    
+                                        @include responsive(tablet-cat) {
+                                            width: calc(-10px + 20vw);
+                                            height: calc(-10px + 20vw);
+                                        }
+
+                                        @include responsive(semi-cat) {
+                                            width: 120px;
+                                            height: 120px;
+                                        }
+
+                                        @include responsive(huge-cat) {
+                                            width: 160px;
+                                            height: 160px;
+                                        }
+    
+                                        circle {
+                                            fill: transparent;
+                                            stroke-width: calc(4px + 1vw);
+                                            stroke-dasharray: calc(calc(-20px + 30vw) * 0.8 * 3.1415926535);
+                                            stroke-dashoffset: calc(calc(-20px + 30vw) * 0.8 * 3.1415926535);
+                                            stroke: $html;
+                                            transform: rotate(-90deg);
+                                            transform-origin: center;
+                                            stroke-linecap: round;
+                                            animation: line1 3s forwards;
+    
+                                            @include responsive(tablet-cat) {
+                                                stroke-width: calc(5px + 1vw);
+                                                stroke-dasharray: calc(calc(-10px + 20vw) * 0.8 * 3.1415926535);
+                                                stroke-dashoffset: calc(calc(-10px + 20vw) * 0.8 * 3.1415926535);
+                                                animation: line2 3s forwards;
+
+                                            }
+
+                                            @include responsive(semi-cat) {
+                                                stroke-width: 12px;
+                                                stroke-dasharray: calc(120px * 0.8 * 3.1415926535);
+                                                stroke-dashoffset: calc(120px * 0.8 * 3.1415926535);
+                                                animation: line3 3s forwards;
+
+                                            }
+
+                                            @include responsive(huge-cat) {
+                                                stroke-width: 16px;
+                                                stroke-dasharray: calc(160px * 0.8 * 3.1415926535);
+                                                stroke-dashoffset: calc(160px * 0.8 * 3.1415926535);
+                                                animation: line4 3s forwards;
+
+
+                                            }
+                                        }
+                                    }
+    
+                                    .chart_data {
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 50%;
+                                        transform: translate(-50%, -50%);
+                                        text-align: center;
+    
+                                        h4 {
+                                            font-size: calc(-4px + 4vw);
+    
+                                            @include responsive(tablet-cat) {
+                                                font-size: calc(4px + 2vw)
+                                            }
+
+                                            @include responsive(semi-cat) {
+                                                font-size: 21px;
+                                            }
+
+                                            @include responsive(huge-cat) {
+                                                font-size: 24px;
+                                            }
+                                        }
+                                        
+    
+                                        p {
+                                            @include nyan_petit_margin;
+                                            font-size: calc(4px + 4vw);
+    
+                                            @include responsive(tablet-cat) {
+                                                font-size: calc(2px + 3vw);
+                                            }
+
+                                            @include responsive(semi-cat) {
+                                                font-size: 24px;
+                                            }
+
+                                            @include responsive(huge-cat) {
+                                                font-size: 32px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .main_projects {
+        
+        @include nyan_large_margin;
+        @include nyan_common_h2;
+
+        .proj_gnb {
+            @include nyan_small_margin;
+
+            .proj_gnb_flex {
+
+                display: flex;
+                align-items: flex-end;
+                margin: 0 auto;
+                width: fit-content;
+                width: 90%;
+                justify-content: space-between;
+
+                @include responsive(tablet-cat) {
+                }
+
+                @include responsive(semi-cat) {
+
+                }
+
+                @include responsive(huge-cat) {
+
+                }
+                
+
+                li {
+                    font-size: calc(8px + 2vw);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    cursor: pointer;
+                    width: calc(100% / 3);
+                    text-align: center;
+
+                    @include responsive(tablet-cat) {
+                        font-size: calc(12px + 1vw);
+                        width: calc(100% / 5);
+                    } 
+    
+                    @include responsive(semi-cat) {
+                        font-size: 24px;
+    
+                    }
+    
+                    @include responsive(huge-cat) {
+                        font-size: 28px;
+    
+                    }
+
+                    &:nth-child(1), &:nth-child(5) {
+                        display: none;
+
+                        @include responsive(tablet-cat) {
                             display: block;
                         }
 
-                        .mk_chart {
-                            position: absolute;
-                            top: 50%;
-                            left: 50%;
-                            transform: translate(-50%, -45%);
+                        @include responsive(semi-cat) {
 
-                            @include responsive(tablet-cat) {
-                                transform: translate(-50%, -45%);
-                            }
-
-                            .chart {
-                                position: relative;
-
-                                svg {
-                                    width: calc(-20px + 30vw);
-                                    height: calc(-20px + 30vw);
-
-                                    @include responsive(tablet-cat) {
-                                        width: calc(-10px + 20vw);
-                                        height: calc(-10px + 20vw);
-
-                                    }
-
-                                    circle {
-                                        fill: transparent;
-                                        stroke-width: calc(4px + 1vw);
-                                        stroke-dasharray: calc(calc(-20px + 30vw) * 0.8 * 3.1415926535);
-                                        stroke-dashoffset: calc(calc(-20px + 30vw) * 0.8 * 3.1415926535);
-                                        stroke: $html;
-                                        transform: rotate(-90deg);
-                                        transform-origin: center;
-                                        stroke-linecap: round;
-                                        animation: line 3s forwards;
-
-                                        @include responsive(tablet-cat) {
-                                            stroke-width: calc(5px + 1vw);
-                                            stroke-dasharray: calc(calc(-10px + 20vw) * 0.8 * 3.1415926535);
-                                            stroke-dashoffset: calc(calc(-10px + 20vw) * 0.8 * 3.1415926535);
-                                        }
-                                    }
-                                }
-
-                                .chart_data {
-                                    position: absolute;
-                                    top: 50%;
-                                    left: 50%;
-                                    transform: translate(-50%, -50%);
-                                    text-align: center;
-
-                                    h4 {
-                                        font-size: calc(-4px + 4vw);
-
-                                        @include responsive(tablet-cat) {
-                                            font-size: calc(4px + 2vw)
-                                        }
-                                    }
-                                    
-
-                                    p {
-                                        @include nyan_petit_margin;
-                                        font-size: calc(4px + 4vw);
-
-                                        @include responsive(tablet-cat) {
-                                            font-size: calc(2px + 3vw);
-                                        }
-
-                                    }
-                                }
-
-                            }
                         }
+
+                        @include  responsive(huge-cat) {
+                            //
+                        }
+                    }
+
+                    &:nth-child(3) {
+                        font-size: calc(18px + 2vw);
+                        color: $identity;
+
+                        @include responsive(tablet-cat) {
+                            font-size: calc(24px + 1vw);
+                        }
+
+                        @include responsive(semi-cat) {
+                            font-size: 36px;
+                        }
+
+                        @include responsive(huge-cat) {
+                            font-size: 40px;
+        
+                        }
+                    }
+                    
+                }
+
+
+    
+                .proj_gnb_kitty {
+                    display: block;
+                    margin-bottom: 5px;
+
+                    img {
+                        width: calc(20px + 5vw);
+                        display: block;
+                        animation: cat_jump ease-in 1s infinite;
                     }
                 }
 
@@ -2007,13 +2233,387 @@ main {
             }
         }
 
+        .proj_web {
+            @include nyan_mid_margin;
+
+            .proj_flex {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+
+                @include responsive(tablet-cat) {
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
+
+                @include responsive(semi-cat) {
+                    //
+                }
+
+                @include responsive(huge-cat) {
+
+                }
+
+                .proj_photo {
+                    width: 80%;
+                    margin: 0 auto;
+                    position: relative;
+
+                    @include responsive(tablet-cat) {
+                        width: 40%;
+                    }
+    
+                    @include responsive(semi-cat) {
+                        //
+                    }
+    
+                    @include responsive(huge-cat) {
+                        //
+                    }
+
+                    img.proj_mockup {
+                        display: block;
+                        width: 100%;
+                    }
+
+                    img.proj_nyanbal {
+                        position: absolute;
+                        width: 30%;
+                        left: 50%;
+                        top: 50%;
+                        rotate: 120deg;
+                        transform-origin: center top;
+
+                        @include responsive(tablet-cat) {
+                            width: 30%;
+                            top: 20%;
+                        }
+
+                        @include responsive(semi-cat) {
+                            //
+                        }
+        
+                        @include responsive(huge-cat) {
+                            //
+                        }
+                    }
+
+                    img.proj_back {
+                        width: 140%;
+                        position: absolute;
+                        top: -10%;
+                        left: -20%;
+                        z-index: -2;
+
+                        @include responsive(tablet-cat) {
+                            top: -4%;
+                            left: -25%;
+                        }
+
+                        @include responsive(semi-cat) {
+                            //
+                        }
+        
+                        @include responsive(huge-cat) {
+                            //
+                        }
+
+                        
+
+                        &:last-child {
+                            top: -5%;
+
+                            @include responsive(tablet-cat) {
+                                top: 0%;
+                                left: -20%;
+                            }
+    
+                            @include responsive(semi-cat) {
+                                //
+                            }
+            
+                            @include responsive(huge-cat) {
+                                //
+                            }
+    
+                        }
+                    }
+                }
+
+                .proj_contents {
+                    @include nyan_mid_margin;
+                    width: 100%;
+
+                    @include responsive(tablet-cat) {
+                        width: 55%;
+                        margin-top: 0;
+                    }
+    
+                    @include responsive(semi-cat) {
+                        //
+                    }
+    
+                    @include responsive(huge-cat) {
+                        //
+                    }
+
+                    .proj_title {
+                        display: flex;
+                        width: 100%;
+                        align-items: center;
+
+                        .title_img {
+                            width: 15%;
+
+                            img {
+                                display: block;
+                                width: 100%;
+                            }
+                        }
+
+                        .title_txt {
+                            margin-left: 20px;
+
+                            @include responsive(tablet-cat) {
+                                margin-left: 15px;
+                            }
+
+                            @include responsive(semi-cat) {
+                                //
+                            }
+            
+                            @include responsive(huge-cat) {
+                                //
+                            }
+
+                            h4 {
+                                color: white;
+                                font-size: calc(4px + 4vw);
+
+                                @include responsive(tablet-cat) {
+                                    font-size: calc(6px + 2vw);
+                                }
+
+                                @include responsive(semi-cat) {
+                                    //
+                                }
+                
+                                @include responsive(huge-cat) {
+                                    //
+                                }
+                                
+                            }
+                        }
+
+                    }
+
+                    .proj_info {
+
+                        width: 100%;
+
+                        .proj_detail {
+                            @include nyan_regular_margin;
+                            display: flex;
+                            width: 100%;
+                            justify-content: space-around;
+
+                            @include responsive(tablet-cat) {
+                                //
+                            }
+
+                            @include responsive(semi-cat) {
+                                //
+                            }
+            
+                            @include responsive(huge-cat) {
+                                //
+                            }
+
+                            &>div {
+                                width: calc(100% / 3);
+                                text-align: center;
+
+                                h5 {
+                                    font-size: calc(3vw + 6px);
+
+                                    @include responsive(tablet-cat) {
+                                        font-size: calc(2vw + 6px);
+
+                                    }
+        
+                                    @include responsive(semi-cat) {
+                                        //
+                                    }
+                    
+                                    @include responsive(huge-cat) {
+                                        //
+                                    }
+                                }
+
+                                p {
+                                    @include nyan_tiny_margin;
+                                    font-size: calc(3vw + 6px);
+
+                                    @include responsive(tablet-cat) {
+                                        font-size: calc(2vw + 6px);
+
+                                    }
+        
+                                    @include responsive(semi-cat) {
+                                        //
+                                    }
+                    
+                                    @include responsive(huge-cat) {
+                                        //
+                                    }
+
+                                    .info_highlight {
+                                        font-size: calc(10vw + 4px);
+                                        color: $kopc;
+
+                                        @include responsive(tablet-cat) {
+                                            font-size: calc(6vw + 6px);
+    
+                                        }
+            
+                                        @include responsive(semi-cat) {
+                                            //
+                                        }
+                        
+                                        @include responsive(huge-cat) {
+                                            //
+                                        }
+
+                                    }
+                                }
+                            }
+
+                            .info_tone {
+                                
+                                .tone_flex {
+                                    width: 60%;
+                                    margin: 0 auto;
+                                    display: flex;
+                                    align-items: center;
+                                    flex-wrap: wrap;
+                                    @include nyan_tiny_margin;
+                                    height: calc(10vw + 4px);
+
+                                    
+                                    @include responsive(tablet-cat) {
+                                        height: calc(6vw + 6px);
 
 
-    }
+                                    }
+        
+                                    @include responsive(semi-cat) {
+                                        //
+                                    }
+                    
+                                    @include responsive(huge-cat) {
+                                        //
+                                    }
+                                    
 
-    .main_projects {
-        height: 1000px;
-        background-color: rgb(199, 112, 175);
+                                    .tone_cat {
+                                        margin: 0 auto;
+                                        width: calc(100% / 3);
+
+                                        &:nth-child(1) {
+                                            img {
+                                                filter: invert(63%) sepia(83%) saturate(371%) hue-rotate(356deg) brightness(92%) contrast(97%);
+                                            }
+                                        }
+
+                                        &:nth-child(2) {
+                                            img {
+                                                filter: invert(17%) sepia(10%) saturate(0%) hue-rotate(235deg) brightness(103%) contrast(94%);
+
+                                            }
+                                        }
+
+                                        &:nth-child(3) {
+                                            img {
+                                                filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(336deg) brightness(101%) contrast(101%);
+
+                                            }
+                                        }
+
+                                        
+                                        img {
+                                            width: 75%;
+                                            display: block;
+                                            margin: 0 auto;
+                                        }
+                                    }
+
+                                }
+
+                                
+
+                            }
+
+                        }
+
+                        .info_desc {
+                            @include nyan_regular_margin;
+
+                            .desc_txt {
+                                text-align: justify;
+                                font-size: calc(8px + 2vw);
+                                line-height: 2em;
+                            }
+                        }    
+                        
+                        .info_btn_grp {
+                            @include nyan_small_margin;
+                            display: flex;
+                            justify-content: space-between;
+
+                            &>button {
+                                display: block;
+                                position: relative;
+                                font-family: $common;
+                                width: 47.5%;
+
+                                text-align: center;
+                                background-color: $kopc;
+                                border-radius: calc(4px + 4vw + 1em);
+                                border: 3px solid $kopc;
+                                overflow: hidden;
+
+                                color: $kopc;
+                                background-color: transparent;
+                                transition: all 0.5s linear;
+
+
+                                &:hover {
+                                    @include button_letter_hover;
+                                }
+
+                                &::after {
+                                    z-index: -1;
+                                    @include button_hover;
+                                    background-color: $kopc;
+                                }
+
+                                p {
+                                    font-size: calc(4px + 4vw);
+                                    padding: 0.5em 0;
+                                    z-index: 3;
+                                }
+
+                            }
+
+                        }
+
+
+                    }
+                }
+            }
+        }
+
+
 
     }
 

@@ -491,19 +491,20 @@ window.addEventListener('load', () => {
     },3000);
 
     [].forEach.call(intro_lines_img, (intro_lines_img, idx)=> {
-        intro_lines_img.style.opacity=0;
+        intro_lines_img.style.transform='scale(0)';
     });
 
 
     for(let l=0;l<intro_lines_img.length;l++) {
         setTimeout(()=> {
             intro_lines_img[l].animate([
-                { 
-                    
-                    opacity: 1,
-                }
+                {transform: 'scale(1.0)'},
+                {transform: 'scale(1.4)'},
+                {transform: 'scale(1.3)'},
+                {transform: 'scale(1.2)'},
+                {transform: 'scale(1.0)'},
             ],{
-                duration: 200,
+                duration: 500,
                 fill: "forwards"
             })
 
@@ -523,7 +524,7 @@ window.addEventListener('load', () => {
             duration: 3000,
             iterations: 'Infinity'
         })
-    },5600);
+    },6000);
 
 
     intro_images.addEventListener('click', ()=> {

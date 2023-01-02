@@ -19,6 +19,23 @@
 /*=================톤앤매너=================*/
 /*=================폰트패밀리=================*/
 /*=================여백=================*/
+@keyframes header_logo {
+  0% {
+    transform: rotateZ(5deg);
+  }
+  25% {
+    transform: rotateZ(-5deg);
+  }
+  50% {
+    transform: rotateZ(5deg);
+  }
+  75% {
+    transform: rotateZ(15deg);
+  }
+  100% {
+    transform: rotateZ(5deg);
+  }
+}
 @keyframes cursor_blink {
   0% {
     opacity: 0;
@@ -41,18 +58,36 @@
     transform: translateY(0%);
   }
 }
-@keyframes line {
+@keyframes line1 {
   from {
     stroke-dasharray: calc((-20px + 30vw) * 0.8 * 3.1415926535);
-    @media screen and (min-width: 768px) {
-      stroke-dasharray: calc((-10px + 20vw) * 0.8 * 3.1415926535);
-    }
   }
   to {
     stroke-dashoffset: calc((-20px + 30vw) * 0.8 * 0.07 * 3.1415926535);
-    @media screen and (min-width: 768px) {
-      stroke-dashoffset: calc((-10px + 20vw) * 0.8 * 0.07 * 3.1415926535);
-    }
+  }
+}
+@keyframes line2 {
+  from {
+    stroke-dasharray: calc((-10px + 20vw) * 0.8 * 3.1415926535);
+  }
+  to {
+    stroke-dashoffset: calc((-10px + 20vw) * 0.8 * 0.07 * 3.1415926535);
+  }
+}
+@keyframes line3 {
+  from {
+    stroke-dasharray: 301.592894736px;
+  }
+  to {
+    stroke-dashoffset: 21.1115026315px;
+  }
+}
+@keyframes line4 {
+  from {
+    stroke-dasharray: 402.123859648px;
+  }
+  to {
+    stroke-dashoffset: 28.1486701754px;
   }
 }
 main .main_intro .nyan_1 .first_flex {
@@ -144,6 +179,20 @@ main .main_intro .nyan_1 .first_flex .intro_images .intro_click .intro_click_hi 
   main .main_intro .nyan_1 .first_flex .intro_images .intro_click .intro_click_hi {
     font-size: 33px;
   }
+}
+main .main_intro .nyan_1 .first_flex .intro_images .intro_wave {
+  display: block;
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background-color: #fff;
+  opacity: 0.5;
+  border-radius: 250px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+  display: none;
 }
 main .main_intro .nyan_1 .first_flex .intro_title {
   margin-top: 60px;
@@ -802,7 +851,8 @@ main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_commen
 main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_comment p {
   margin-top: 7px;
   margin-top: 15px;
-  font-size: calc(6px + 2vw);
+  font-size: calc(8px + 2vw);
+  line-height: 2em;
 }
 @media screen and (min-width: 768px) {
   main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_comment p {
@@ -826,12 +876,18 @@ main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_commen
 }
 @media screen and (min-width: 1200px) {
   main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_comment p {
+    line-height: 1.5em;
     font-size: 21px;
   }
 }
 @media screen and (min-width: 1600px) {
   main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_comment p {
     font-size: 24px;
+  }
+}
+@media screen and (min-width: 450px) {
+  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_comment p br {
+    display: none;
   }
 }
 main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explain {
@@ -877,22 +933,26 @@ main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explai
   display: block;
   text-align: center;
   font-size: 2em;
+  margin-bottom: 7px;
 }
 @media screen and (min-width: 768px) {
   main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explain .explain_title p span.descri_keyword {
     display: inline;
     text-align: justify;
     font-size: 1.5em;
+    margin-bottom: 10px;
   }
 }
 @media screen and (min-width: 1200px) {
   main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explain .explain_title p span.descri_keyword {
     font-size: 36px;
+    margin-bottom: 12px;
   }
 }
 @media screen and (min-width: 1600px) {
   main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explain .explain_title p span.descri_keyword {
     font-size: 40px;
+    margin-bottom: 15px;
   }
 }
 main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explain .explain_contents {
@@ -1177,7 +1237,7 @@ main .main_myspecs .main_h2 .nyan_zone_h2 .title_text_area h2 {
 main .main_myspecs .my_specs_back {
   display: none;
   position: relative;
-  z-index: -1;
+  z-index: -2;
 }
 main .main_myspecs .my_specs_back > div {
   position: absolute;
@@ -1498,7 +1558,7 @@ main .main_myspecs .my_specs_urban .urban_gradient {
   display: block;
   background: rgb(232, 125, 158);
   background: linear-gradient(180deg, rgba(232, 125, 158, 0) 0%, rgb(232, 125, 158) 100%);
-  z-index: -1;
+  z-index: -2;
 }
 @media screen and (min-width: 768px) {
   main .main_myspecs .my_specs_urban .urban_gradient {
@@ -1705,6 +1765,21 @@ main .main_myskills .my_skills_gnb .mk_gnb_flex li .mk_gnb_kitty img {
   display: block;
   animation: cat_jump ease-in 1s infinite;
 }
+@media screen and (min-width: 768px) {
+  main .main_myskills .my_skills_gnb .mk_gnb_flex li .mk_gnb_kitty img {
+    width: calc(18px + 5vw);
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_myskills .my_skills_gnb .mk_gnb_flex li .mk_gnb_kitty img {
+    width: 80px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_myskills .my_skills_gnb .mk_gnb_flex li .mk_gnb_kitty img {
+    width: 100px;
+  }
+}
 main .main_myskills .mk_main {
   position: relative;
 }
@@ -1712,14 +1787,19 @@ main .main_myskills .mk_main {
   main .main_myskills .mk_main {
     width: 960px;
     margin: 0 auto;
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
   }
 }
 @media screen and (min-width: 1600px) {
   main .main_myskills .mk_main {
     width: 1080px;
+    margin-top: 120px;
   }
 }
 main .main_myskills .mk_main .mk_skills_kitty {
+  z-index: 3;
   position: relative;
   margin: 0 auto;
   margin-top: 40px;
@@ -1732,16 +1812,16 @@ main .main_myskills .mk_main .mk_skills_kitty {
 }
 @media screen and (min-width: 1200px) {
   main .main_myskills .mk_main .mk_skills_kitty {
-    width: 480px;
-    padding: 200px 0;
+    width: 440px;
     margin-top: 0;
     margin: 0 auto;
+    padding: 146.6666666667px 0;
   }
 }
 @media screen and (min-width: 1600px) {
   main .main_myskills .mk_main .mk_skills_kitty {
-    width: 600px;
-    padding: 250px 0;
+    width: 540px;
+    padding: 180px 0;
   }
 }
 main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big {
@@ -1755,7 +1835,7 @@ main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big {
 }
 @media screen and (min-width: 1200px) {
   main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big {
-    width: 480px;
+    width: 440px;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -1780,7 +1860,12 @@ main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail {
 }
 @media screen and (min-width: 1200px) {
   main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail {
-    width: 480px;
+    width: 440px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail {
+    width: 540px;
   }
 }
 main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail h4 {
@@ -1794,12 +1879,12 @@ main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail h4 {
 }
 @media screen and (min-width: 1200px) {
   main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail h4 {
-    font-size: 36px;
+    font-size: 32px;
   }
 }
 @media screen and (min-width: 1600px) {
   main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail h4 {
-    font-size: 40px;
+    font-size: 36px;
   }
 }
 main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_gauge {
@@ -1831,13 +1916,14 @@ main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_
 }
 @media screen and (min-width: 1200px) {
   main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_gauge {
-    width: 320px;
-    margin-top: 20px;
+    width: 280px;
+    margin-top: 10px;
   }
 }
 @media screen and (min-width: 1600px) {
   main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_gauge {
-    margin-top: 25px;
+    width: 360px;
+    margin-top: 15px;
   }
 }
 main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_gauge > div {
@@ -1851,6 +1937,11 @@ main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_
 @media screen and (min-width: 768px) {
   main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_gauge > div:nth-child(2) {
     margin-top: 6px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_gauge > div:nth-child(2) {
+    margin-top: 8px;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -1868,7 +1959,7 @@ main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_
 }
 @media screen and (min-width: 1200px) {
   main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_gauge > div p {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -1942,7 +2033,7 @@ main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_
 }
 @media screen and (min-width: 1600px) {
   main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_descri {
-    width: 378px;
+    width: 406px;
   }
 }
 main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_descri h5 {
@@ -1957,8 +2048,8 @@ main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_
 }
 @media screen and (min-width: 1200px) {
   main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_descri h5 {
-    font-size: 24px;
-    margin-top: 16px;
+    font-size: 21px;
+    margin-top: 12px;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -1995,12 +2086,12 @@ main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_
 }
 @media screen and (min-width: 1200px) {
   main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_descri p {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 1600px) {
   main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_descri p {
-    font-size: 20px;
+    font-size: 21px;
   }
 }
 main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .skills_descri .mk_works {
@@ -2071,7 +2162,7 @@ main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .mk_clos
 }
 @media screen and (min-width: 1200px) {
   main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .mk_close {
-    font-size: 28px;
+    font-size: 24px;
     margin-top: 20px;
   }
 }
@@ -2096,100 +2187,183 @@ main .main_myskills .mk_main .mk_skills_kitty img.mk_skills_kitty {
 }
 @media screen and (min-width: 1600px) {
   main .main_myskills .mk_main .mk_skills_kitty img.mk_skills_kitty {
-    top: 60px;
-  }
-}
-main .main_myskills .mk_main .mk_icons {
-  margin-top: 60px;
-}
-@media screen and (min-width: 768px) {
-  main .main_myskills .mk_main .mk_icons {
-    margin-top: 80px;
+    top: 120px;
   }
 }
 @media screen and (min-width: 1200px) {
-  main .main_myskills .mk_main .mk_icons {
-    margin-top: 100px;
-  }
-}
-@media screen and (min-width: 1600px) {
-  main .main_myskills .mk_main .mk_icons {
-    margin-top: 120px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  main .main_myskills .mk_main .mk_icons {
+  main .main_myskills .mk_main .nyan_zone {
     position: absolute;
     top: 0;
     margin: 0;
   }
 }
-main .main_myskills .mk_main .mk_icons .icons_flex {
+main .main_myskills .mk_main .nyan_zone .mk_icons {
+  margin-top: 60px;
+}
+@media screen and (min-width: 768px) {
+  main .main_myskills .mk_main .nyan_zone .mk_icons {
+    margin-top: 80px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main .nyan_zone .mk_icons {
+    margin-top: 100px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_myskills .mk_main .nyan_zone .mk_icons {
+    margin-top: 120px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main .nyan_zone .mk_icons {
+    margin-top: 0;
+  }
+}
+main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex {
   display: flex;
   flex-wrap: wrap;
+  position: relative;
 }
-main .main_myskills .mk_main .mk_icons .icons_flex .mk_skill {
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex {
+    width: 720px;
+    height: 720px;
+    display: block;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex {
+    width: 900px;
+    height: 900px;
+  }
+}
+main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill {
   width: 33%;
   position: relative;
 }
 @media screen and (min-width: 768px) {
-  main .main_myskills .mk_main .mk_icons .icons_flex .mk_skill {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill {
     width: 25%;
   }
 }
-main .main_myskills .mk_main .mk_icons .icons_flex .mk_skill:nth-child(n+4) {
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill {
+    width: 150px;
+    position: absolute;
+  }
+  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill:nth-child(1) {
+    top: 0%;
+    left: 50%;
+    translate: -50% -50%;
+  }
+  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill:nth-child(2) {
+    top: 15%;
+    left: 85%;
+    translate: -50% -50%;
+  }
+  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill:nth-child(3) {
+    left: 100%;
+    top: 50%;
+    translate: -50% -50%;
+  }
+  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill:nth-child(4) {
+    left: 85%;
+    top: 85%;
+    translate: -50% -50%;
+  }
+  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill:nth-child(5) {
+    left: 50%;
+    top: 100%;
+    translate: -50% -50%;
+  }
+  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill:nth-child(6) {
+    left: 15%;
+    top: 85%;
+    translate: -50% -50%;
+  }
+  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill:nth-child(7) {
+    left: 0%;
+    top: 50%;
+    translate: -50% -50%;
+  }
+  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill:nth-child(8) {
+    left: 15%;
+    top: 15%;
+    translate: -50% -50%;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill {
+    width: 200px;
+  }
+}
+main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill:nth-child(n+4) {
   margin-top: 7px;
 }
 @media screen and (min-width: 768px) {
-  main .main_myskills .mk_main .mk_icons .icons_flex .mk_skill:nth-child(n+4) {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill:nth-child(n+4) {
     margin-top: 0;
   }
 }
 @media screen and (min-width: 768px) {
-  main .main_myskills .mk_main .mk_icons .icons_flex .mk_skill:nth-child(n+5) {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill:nth-child(n+5) {
     margin-top: 10px;
   }
 }
 @media screen and (min-width: 1200px) {
-  main .main_myskills .mk_main .mk_icons .icons_flex .mk_skill:nth-child(n+5) {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill:nth-child(n+5) {
     margin-top: 0;
   }
 }
 @media screen and (min-width: 768px) {
-  main .main_myskills .mk_main .mk_icons .icons_flex .mk_skill:last-child {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill:last-child {
     display: none;
   }
 }
-main .main_myskills .mk_main .mk_icons .icons_flex .mk_skill img {
+main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill img {
   width: 80%;
   margin: 0 auto;
   display: block;
 }
-main .main_myskills .mk_main .mk_icons .icons_flex .mk_skill .mk_chart {
+main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -45%);
 }
 @media screen and (min-width: 768px) {
-  main .main_myskills .mk_main .mk_icons .icons_flex .mk_skill .mk_chart {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart {
     transform: translate(-50%, -45%);
   }
 }
-main .main_myskills .mk_main .mk_icons .icons_flex .mk_skill .mk_chart .chart {
+main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart {
   position: relative;
 }
-main .main_myskills .mk_main .mk_icons .icons_flex .mk_skill .mk_chart .chart svg {
+main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart svg {
   width: calc(-20px + 30vw);
   height: calc(-20px + 30vw);
 }
 @media screen and (min-width: 768px) {
-  main .main_myskills .mk_main .mk_icons .icons_flex .mk_skill .mk_chart .chart svg {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart svg {
     width: calc(-10px + 20vw);
     height: calc(-10px + 20vw);
   }
 }
-main .main_myskills .mk_main .mk_icons .icons_flex .mk_skill .mk_chart .chart svg circle {
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart svg {
+    width: 120px;
+    height: 120px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart svg {
+    width: 160px;
+    height: 160px;
+  }
+}
+main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart svg circle {
   fill: transparent;
   stroke-width: calc(4px + 1vw);
   stroke-dasharray: calc((-20px + 30vw) * 0.8 * 3.1415926535);
@@ -2198,57 +2372,626 @@ main .main_myskills .mk_main .mk_icons .icons_flex .mk_skill .mk_chart .chart sv
   transform: rotate(-90deg);
   transform-origin: center;
   stroke-linecap: round;
-  animation: line 3s forwards;
+  animation: line1 3s forwards;
 }
 @media screen and (min-width: 768px) {
-  main .main_myskills .mk_main .mk_icons .icons_flex .mk_skill .mk_chart .chart svg circle {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart svg circle {
     stroke-width: calc(5px + 1vw);
     stroke-dasharray: calc((-10px + 20vw) * 0.8 * 3.1415926535);
     stroke-dashoffset: calc((-10px + 20vw) * 0.8 * 3.1415926535);
+    animation: line2 3s forwards;
   }
 }
-main .main_myskills .mk_main .mk_icons .icons_flex .mk_skill .mk_chart .chart .chart_data {
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart svg circle {
+    stroke-width: 12px;
+    stroke-dasharray: 301.592894736px;
+    stroke-dashoffset: 301.592894736px;
+    animation: line3 3s forwards;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart svg circle {
+    stroke-width: 16px;
+    stroke-dasharray: 402.123859648px;
+    stroke-dashoffset: 402.123859648px;
+    animation: line4 3s forwards;
+  }
+}
+main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart .chart_data {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
-main .main_myskills .mk_main .mk_icons .icons_flex .mk_skill .mk_chart .chart .chart_data h4 {
+main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart .chart_data h4 {
   font-size: calc(-4px + 4vw);
 }
 @media screen and (min-width: 768px) {
-  main .main_myskills .mk_main .mk_icons .icons_flex .mk_skill .mk_chart .chart .chart_data h4 {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart .chart_data h4 {
     font-size: calc(4px + 2vw);
   }
 }
-main .main_myskills .mk_main .mk_icons .icons_flex .mk_skill .mk_chart .chart .chart_data p {
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart .chart_data h4 {
+    font-size: 21px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart .chart_data h4 {
+    font-size: 24px;
+  }
+}
+main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart .chart_data p {
   margin-top: 7px;
   font-size: calc(4px + 4vw);
 }
 @media screen and (min-width: 768px) {
-  main .main_myskills .mk_main .mk_icons .icons_flex .mk_skill .mk_chart .chart .chart_data p {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart .chart_data p {
     margin-top: 10px;
   }
 }
 @media screen and (min-width: 1200px) {
-  main .main_myskills .mk_main .mk_icons .icons_flex .mk_skill .mk_chart .chart .chart_data p {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart .chart_data p {
     margin-top: 12px;
   }
 }
 @media screen and (min-width: 1600px) {
-  main .main_myskills .mk_main .mk_icons .icons_flex .mk_skill .mk_chart .chart .chart_data p {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart .chart_data p {
     margin-top: 15px;
   }
 }
 @media screen and (min-width: 768px) {
-  main .main_myskills .mk_main .mk_icons .icons_flex .mk_skill .mk_chart .chart .chart_data p {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart .chart_data p {
     font-size: calc(2px + 3vw);
   }
 }
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart .chart_data p {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart .chart_data p {
+    font-size: 32px;
+  }
+}
 main .main_projects {
-  height: 1000px;
-  background-color: rgb(199, 112, 175);
+  margin-top: 150px;
+}
+@media screen and (min-width: 768px) {
+  main .main_projects {
+    margin-top: 200px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_projects {
+    margin-top: 250px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_projects {
+    margin-top: 300px;
+  }
+}
+main .main_projects .main_h2 .nyan_zone_h2 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .main_h2 .nyan_zone_h2 {
+    flex-direction: row;
+  }
+}
+main .main_projects .main_h2 .nyan_zone_h2 .title_trace_area {
+  position: relative;
+  width: calc(15px + 3vw);
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .main_h2 .nyan_zone_h2 .title_trace_area {
+    margin: 0;
+    width: calc(30px + 2vw);
+    height: calc(20px + 2vw);
+    margin-right: 20px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_projects .main_h2 .nyan_zone_h2 .title_trace_area {
+    width: 50px;
+    height: 40px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_projects .main_h2 .nyan_zone_h2 .title_trace_area {
+    width: 60px;
+    height: 48px;
+  }
+}
+main .main_projects .main_h2 .nyan_zone_h2 .title_trace_area > img {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .main_h2 .nyan_zone_h2 .title_trace_area > img {
+    margin: 0;
+    position: absolute;
+    width: 40%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_projects .main_h2 .nyan_zone_h2 .title_trace_area > img {
+    width: 20px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_projects .main_h2 .nyan_zone_h2 .title_trace_area > img {
+    width: 24px;
+  }
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(1) {
+    bottom: 0;
+  }
+}
+main .main_projects .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(2) {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(2) {
+    display: block;
+    left: 45%;
+    transform: translateX(-50%);
+  }
+}
+main .main_projects .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(3) {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(3) {
+    display: block;
+    right: 0%;
+    top: 60%;
+    transform: translateY(-50%);
+  }
+}
+main .main_projects .main_h2 .nyan_zone_h2 .title_text_area h2 {
+  text-align: center;
+  font-size: calc(16px + 2vw);
+  margin-top: 7px;
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .main_h2 .nyan_zone_h2 .title_text_area h2 {
+    margin-top: 0;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_projects .main_h2 .nyan_zone_h2 .title_text_area h2 {
+    font-size: 36px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_projects .main_h2 .nyan_zone_h2 .title_text_area h2 {
+    font-size: 40px;
+  }
+}
+main .main_projects .proj_gnb {
+  margin-top: 25px;
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .proj_gnb {
+    margin-top: 35px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_projects .proj_gnb {
+    margin-top: 40px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_projects .proj_gnb {
+    margin-top: 50px;
+  }
+}
+main .main_projects .proj_gnb .proj_gnb_flex {
+  display: flex;
+  align-items: flex-end;
+  margin: 0 auto;
+  width: fit-content;
+  width: 90%;
+  justify-content: space-between;
+}
+main .main_projects .proj_gnb .proj_gnb_flex li {
+  font-size: calc(8px + 2vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  width: 33.3333333333%;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .proj_gnb .proj_gnb_flex li {
+    font-size: calc(12px + 1vw);
+    width: 20%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_projects .proj_gnb .proj_gnb_flex li {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_projects .proj_gnb .proj_gnb_flex li {
+    font-size: 28px;
+  }
+}
+main .main_projects .proj_gnb .proj_gnb_flex li:nth-child(1), main .main_projects .proj_gnb .proj_gnb_flex li:nth-child(5) {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .proj_gnb .proj_gnb_flex li:nth-child(1), main .main_projects .proj_gnb .proj_gnb_flex li:nth-child(5) {
+    display: block;
+  }
+}
+main .main_projects .proj_gnb .proj_gnb_flex li:nth-child(3) {
+  font-size: calc(18px + 2vw);
+  color: #e87d9e;
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .proj_gnb .proj_gnb_flex li:nth-child(3) {
+    font-size: calc(24px + 1vw);
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_projects .proj_gnb .proj_gnb_flex li:nth-child(3) {
+    font-size: 36px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_projects .proj_gnb .proj_gnb_flex li:nth-child(3) {
+    font-size: 40px;
+  }
+}
+main .main_projects .proj_gnb .proj_gnb_flex .proj_gnb_kitty {
+  display: block;
+  margin-bottom: 5px;
+}
+main .main_projects .proj_gnb .proj_gnb_flex .proj_gnb_kitty img {
+  width: calc(20px + 5vw);
+  display: block;
+  animation: cat_jump ease-in 1s infinite;
+}
+main .main_projects .proj_web {
+  margin-top: 75px;
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .proj_web {
+    margin-top: 90px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_projects .proj_web {
+    margin-top: 120px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_projects .proj_web {
+    margin-top: 150px;
+  }
+}
+main .main_projects .proj_web .proj_flex {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .proj_web .proj_flex {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+main .main_projects .proj_web .proj_flex .proj_photo {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .proj_web .proj_flex .proj_photo {
+    width: 40%;
+  }
+}
+main .main_projects .proj_web .proj_flex .proj_photo img.proj_mockup {
+  display: block;
+  width: 100%;
+}
+main .main_projects .proj_web .proj_flex .proj_photo img.proj_nyanbal {
+  position: absolute;
+  width: 30%;
+  left: 50%;
+  top: 50%;
+  rotate: 120deg;
+  transform-origin: center top;
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .proj_web .proj_flex .proj_photo img.proj_nyanbal {
+    width: 30%;
+    top: 20%;
+  }
+}
+main .main_projects .proj_web .proj_flex .proj_photo img.proj_back {
+  width: 140%;
+  position: absolute;
+  top: -10%;
+  left: -20%;
+  z-index: -2;
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .proj_web .proj_flex .proj_photo img.proj_back {
+    top: -4%;
+    left: -25%;
+  }
+}
+main .main_projects .proj_web .proj_flex .proj_photo img.proj_back:last-child {
+  top: -5%;
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .proj_web .proj_flex .proj_photo img.proj_back:last-child {
+    top: 0%;
+    left: -20%;
+  }
+}
+main .main_projects .proj_web .proj_flex .proj_contents {
+  margin-top: 75px;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .proj_web .proj_flex .proj_contents {
+    margin-top: 90px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_projects .proj_web .proj_flex .proj_contents {
+    margin-top: 120px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_projects .proj_web .proj_flex .proj_contents {
+    margin-top: 150px;
+  }
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .proj_web .proj_flex .proj_contents {
+    width: 55%;
+    margin-top: 0;
+  }
+}
+main .main_projects .proj_web .proj_flex .proj_contents .proj_title {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+main .main_projects .proj_web .proj_flex .proj_contents .proj_title .title_img {
+  width: 15%;
+}
+main .main_projects .proj_web .proj_flex .proj_contents .proj_title .title_img img {
+  display: block;
+  width: 100%;
+}
+main .main_projects .proj_web .proj_flex .proj_contents .proj_title .title_txt {
+  margin-left: 20px;
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .proj_web .proj_flex .proj_contents .proj_title .title_txt {
+    margin-left: 15px;
+  }
+}
+main .main_projects .proj_web .proj_flex .proj_contents .proj_title .title_txt h4 {
+  color: white;
+  font-size: calc(4px + 4vw);
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .proj_web .proj_flex .proj_contents .proj_title .title_txt h4 {
+    font-size: calc(6px + 2vw);
+  }
+}
+main .main_projects .proj_web .proj_flex .proj_contents .proj_info {
+  width: 100%;
+}
+main .main_projects .proj_web .proj_flex .proj_contents .proj_info .proj_detail {
+  margin-top: 40px;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .proj_web .proj_flex .proj_contents .proj_info .proj_detail {
+    margin-top: 60px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_projects .proj_web .proj_flex .proj_contents .proj_info .proj_detail {
+    margin-top: 80px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_projects .proj_web .proj_flex .proj_contents .proj_info .proj_detail {
+    margin-top: 100px;
+  }
+}
+main .main_projects .proj_web .proj_flex .proj_contents .proj_info .proj_detail > div {
+  width: 33.3333333333%;
+  text-align: center;
+}
+main .main_projects .proj_web .proj_flex .proj_contents .proj_info .proj_detail > div h5 {
+  font-size: calc(3vw + 6px);
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .proj_web .proj_flex .proj_contents .proj_info .proj_detail > div h5 {
+    font-size: calc(2vw + 6px);
+  }
+}
+main .main_projects .proj_web .proj_flex .proj_contents .proj_info .proj_detail > div p {
+  margin-top: 15px;
+  font-size: calc(3vw + 6px);
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .proj_web .proj_flex .proj_contents .proj_info .proj_detail > div p {
+    margin-top: 20px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_projects .proj_web .proj_flex .proj_contents .proj_info .proj_detail > div p {
+    margin-top: 25px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_projects .proj_web .proj_flex .proj_contents .proj_info .proj_detail > div p {
+    margin-top: 30px;
+  }
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .proj_web .proj_flex .proj_contents .proj_info .proj_detail > div p {
+    font-size: calc(2vw + 6px);
+  }
+}
+main .main_projects .proj_web .proj_flex .proj_contents .proj_info .proj_detail > div p .info_highlight {
+  font-size: calc(10vw + 4px);
+  color: #e7a335;
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .proj_web .proj_flex .proj_contents .proj_info .proj_detail > div p .info_highlight {
+    font-size: calc(6vw + 6px);
+  }
+}
+main .main_projects .proj_web .proj_flex .proj_contents .proj_info .proj_detail .info_tone .tone_flex {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  height: calc(10vw + 4px);
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .proj_web .proj_flex .proj_contents .proj_info .proj_detail .info_tone .tone_flex {
+    margin-top: 20px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_projects .proj_web .proj_flex .proj_contents .proj_info .proj_detail .info_tone .tone_flex {
+    margin-top: 25px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_projects .proj_web .proj_flex .proj_contents .proj_info .proj_detail .info_tone .tone_flex {
+    margin-top: 30px;
+  }
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .proj_web .proj_flex .proj_contents .proj_info .proj_detail .info_tone .tone_flex {
+    height: calc(6vw + 6px);
+  }
+}
+main .main_projects .proj_web .proj_flex .proj_contents .proj_info .proj_detail .info_tone .tone_flex .tone_cat {
+  margin: 0 auto;
+  width: 33.3333333333%;
+}
+main .main_projects .proj_web .proj_flex .proj_contents .proj_info .proj_detail .info_tone .tone_flex .tone_cat:nth-child(1) img {
+  filter: invert(63%) sepia(83%) saturate(371%) hue-rotate(356deg) brightness(92%) contrast(97%);
+}
+main .main_projects .proj_web .proj_flex .proj_contents .proj_info .proj_detail .info_tone .tone_flex .tone_cat:nth-child(2) img {
+  filter: invert(17%) sepia(10%) saturate(0%) hue-rotate(235deg) brightness(103%) contrast(94%);
+}
+main .main_projects .proj_web .proj_flex .proj_contents .proj_info .proj_detail .info_tone .tone_flex .tone_cat:nth-child(3) img {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(336deg) brightness(101%) contrast(101%);
+}
+main .main_projects .proj_web .proj_flex .proj_contents .proj_info .proj_detail .info_tone .tone_flex .tone_cat img {
+  width: 75%;
+  display: block;
+  margin: 0 auto;
+}
+main .main_projects .proj_web .proj_flex .proj_contents .proj_info .info_desc {
+  margin-top: 40px;
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .proj_web .proj_flex .proj_contents .proj_info .info_desc {
+    margin-top: 60px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_projects .proj_web .proj_flex .proj_contents .proj_info .info_desc {
+    margin-top: 80px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_projects .proj_web .proj_flex .proj_contents .proj_info .info_desc {
+    margin-top: 100px;
+  }
+}
+main .main_projects .proj_web .proj_flex .proj_contents .proj_info .info_desc .desc_txt {
+  text-align: justify;
+  font-size: calc(8px + 2vw);
+  line-height: 2em;
+}
+main .main_projects .proj_web .proj_flex .proj_contents .proj_info .info_btn_grp {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .proj_web .proj_flex .proj_contents .proj_info .info_btn_grp {
+    margin-top: 35px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_projects .proj_web .proj_flex .proj_contents .proj_info .info_btn_grp {
+    margin-top: 40px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_projects .proj_web .proj_flex .proj_contents .proj_info .info_btn_grp {
+    margin-top: 50px;
+  }
+}
+main .main_projects .proj_web .proj_flex .proj_contents .proj_info .info_btn_grp > button {
+  display: block;
+  position: relative;
+  font-family: "ImcreSoojin";
+  width: 47.5%;
+  text-align: center;
+  background-color: #e7a335;
+  border-radius: calc(4px + 4vw + 1em);
+  border: 3px solid #e7a335;
+  overflow: hidden;
+  color: #e7a335;
+  background-color: transparent;
+  transition: all 0.5s linear;
+}
+main .main_projects .proj_web .proj_flex .proj_contents .proj_info .info_btn_grp > button:hover {
+  color: #000620;
+}
+main .main_projects .proj_web .proj_flex .proj_contents .proj_info .info_btn_grp > button:hover::after {
+  left: 0%;
+}
+main .main_projects .proj_web .proj_flex .proj_contents .proj_info .info_btn_grp > button::after {
+  z-index: -1;
+  transition: all 0.5s linear;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: -100%;
+  background-color: #e7a335;
+}
+main .main_projects .proj_web .proj_flex .proj_contents .proj_info .info_btn_grp > button p {
+  font-size: calc(4px + 4vw);
+  padding: 0.5em 0;
+  z-index: 3;
 }
 main .main_contactme {
   height: 1000px;

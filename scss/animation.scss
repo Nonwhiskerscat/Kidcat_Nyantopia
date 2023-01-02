@@ -1,28 +1,28 @@
 @import './responsive.scss';
 //헤더 로고 애니메이션
 
-// @keyframes header_logo {
+@keyframes header_logo {
 
-//     0% {
-//         transform:rotateZ(5deg);
-//     }
+    0% {
+        transform:rotateZ(5deg);
+    }
 
-//     25% {
-//         transform:rotateZ(-5deg);
-//     }
+    25% {
+        transform:rotateZ(-5deg);
+    }
 
-//     50% {
-//         transform:rotateZ(5deg);
-//     }
+    50% {
+        transform:rotateZ(5deg);
+    }
 
-//     75% {
-//         transform:rotateZ(15deg);
-//     }
+    75% {
+        transform:rotateZ(15deg);
+    }
 
-//     100% {
-//         transform:rotateZ(5deg);
-//     }
-// }
+    100% {
+        transform:rotateZ(5deg);
+    }
+}
 
 //헤더 gnb 아이콘 애니메이션
 
@@ -158,25 +158,50 @@
     }
 }
 
-@keyframes line {
+@keyframes line1 {
     from {
-        stroke-dasharray: calc(calc(-20px + 30vw) * 0.8 * 3.1415926535);
-
-        @include responsive(tablet-cat) {
-            stroke-dasharray: calc(calc(-10px + 20vw) * 0.8 * 3.1415926535);
-        }
-        
+        stroke-dasharray: calc(calc(-20px + 30vw) * 0.8 * 3.1415926535);  
     }
 
     to {
         stroke-dashoffset: calc(calc(-20px + 30vw) * 0.8 * 0.07 * 3.1415926535);
-
-        @include responsive(tablet-cat) {
-            stroke-dashoffset: calc(calc(-10px + 20vw) * 0.8 * 0.07 * 3.1415926535);
-
-        }
     }
 }
+
+@keyframes line2 {
+    from {
+        stroke-dasharray: calc(calc(-10px + 20vw) * 0.8 * 3.1415926535);
+    }
+
+    to {
+        stroke-dashoffset: calc(calc(-10px + 20vw) * 0.8 * 0.07 * 3.1415926535);
+
+    }
+}
+
+@keyframes line3 {
+    from {
+        stroke-dasharray: calc(120px * 0.8 * 3.1415926535);
+    }
+
+    to {
+        stroke-dashoffset: calc(120px * 0.8 * 0.07 * 3.1415926535);
+
+    }
+}
+
+@keyframes line4 {
+    from {
+        stroke-dasharray: calc(160px * 0.8 * 3.1415926535);
+    }
+
+    to {
+        stroke-dashoffset: calc(160px * 0.8 * 0.07 * 3.1415926535);
+    }
+}
+
+
+
 
 // 
 
