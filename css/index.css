@@ -1,22 +1,32 @@
 @charset "UTF-8";
 /*=================중단점=================*/
 /*=================톤앤매너=================*/
+/*=================톤앤매너(스킬)=================*/
+/*=================svg 필터=================*/
 /*=================폰트패밀리=================*/
 /*=================여백=================*/
 /*=================중단점=================*/
 /*=================톤앤매너=================*/
+/*=================톤앤매너(스킬)=================*/
+/*=================svg 필터=================*/
 /*=================폰트패밀리=================*/
 /*=================여백=================*/
 /*=================중단점=================*/
 /*=================톤앤매너=================*/
+/*=================톤앤매너(스킬)=================*/
+/*=================svg 필터=================*/
 /*=================폰트패밀리=================*/
 /*=================여백=================*/
 /*=================중단점=================*/
 /*=================톤앤매너=================*/
+/*=================톤앤매너(스킬)=================*/
+/*=================svg 필터=================*/
 /*=================폰트패밀리=================*/
 /*=================여백=================*/
 /*=================중단점=================*/
 /*=================톤앤매너=================*/
+/*=================톤앤매너(스킬)=================*/
+/*=================svg 필터=================*/
 /*=================폰트패밀리=================*/
 /*=================여백=================*/
 @keyframes header_logo {
@@ -2722,311 +2732,266 @@ main .main_projects .proj_gnb .proj_gnb_flex .proj_gnb_kitty img {
     width: 80px;
   }
 }
-main .main_projects .proj_web {
+main .main_projects .projs {
   margin-top: 75px;
 }
 @media screen and (min-width: 768px) {
-  main .main_projects .proj_web {
+  main .main_projects .projs {
     margin-top: 90px;
   }
 }
 @media screen and (min-width: 1200px) {
-  main .main_projects .proj_web {
+  main .main_projects .projs {
     margin-top: 120px;
   }
 }
 @media screen and (min-width: 1600px) {
-  main .main_projects .proj_web {
+  main .main_projects .projs {
     margin-top: 150px;
   }
 }
-main .main_projects .proj_web > div:nth-child(n+2) {
+main .main_projects .projs > div:nth-child(n+2) {
   margin-top: 150px;
 }
 @media screen and (min-width: 768px) {
-  main .main_projects .proj_web > div:nth-child(n+2) {
+  main .main_projects .projs > div:nth-child(n+2) {
     margin-top: 200px;
   }
 }
 @media screen and (min-width: 1200px) {
-  main .main_projects .proj_web > div:nth-child(n+2) {
+  main .main_projects .projs > div:nth-child(n+2) {
     margin-top: 250px;
   }
 }
 @media screen and (min-width: 1600px) {
-  main .main_projects .proj_web > div:nth-child(n+2) {
+  main .main_projects .projs > div:nth-child(n+2) {
     margin-top: 300px;
   }
 }
-main .main_projects .proj_web > div .proj_flex {
+@media screen and (min-width: 768px) {
+  main .main_projects .projs > div:nth-child(2n) .proj_photo {
+    order: 2;
+  }
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .projs > div:nth-child(2n) .proj_contents {
+    order: 1;
+  }
+}
+main .main_projects .projs > div .proj_flex {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 @media screen and (min-width: 768px) {
-  main .main_projects .proj_web > div .proj_flex {
+  main .main_projects .projs > div .proj_flex {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
 }
-main .main_projects .proj_web > div .proj_flex .proj_photo {
+main .main_projects .projs > div .proj_flex .proj_photo {
   width: 80%;
   margin: 0 auto;
   position: relative;
 }
 @media screen and (min-width: 768px) {
-  main .main_projects .proj_web > div .proj_flex .proj_photo {
+  main .main_projects .projs > div .proj_flex .proj_photo {
     width: 40%;
   }
 }
 @media screen and (min-width: 1200px) {
-  main .main_projects .proj_web > div .proj_flex .proj_photo {
+  main .main_projects .projs > div .proj_flex .proj_photo {
     width: 480px;
   }
 }
 @media screen and (min-width: 1600px) {
-  main .main_projects .proj_web > div .proj_flex .proj_photo {
+  main .main_projects .projs > div .proj_flex .proj_photo {
     width: 580px;
   }
 }
-main .main_projects .proj_web > div .proj_flex .proj_photo img.proj_mockup {
+main .main_projects .projs > div .proj_flex .proj_photo img.proj_mockup {
   display: block;
   width: 100%;
 }
-main .main_projects .proj_web > div .proj_flex .proj_photo img.proj_nyanbal {
+main .main_projects .projs > div .proj_flex .proj_photo img.proj_nyanbal {
   position: absolute;
-  width: 30%;
-  left: 50%;
-  top: 50%;
-  rotate: 120deg;
   transform-origin: center top;
 }
-@media screen and (min-width: 768px) {
-  main .main_projects .proj_web > div .proj_flex .proj_photo img.proj_nyanbal {
-    width: 30%;
-    top: 50%;
-  }
-}
-@media screen and (min-width: 1200px) {
-  main .main_projects .proj_web > div .proj_flex .proj_photo img.proj_nyanbal {
-    width: 30%;
-  }
-}
-main .main_projects .proj_web > div .proj_flex .proj_photo img.proj_back {
-  width: 140%;
+main .main_projects .projs > div .proj_flex .proj_photo img.proj_back {
   position: absolute;
-  top: -10%;
-  left: -20%;
   z-index: -2;
 }
-@media screen and (min-width: 768px) {
-  main .main_projects .proj_web > div .proj_flex .proj_photo img.proj_back {
-    top: -4%;
-    left: -25%;
-  }
-}
-@media screen and (min-width: 1200px) {
-  main .main_projects .proj_web > div .proj_flex .proj_photo img.proj_back {
-    width: 150%;
-    top: -10%;
-    left: -40%;
-  }
-}
-@media screen and (min-width: 1600px) {
-  main .main_projects .proj_web > div .proj_flex .proj_photo img.proj_back {
-    top: -10%;
-  }
-}
-main .main_projects .proj_web > div .proj_flex .proj_photo img.proj_back:last-child {
-  top: -5%;
-}
-@media screen and (min-width: 768px) {
-  main .main_projects .proj_web > div .proj_flex .proj_photo img.proj_back:last-child {
-    top: 0%;
-    left: -20%;
-  }
-}
-@media screen and (min-width: 1200px) {
-  main .main_projects .proj_web > div .proj_flex .proj_photo img.proj_back:last-child {
-    left: -35%;
-  }
-}
-@media screen and (min-width: 1600px) {
-  main .main_projects .proj_web > div .proj_flex .proj_photo img.proj_back:last-child {
-    top: 0;
-  }
-}
-main .main_projects .proj_web > div .proj_flex .proj_contents {
+main .main_projects .projs > div .proj_flex .proj_contents {
   margin-top: 75px;
   width: 100%;
 }
 @media screen and (min-width: 768px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents {
+  main .main_projects .projs > div .proj_flex .proj_contents {
     margin-top: 90px;
   }
 }
 @media screen and (min-width: 1200px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents {
+  main .main_projects .projs > div .proj_flex .proj_contents {
     margin-top: 120px;
   }
 }
 @media screen and (min-width: 1600px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents {
+  main .main_projects .projs > div .proj_flex .proj_contents {
     margin-top: 150px;
   }
 }
 @media screen and (min-width: 768px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents {
+  main .main_projects .projs > div .proj_flex .proj_contents {
     width: 55%;
     margin-top: 0;
   }
 }
 @media screen and (min-width: 1200px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents {
+  main .main_projects .projs > div .proj_flex .proj_contents {
     width: 580px;
   }
 }
 @media screen and (min-width: 1600px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents {
+  main .main_projects .projs > div .proj_flex .proj_contents {
     width: 780px;
   }
 }
-main .main_projects .proj_web > div .proj_flex .proj_contents .proj_title {
+main .main_projects .projs > div .proj_flex .proj_contents .proj_title {
   display: flex;
   width: 100%;
   align-items: center;
 }
-main .main_projects .proj_web > div .proj_flex .proj_contents .proj_title .title_img {
+main .main_projects .projs > div .proj_flex .proj_contents .proj_title .title_img {
   width: 15%;
 }
-main .main_projects .proj_web > div .proj_flex .proj_contents .proj_title .title_img img {
+main .main_projects .projs > div .proj_flex .proj_contents .proj_title .title_img img {
   display: block;
   width: 100%;
 }
-main .main_projects .proj_web > div .proj_flex .proj_contents .proj_title .title_txt {
+main .main_projects .projs > div .proj_flex .proj_contents .proj_title .title_txt {
   margin-left: 20px;
 }
 @media screen and (min-width: 768px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents .proj_title .title_txt {
+  main .main_projects .projs > div .proj_flex .proj_contents .proj_title .title_txt {
     margin-left: 15px;
   }
 }
 @media screen and (min-width: 1200px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents .proj_title .title_txt {
+  main .main_projects .projs > div .proj_flex .proj_contents .proj_title .title_txt {
     margin-left: 20px;
   }
 }
 @media screen and (min-width: 1600px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents .proj_title .title_txt {
+  main .main_projects .projs > div .proj_flex .proj_contents .proj_title .title_txt {
     margin-left: 30px;
   }
 }
-main .main_projects .proj_web > div .proj_flex .proj_contents .proj_title .title_txt h4 {
+main .main_projects .projs > div .proj_flex .proj_contents .proj_title .title_txt h4 {
   color: white;
   font-size: calc(4px + 4vw);
 }
 @media screen and (min-width: 768px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents .proj_title .title_txt h4 {
+  main .main_projects .projs > div .proj_flex .proj_contents .proj_title .title_txt h4 {
     font-size: calc(6px + 2vw);
   }
 }
 @media screen and (min-width: 1200px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents .proj_title .title_txt h4 {
+  main .main_projects .projs > div .proj_flex .proj_contents .proj_title .title_txt h4 {
     font-size: 32px;
   }
 }
 @media screen and (min-width: 1600px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents .proj_title .title_txt h4 {
+  main .main_projects .projs > div .proj_flex .proj_contents .proj_title .title_txt h4 {
     font-size: 40px;
   }
 }
-main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info {
+main .main_projects .projs > div .proj_flex .proj_contents .proj_info {
   width: 100%;
 }
-main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .proj_detail {
+main .main_projects .projs > div .proj_flex .proj_contents .proj_info .proj_detail {
   margin-top: 40px;
   display: flex;
   width: 100%;
   justify-content: space-around;
 }
 @media screen and (min-width: 768px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .proj_detail {
+  main .main_projects .projs > div .proj_flex .proj_contents .proj_info .proj_detail {
     margin-top: 25px;
   }
 }
 @media screen and (min-width: 1200px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .proj_detail {
+  main .main_projects .projs > div .proj_flex .proj_contents .proj_info .proj_detail {
     margin-top: 40px;
   }
 }
 @media screen and (min-width: 1600px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .proj_detail {
+  main .main_projects .projs > div .proj_flex .proj_contents .proj_info .proj_detail {
     margin-top: 50px;
   }
 }
-main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .proj_detail > div {
+main .main_projects .projs > div .proj_flex .proj_contents .proj_info .proj_detail > div {
   width: 33.3333333333%;
   text-align: center;
 }
-main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .proj_detail > div h5 {
+main .main_projects .projs > div .proj_flex .proj_contents .proj_info .proj_detail > div h5 {
   font-size: calc(3vw + 6px);
 }
 @media screen and (min-width: 768px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .proj_detail > div h5 {
+  main .main_projects .projs > div .proj_flex .proj_contents .proj_info .proj_detail > div h5 {
     font-size: calc(2vw + 2px);
   }
 }
 @media screen and (min-width: 1200px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .proj_detail > div h5 {
+  main .main_projects .projs > div .proj_flex .proj_contents .proj_info .proj_detail > div h5 {
     font-size: 24px;
   }
 }
 @media screen and (min-width: 1600px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .proj_detail > div h5 {
+  main .main_projects .projs > div .proj_flex .proj_contents .proj_info .proj_detail > div h5 {
     font-size: 32px;
   }
 }
-main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .proj_detail > div p {
+main .main_projects .projs > div .proj_flex .proj_contents .proj_info .proj_detail > div p {
   margin-top: 15px;
   font-size: calc(3vw + 6px);
 }
 @media screen and (min-width: 768px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .proj_detail > div p {
+  main .main_projects .projs > div .proj_flex .proj_contents .proj_info .proj_detail > div p {
     font-size: calc(2vw + 1px);
     margin-top: 10px;
   }
 }
 @media screen and (min-width: 1200px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .proj_detail > div p {
+  main .main_projects .projs > div .proj_flex .proj_contents .proj_info .proj_detail > div p {
     font-size: 24px;
   }
 }
 @media screen and (min-width: 1600px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .proj_detail > div p {
+  main .main_projects .projs > div .proj_flex .proj_contents .proj_info .proj_detail > div p {
     font-size: 32px;
   }
 }
-main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .proj_detail > div p .info_highlight {
+main .main_projects .projs > div .proj_flex .proj_contents .proj_info .proj_detail > div p .info_highlight {
   font-size: calc(10vw + 4px);
   color: #e7a335;
 }
 @media screen and (min-width: 768px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .proj_detail > div p .info_highlight {
+  main .main_projects .projs > div .proj_flex .proj_contents .proj_info .proj_detail > div p .info_highlight {
     font-size: 6vw;
   }
 }
 @media screen and (min-width: 1200px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .proj_detail > div p .info_highlight {
+  main .main_projects .projs > div .proj_flex .proj_contents .proj_info .proj_detail > div p .info_highlight {
     font-size: 80px;
   }
 }
 @media screen and (min-width: 1600px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .proj_detail > div p .info_highlight {
+  main .main_projects .projs > div .proj_flex .proj_contents .proj_info .proj_detail > div p .info_highlight {
     font-size: 96px;
   }
 }
-main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .proj_detail .info_tone .tone_flex {
+main .main_projects .projs > div .proj_flex .proj_contents .proj_info .proj_detail .info_tone .tone_flex {
   width: 60%;
   margin: 0 auto;
   display: flex;
@@ -3037,91 +3002,91 @@ main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .proj_d
   justify-content: space-around;
 }
 @media screen and (min-width: 768px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .proj_detail .info_tone .tone_flex {
+  main .main_projects .projs > div .proj_flex .proj_contents .proj_info .proj_detail .info_tone .tone_flex {
     height: 6vw;
     margin-top: 10px;
   }
 }
 @media screen and (min-width: 1200px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .proj_detail .info_tone .tone_flex {
+  main .main_projects .projs > div .proj_flex .proj_contents .proj_info .proj_detail .info_tone .tone_flex {
     height: 80px;
     margin-top: 12px;
   }
 }
 @media screen and (min-width: 1600px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .proj_detail .info_tone .tone_flex {
+  main .main_projects .projs > div .proj_flex .proj_contents .proj_info .proj_detail .info_tone .tone_flex {
     height: 96px;
     margin-top: 15px;
   }
 }
-main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .proj_detail .info_tone .tone_flex .tone_cat {
+main .main_projects .projs > div .proj_flex .proj_contents .proj_info .proj_detail .info_tone .tone_flex .tone_cat {
   margin: 0 auto;
   width: 33.3333333333%;
 }
-main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .proj_detail .info_tone .tone_flex .tone_cat:nth-child(1) img {
+main .main_projects .projs > div .proj_flex .proj_contents .proj_info .proj_detail .info_tone .tone_flex .tone_cat:nth-child(1) img {
   filter: invert(63%) sepia(83%) saturate(371%) hue-rotate(356deg) brightness(92%) contrast(97%);
 }
-main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .proj_detail .info_tone .tone_flex .tone_cat:nth-child(2) img {
+main .main_projects .projs > div .proj_flex .proj_contents .proj_info .proj_detail .info_tone .tone_flex .tone_cat:nth-child(2) img {
   filter: invert(17%) sepia(10%) saturate(0%) hue-rotate(235deg) brightness(103%) contrast(94%);
 }
-main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .proj_detail .info_tone .tone_flex .tone_cat:nth-child(3) img {
+main .main_projects .projs > div .proj_flex .proj_contents .proj_info .proj_detail .info_tone .tone_flex .tone_cat:nth-child(3) img {
   filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(336deg) brightness(101%) contrast(101%);
 }
-main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .proj_detail .info_tone .tone_flex .tone_cat img {
+main .main_projects .projs > div .proj_flex .proj_contents .proj_info .proj_detail .info_tone .tone_flex .tone_cat img {
   width: 75%;
   display: block;
   margin: 0 auto;
 }
-main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .info_desc {
+main .main_projects .projs > div .proj_flex .proj_contents .proj_info .info_desc {
   margin-top: 40px;
 }
 @media screen and (min-width: 768px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .info_desc {
+  main .main_projects .projs > div .proj_flex .proj_contents .proj_info .info_desc {
     margin-top: 25px;
   }
 }
-main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .info_desc .desc_txt {
+main .main_projects .projs > div .proj_flex .proj_contents .proj_info .info_desc .desc_txt {
   text-align: justify;
   font-size: calc(8px + 2vw);
   line-height: 2em;
 }
 @media screen and (min-width: 768px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .info_desc .desc_txt {
+  main .main_projects .projs > div .proj_flex .proj_contents .proj_info .info_desc .desc_txt {
     font-size: calc(8px + 1.1vw);
   }
 }
 @media screen and (min-width: 1200px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .info_desc .desc_txt {
+  main .main_projects .projs > div .proj_flex .proj_contents .proj_info .info_desc .desc_txt {
     font-size: 24px;
     line-height: 2em;
   }
 }
 @media screen and (min-width: 1200px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .info_desc .desc_txt {
+  main .main_projects .projs > div .proj_flex .proj_contents .proj_info .info_desc .desc_txt {
     font-size: 28px;
   }
 }
-main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .info_btn_grp {
+main .main_projects .projs > div .proj_flex .proj_contents .proj_info .info_btn_grp {
   margin-top: 25px;
   display: flex;
   justify-content: space-between;
 }
 @media screen and (min-width: 768px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .info_btn_grp {
+  main .main_projects .projs > div .proj_flex .proj_contents .proj_info .info_btn_grp {
     margin-top: 35px;
   }
 }
 @media screen and (min-width: 1200px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .info_btn_grp {
+  main .main_projects .projs > div .proj_flex .proj_contents .proj_info .info_btn_grp {
     margin-top: 40px;
   }
 }
 @media screen and (min-width: 1600px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .info_btn_grp {
+  main .main_projects .projs > div .proj_flex .proj_contents .proj_info .info_btn_grp {
     margin-top: 50px;
   }
 }
-main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .info_btn_grp > button {
+main .main_projects .projs > div .proj_flex .proj_contents .proj_info .info_btn_grp > button {
   cursor: pointer;
   display: block;
   position: relative;
@@ -3137,27 +3102,27 @@ main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .info_b
   transition: all 0.5s linear;
 }
 @media screen and (min-width: 768px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .info_btn_grp > button {
+  main .main_projects .projs > div .proj_flex .proj_contents .proj_info .info_btn_grp > button {
     border-width: 2px;
   }
 }
 @media screen and (min-width: 1200px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .info_btn_grp > button {
+  main .main_projects .projs > div .proj_flex .proj_contents .proj_info .info_btn_grp > button {
     width: 275px;
   }
 }
 @media screen and (min-width: 1600px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .info_btn_grp > button {
+  main .main_projects .projs > div .proj_flex .proj_contents .proj_info .info_btn_grp > button {
     width: 375px;
   }
 }
-main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .info_btn_grp > button:hover {
+main .main_projects .projs > div .proj_flex .proj_contents .proj_info .info_btn_grp > button:hover {
   color: #000620;
 }
-main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .info_btn_grp > button:hover::after {
+main .main_projects .projs > div .proj_flex .proj_contents .proj_info .info_btn_grp > button:hover::after {
   left: 0%;
 }
-main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .info_btn_grp > button::after {
+main .main_projects .projs > div .proj_flex .proj_contents .proj_info .info_btn_grp > button::after {
   z-index: -1;
   transition: all 0.5s linear;
   position: absolute;
@@ -3170,114 +3135,245 @@ main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .info_b
   left: -100%;
   background-color: #e7a335;
 }
-main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .info_btn_grp > button p {
+main .main_projects .projs > div .proj_flex .proj_contents .proj_info .info_btn_grp > button p {
   font-size: calc(4px + 4vw);
   padding: 0.5em 0;
   z-index: 3;
 }
 @media screen and (min-width: 768px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .info_btn_grp > button p {
+  main .main_projects .projs > div .proj_flex .proj_contents .proj_info .info_btn_grp > button p {
     font-size: calc(8px + 2vw);
   }
 }
 @media screen and (min-width: 1200px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .info_btn_grp > button p {
+  main .main_projects .projs > div .proj_flex .proj_contents .proj_info .info_btn_grp > button p {
     font-size: 32px;
   }
 }
 @media screen and (min-width: 1600px) {
-  main .main_projects .proj_web > div .proj_flex .proj_contents .proj_info .info_btn_grp > button p {
+  main .main_projects .projs > div .proj_flex .proj_contents .proj_info .info_btn_grp > button p {
     font-size: 40px;
   }
 }
-main .main_projects .proj_web > div:nth-child(2) .proj_photo img.proj_nyanbal {
-  position: absolute;
+main .main_projects .projs > div:nth-child(1) .proj_photo img.proj_nyanbal {
   width: 30%;
   left: 50%;
   top: 50%;
   rotate: 120deg;
-  transform-origin: center top;
 }
 @media screen and (min-width: 768px) {
-  main .main_projects .proj_web > div:nth-child(2) .proj_photo img.proj_nyanbal {
-    width: 30%;
+  main .main_projects .projs > div:nth-child(1) .proj_photo img.proj_nyanbal {
     top: 50%;
   }
 }
-@media screen and (min-width: 1200px) {
-  main .main_projects .proj_web > div:nth-child(2) .proj_photo img.proj_nyanbal {
-    width: 30%;
-  }
-}
-main .main_projects .proj_web > div:nth-child(2) .proj_photo img.proj_back {
+main .main_projects .projs > div:nth-child(1) .proj_photo img.proj_back {
   width: 140%;
-  position: absolute;
   top: -10%;
   left: -20%;
-  z-index: -2;
 }
 @media screen and (min-width: 768px) {
-  main .main_projects .proj_web > div:nth-child(2) .proj_photo img.proj_back {
+  main .main_projects .projs > div:nth-child(1) .proj_photo img.proj_back {
     top: -4%;
     left: -25%;
   }
 }
 @media screen and (min-width: 1200px) {
-  main .main_projects .proj_web > div:nth-child(2) .proj_photo img.proj_back {
+  main .main_projects .projs > div:nth-child(1) .proj_photo img.proj_back {
     width: 150%;
     top: -10%;
     left: -40%;
   }
 }
 @media screen and (min-width: 1600px) {
-  main .main_projects .proj_web > div:nth-child(2) .proj_photo img.proj_back {
+  main .main_projects .projs > div:nth-child(1) .proj_photo img.proj_back {
     top: -10%;
   }
 }
-main .main_projects .proj_web > div:nth-child(2) .proj_photo img.proj_back:last-child {
+main .main_projects .projs > div:nth-child(1) .proj_photo img.proj_back:last-child {
   top: -5%;
 }
 @media screen and (min-width: 768px) {
-  main .main_projects .proj_web > div:nth-child(2) .proj_photo img.proj_back:last-child {
+  main .main_projects .projs > div:nth-child(1) .proj_photo img.proj_back:last-child {
     top: 0%;
     left: -20%;
   }
 }
 @media screen and (min-width: 1200px) {
-  main .main_projects .proj_web > div:nth-child(2) .proj_photo img.proj_back:last-child {
+  main .main_projects .projs > div:nth-child(1) .proj_photo img.proj_back:last-child {
     left: -35%;
   }
 }
 @media screen and (min-width: 1600px) {
-  main .main_projects .proj_web > div:nth-child(2) .proj_photo img.proj_back:last-child {
+  main .main_projects .projs > div:nth-child(1) .proj_photo img.proj_back:last-child {
     top: 0;
   }
 }
-main .main_projects .proj_web > div:nth-child(2) .proj_contents .proj_info {
-  width: 100%;
+main .main_projects .projs > div:nth-child(2) .proj_photo img.proj_nyanbal {
+  left: 20%;
+  top: 45%;
+  rotate: -110deg;
 }
-main .main_projects .proj_web > div:nth-child(2) .proj_contents .proj_info .proj_detail p .info_highlight {
+@media screen and (min-width: 768px) {
+  main .main_projects .projs > div:nth-child(2) .proj_photo img.proj_nyanbal {
+    width: 30%;
+    top: 50%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_projects .projs > div:nth-child(2) .proj_photo img.proj_nyanbal {
+    width: 30%;
+  }
+}
+main .main_projects .projs > div:nth-child(2) .proj_photo img.proj_back {
+  width: 150%;
+  top: 5%;
+  left: -20%;
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .projs > div:nth-child(2) .proj_photo img.proj_back {
+    top: -4%;
+    left: -5%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_projects .projs > div:nth-child(2) .proj_photo img.proj_back {
+    top: 5%;
+    left: -5%;
+    width: 160%;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_projects .projs > div:nth-child(2) .proj_photo img.proj_back {
+    top: 0%;
+    width: 160%;
+  }
+}
+main .main_projects .projs > div:nth-child(2) .proj_photo img.proj_back:last-child {
+  top: 0%;
+  left: -20%;
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .projs > div:nth-child(2) .proj_photo img.proj_back:last-child {
+    top: -9%;
+    left: -10%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_projects .projs > div:nth-child(2) .proj_photo img.proj_back:last-child {
+    left: -10%;
+    top: 0%;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_projects .projs > div:nth-child(2) .proj_photo img.proj_back:last-child {
+    top: -5%;
+    left: -10%;
+  }
+}
+main .main_projects .projs > div:nth-child(3) .proj_photo img.proj_nyanbal {
+  left: 45%;
+  top: 35%;
+  rotate: 60deg;
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .projs > div:nth-child(3) .proj_photo img.proj_nyanbal {
+    width: 30%;
+    top: 35%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_projects .projs > div:nth-child(3) .proj_photo img.proj_nyanbal {
+    width: 30%;
+  }
+}
+main .main_projects .projs > div:nth-child(3) .proj_photo img.proj_back {
+  width: 140%;
+  top: 3%;
+  left: -20%;
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .projs > div:nth-child(3) .proj_photo img.proj_back {
+    width: 150%;
+    top: -3%;
+    left: -20%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_projects .projs > div:nth-child(3) .proj_photo img.proj_back {
+    top: 5%;
+    left: -35%;
+    width: 150%;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_projects .projs > div:nth-child(3) .proj_photo img.proj_back {
+    top: 0%;
+    width: 160%;
+  }
+}
+main .main_projects .projs > div:nth-child(3) .proj_photo img.proj_back:last-child {
+  top: 8%;
+  left: -25%;
+}
+@media screen and (min-width: 768px) {
+  main .main_projects .projs > div:nth-child(3) .proj_photo img.proj_back:last-child {
+    top: 5%;
+    left: -15%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_projects .projs > div:nth-child(3) .proj_photo img.proj_back:last-child {
+    left: -30%;
+    top: 8%;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_projects .projs > div:nth-child(3) .proj_photo img.proj_back:last-child {
+    top: 2%;
+    left: -35%;
+  }
+}
+main .main_projects .projs .proj_kopc .proj_contents .proj_info .proj_detail p .info_highlight {
   color: #e7a335;
 }
-main .main_projects .proj_web > div:nth-child(2) .proj_contents .proj_info .info_tone .tone_flex .tone_cat:nth-child(1) img {
+main .main_projects .projs .proj_kopc .proj_contents .proj_info .info_tone .tone_flex .tone_cat:nth-child(1) img {
   filter: invert(63%) sepia(83%) saturate(371%) hue-rotate(356deg) brightness(92%) contrast(97%);
 }
-main .main_projects .proj_web > div:nth-child(2) .proj_contents .proj_info .info_tone .tone_flex .tone_cat:nth-child(2) img {
+main .main_projects .projs .proj_kopc .proj_contents .proj_info .info_tone .tone_flex .tone_cat:nth-child(2) img {
   filter: invert(17%) sepia(10%) saturate(0%) hue-rotate(235deg) brightness(103%) contrast(94%);
 }
-main .main_projects .proj_web > div:nth-child(2) .proj_contents .proj_info .info_tone .tone_flex .tone_cat:nth-child(3) img {
+main .main_projects .projs .proj_kopc .proj_contents .proj_info .info_tone .tone_flex .tone_cat:nth-child(3) img {
   filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(336deg) brightness(101%) contrast(101%);
 }
-main .main_projects .proj_web > div:nth-child(2) .proj_contents .info_btn_grp > button {
+main .main_projects .projs .proj_kopc .proj_contents .info_btn_grp > button {
   background-color: #e7a335;
   border: 3px solid #e7a335;
   color: #e7a335;
 }
-main .main_projects .proj_web > div:nth-child(2) .proj_contents .info_btn_grp > button::after {
+main .main_projects .projs .proj_kopc .proj_contents .info_btn_grp > button::after {
   background-color: #e7a335;
 }
-
-.main_contactme {
+main .main_projects .projs .proj_FAHotel .proj_contents .proj_info .proj_detail p .info_highlight {
+  color: #c3dded;
+}
+main .main_projects .projs .proj_FAHotel .proj_contents .proj_info .info_tone .tone_flex .tone_cat:nth-child(1) img {
+  filter: invert(99%) sepia(32%) saturate(313%) hue-rotate(323deg) brightness(103%) contrast(99%);
+}
+main .main_projects .projs .proj_FAHotel .proj_contents .proj_info .info_tone .tone_flex .tone_cat:nth-child(2) img {
+  filter: invert(15%) sepia(19%) saturate(1616%) hue-rotate(353deg) brightness(103%) contrast(92%);
+}
+main .main_projects .projs .proj_FAHotel .proj_contents .proj_info .info_tone .tone_flex .tone_cat:nth-child(3) img {
+  filter: invert(9%) sepia(94%) saturate(5860%) hue-rotate(359deg) brightness(87%) contrast(110%);
+}
+main .main_projects .projs .proj_FAHotel .proj_contents .info_btn_grp > button {
+  background-color: #c3dded;
+  border: 3px solid #c3dded;
+  color: #c3dded;
+}
+main .main_projects .projs .proj_FAHotel .proj_contents .info_btn_grp > button::after {
+  background-color: #c3dded;
+}
+main .main_contactme {
   height: 1000px;
   background-color: rgb(226, 223, 0);
 }

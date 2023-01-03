@@ -361,6 +361,246 @@
     }
 }
 
+@mixin proj_margin {
+    &:nth-child(n+2) {
+        @include nyan_large_margin;
+
+    }
+}
+
+@mixin proj_flex_order {
+
+    &:nth-child(2n) {
+        .proj_photo {
+
+            @include responsive(tablet-cat) {
+                order: 2;
+            }
+
+        }
+
+        .proj_contents {
+
+            @include responsive(tablet-cat) {
+                order: 1;
+            }
+        }
+    }
+}
+
+@mixin proj_back_img {
+    &:nth-child(1) {
+
+        .proj_photo {
+
+            img.proj_nyanbal {
+                width: 30%;
+                left: 50%;
+                top: 50%;
+                rotate: 120deg;
+
+                @include responsive(tablet-cat) {
+                    top: 50%;
+                }
+
+                @include responsive(semi-cat) {
+                    //
+                }
+
+                @include responsive(huge-cat) {
+                    //
+                }
+            }
+
+            img.proj_back {
+                width: 140%;
+                top: -10%;
+                left: -20%;
+
+                @include responsive(tablet-cat) {
+                    top: -4%;
+                    left: -25%;
+                }
+
+                @include responsive(semi-cat) {
+                    width: 150%;
+                    top: -10%;
+                    left: -40%;
+                }
+
+                @include responsive(huge-cat) {
+                    top: -10%;
+                }
+
+                
+
+                &:last-child {
+                    top: -5%;
+
+                    @include responsive(tablet-cat) {
+                        top: 0%;
+                        left: -20%;
+                    }
+
+                    @include responsive(semi-cat) {
+                        left: -35%;
+                    }
+    
+                    @include responsive(huge-cat) {
+                        top: -0;
+                    }
+
+                }
+            }
+        }
+    }
+
+    &:nth-child(2) {
+
+        .proj_photo {
+
+            img.proj_nyanbal {
+
+                left: 20%;
+                top: 45%;
+                rotate: -110deg;
+
+                @include responsive(tablet-cat) {
+                    width: 30%;
+                    top: 50%;
+                }
+
+                @include responsive(semi-cat) {
+                    width: 30%;
+                }
+
+                @include responsive(huge-cat) {
+                    //
+                }
+            }
+
+            img.proj_back {
+                width: 150%;
+                top: 5%;
+                left: -20%;
+
+                @include responsive(tablet-cat) {
+                    top: -4%;
+                    left: -5%;
+                }
+
+                @include responsive(semi-cat) {
+                    top: 5%;
+                    left: -5%;
+                    width: 160%;
+                }
+
+                @include responsive(huge-cat) {
+                    top: -0%;
+                    width: 160%;
+                }
+
+                
+
+                &:last-child {
+                    top: 0%;
+                    left: -20%;
+
+
+                    @include responsive(tablet-cat) {
+                        top: -9%;
+                        left: -10%;
+                    }
+
+                    @include responsive(semi-cat) {
+                        left: -10%;
+                        top: 0%;
+                    }
+    
+                    @include responsive(huge-cat) {
+                        top: -5%;
+                        left: -10%;
+                    }
+
+                }
+            }
+        }
+    }
+
+    &:nth-child(3) {
+
+        .proj_photo {
+
+            img.proj_nyanbal {
+
+                left: 45%;
+                top: 35%;
+                rotate: 60deg;
+
+                @include responsive(tablet-cat) {
+                    width: 30%;
+                    top: 35%;
+                }
+
+                @include responsive(semi-cat) {
+                    width: 30%;
+                }
+
+                @include responsive(huge-cat) {
+                    //
+                }
+            }
+
+            img.proj_back {
+                width: 140%;
+                top: 3%;
+                left: -20%;
+
+                @include responsive(tablet-cat) {
+                    width: 150%;
+                    top: -3%;
+                    left: -20%;
+                }
+
+                @include responsive(semi-cat) {
+                    top: 5%;
+                    left: -35%;
+                    width: 150%;
+                }
+
+                @include responsive(huge-cat) {
+                    top: -0%;
+                    width: 160%;
+                }
+
+                
+
+                &:last-child {
+                    top: 8%;
+                    left: -25%;
+
+
+                    @include responsive(tablet-cat) {
+                        top: 5%;
+                        left: -15%;
+                    }
+
+                    @include responsive(semi-cat) {
+                        left: -30%;
+                        top: 8%;
+                    }
+    
+                    @include responsive(huge-cat) {
+                        top: 2%;
+                        left: -35%;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
 @mixin button_hover {
     transition: all 0.5s linear;
     position: absolute;
@@ -378,4 +618,64 @@
     &::after {
         left: 0%;
     }
+}
+
+@mixin proj_common_contents($idd, $svg1, $svg2, $svg3) {
+    
+    .proj_info {
+
+        .proj_detail {
+
+                p {
+
+                    .info_highlight {
+                        color: $idd;
+                    }
+                }
+            }
+
+            .info_tone {
+                .tone_flex {
+                    .tone_cat {
+                        &:nth-child(1) {
+                            img {
+                                filter: $svg1;
+                            }
+                        }
+                        &:nth-child(2) {
+                            img {
+                                filter: $svg2;
+
+                            }
+                        }
+                        &:nth-child(3) {
+                            img {
+                                filter: $svg3;
+
+                            }
+                        }
+                    }
+                }                               
+            }
+    }
+
+    .info_btn_grp {
+
+        &>button {
+
+            background-color: $idd;
+            border: 3px solid $idd;    
+            color: $idd;
+
+            &:hover {
+            }
+
+            &::after {
+                background-color: $idd;
+            }
+
+        }
+
+    }
+    
 }
