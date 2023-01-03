@@ -3523,6 +3523,7 @@ main .main_contactme .cm_flex {
   main .main_contactme .cm_flex {
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
   }
 }
 main .main_contactme .cm_flex .cm_img_area {
@@ -3552,7 +3553,7 @@ main .main_contactme .cm_flex .cm_img_area img:first-child {
 }
 @media screen and (min-width: 768px) {
   main .main_contactme .cm_flex .cm_img_area img:first-child {
-    width: 90%;
+    width: 80%;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -3576,18 +3577,23 @@ main .main_contactme .cm_flex .cm_img_area img:nth-child(2) {
 }
 @media screen and (min-width: 768px) {
   main .main_contactme .cm_flex .cm_img_area img:nth-child(2) {
-    width: 100%;
-    top: -3%;
+    width: 110%;
+    top: -25%;
+    left: 17.5%;
   }
 }
 @media screen and (min-width: 1200px) {
   main .main_contactme .cm_flex .cm_img_area img:nth-child(2) {
     width: 440px;
+    top: -25%;
+    left: 24%;
   }
 }
 @media screen and (min-width: 1600px) {
   main .main_contactme .cm_flex .cm_img_area img:nth-child(2) {
     width: 550px;
+    top: -25%;
+    left: 26%;
   }
 }
 main .main_contactme .cm_flex .cm_contents_area {

@@ -2614,6 +2614,7 @@ main {
             @include responsive(tablet-cat) {
                 flex-direction: row;
                 justify-content: space-between;
+                align-items: center;
             }
 
             @include responsive(semi-cat) {
@@ -2650,7 +2651,7 @@ main {
                         margin: 0 auto;
 
                         @include responsive(tablet-cat) {
-                            width: 90%;
+                            width: 80%;
                         }
             
                         @include responsive(semi-cat) {
@@ -2673,17 +2674,22 @@ main {
                         animation: header_gnb_mobile 5s linear infinite;
 
                         @include responsive(tablet-cat) {
-                            width: 100%;
-                            top: -3%;
+                            width: 110%;
+                            top: -25%;
+                            left: 17.5%;
                             
                         }
             
                         @include responsive(semi-cat) {
                             width: 440px;
+                            top: -25%;
+                            left: 24%;
                         }
             
                         @include responsive(huge-cat) {
                             width: 550px;
+                            top: -25%;
+                            left: 26%;
                         }
                     }
                 }
