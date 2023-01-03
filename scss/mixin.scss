@@ -129,6 +129,22 @@
     }
 }
 
+@mixin nyan_grand_margin {
+    margin-top: $grand_margin_p;
+
+    @include responsive(tablet-cat) {
+        margin-top: $grand_margin_t;
+    }
+
+    @include responsive(semi-cat) {
+        margin-top: $grand_margin_s;
+    }
+
+    @include responsive(huge-cat) {
+        margin-top: $grand_margin_h;
+    }
+}
+
 @mixin nyan_common_h2 {
     .main_h2 {
         .nyan_zone_h2 {
@@ -292,6 +308,8 @@
         margin-top: 25px;
     }
 }
+
+
 
 @mixin ferris_wheel {
     &:nth-child(1) {

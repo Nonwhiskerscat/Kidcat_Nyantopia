@@ -26,44 +26,44 @@
 
 //헤더 gnb 아이콘 애니메이션
 
-// @keyframes header_gnb_icon {
-//     0% {
-//         transform: translateY(0%);
-//     }
+@keyframes header_gnb_icon {
+    0% {
+        transform: translateY(0%);
+    }
 
-//     50% {
-//         transform: translateY(-10%);
-//     }
+    50% {
+        transform: translateY(-10%);
+    }
 
-//     100% {
-//         transform: translateY(0%);
-//     }
-// }
+    100% {
+        transform: translateY(0%);
+    }
+}
 
 //헤더 gnb 모빌 애니메이션
 
-// @keyframes header_gnb_mobile {
+@keyframes header_gnb_mobile {
 
-//     0% {
-//         transform:rotateZ(0);
-//     }
+    0% {
+        transform:rotateZ(0);
+    }
 
-//     25% {
-//         transform:rotateZ(-5deg);
-//     }
+    25% {
+        transform:rotateZ(-5deg);
+    }
 
-//     50% {
-//         transform:rotateZ(0);
-//     }
+    50% {
+        transform:rotateZ(0);
+    }
 
-//     75% {
-//         transform:rotateZ(5deg);
-//     }
+    75% {
+        transform:rotateZ(5deg);
+    }
 
-//     100% {
-//         transform:rotateZ(0deg);
-//     }
-// }
+    100% {
+        transform:rotateZ(0deg);
+    }
+}
 
 
 // @keyframes header_gnb_cat {

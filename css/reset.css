@@ -111,6 +111,10 @@ h3 {
   color: #e87d9e;
 }
 
+h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
 ul, ol, li {
   list-style-type: none;
 }

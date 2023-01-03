@@ -20,6 +20,34 @@
     transform: rotateZ(5deg);
   }
 }
+@keyframes header_gnb_icon {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+@keyframes header_gnb_mobile {
+  0% {
+    transform: rotateZ(0);
+  }
+  25% {
+    transform: rotateZ(-5deg);
+  }
+  50% {
+    transform: rotateZ(0);
+  }
+  75% {
+    transform: rotateZ(5deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
 @keyframes cursor_blink {
   0% {
     opacity: 0;

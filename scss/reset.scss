@@ -115,11 +115,21 @@ h1 {
 h2 {
   font-family: $common;
   color: $identity;
+
 }
 
 h3 {
   color: $identity;
+
 }
+
+h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+
+
+
 
 ul, ol, li {
   list-style-type: none;

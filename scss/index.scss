@@ -40,8 +40,6 @@ main {
             .first_flex {
                 position: relative;
 
-
-
                 .intro_images {
                     margin: 0 auto;
                     position: relative;
@@ -50,36 +48,10 @@ main {
                     // animation: intro_kitty infinite 3s linear;
                     transform-origin: 40% center;
                     margin-top: $large_margin_p;
-
-        
-                    @include responsive(tablet-cat) {
-                        //
-                    }
-            
-                    @include responsive(semi-cat) {
-                        //
-                    }
-            
-                    @include responsive(huge-cat) {
-                        //
-                    }
         
                     & img {
                         display: block;
-        
-                        @include responsive(tablet-cat) {
-                            //
-                        }
-                
-                        @include responsive(semi-cat) {
-                            //
-                        }
-                
-                        @include responsive(huge-cat) {
-                            //
-                        }
                     }
-        
                     
                     .intro_kitty {
                         width: calc(150px + 20vw);
@@ -2145,14 +2117,15 @@ main {
                 justify-content: space-between;
 
                 @include responsive(tablet-cat) {
+                    width: 100%;
                 }
 
                 @include responsive(semi-cat) {
-
+                    width: 980px;
                 }
 
                 @include responsive(huge-cat) {
-
+                    width: 1180px;
                 }
                 
 
@@ -2166,17 +2139,17 @@ main {
                     text-align: center;
 
                     @include responsive(tablet-cat) {
-                        font-size: calc(12px + 1vw);
+                        font-size: calc(8px + 1vw);
                         width: calc(100% / 5);
                     } 
     
                     @include responsive(semi-cat) {
-                        font-size: 24px;
+                        font-size: 21px;
     
                     }
     
                     @include responsive(huge-cat) {
-                        font-size: 28px;
+                        font-size: 24px;
     
                     }
 
@@ -2199,9 +2172,10 @@ main {
                     &:nth-child(3) {
                         font-size: calc(18px + 2vw);
                         color: $identity;
+                        font-weight: bold;
 
                         @include responsive(tablet-cat) {
-                            font-size: calc(24px + 1vw);
+                            font-size: calc(18px + 1vw);
                         }
 
                         @include responsive(semi-cat) {
@@ -2223,9 +2197,21 @@ main {
                     margin-bottom: 5px;
 
                     img {
-                        width: calc(20px + 5vw);
+                        width: calc(16px + 5vw);
                         display: block;
                         animation: cat_jump ease-in 1s infinite;
+
+                        @include responsive(tablet-cat) {
+                            width: calc(14px + 5vw);
+                        } 
+    
+                        @include responsive(semi-cat) {
+                            width: 60px;
+                        }
+    
+                        @include responsive(huge-cat) {
+                            width: 80px;
+                        }
                     }
                 }
 
@@ -2236,117 +2222,22 @@ main {
         .proj_web {
             @include nyan_mid_margin;
 
-            .proj_flex {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-
-                @include responsive(tablet-cat) {
-                    flex-direction: row;
-                    justify-content: space-between;
-                }
-
-                @include responsive(semi-cat) {
-                    //
-                }
-
-                @include responsive(huge-cat) {
+            &>div {
+                &:nth-child(n+2) {
+                    @include nyan_large_margin;
 
                 }
 
-                .proj_photo {
-                    width: 80%;
-                    margin: 0 auto;
-                    position: relative;
-
-                    @include responsive(tablet-cat) {
-                        width: 40%;
-                    }
-    
-                    @include responsive(semi-cat) {
-                        //
-                    }
-    
-                    @include responsive(huge-cat) {
-                        //
-                    }
-
-                    img.proj_mockup {
-                        display: block;
-                        width: 100%;
-                    }
-
-                    img.proj_nyanbal {
-                        position: absolute;
-                        width: 30%;
-                        left: 50%;
-                        top: 50%;
-                        rotate: 120deg;
-                        transform-origin: center top;
-
-                        @include responsive(tablet-cat) {
-                            width: 30%;
-                            top: 20%;
-                        }
-
-                        @include responsive(semi-cat) {
-                            //
-                        }
-        
-                        @include responsive(huge-cat) {
-                            //
-                        }
-                    }
-
-                    img.proj_back {
-                        width: 140%;
-                        position: absolute;
-                        top: -10%;
-                        left: -20%;
-                        z-index: -2;
-
-                        @include responsive(tablet-cat) {
-                            top: -4%;
-                            left: -25%;
-                        }
-
-                        @include responsive(semi-cat) {
-                            //
-                        }
-        
-                        @include responsive(huge-cat) {
-                            //
-                        }
-
-                        
-
-                        &:last-child {
-                            top: -5%;
-
-                            @include responsive(tablet-cat) {
-                                top: 0%;
-                                left: -20%;
-                            }
-    
-                            @include responsive(semi-cat) {
-                                //
-                            }
-            
-                            @include responsive(huge-cat) {
-                                //
-                            }
-    
-                        }
-                    }
-                }
-
-                .proj_contents {
-                    @include nyan_mid_margin;
+                .proj_flex {
+                    display: flex;
+                    flex-direction: column;
                     width: 100%;
-
+    
                     @include responsive(tablet-cat) {
-                        width: 55%;
-                        margin-top: 0;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                        
                     }
     
                     @include responsive(semi-cat) {
@@ -2354,263 +2245,559 @@ main {
                     }
     
                     @include responsive(huge-cat) {
-                        //
+    
                     }
-
-                    .proj_title {
-                        display: flex;
-                        width: 100%;
-                        align-items: center;
-
-                        .title_img {
-                            width: 15%;
-
-                            img {
-                                display: block;
-                                width: 100%;
-                            }
+    
+                    .proj_photo {
+                        width: 80%;
+                        margin: 0 auto;
+                        position: relative;
+    
+                        @include responsive(tablet-cat) {
+                            width: 40%;
                         }
-
-                        .title_txt {
-                            margin-left: 20px;
-
+        
+                        @include responsive(semi-cat) {
+                            width: 480px;
+    
+                        }
+        
+                        @include responsive(huge-cat) {
+                            width: 580px;
+                        }
+    
+                        img.proj_mockup {
+                            display: block;
+                            width: 100%;
+                        }
+    
+                        img.proj_nyanbal {
+                            position: absolute;
+                            width: 30%;
+                            left: 50%;
+                            top: 50%;
+                            rotate: 120deg;
+                            transform-origin: center top;
+    
                             @include responsive(tablet-cat) {
-                                margin-left: 15px;
+                                width: 30%;
+                                top: 50%;
                             }
-
+    
                             @include responsive(semi-cat) {
-                                //
+                                width: 30%;
                             }
             
                             @include responsive(huge-cat) {
                                 //
                             }
-
-                            h4 {
-                                color: white;
-                                font-size: calc(4px + 4vw);
-
+                        }
+    
+                        img.proj_back {
+                            width: 140%;
+                            position: absolute;
+                            top: -10%;
+                            left: -20%;
+                            z-index: -2;
+    
+                            @include responsive(tablet-cat) {
+                                top: -4%;
+                                left: -25%;
+                            }
+    
+                            @include responsive(semi-cat) {
+                                width: 150%;
+                                top: -10%;
+                                left: -40%;
+                            }
+            
+                            @include responsive(huge-cat) {
+                                top: -10%;
+                            }
+    
+                            
+    
+                            &:last-child {
+                                top: -5%;
+    
                                 @include responsive(tablet-cat) {
-                                    font-size: calc(6px + 2vw);
+                                    top: 0%;
+                                    left: -20%;
                                 }
-
+        
                                 @include responsive(semi-cat) {
-                                    //
+                                    left: -35%;
                                 }
                 
                                 @include responsive(huge-cat) {
-                                    //
+                                    top: -0;
                                 }
-                                
+        
                             }
                         }
-
                     }
-
-                    .proj_info {
-
+    
+                    .proj_contents {
+                        @include nyan_mid_margin;
                         width: 100%;
-
-                        .proj_detail {
-                            @include nyan_regular_margin;
+    
+                        @include responsive(tablet-cat) {
+                            width: 55%;
+                            margin-top: 0;
+                        }
+        
+                        @include responsive(semi-cat) {
+                            width: 580px;
+                        }
+        
+                        @include responsive(huge-cat) {
+                            width: 780px;
+                        }
+    
+                        .proj_title {
                             display: flex;
                             width: 100%;
-                            justify-content: space-around;
-
-                            @include responsive(tablet-cat) {
-                                //
-                            }
-
-                            @include responsive(semi-cat) {
-                                //
-                            }
-            
-                            @include responsive(huge-cat) {
-                                //
-                            }
-
-                            &>div {
-                                width: calc(100% / 3);
-                                text-align: center;
-
-                                h5 {
-                                    font-size: calc(3vw + 6px);
-
-                                    @include responsive(tablet-cat) {
-                                        font-size: calc(2vw + 6px);
-
-                                    }
-        
-                                    @include responsive(semi-cat) {
-                                        //
-                                    }
-                    
-                                    @include responsive(huge-cat) {
-                                        //
-                                    }
+                            align-items: center;
+    
+                            .title_img {
+                                width: 15%;
+    
+                                img {
+                                    display: block;
+                                    width: 100%;
                                 }
-
-                                p {
-                                    @include nyan_tiny_margin;
-                                    font-size: calc(3vw + 6px);
-
+                            }
+    
+                            .title_txt {
+                                margin-left: 20px;
+    
+                                @include responsive(tablet-cat) {
+                                    margin-left: 15px;
+                                }
+    
+                                @include responsive(semi-cat) {
+                                    margin-left: 20px;
+                                }
+                
+                                @include responsive(huge-cat) {
+                                    margin-left: 30px;
+                                }
+    
+                                h4 {
+                                    color: white;
+                                    font-size: calc(4px + 4vw);
+    
                                     @include responsive(tablet-cat) {
-                                        font-size: calc(2vw + 6px);
-
+                                        font-size: calc(6px + 2vw);
                                     }
-        
+    
                                     @include responsive(semi-cat) {
-                                        //
+                                        font-size: 32px;
                                     }
                     
                                     @include responsive(huge-cat) {
-                                        //
+                                        font-size: 40px;
                                     }
+                                    
+                                }
+                            }
+    
+                        }
+    
+                        .proj_info {
+    
+                            width: 100%;
+    
+                            .proj_detail {
+                                margin-top: $regular_margin_p;
+                                display: flex;
+                                width: 100%;
+                                justify-content: space-around;
+    
+                                @include responsive(tablet-cat) {
+                                    margin-top: $small_margin_p;
+                                }
+    
+                                @include responsive(semi-cat) {
+                                    margin-top: $small_margin_s;
+    
+                                }
+                
+                                @include responsive(huge-cat) {
+                                    margin-top: $small_margin_h;
+                                }
+    
+                                &>div {
+                                    width: calc(100% / 3);
+                                    text-align: center;
 
-                                    .info_highlight {
-                                        font-size: calc(10vw + 4px);
-                                        color: $kopc;
 
+    
+                                    h5 {
+                                        font-size: calc(3vw + 6px);
+    
                                         @include responsive(tablet-cat) {
-                                            font-size: calc(6vw + 6px);
+                                            font-size: calc(2vw + 2px);
     
                                         }
             
                                         @include responsive(semi-cat) {
-                                            //
+                                            font-size: 24px;
                                         }
                         
                                         @include responsive(huge-cat) {
-                                            //
-                                        }
-
-                                    }
-                                }
-                            }
-
-                            .info_tone {
-                                
-                                .tone_flex {
-                                    width: 60%;
-                                    margin: 0 auto;
-                                    display: flex;
-                                    align-items: center;
-                                    flex-wrap: wrap;
-                                    @include nyan_tiny_margin;
-                                    height: calc(10vw + 4px);
-
-                                    
-                                    @include responsive(tablet-cat) {
-                                        height: calc(6vw + 6px);
-
-
-                                    }
-        
-                                    @include responsive(semi-cat) {
-                                        //
-                                    }
-                    
-                                    @include responsive(huge-cat) {
-                                        //
-                                    }
-                                    
-
-                                    .tone_cat {
-                                        margin: 0 auto;
-                                        width: calc(100% / 3);
-
-                                        &:nth-child(1) {
-                                            img {
-                                                filter: invert(63%) sepia(83%) saturate(371%) hue-rotate(356deg) brightness(92%) contrast(97%);
-                                            }
-                                        }
-
-                                        &:nth-child(2) {
-                                            img {
-                                                filter: invert(17%) sepia(10%) saturate(0%) hue-rotate(235deg) brightness(103%) contrast(94%);
-
-                                            }
-                                        }
-
-                                        &:nth-child(3) {
-                                            img {
-                                                filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(336deg) brightness(101%) contrast(101%);
-
-                                            }
-                                        }
-
-                                        
-                                        img {
-                                            width: 75%;
-                                            display: block;
-                                            margin: 0 auto;
+                                            font-size: 32px;
                                         }
                                     }
-
-                                }
-
-                                
-
-                            }
-
-                        }
-
-                        .info_desc {
-                            @include nyan_regular_margin;
-
-                            .desc_txt {
-                                text-align: justify;
-                                font-size: calc(8px + 2vw);
-                                line-height: 2em;
-                            }
-                        }    
+    
+                                    p {
+                                        margin-top: $tiny_margin_p;
+                                        font-size: calc(3vw + 6px);
+    
+                                        @include responsive(tablet-cat) {
+                                            font-size: calc(2vw + 1px);
+                                            margin-top: $petit_margin_t;
+    
+                                        }
+            
+                                        @include responsive(semi-cat) {
+                                            font-size: 24px;
+                                        }
                         
-                        .info_btn_grp {
-                            @include nyan_small_margin;
-                            display: flex;
-                            justify-content: space-between;
-
-                            &>button {
-                                display: block;
-                                position: relative;
-                                font-family: $common;
-                                width: 47.5%;
-
-                                text-align: center;
-                                background-color: $kopc;
-                                border-radius: calc(4px + 4vw + 1em);
-                                border: 3px solid $kopc;
-                                overflow: hidden;
-
-                                color: $kopc;
-                                background-color: transparent;
-                                transition: all 0.5s linear;
-
-
-                                &:hover {
-                                    @include button_letter_hover;
+                                        @include responsive(huge-cat) {
+                                            font-size: 32px;
+                                        }
+    
+                                        .info_highlight {
+                                            font-size: calc(10vw + 4px);
+                                            color: $kopc;
+    
+                                            @include responsive(tablet-cat) {
+                                                font-size: calc(6vw);
+        
+                                            }
+                
+                                            @include responsive(semi-cat) {
+                                                font-size: 80px;
+                                            }
+                            
+                                            @include responsive(huge-cat) {
+                                                font-size: 96px;
+                                            }
+    
+                                        }
+                                    }
                                 }
-
-                                &::after {
-                                    z-index: -1;
-                                    @include button_hover;
-                                    background-color: $kopc;
+    
+                                .info_tone {
+                                    
+                                    .tone_flex {
+                                        width: 60%;
+                                        margin: 0 auto;
+                                        display: flex;
+                                        align-items: center;
+                                        flex-wrap: wrap;
+                                        margin-top: $tiny_margin_p;
+                                        height: calc(10vw + 4px);
+                                        justify-content: space-around;
+    
+                                        
+                                        @include responsive(tablet-cat) {
+                                            height: calc(6vw);
+                                            margin-top: $petit_margin_t;                                      
+                                        }
+            
+                                        @include responsive(semi-cat) {
+                                            height: 80px;
+                                            margin-top: $petit_margin_s;                                      
+                                        }
+                        
+                                        @include responsive(huge-cat) {
+                                            height: 96px;
+                                            margin-top: $petit_margin_h;                                      
+                                        }
+                                        
+    
+                                        .tone_cat {
+                                            margin: 0 auto;
+                                            width: calc(100% / 3);
+    
+                                            &:nth-child(1) {
+                                                img {
+                                                    filter: invert(63%) sepia(83%) saturate(371%) hue-rotate(356deg) brightness(92%) contrast(97%);
+                                                }
+                                            }
+    
+                                            &:nth-child(2) {
+                                                img {
+                                                    filter: invert(17%) sepia(10%) saturate(0%) hue-rotate(235deg) brightness(103%) contrast(94%);
+    
+                                                }
+                                            }
+    
+                                            &:nth-child(3) {
+                                                img {
+                                                    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(336deg) brightness(101%) contrast(101%);
+    
+                                                }
+                                            }
+    
+                                            
+                                            img {
+                                                width: 75%;
+                                                display: block;
+                                                margin: 0 auto;
+                                            }
+                                        }
+                                    }                               
                                 }
-
-                                p {
-                                    font-size: calc(4px + 4vw);
-                                    padding: 0.5em 0;
-                                    z-index: 3;
-                                }
-
                             }
-
+    
+                            .info_desc {
+                                margin-top: $regular_margin_p;
+    
+                                @include responsive(tablet-cat) {
+                                    margin-top: $small_margin_p;
+                                }
+    
+                                .desc_txt {
+    
+                                
+                                        text-align: justify;
+                                        font-size: calc(8px + 2vw);
+                                        line-height: 2em;
+        
+                                        @include responsive(tablet-cat) {
+                                            font-size: calc(8px + 1.1vw);
+                                        }
+    
+                                        @include responsive(semi-cat) {
+                                            font-size: 24px;
+                                            line-height: 2em;
+                                        }
+    
+                                        @include responsive(semi-cat) {
+                                            font-size: 28px;
+                                        }
+        
+    
+                                }
+                            }    
+                            
+                            .info_btn_grp {
+                                @include nyan_small_margin;
+                                display: flex;
+                                justify-content: space-between;
+    
+                                &>button {
+                                    cursor: pointer;
+                                    display: block;
+                                    position: relative;
+                                    font-family: $common;
+                                    width: 47.5%;
+    
+                                    text-align: center;
+                                    background-color: $kopc;
+                                    border-radius: calc(1000px);
+                                    border: 3px solid $kopc;
+                                    overflow: hidden;
+    
+                                    color: $kopc;
+                                    background-color: transparent;
+                                    transition: all 0.5s linear;
+    
+                                    @include responsive(tablet-cat) {
+                                        border-width: 2px;
+                                    }
+    
+                                    @include responsive(semi-cat) {
+                                        width: 275px;
+                                    }
+    
+                                    @include responsive(huge-cat) {
+                                        width: 375px;
+                                    }
+                            
+    
+    
+                                    &:hover {
+                                        @include button_letter_hover;
+                                    }
+    
+                                    &::after {
+                                        z-index: -1;
+                                        @include button_hover;
+                                        background-color: $kopc;
+                                    }
+    
+                                    p {
+                                        font-size: calc(4px + 4vw);
+                                        padding: 0.5em 0;
+                                        z-index: 3;
+                                        
+                                        @include responsive(tablet-cat) {
+                                            font-size: calc(8px + 2vw);
+                                        }
+    
+                                        @include responsive(semi-cat) {
+                                            font-size: 32px;
+                                        }
+    
+                                        @include responsive(huge-cat) {
+                                            font-size: 40px;
+                                        }
+    
+                                    }
+    
+                                }
+    
+                            }
+    
+    
                         }
-
-
                     }
                 }
+
+                &:nth-child(2) {
+
+                    .proj_photo {
+    
+                        img.proj_nyanbal {
+                            position: absolute;
+                            width: 30%;
+                            left: 50%;
+                            top: 50%;
+                            rotate: 120deg;
+                            transform-origin: center top;
+    
+                            @include responsive(tablet-cat) {
+                                width: 30%;
+                                top: 50%;
+                            }
+    
+                            @include responsive(semi-cat) {
+                                width: 30%;
+                            }
+            
+                            @include responsive(huge-cat) {
+                                //
+                            }
+                        }
+    
+                        img.proj_back {
+                            width: 140%;
+                            position: absolute;
+                            top: -10%;
+                            left: -20%;
+                            z-index: -2;
+    
+                            @include responsive(tablet-cat) {
+                                top: -4%;
+                                left: -25%;
+                            }
+    
+                            @include responsive(semi-cat) {
+                                width: 150%;
+                                top: -10%;
+                                left: -40%;
+                            }
+            
+                            @include responsive(huge-cat) {
+                                top: -10%;
+                            }
+    
+                            
+    
+                            &:last-child {
+                                top: -5%;
+    
+                                @include responsive(tablet-cat) {
+                                    top: 0%;
+                                    left: -20%;
+                                }
+        
+                                @include responsive(semi-cat) {
+                                    left: -35%;
+                                }
+                
+                                @include responsive(huge-cat) {
+                                    top: -0;
+                                }
+        
+                            }
+                        }
+                    }
+
+                    .proj_contents {
+    
+                        .proj_info {
+    
+                            width: 100%;
+    
+                            .proj_detail {
+    
+                                    p {
+    
+                                        .info_highlight {
+                                            color: $kopc;
+                                        }
+                                    }
+                                }
+    
+                                .info_tone {
+                                    .tone_flex {
+                                        .tone_cat {
+                                            &:nth-child(1) {
+                                                img {
+                                                    filter: invert(63%) sepia(83%) saturate(371%) hue-rotate(356deg) brightness(92%) contrast(97%);
+                                                }
+                                            }
+                                            &:nth-child(2) {
+                                                img {
+                                                    filter: invert(17%) sepia(10%) saturate(0%) hue-rotate(235deg) brightness(103%) contrast(94%);
+    
+                                                }
+                                            }
+                                            &:nth-child(3) {
+                                                img {
+                                                    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(336deg) brightness(101%) contrast(101%);
+    
+                                                }
+                                            }
+                                        }
+                                    }                               
+                                }
+                            }
+
+                            .info_btn_grp {
+    
+                                &>button {
+
+                                    background-color: $kopc;
+                                    border: 3px solid $kopc;    
+                                    color: $kopc;
+
+                                    &:hover {
+                                    }
+    
+                                    &::after {
+
+                                        background-color: $kopc;
+                                    }
+    
+                                }
+    
+                            }
+    
+    
+                        }
+                    }
+                }
+
+
             }
+
+
         }
 
 
@@ -2621,4 +2808,3 @@ main {
         height: 1000px;
         background-color: rgb(226, 223, 0);
     }
-}
