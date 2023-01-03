@@ -464,9 +464,9 @@
                 left: 20%;
                 top: 45%;
                 rotate: -110deg;
+                width: 30%;
 
                 @include responsive(tablet-cat) {
-                    width: 30%;
                     top: 50%;
                 }
 
@@ -533,12 +533,12 @@
 
             img.proj_nyanbal {
 
+                width: 30%;
                 left: 45%;
                 top: 35%;
                 rotate: 60deg;
 
                 @include responsive(tablet-cat) {
-                    width: 30%;
                     top: 35%;
                 }
 
@@ -627,7 +627,6 @@
         .proj_detail {
 
                 p {
-
                     .info_highlight {
                         color: $idd;
                     }
@@ -645,7 +644,6 @@
                         &:nth-child(2) {
                             img {
                                 filter: $svg2;
-
                             }
                         }
                         &:nth-child(3) {
@@ -664,11 +662,8 @@
         &>button {
 
             background-color: $idd;
-            border: 3px solid $idd;    
+            border-color: $idd;    
             color: $idd;
-
-            &:hover {
-            }
 
             &::after {
                 background-color: $idd;

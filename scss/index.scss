@@ -2372,7 +2372,6 @@ main {
                                     width: calc(100% / 3);
                                     text-align: center;
 
-
     
                                     h5 {
                                         font-size: calc(3vw + 6px);
@@ -2411,7 +2410,6 @@ main {
     
                                         .info_highlight {
                                             font-size: calc(10vw + 4px);
-                                            color: $kopc;
     
                                             @include responsive(tablet-cat) {
                                                 font-size: calc(6vw);
@@ -2462,27 +2460,6 @@ main {
                                         .tone_cat {
                                             margin: 0 auto;
                                             width: calc(100% / 3);
-    
-                                            &:nth-child(1) {
-                                                img {
-                                                    filter: invert(63%) sepia(83%) saturate(371%) hue-rotate(356deg) brightness(92%) contrast(97%);
-                                                }
-                                            }
-    
-                                            &:nth-child(2) {
-                                                img {
-                                                    filter: invert(17%) sepia(10%) saturate(0%) hue-rotate(235deg) brightness(103%) contrast(94%);
-    
-                                                }
-                                            }
-    
-                                            &:nth-child(3) {
-                                                img {
-                                                    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(336deg) brightness(101%) contrast(101%);
-    
-                                                }
-                                            }
-    
                                             
                                             img {
                                                 width: 75%;
@@ -2536,19 +2513,18 @@ main {
                                     position: relative;
                                     font-family: $common;
                                     width: 47.5%;
+                                    border-width: 2px;
+                                    border-style: solid;    
     
                                     text-align: center;
-                                    background-color: $kopc;
                                     border-radius: calc(1000px);
-                                    border: 3px solid $kopc;
                                     overflow: hidden;
     
-                                    color: $kopc;
                                     background-color: transparent;
                                     transition: all 0.5s linear;
     
                                     @include responsive(tablet-cat) {
-                                        border-width: 2px;
+                                        //
                                     }
     
                                     @include responsive(semi-cat) {
@@ -2568,7 +2544,6 @@ main {
                                     &::after {
                                         z-index: -1;
                                         @include button_hover;
-                                        background-color: $kopc;
                                     }
     
                                     p {
@@ -2589,12 +2564,8 @@ main {
                                         }
     
                                     }
-    
                                 }
-    
                             }
-    
-    
                         }
                     }
                 }
@@ -2611,21 +2582,131 @@ main {
 
             .proj_FAHotel {
                 .proj_contents {
-                    @include proj_common_contents($FAHotel, $FAHotel_f1, $FAHotel_f2, $FAHotel_f3)
+                    @include proj_common_contents($FAHotel, $FAHotel_f1, $FAHotel_f2, none)
+                }
+            }
+
+            .proj_kidcat {
+                .proj_contents {
+                    @include proj_common_contents($kidcat, $kidcat_f1, none, none);
+
+
+                    .tone_cat {
+                        margin: 0 auto;
+                        width: calc(100% / 2) !important;
+                    }
                 }
             }
 
         }
 
-
     }
 
-
-
-    
-
     .main_contactme {
-        height: 1000px;
-        background-color: rgb(226, 223, 0);
+        @include nyan_large_margin;
+        @include nyan_common_h2;
+
+        .cm_flex {
+            @include nyan_big_margin;
+            display: flex;
+            flex-direction: column;
+
+            @include responsive(tablet-cat) {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            @include responsive(semi-cat) {
+                //
+            }
+
+            @include responsive(huge-cat) {
+                //
+            }
+
+            .cm_img_area {
+                
+                position: relative;
+                width: 100%;
+
+                @include responsive(tablet-cat) {
+                    width: 30%;
+                }
+    
+                @include responsive(semi-cat) {
+                    width: 480px;
+                }
+    
+                @include responsive(huge-cat) {
+                    width: 680px;
+                }
+
+                img {
+                    
+                    &:first-child { // 고양이
+                        position: relative;
+                        display: block;
+                        width: 40%;
+                        margin: 0 auto;
+
+                        @include responsive(tablet-cat) {
+                            width: 90%;
+                        }
+            
+                        @include responsive(semi-cat) {
+                            width: 320px;
+                        }
+            
+                        @include responsive(huge-cat) {
+                            width: 400px;
+                        }
+
+                    }
+
+                    &:nth-child(2) { // 우산
+                        position: absolute;
+                        top: -24%;
+                        left: 34%;
+                        width: 55%;
+                        rotate: -5deg;
+                        transform-origin: bottom center;
+                        animation: header_gnb_mobile 5s linear infinite;
+
+                        @include responsive(tablet-cat) {
+                            width: 100%;
+                            top: -3%;
+                            
+                        }
+            
+                        @include responsive(semi-cat) {
+                            width: 440px;
+                        }
+            
+                        @include responsive(huge-cat) {
+                            width: 550px;
+                        }
+                    }
+                }
+
+                
+            }
+
+            .cm_contents_area {
+                position: relative;
+                width: 100%;
+
+                @include responsive(tablet-cat) {
+                    width: 60%;
+                }
+    
+                @include responsive(semi-cat) {
+                    width: 580px;
+                }
+    
+                @include responsive(huge-cat) {
+                    width: 780px;
+                }
+            }
+        }
     }
 }
