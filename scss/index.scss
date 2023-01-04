@@ -2503,68 +2503,7 @@ main {
                             }    
                             
                             .info_btn_grp {
-                                @include nyan_small_margin;
-                                display: flex;
-                                justify-content: space-between;
-    
-                                &>button {
-                                    cursor: pointer;
-                                    display: block;
-                                    position: relative;
-                                    font-family: $common;
-                                    width: 47.5%;
-                                    border-width: 2px;
-                                    border-style: solid;    
-    
-                                    text-align: center;
-                                    border-radius: calc(1000px);
-                                    overflow: hidden;
-    
-                                    background-color: transparent;
-                                    transition: all 0.5s linear;
-    
-                                    @include responsive(tablet-cat) {
-                                        //
-                                    }
-    
-                                    @include responsive(semi-cat) {
-                                        width: 275px;
-                                    }
-    
-                                    @include responsive(huge-cat) {
-                                        width: 375px;
-                                    }
-                            
-    
-    
-                                    &:hover {
-                                        @include button_letter_hover;
-                                    }
-    
-                                    &::after {
-                                        z-index: -1;
-                                        @include button_hover;
-                                    }
-    
-                                    p {
-                                        font-size: calc(4px + 4vw);
-                                        padding: 0.5em 0;
-                                        z-index: 3;
-                                        
-                                        @include responsive(tablet-cat) {
-                                            font-size: calc(8px + 2vw);
-                                        }
-    
-                                        @include responsive(semi-cat) {
-                                            font-size: 32px;
-                                        }
-    
-                                        @include responsive(huge-cat) {
-                                            font-size: 40px;
-                                        }
-    
-                                    }
-                                }
+                                @include common_btn(0);
                             }
                         }
                     }
@@ -2576,13 +2515,13 @@ main {
 
             .proj_kopc {
                 .proj_contents {
-                    @include proj_common_contents($kopc, $kopc_f1, $kopc_f2, $kopc_f3)
+                    @include proj_common_contents($kopc, $kopc_f1, $kopc_f2, $kopc_f3);
                 }
             }
 
             .proj_FAHotel {
                 .proj_contents {
-                    @include proj_common_contents($FAHotel, $FAHotel_f1, $FAHotel_f2, none)
+                    @include proj_common_contents($FAHotel, $FAHotel_f1, $FAHotel_f2, none);
                 }
             }
 
@@ -2607,22 +2546,23 @@ main {
         @include nyan_common_h2;
 
         .cm_flex {
-            @include nyan_big_margin;
+            margin-top: $big_margin_p;
             display: flex;
             flex-direction: column;
 
             @include responsive(tablet-cat) {
+                margin-top: $regular_margin_t;
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: center;
             }
 
             @include responsive(semi-cat) {
-                //
+                margin-top: $mezo_margin_s;
             }
 
             @include responsive(huge-cat) {
-                //
+                margin-top: $large_margin_p;
             }
 
             .cm_img_area {
@@ -2655,7 +2595,7 @@ main {
                         }
             
                         @include responsive(semi-cat) {
-                            width: 320px;
+                            width: 300px;
                         }
             
                         @include responsive(huge-cat) {
@@ -2681,15 +2621,15 @@ main {
                         }
             
                         @include responsive(semi-cat) {
-                            width: 440px;
-                            top: -25%;
-                            left: 24%;
+                            width: 400px;
+                            top: -22%;
+                            left: 26%;
                         }
             
                         @include responsive(huge-cat) {
-                            width: 550px;
-                            top: -25%;
-                            left: 26%;
+                            width: 540px;
+                            top: -23.5%;
+                            left: 26.5%;
                         }
                     }
                 }
@@ -2711,6 +2651,288 @@ main {
     
                 @include responsive(huge-cat) {
                     width: 780px;
+                }
+
+                .cm_not_hidden {
+                    margin-top: $mezo_margin_p;
+
+                    @include responsive(tablet-cat) {
+                        margin-top: 0;
+                    }
+        
+                    @include responsive(semi-cat) {
+                        //
+                    }
+        
+                    @include responsive(huge-cat) {
+                        //
+                    }
+
+                    .cm_title {
+                        width: 100%;
+                        font-size: calc(3px + 4vw);
+
+                        @include responsive(tablet-cat) {
+                            font-size: calc(1px + 3vw);
+                        }
+
+                        @include responsive(semi-cat) {
+                            font-size: 32px;
+                        }
+            
+                        @include responsive(huge-cat) {
+                            font-size: 36px
+                        }
+
+                        .cm_upper {
+                            //
+                        }
+
+                        .cm_lower {
+                            
+                            @include nyan_petit_margin;
+                            width: fit-content;
+                        
+                            .cm_lower_flex {
+                                
+                                display: flex;
+                                width: fit-content;
+                                align-items: center;
+                            
+                                h2 {
+                                    margin-right: 5px;
+                                    margin-left: auto;
+
+                                    @include responsive(tablet-cat) {
+                                        margin-right: 10px;
+                                    }
+                        
+                                    @include responsive(semi-cat) {
+                                        margin-right: 5px;
+                                    }
+                        
+                                    @include responsive(huge-cat) {
+                                        //
+                                    }
+                                    
+                                }
+    
+                                img {
+                                    display: block;
+                                    width: 15%;
+
+                                    @include responsive(tablet-cat) {
+                                        //
+                                    }
+                        
+                                    @include responsive(semi-cat) {
+                                        width: 16%
+                                    }
+                        
+                                    @include responsive(huge-cat) {
+                                        width: 17.5%
+                                    }
+                                }
+
+                            }
+
+                            
+                            
+                        }
+                    }
+
+                    .cm_greet {
+
+                        p {
+                            @include nyan_small_margin;
+                            text-align: justify;
+                            font-size: calc(6px + 3vw);
+                            line-height: 2em;
+
+                            @include responsive(tablet-cat) {
+                                font-size: calc(6px + 2vw);
+                            }
+                
+                            @include responsive(semi-cat) {
+                                font-size: 28px;
+                            }
+                
+                            @include responsive(huge-cat) {
+                                font-size: 32px;
+                            }
+
+                            .cm_highlight {
+                                color: $identity;
+                            }
+                        }
+
+                    }
+
+                    .cm_btn_grp {
+                        @include common_btn(white);
+
+                        button {
+                            @include common_btn_plus;
+                        }
+
+                    }
+                }
+
+                .cm_hidden {
+                    margin-top: $mezo_margin_p;
+
+                    @include responsive(tablet-cat) {
+                        margin-top: 0;
+                    }
+        
+                    @include responsive(semi-cat) {
+                        //
+                    }
+        
+                    @include responsive(huge-cat) {
+                        //
+                    }
+
+                    .cm_hd_title {
+                        position: relative;
+                        width: fit-content;
+
+                        h3 {
+                            position: relative;
+                            font-size: calc(8px + 4vw);
+                            color: white;
+                            text-align: center;
+                            width: fit-content;
+
+                            @include responsive(tablet-cat) {
+                                font-size: calc(8px + 3vw);
+                            }
+                
+                            @include responsive(semi-cat) {
+                                font-size: 40px;
+                            }
+                
+                            @include responsive(huge-cat) {
+                                //
+                            }
+
+                            &::after {
+                                content: '';
+                                display: block;
+                                height: calc(2px + 0.5vw);
+                                margin-top: 5px;
+                                border-radius: 1000px;
+                                width: 150%;
+                                background-color: white;
+                                translate: -5%;
+
+                                @include responsive(tablet-cat) {
+                                    height: calc(1px + 0.5vw);
+                                    translate: 0;
+                                    width: 135%;
+                                }
+                    
+                                @include responsive(semi-cat) {
+                                    height: 6px;
+                                }
+                    
+                                @include responsive(huge-cat) {
+                                    //
+                                }
+                            }
+                        }
+
+                        .cm_hd_kitty {
+                            position: absolute;
+                            width: 20%;
+                            top: -40%;
+                            right: -35%;
+
+                            @include responsive(tablet-cat) {
+                                
+                                top: -45%;
+                                right: -30%;
+                            }
+                
+                            @include responsive(semi-cat) {
+                                //
+                            }
+                
+                            @include responsive(huge-cat) {
+                                //
+                            }
+
+                            img {
+                                display: block;
+                                width: 100%;
+                            }
+
+                        }
+                    }
+
+                    .cm_hd_main {
+                        @include nyan_small_margin;
+
+                        form {
+
+                            .cm_form_flex {
+                                display: flex;
+                                flex-direction: column;
+
+                                @include responsive(tablet-cat) {
+
+                                }
+
+                                @include responsive(semi-cat) {
+                                }
+
+                                @include responsive(huge-cat) {
+                                    flex-direction: row;
+                                    justify-content: space-between;
+                                }
+
+                                &>div {
+                                    @include cm_form_div;
+
+                                }
+
+                                .cm_name {
+                                    margin-top: 0;
+
+                                    @include responsive(huge-cat) {
+                                        width: 47.5%;
+                                    }
+                                }
+
+                                .cm_email {
+                                    @include responsive(huge-cat) {
+                                        width: 47.5%;
+                                        margin-top: 0;
+                                    }
+                                }
+
+                            }
+
+                            .cm_message {
+                                @include cm_form_div;
+                                align-items: flex-start;
+                                flex-direction: column;
+
+                                @include responsive(huge-cat) {
+                                    margin-top: $tiny_margin_h;
+
+                                }
+                            }
+                            
+                            .cmh_btn_grp {
+                                @include common_btn(white);
+        
+                                button {
+                                    @include common_btn_plus;
+                                }
+                            }
+                        }    
+                    }
                 }
             }
         }

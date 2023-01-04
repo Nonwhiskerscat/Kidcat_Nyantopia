@@ -267,10 +267,11 @@
 
                 h2 {
                     text-align: center;
-                    font-size: calc(16px + 2vw);
+                    font-size: calc(6px + 6vw);
                     margin-top: $petit_margin_p;
 
                     @include responsive(tablet-cat) {
+                        font-size: calc(6px + 4vw);
                         margin-top: 0;
                     }
 
@@ -673,4 +674,234 @@
 
     }
     
+}
+
+@mixin common_btn($color) {
+    @include nyan_small_margin;
+    display: flex;
+    justify-content: space-between;
+
+    &>button {
+        cursor: pointer;
+        display: block;
+        position: relative;
+        font-family: $common;
+        width: 47.5%;
+        border-width: 2px;
+        border-style: solid;    
+
+        text-align: center;
+        border-radius: calc(1000px);
+        overflow: hidden;
+
+        background-color: transparent;
+        transition: all 0.5s linear;
+
+        border-color: $color;    
+        color: $color;
+
+        @include responsive(tablet-cat) {
+            //
+        }
+
+        @include responsive(semi-cat) {
+            width: 275px;
+        }
+
+        @include responsive(huge-cat) {
+            width: 375px;
+        }
+
+
+
+        &:hover {
+            @include button_letter_hover;
+        }
+
+        &::after {
+            z-index: -1;
+            background-color: $color;
+            @include button_hover;
+        }
+
+        p {
+            font-size: calc(4px + 4vw);
+            padding: 0.5em 0;
+            z-index: 3;
+            
+            @include responsive(tablet-cat) {
+                font-size: calc(8px + 2vw);
+            }
+
+            @include responsive(semi-cat) {
+                font-size: 32px;
+            }
+
+            @include responsive(huge-cat) {
+                font-size: 40px;
+            }
+
+        }
+    }
+}
+
+@mixin common_btn_plus {
+    &:first-child {
+
+        @include responsive(tablet-cat) {
+            width: 37.5%;
+        }
+
+        @include responsive(semi-cat) {
+            //
+        }
+
+        @include responsive(huge-cat) {
+            //
+        }
+    }
+    
+
+    &:last-child {
+
+        @include responsive(tablet-cat) {
+            width: 57.5%;
+        }
+
+        @include responsive(semi-cat) {
+            //
+        }
+
+        @include responsive(huge-cat) {
+            //
+        }
+
+        .btn_mob {
+            @include responsive(tablet-cat) {
+                display: none;
+            }
+        }
+
+        .btn_pc {
+            display: none;
+
+            @include responsive(tablet-cat) {
+                display: block;
+            }
+        }
+    }
+}
+
+@mixin cm_form_div {
+    @include nyan_small_margin;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    
+    &>p {
+        width: 25%;
+        font-size: calc(8px + 3vw);
+
+        @include responsive(tablet-cat) {
+            font-size: calc(8px + 2vw);
+        }
+
+        @include responsive(semi-cat) {
+            font-size: 32px;
+        }
+
+        @include responsive(huge-cat) {
+            font-size: 24px;
+        }
+    }
+
+    &>input, &>textarea {
+        border: 0;
+        background-color: rgba($color: #fff, $alpha: 0.8);
+        outline: none;
+        padding: 0.25em 2%;
+        font-family: $minor;
+        color: #333;
+        font-size: calc(5px + 3vw);
+        text-align: justify;
+
+        @include responsive(tablet-cat) {
+            font-size: calc(4px + 2vw);
+        }
+
+        @include responsive(semi-cat) {
+            font-size: 24px;
+        }
+
+        @include responsive(huge-cat) {
+
+        }
+
+        &::placeholder {
+            color: #777;
+            font-family: $minor;
+            text-align: justify;
+        }
+
+    }
+
+    &>input {
+        width: 70%;
+        border-radius: 1000px;
+
+        @include responsive(tablet-cat) {
+            width: 75%;
+        }
+
+        @include responsive(semi-cat) {
+
+        }
+
+        @include responsive(huge-cat) {
+
+        }
+    }
+
+    &>textarea {
+        @include nyan_petit_margin;
+        width: 100%;
+        border-radius: calc(5px + 3vw);
+        min-height: calc(100px + 5vh);
+
+        @include responsive(tablet-cat) {
+            border-radius: calc(4px + 3vw);
+            min-height: calc(120px + 5vh);
+        }
+
+        @include responsive(semi-cat) {
+            border-radius: 32px;
+            min-height: 240px;
+        }
+
+        @include responsive(huge-cat) {
+            border-radius: 40px;
+        }
+
+        &::placeholder {
+            line-height: 1.2em;
+
+            @include responsive(tablet-cat) {
+                line-height: 1.5em;
+            }
+
+            @include responsive(semi-cat) {
+
+            }
+    
+            @include responsive(huge-cat) {
+    
+            }
+        }
+
+        &>p {
+            width: 100%;
+        }
+    }
 }

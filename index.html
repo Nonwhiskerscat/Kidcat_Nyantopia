@@ -848,20 +848,20 @@
     
                         <div class="cm_contents_area">
                             
-                            <div class="cm_not_hidden">
+                            <div class="cm_not_hidden no">
                                 <div class="cm_title">
                                     <h2 class="cm_upper">여기까지 읽어 주셔서</h2>
                                     <div class="cm_lower">
-                                        <h2 class="class">대단히 감사합니다.</h2>
-                                        <span>
-                                            <img src="./img/main/intro_kitty_picto.png" alt="냥이">
-                                        </span>
+                                        <div class="cm_lower_flex">
+                                            <h2 class="class">대단히 감사합니다.</h2>
+                                            <img src="./img/main/intro_kitty_picto_pink.png" alt="냥이">
+                                        </div>
                                     </div>
                                 </div>
 
                                 <div class="cm_greet">
                                     <p>
-                                        KIDCAT NYANTOPIA에 대해 궁금한 점 이 있거나 이해가 가지 않는 부분 혹은 피드백이 있다면 <span class="cm_highlight">nonwhiskerscat@gmail.com</span> 또는 <span class="cm_highlight">Contact Me</span>를 통해 언제든지 질문해 주십시오. <span class="cm_highlight">항상 친절하게 답변</span>해 드리겠습니다.
+                                        KIDCAT NYANTOPIA에 대해 궁금한 점이 있거나 이해가 가지 않는 부분 혹은 웹 페이지에 피드백이 있다면 <span class="cm_highlight">nonwhiskerscat@gmail.com</span> 또는 <span class="cm_highlight">Contact Me</span>를 통해 언제든지 질문해 주십시오. <span class="cm_highlight">항상 친절하게 답변</span>해 드리겠습니다.
                                     </p>
                                 </div>
 
@@ -871,7 +871,7 @@
                                     </button>
 
                                     <button class="btn_web">
-                                        <p class="btn_txt">Contanct Me 실행하기</p>
+                                        <p class="btn_txt"><span class="btn_mob">질문하기</span><span class="btn_pc">Contact Me 실행</span></p>
                                     </button>
                                 </div>
                             </div>
@@ -882,26 +882,28 @@
                                     <div class="cm_hd_kitty">
                                         <img src="./img/main/cm_hd_kitty.png" alt="타이틀 고양이">
                                     </div>
-
+                                </div>
                                     <div class="cm_hd_main">
                                         <form action="https://formsubmit.co/nonwhiskerscat@gmail.com" method="POST">
-                                        <div class="cm_name">
-                                                <p>Name</p>
-                                                <input type="text" name="Name" placeholder="이름을 입력하세요!" required>
+                                            <div class="cm_form_flex">
+                                                <div class="cm_name">
+                                                    <p>Name</p>
+                                                    <input type="text" name="Name" placeholder="이름을 입력하세요!" required>
+                                                </div>
+
+                                                <div class="cm_email">
+                                                    <p>E-mail</p>
+                                                    <input type="email" name="Email" placeholder="이메일을 입력하세요!">
+                                                </div>
                                             </div>
 
-                                            <div class="cm_email">
-                                                <p>E-mail</p>
-                                                <input type="email" name="Email" placeholder="이메일을 입력하세요!">
-                                            </div>
 
                                             <div class="cm_message">
                                                 <p>Message</p>
-                                                <textarea name="Message" style="resize: none" type="text" placeholder="어떤 내용이든지 마음껏 질문해 주세요. 저는 언제든지 답변 할 준비가 되어있습니다 :)" required>
-                                                </textarea>
+                                                <textarea name="Message" style="resize: none" type="text" placeholder="어떤 내용이든지 마음껏 질문해 주세요. 저는 언제든지 답변 할 준비가 되어있습니다 :)" required></textarea>
                                             </div>
                                             
-                                            <div class="cm_btn_grp">
+                                            <div class="cmh_btn_grp">
                                                 <button class="btn_design">
                                                     <p class="btn_txt">취소하기</p>
                                                 </button>
@@ -914,18 +916,31 @@
                                     </div>
                                 </div>
                             </div>
-    
                         </div>
                     </div>
                 </div>
-
-
-            </div>
     
     
         </main>
         <footer>
-    
+            <div class="footer_img">
+                <img src="./img/footer/footer_kitty.png" alt="footer kitty">
+                <img src="./img/footer/footer_road.png" alt="">
+                <div class="road_gradient"></div>
+            </div>
+
+            <div class="footer_icons">
+                <!--아이콘 제작 후 편집-->
+            </div>
+            
+            <div class="footer_information">
+                <p>
+                    COPYRIGHT ⓒ2022 All Rights Reserved<br>
+                    Portfolio Created By Nonwhiskerscat whose name is Seoyong Kim!
+                </p>
+            </div>
+
+
         </footer>
 
     </div>

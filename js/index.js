@@ -676,7 +676,4 @@ window.addEventListener('load', () => {
 
     })
 
-
-
-
 });
