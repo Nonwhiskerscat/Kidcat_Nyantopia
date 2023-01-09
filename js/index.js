@@ -27,6 +27,12 @@ window.addEventListener('load', () => {
     let bighead$=document.querySelector('.bighead');
     let bighead_width=bighead$.offsetWidth;
 
+    //background(tile)
+    let kit=document.querySelector('.tile_back');
+    let kit_width=bighead$.offsetWidth;
+    let kit_height=bighead$.offsetHeight;
+    let kit_timer=null;
+
     //header(logo)
     let header$=document.querySelector('header');
     let header_logo=document.querySelector('.header_logo'); 
@@ -62,22 +68,96 @@ window.addEventListener('load', () => {
     let intro_lines_img=document.querySelectorAll('.intro_lines img');
     let intro_kitty_width=intro_kitty.offsetWidth;
     let intro_kitty_axis= bighead_width/2+intro_kitty_width/2;
-
+    let intro_click_hi=document.querySelector('.intro_click_hi');
     let intro_title_h2 = document.querySelector('.intro_h2 h2');
     let intro_title_h1 = document.querySelector('.intro_h1 h1');
+    
 
     //main(my_specs)
 
-    let my_specs_urban_img=document.querySelector('.my_specs_urban img')
+    let my_specs_urban_img=document.querySelector('.my_specs_urban img');
+
+    //footer(images)
+    let footer_road=document.querySelector('.footer_road');
 
 
     //===========resize에 따라 변하는 요소==========//
     window.addEventListener('resize', ()=> {
-        bighead_width=bighead$.offsetWidth;
+        kit_width=bighead$.offsetWidth;
+        kit_height=bighead$.offsetHeight;
         w_height=window.innerHeight;
         h_height=window.innerWidth;
     });
+
+    //===========배경화면 타일 애니메이션============//
+
+
+    console.log(kit_height)
     
+    function createTile() {
+        const el = document.createElement('img');
+        let el_rand=Math.ceil(Math.random()*5);
+        let el_rot=`${Math.random()*360}deg`
+        el.src=`../img/etc/kidcat_back_${el_rand}.png`;
+        el.classList.add('tile');
+        el.style.marginLeft = `${randomPosition()-el.offsetWidth}px`;
+        el.style.rotate=el_rot;
+        kit.insertBefore(el, kit.firstChild);
+    }
+
+    function createTiles() {
+        for(let i = 0; i<kit_height/10; i++) {
+            createTile();
+        }
+    }
+
+    function removeTiles() {
+        kit.innerHTML='';
+    }
+
+    function randomPosition() {
+        return (Math.random() * kit_width);
+    }
+
+    function tilesBlink() {
+        let tiles=document.querySelectorAll('.tile');
+        [].forEach.call(tiles, function(tiles) {
+            tiles.animate([
+                {opacity:0},
+                {opacity:1},
+                {opacity:0}
+                ],
+            {
+                duration: Math.random()*3000+2000,
+                delay: Math.random()*1000,
+                easing: 'linear',
+                iterations: Infinity
+            })
+        });
+    }
+
+    kit.style.height=`${kit_height-footer_road.offsetHeight/3}px`;
+
+    setTimeout(()=> {
+        createTiles();
+        tilesBlink();
+        
+    }, 6600)
+
+    window.addEventListener('resize', ()=> {
+        clearTimeout(kit_timer);
+        kit_width=bighead$.offsetWidth;
+        kit_height=bighead$.offsetHeight;
+        kit.style.height=`${kit_height}px`;
+        removeTiles();
+
+        kit_timer=setTimeout(()=> {
+            createTiles();
+            tilesBlink();
+        },300)
+    });
+
+
 
 
     ////===========효과 부여==========////
@@ -494,23 +574,32 @@ window.addEventListener('load', () => {
         intro_lines_img.style.transform='scale(0)';
     });
 
+    let intro_scale_ani = [
+        {transform: 'scale(1.0)'},
+        {transform: 'scale(1.4)'},
+        {transform: 'scale(1.3)'},
+        {transform: 'scale(1.2)'},
+        {transform: 'scale(1.0)'},
+    ];
+
 
     for(let l=0;l<intro_lines_img.length;l++) {
         setTimeout(()=> {
-            intro_lines_img[l].animate([
-                {transform: 'scale(1.0)'},
-                {transform: 'scale(1.4)'},
-                {transform: 'scale(1.3)'},
-                {transform: 'scale(1.2)'},
-                {transform: 'scale(1.0)'},
-            ],{
-                duration: 500,
+            intro_lines_img[l].animate(intro_scale_ani,{
+                duration: 1000,
                 fill: "forwards"
             })
-
-
         },5000+200*l);
     }
+
+    setTimeout(()=> {
+        intro_click_hi.animate(
+            intro_scale_ani
+        , {
+            duration: 1000,
+            fill: "forwards"
+        })
+    },5600)
 
     setTimeout(()=> {
         intro_images.animate([
@@ -524,7 +613,7 @@ window.addEventListener('load', () => {
             duration: 3000,
             iterations: 'Infinity'
         })
-    },6000);
+    },6500);
 
 
     intro_images.addEventListener('click', ()=> {

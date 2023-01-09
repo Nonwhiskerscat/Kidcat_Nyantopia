@@ -1,0 +1,21 @@
+.tile_back {
+  width: 100%;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  overflow: hidden;
+  /* background: radial-gradient(ellipse at bottom, #000620 0%, #000620 100%); */
+}
+
+.tile {
+  display: block;
+  width: 30px;
+  height: 30px;
+  /* background: url(./kidcat_back_1.png); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: tile 10s linear infinite;
+}

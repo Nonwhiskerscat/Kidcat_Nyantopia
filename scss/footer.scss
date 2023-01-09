@@ -1,0 +1,107 @@
+@import './mixin.scss';
+@import './style.scss';
+@import './responsive.scss';
+@import './reset.scss';
+
+footer {
+    .footer_trace {
+        @include nyan_mezo_margin;
+    }
+
+    .footer_important {
+        position: relative;
+        overflow: hidden;
+
+        .footer_road {
+            position: relative;
+            padding-top: calc(60px + 60vw);
+            width: 100%;
+            display: block;
+
+            @include responsive(tablet-cat) {
+                padding-top: calc(60vw);
+            }
+
+            @include responsive(semi-cat) {
+                padding-top: calc(65vw);
+            }
+
+            @include responsive(huge-cat) {
+                padding-top: calc(70vw);
+            }
+
+        }
+
+        .footer_kitty {
+            position: absolute;
+            width: 100%;
+            display: block;
+            bottom: -20%;
+            z-index: -1;
+
+        }
+
+        .footer_icons {
+            position: absolute;
+        }
+
+        .footer_information {
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            translate: -50% 0;
+            width: 100%;
+
+            p {
+                text-align: center;
+
+                em {
+                    font-style: normal;
+                    font-size: calc(2px + 3vw);
+                    display: block;
+
+                    @include responsive(tablet-cat) {
+                        font-size: calc(2px + 2vw)
+                    }
+
+                    @include responsive(semi-cat) {
+                        font-size: 32px;
+                    }
+
+                    @include responsive(huge-cat) {
+                        font-size: 36px;
+                    }
+                    
+                }
+
+                q {
+                    @include nyan_petit_margin;
+                    display: block;
+                    font-size: calc(-4px + 3vw);
+                    
+                    @include responsive(tablet-cat) {
+                        font-size: calc(2px + 2vw);
+                    }
+
+                    @include responsive(semi-cat) {
+                        font-size: 24px;
+                    }
+
+                    @include responsive(huge-cat) {
+                        font-size: 28px;
+                    }
+
+                    br{
+                        line-height: 0;
+                        @include responsive(m450-cat) {
+                            display: none;
+                        }
+                    }
+                }
+
+
+            }
+        }
+    }
+
+}
