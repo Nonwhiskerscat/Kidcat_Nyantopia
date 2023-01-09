@@ -115,6 +115,7 @@ main {
                             top: 70%;
                             right: 0%;
                             font-size: calc(12px + 1.5vw);
+                            transform: scale(0);
         
                             @include responsive(tablet-cat) {
                                 font-size: calc(14px + 1vw);
@@ -137,13 +138,13 @@ main {
                         width: 500px;
                         height: 500px;
                         background-color: #fff;
+                        
                         opacity: 0.5;
                         border-radius: 250px;
                         top: 50%;
                         left: 50%;
                         transform: translate(-50%, -50%);
                         z-index: -2;
-                        display: none
                     }
                     
                 }
@@ -1373,7 +1374,6 @@ main {
         .my_specs_urban {
             position: relative;
             width: 100%;
-            max-width: 3000px;
             margin: 0 auto;
             margin-top: 150px;
 
@@ -1393,6 +1393,8 @@ main {
 
             &>img {
                 width: 100%;
+                margin: 0 auto;
+                display: block;
             }
 
             .urban_gradient {
@@ -1525,7 +1527,6 @@ main {
             }
 
             .mk_skills_kitty {
-                z-index: 3;
                 position: relative;
                 margin: 0 auto;
                 margin-top: $regular_margin_p;
@@ -2217,8 +2218,29 @@ main {
             }
         }
 
+        .big_nyan {
+            margin: 0 auto;
+
+            @include responsive(tablet-cat) {
+
+            }
+
+            @include responsive(semi-cat) {
+                
+            }
+
+            @include responsive(huge-cat) {
+                overflow: hidden;
+                max-width: 2000px;
+            }
+        }
+
         .projs {
             @include nyan_mid_margin;
+
+            @include responsive(semi-cat) {
+                padding: $mezo_margin_h 0;
+            }
 
             &>div {
                 @include proj_margin;
