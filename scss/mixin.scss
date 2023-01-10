@@ -228,8 +228,9 @@
 
                         @include responsive(tablet-cat) {
                             display: block;
-                            left: 45%;
-                            transform: translateX(-50%);
+                            right: 0%;
+                            top: 60%;
+                            transform: translateY(-50%);
                         }
 
                         @include responsive(semi-cat) {
@@ -247,9 +248,8 @@
 
                         @include responsive(tablet-cat) {
                             display: block;
-                            right: 0%;
-                            top: 60%;
-                            transform: translateY(-50%);
+                            left: 45%;
+                            transform: translateX(-50%);
                         }
 
                         @include responsive(semi-cat) {

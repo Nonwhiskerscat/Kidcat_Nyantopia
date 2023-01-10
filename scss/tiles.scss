@@ -1,3 +1,6 @@
+@import './style.scss';
+@import './responsive.scss';
+
 .tile_back {
     width: 100%;
     opacity: 0.5;
@@ -10,12 +13,27 @@
 
 .tile {
     display: block;
-    width: 30px;
-    height: 30px;
+    width: 15px;
+    height: 15px;
     /* background: url(./kidcat_back_1.png); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     opacity: 0;
     animation: tile 10s linear infinite;
+
+    @include responsive(tablet-cat) {
+        width: 20px;
+        height: 20px;
+    }
+
+    @include responsive(semi-cat) {
+        width: 25px;
+        height: 25px;
+    }
+
+    @include responsive(huge-cat) {
+        width: 30px;
+        height: 30px;
+    }
 }

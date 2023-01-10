@@ -223,7 +223,7 @@ main .main_intro .nyan_1 .first_flex .intro_images .intro_click .intro_click_hi 
   color: #9ea0a4;
   position: absolute;
   top: 70%;
-  right: 0%;
+  right: -10%;
   font-size: calc(12px + 1.5vw);
   transform: scale(0);
 }
@@ -249,15 +249,58 @@ main .main_intro .nyan_1 .first_flex .intro_images .intro_click .intro_click_hi 
 main .main_intro .nyan_1 .first_flex .intro_images .intro_wave {
   display: block;
   position: absolute;
-  width: 500px;
-  height: 500px;
-  background-color: #fff;
+  width: calc(200px + 10vw);
+  height: calc(200px + 10vw);
+  background: white;
   opacity: 0.5;
+  box-shadow: 0px 0px 30px 30px white;
   border-radius: 250px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: -2;
+}
+
+@media screen and (min-width: 768px) {
+  main .main_intro .nyan_1 .first_flex .intro_images .intro_wave {
+    width: calc(250px + 10vw);
+    height: calc(250px + 10vw);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  main .main_intro .nyan_1 .first_flex .intro_images .intro_wave {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  main .main_intro .nyan_1 .first_flex .intro_images .intro_wave {
+    width: 450px;
+    height: 450px;
+  }
+}
+
+main .main_intro .nyan_1 .first_flex .intro_images .intro_wave > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 200%;
+  height: 200%;
+  scale: 0;
+  border-radius: 50%;
+}
+
+main .main_intro .nyan_1 .first_flex .intro_images .intro_wave > div:first-child {
+  display: block;
+  border: 5px dashed white;
+}
+
+main .main_intro .nyan_1 .first_flex .intro_images .intro_wave > div:last-child {
+  display: block;
+  border: 5px solid white;
 }
 
 main .main_intro .nyan_1 .first_flex .intro_title {
@@ -507,8 +550,9 @@ main .main_aboutme .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(2) {
 @media screen and (min-width: 768px) {
   main .main_aboutme .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(2) {
     display: block;
-    left: 45%;
-    transform: translateX(-50%);
+    right: 0%;
+    top: 60%;
+    transform: translateY(-50%);
   }
 }
 
@@ -519,9 +563,8 @@ main .main_aboutme .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(3) {
 @media screen and (min-width: 768px) {
   main .main_aboutme .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(3) {
     display: block;
-    right: 0%;
-    top: 60%;
-    transform: translateY(-50%);
+    left: 45%;
+    transform: translateX(-50%);
   }
 }
 
@@ -688,7 +731,7 @@ main .main_aboutme .nyan_zone .about_me_contents .about_me_illust .about_me_back
   width: 60%;
   right: 15%;
   top: -10%;
-  transform: rotateZ(-10deg);
+  rotate: rotateZ(-10deg);
 }
 
 @media screen and (min-width: 768px) {
@@ -852,7 +895,7 @@ main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_idc .i
 }
 
 main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_idc .idc_h3_entire > span:nth-child(2) {
-  transform: rotateZ(90deg);
+  rotate: 90deg;
   transform-origin: left top;
 }
 
@@ -1087,53 +1130,57 @@ main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_commen
   }
 }
 
-main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explain {
+main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explains {
   margin-top: 25px;
 }
 
 @media screen and (min-width: 768px) {
-  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explain {
+  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explains {
     margin-top: 35px;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explain {
+  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explains {
     margin-top: 40px;
   }
 }
 
 @media screen and (min-width: 1600px) {
-  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explain {
+  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explains {
     margin-top: 50px;
   }
 }
 
-main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explain .explain_title p {
+main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explains .descri_explain .explain_title {
+  position: relative;
+}
+
+main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explains .descri_explain .explain_title p {
   font-size: calc(10px + 1vw);
   line-height: 2em;
   text-align: justify;
 }
 
 @media screen and (min-width: 768px) {
-  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explain .explain_title p {
+  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explains .descri_explain .explain_title p {
     font-size: calc(8px + 1vw);
   }
 }
 
 @media screen and (min-width: 1200px) {
-  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explain .explain_title p {
+  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explains .descri_explain .explain_title p {
     font-size: 24px;
   }
 }
 
 @media screen and (min-width: 1600px) {
-  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explain .explain_title p {
+  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explains .descri_explain .explain_title p {
     font-size: 28px;
   }
 }
 
-main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explain .explain_title p span.descri_keyword {
+main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explains .descri_explain .explain_title p span.descri_keyword {
   color: #e87d9e;
   display: block;
   text-align: center;
@@ -1142,7 +1189,7 @@ main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explai
 }
 
 @media screen and (min-width: 768px) {
-  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explain .explain_title p span.descri_keyword {
+  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explains .descri_explain .explain_title p span.descri_keyword {
     display: inline;
     text-align: justify;
     font-size: 1.5em;
@@ -1151,62 +1198,88 @@ main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explai
 }
 
 @media screen and (min-width: 1200px) {
-  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explain .explain_title p span.descri_keyword {
+  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explains .descri_explain .explain_title p span.descri_keyword {
     font-size: 36px;
     margin-bottom: 12px;
   }
 }
 
 @media screen and (min-width: 1600px) {
-  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explain .explain_title p span.descri_keyword {
+  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explains .descri_explain .explain_title p span.descri_keyword {
     font-size: 40px;
     margin-bottom: 15px;
   }
 }
 
-main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explain .explain_contents {
+main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explains .descri_explain .explain_contents {
   margin-top: 15px;
+  position: relative;
 }
 
 @media screen and (min-width: 768px) {
-  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explain .explain_contents {
+  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explains .descri_explain .explain_contents {
     margin-top: 20px;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explain .explain_contents {
+  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explains .descri_explain .explain_contents {
     margin-top: 25px;
   }
 }
 
 @media screen and (min-width: 1600px) {
-  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explain .explain_contents {
+  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explains .descri_explain .explain_contents {
     margin-top: 30px;
   }
 }
 
-main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explain .explain_contents p {
+main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explains .descri_explain .explain_contents p {
   font-size: calc(10px + 1vw);
   line-height: 2em;
   text-align: justify;
+  position: relative;
 }
 
 @media screen and (min-width: 768px) {
-  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explain .explain_contents p {
+  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explains .descri_explain .explain_contents p {
     font-size: calc(6px + 1vw);
   }
 }
 
 @media screen and (min-width: 1200px) {
-  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explain .explain_contents p {
+  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explains .descri_explain .explain_contents p {
     font-size: 18px;
   }
 }
 
 @media screen and (min-width: 1600px) {
-  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explain .explain_contents p {
+  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explains .descri_explain .explain_contents p {
     font-size: 21px;
+  }
+}
+
+main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explains .descri_explain .explain_contents p .am_under {
+  color: #e87d9e;
+  z-index: -1;
+  box-shadow: inset 0 calc(calc(10px + 1vw) / -2) 0 rgba(232, 125, 158, 0.3);
+}
+
+@media screen and (min-width: 768px) {
+  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explains .descri_explain .explain_contents p .am_under {
+    box-shadow: inset 0 calc(calc(6px + 1vw) / -2) 0 rgba(232, 125, 158, 0.3);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explains .descri_explain .explain_contents p .am_under {
+    box-shadow: inset 0 -9px 0 rgba(232, 125, 158, 0.3);
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_explains .descri_explain .explain_contents p .am_under {
+    box-shadow: inset 0 -10.5px 0 rgba(232, 125, 158, 0.3);
   }
 }
 
@@ -1455,8 +1528,9 @@ main .main_myspecs .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(2) {
 @media screen and (min-width: 768px) {
   main .main_myspecs .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(2) {
     display: block;
-    left: 45%;
-    transform: translateX(-50%);
+    right: 0%;
+    top: 60%;
+    transform: translateY(-50%);
   }
 }
 
@@ -1467,9 +1541,8 @@ main .main_myspecs .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(3) {
 @media screen and (min-width: 768px) {
   main .main_myspecs .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(3) {
     display: block;
-    right: 0%;
-    top: 60%;
-    transform: translateY(-50%);
+    left: 45%;
+    transform: translateX(-50%);
   }
 }
 
@@ -2004,8 +2077,9 @@ main .main_myskills .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(2) 
 @media screen and (min-width: 768px) {
   main .main_myskills .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(2) {
     display: block;
-    left: 45%;
-    transform: translateX(-50%);
+    right: 0%;
+    top: 60%;
+    transform: translateY(-50%);
   }
 }
 
@@ -2016,9 +2090,8 @@ main .main_myskills .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(3) 
 @media screen and (min-width: 768px) {
   main .main_myskills .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(3) {
     display: block;
-    right: 0%;
-    top: 60%;
-    transform: translateY(-50%);
+    left: 45%;
+    transform: translateX(-50%);
   }
 }
 
@@ -3046,8 +3119,9 @@ main .main_projects .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(2) 
 @media screen and (min-width: 768px) {
   main .main_projects .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(2) {
     display: block;
-    left: 45%;
-    transform: translateX(-50%);
+    right: 0%;
+    top: 60%;
+    transform: translateY(-50%);
   }
 }
 
@@ -3058,9 +3132,8 @@ main .main_projects .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(3) 
 @media screen and (min-width: 768px) {
   main .main_projects .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(3) {
     display: block;
-    right: 0%;
-    top: 60%;
-    transform: translateY(-50%);
+    left: 45%;
+    transform: translateX(-50%);
   }
 }
 
@@ -4130,8 +4203,9 @@ main .main_contactme .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(2)
 @media screen and (min-width: 768px) {
   main .main_contactme .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(2) {
     display: block;
-    left: 45%;
-    transform: translateX(-50%);
+    right: 0%;
+    top: 60%;
+    transform: translateY(-50%);
   }
 }
 
@@ -4142,9 +4216,8 @@ main .main_contactme .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(3)
 @media screen and (min-width: 768px) {
   main .main_contactme .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(3) {
     display: block;
-    right: 0%;
-    top: 60%;
-    transform: translateY(-50%);
+    left: 45%;
+    transform: translateX(-50%);
   }
 }
 

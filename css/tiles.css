@@ -1,3 +1,16 @@
+@charset "UTF-8";
+/*=================중단점=================*/
+/*=================톤앤매너=================*/
+/*=================톤앤매너(스킬)=================*/
+/*=================svg 필터=================*/
+/*=================폰트패밀리=================*/
+/*=================여백=================*/
+/*=================중단점=================*/
+/*=================톤앤매너=================*/
+/*=================톤앤매너(스킬)=================*/
+/*=================svg 필터=================*/
+/*=================폰트패밀리=================*/
+/*=================여백=================*/
 .tile_back {
   width: 100%;
   opacity: 0.5;
@@ -10,12 +23,33 @@
 
 .tile {
   display: block;
-  width: 30px;
-  height: 30px;
+  width: 15px;
+  height: 15px;
   /* background: url(./kidcat_back_1.png); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   opacity: 0;
   animation: tile 10s linear infinite;
+}
+
+@media screen and (min-width: 768px) {
+  .tile {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .tile {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .tile {
+    width: 30px;
+    height: 30px;
+  }
 }

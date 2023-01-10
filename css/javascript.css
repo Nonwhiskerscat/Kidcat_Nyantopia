@@ -32,3 +32,8 @@
 span.mk_highlight {
   color: #e54d26;
 }
+
+.next_style {
+  top: 2em;
+  opacity: 0;
+}

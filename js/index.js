@@ -15,12 +15,11 @@ window.addEventListener('load', () => {
     const header_margin_tablet$=15;
     const header_margin_semi$=20;
 
-
     //===========querySelector, getElement==========//
 
     //window, document
     let w_height=window.innerHeight;
-    let h_height=window.innerWidth;
+    let w_width=window.innerWidth;
 
     //body, html, bighead
     let html$=document.querySelector('html');
@@ -41,16 +40,16 @@ window.addEventListener('load', () => {
 
     //header(gnb_menu)
     let gnb_main_li =  document.querySelectorAll('.gnb_main li');
-    let gnb_nyan=document.querySelector('.gnb_nyan'); //3
+    let gnb_nyan=document.querySelector('.gnb_nyan'); 
     let gnb_icon=document.querySelector('.gnb_icon');
     let gnb_width=gnb_nyan.offsetWidth;
     let gnb_height=gnb_nyan.offsetHeight;
-    let gnb_mobiles=document.querySelectorAll('.gnb_mobile img'); //1번
-    let gnb_list_li = document.querySelectorAll('.gnb_list li'); //2번
-    let gnb_base_bottom=document.querySelector('.base_bottom'); //3번
-    let gnb_light=document.querySelector('.gaussian_light'); //4번
-    let gnb_bead=document.querySelector('.gnb_bead'); // 5번
-    let gnb_kitty=document.querySelector('.gnb_kitty'); //6번
+    let gnb_mobiles=document.querySelectorAll('.gnb_mobile img'); 
+    let gnb_list_li = document.querySelectorAll('.gnb_list li'); 
+    let gnb_base_bottom=document.querySelector('.base_bottom'); 
+    let gnb_light=document.querySelector('.gaussian_light'); 
+    let gnb_bead=document.querySelector('.gnb_bead'); 
+    let gnb_kitty=document.querySelector('.gnb_kitty'); 
     let gnb_kitty_width=gnb_kitty.offsetWidth;
     let gnb_mobile=document.querySelectorAll('.gnb_mobile img'); // 4
 
@@ -71,6 +70,8 @@ window.addEventListener('load', () => {
     let intro_click_hi=document.querySelector('.intro_click_hi');
     let intro_title_h2 = document.querySelector('.intro_h2 h2');
     let intro_title_h1 = document.querySelector('.intro_h1 h1');
+    let intro_wave=document.querySelector('.intro_wave');
+    let intro_waves=document.querySelectorAll('.intro_waves');
     
 
     //main(my_specs)
@@ -86,76 +87,95 @@ window.addEventListener('load', () => {
         kit_width=bighead$.offsetWidth;
         kit_height=bighead$.offsetHeight;
         w_height=window.innerHeight;
-        h_height=window.innerWidth;
+        w_width=window.innerWidth;
     });
 
-    //===========배경화면 타일 애니메이션============//
+    //===========스크롤 애니메이션 수치============//
 
-
-    console.log(kit_height)
+    function scroll_cat() {
+        if(w_width<tablet_cat) {
+            return 200;
+        }
     
-    function createTile() {
-        const el = document.createElement('img');
-        let el_rand=Math.ceil(Math.random()*5);
-        let el_rot=`${Math.random()*360}deg`
-        el.src=`../img/etc/kidcat_back_${el_rand}.png`;
-        el.classList.add('tile');
-        el.style.marginLeft = `${randomPosition()-el.offsetWidth}px`;
-        el.style.rotate=el_rot;
-        kit.insertBefore(el, kit.firstChild);
-    }
-
-    function createTiles() {
-        for(let i = 0; i<kit_height/10; i++) {
-            createTile();
+        else if(w_width<semi_cat) {
+            return 250;
+        }
+    
+        else if(w_width<huge_cat) {
+            return 300;
+        }
+    
+        else {
+            return 350;
         }
     }
 
-    function removeTiles() {
-        kit.innerHTML='';
-    }
+    console.log(scroll_cat())
 
-    function randomPosition() {
-        return (Math.random() * kit_width);
-    }
+    //===========배경화면 타일 애니메이션============//
+    
+    // function createTile() {
+    //     const el = document.createElement('img');
+    //     let el_rand=Math.ceil(Math.random()*5);
+    //     let el_rot=`${Math.random()*360}deg`
+    //     el.src=`../img/etc/kidcat_back_${el_rand}.png`;
+    //     el.classList.add('tile');
+    //     el.style.marginLeft = `${randomPosition()-el.offsetWidth}px`;
+    //     el.style.rotate=el_rot;
+    //     kit.insertBefore(el, kit.firstChild);
+    // }
 
-    function tilesBlink() {
-        let tiles=document.querySelectorAll('.tile');
-        [].forEach.call(tiles, function(tiles) {
-            tiles.animate([
-                {opacity:0},
-                {opacity:1},
-                {opacity:0}
-                ],
-            {
-                duration: Math.random()*3000+2000,
-                delay: Math.random()*1000,
-                easing: 'linear',
-                iterations: Infinity
-            })
-        });
-    }
+    // function createTiles() {
+    //     for(let i = 0; i<kit_height/10; i++) {
+    //         createTile();
+    //     }
+    // }
 
-    kit.style.height=`${kit_height-footer_road.offsetHeight/3}px`;
+    // function removeTiles() {
+    //     kit.innerHTML='';
+    // }
 
-    setTimeout(()=> {
-        createTiles();
-        tilesBlink();
+    // function randomPosition() {
+    //     return (Math.random() * kit_width);
+    // }
+
+    // function tilesBlink() {
+    //     let tiles=document.querySelectorAll('.tile');
+    //     [].forEach.call(tiles, function(tiles) {
+    //         tiles.animate([
+    //             {opacity:0},
+    //             {opacity:1},
+    //             {opacity:0}
+    //             ],
+    //         {
+    //             duration: Math.random()*3000+2000,
+    //             delay: Math.random()*1000,
+    //             easing: 'linear',
+    //             iterations: Infinity
+    //         })
+    //     });
+    // }
+
+    // kit.style.height=`${kit_height-footer_road.offsetHeight}px`;
+
+    // setTimeout(()=> {
+    //     createTiles();
+    //     tilesBlink();
         
-    }, 6600)
+    // }, 6600)
 
-    window.addEventListener('resize', ()=> {
-        clearTimeout(kit_timer);
-        kit_width=bighead$.offsetWidth;
-        kit_height=bighead$.offsetHeight;
-        kit.style.height=`${kit_height}px`;
-        removeTiles();
+    // window.addEventListener('resize', ()=> {
+    //     clearTimeout(kit_timer);
+    //     kit_width=bighead$.offsetWidth;
+    //     kit_height=bighead$.offsetHeight;
+    //     kit.style.height=`${kit_height}px`;
+    //     removeTiles();
 
-        kit_timer=setTimeout(()=> {
-            createTiles();
-            tilesBlink();
-        },300)
-    });
+    //     kit_timer=setTimeout(()=> {
+    //         createTiles();
+    //         tilesBlink();
+    //     },300)
+    // });
 
 
 
@@ -543,10 +563,9 @@ window.addEventListener('load', () => {
 
     // 메인 고양이 애니메이션
 
-
-
     intro_images.style.left=`-${intro_kitty_axis}px`;
     intro_images.style.cursor=`pointer`;
+    intro_wave.style.opacity= 0;
 
     
     intro_images.animate(
@@ -653,7 +672,34 @@ window.addEventListener('load', () => {
             {
                 duration: 1000,
                 easing: 'ease-in'
-            })
+            });
+
+            intro_wave.animate([
+                {opacity: 0.5},
+                {opacity: 0.2, offset: 0.5},
+                {opacity: 0.0, offset: 0.75}
+            ], {
+                duration: 1000,
+                easing: 'linear'
+            });
+            
+            [].forEach.call(intro_waves, (intro_waves, idx)=> {
+                intro_waves.animate([
+                    {scale: 0},
+                    {scale: 2},
+                ], {
+                    duration: 1000,
+                    delay: (idx*2000)
+                });
+            });
+
+            intro_click_hi.innerHTML='Nyan~';
+            intro_click_hi.color=identity$;
+
+            setTimeout(()=>{
+                intro_click_hi.innerHTML='Click Me~';
+                intro_click_hi.color='white';
+            },1000);
         });
     });
 
@@ -670,14 +716,16 @@ window.addEventListener('load', () => {
         intro_title_letter.style.position='relative';
     })
 
-    intro_title_letter[2].style.transform='rotateX(200deg)'
+    intro_title_letter[2].style.transform='rotateX(200deg)';
 
 
     for(let m=0;m<intro_title_letter.length;m++) {
 
         setTimeout(()=> {
-            intro_title_letter[m].animate(
+            intro_title_letter[m].animate([
                 {color: identity$}
+
+            ]
             , {
                 duration: 600
             })
@@ -686,14 +734,20 @@ window.addEventListener('load', () => {
         setTimeout(()=> {
             setTimeout(()=> {
                 intro_title_letter[m].animate(
-                    {color: identity$}
+                    [
+                        {color: identity$, top: '0em'},
+                        {color: identity$, top: '-1em'},
+                        {color: identity$, top: '-0.5em'},
+                        {color: identity$, top: '-0.25em'},
+                        {color: identity$, top: '-0em'}
+                    ]
                 , {
-                    duration: 200,
+                    duration: 600,
                     fill: "forwards"
 
                 })
             }, m*50);
-        }, 1300);
+        }, 2000);
     } 
 
     setTimeout(()=> {
@@ -742,27 +796,293 @@ window.addEventListener('load', () => {
             })
 
         },300)
+    }, intro_title_letter.length*50+2000);
 
+    //h2_공통요소
+    let trace_en=document.querySelectorAll('.title_trace_area');
+    let trace_children=document.querySelectorAll('.title_trace_area img');
+
+    [].forEach.call(trace_en, (trace_en, idx) => {
+        trace_en.classList.add(`m${idx}_trace_en`);
+    });
+
+    let main_h2=document.querySelectorAll('.title_text_area h2');
+    [].forEach.call(main_h2, (main_h2, idx)=> {
+        main_h2.innerHTML = main_h2.textContent.replace(/\S/g, `<span class='m${idx}_h2_letter'>$&</span>`);
+    })
+
+    function h2_ani() {
+            setInterval(()=> {
+                if(w_width<tablet_cat) {
+                    [].forEach.call(trace_en, (trace_en)=> {
+                        trace_en.animate(
+                            {transform: 'rotateY(360deg)'}
+                        ,{
+                            duration: 1500
+                        });
+                    });
+                }
+
+                else {
+                    [].forEach.call(trace_en, (trace_en, idx)=> {
+                        let semi_trace=document.querySelectorAll(`.m${idx}_trace_en img`);
+                
+                        [].forEach.call(semi_trace, (semi_trace, idx) => {
+                            semi_trace.animate (
+                            [
+                                {opacity: 1, offset: 0},
+                                {opacity: 0, offset: 0.000000001},
+                                {opacity: 1, offset: 0.1},
+                                {opacity: 1, offset: 1.0}
+                            ]
+                            ,{
+                                duration: 5000-(500*idx),
+                                delay: 500*idx,
+                                fill: 'forwards'
+                            })
+                        
+                        });
+                    })
+                }
+
+                setTimeout(()=>{
+                [].forEach.call(main_h2, (data,idx)=> {
+                        let main_h2_letter=document.querySelectorAll(`.m${idx}_h2_letter`);
+                        [].forEach.call(main_h2_letter,(main_h2_letter, idx) => {
+                            main_h2_letter.style.display='inline-block';
+                            main_h2_letter.style.transformOrigin='bottom center';
+                            main_h2_letter.animate([
+                                {transform: 'rotateY(0deg) scaleY(1.0)'},
+                                {transform: 'rotateY(90deg) scaleY(0.75)'},
+                                {transform: 'rotateY(180deg) scaleY(0.5)'},
+                                {transform: 'rotateY(270deg) scaleY(0.75)'},
+                                {transform: 'rotateY(360deg) scaleY(1)'}
+                            ],1500+idx*100);
+                        })
+                    })
+                },1500);
+
+            },5000)
+
+    }
+    
+    h2_ani();
+
+    //About me
+    
+    //About me 고양이
+    let about_me$=document.querySelector('.main_aboutme');
+    let stop_timer='null';
+    let about_me_back=document.querySelector('.about_me_back');
+    let about_me_base=about_me_back.getElementsByClassName('about_me_base');
+
+    [].forEach.call(about_me_base, (cat)=>{
+        cat.style.opacity=0;
+        cat.style.scale=0;
+    });
+
+    
+    let about_me_front=document.querySelector('.about_me_front');
+    let about_me_kitty=about_me_front.querySelector('img:nth-of-type(1)');
+    let about_me_lines=about_me_front.querySelectorAll('img:nth-of-type(n+2)');
+    
+    
+    function about_me_kitty_set() {
+        let about_me_kitty_w=about_me_kitty.offsetWidth;
+        about_me_kitty.style.transform=`translate(-${about_me_kitty_w}px, 0)`;
+    }
+
+    [].forEach.call(about_me_lines, (cat) => {
+        cat.style.opacity=0;
+        cat.style.scale=0;
+    });
+
+    about_me_kitty_set();
+    
+    window.addEventListener('resize', ()=>{
+        about_me_kitty_set()
+    });
+    
+    const about_me_back_fadein = () => {
+        [].forEach.call(about_me_base, (cat, idx)=>{
+            cat.animate([
+                {opacity: 1, scale: 1.0}
+            ], {
+                duration: 500,
+                delay: idx*500,
+                fill: 'forwards',
+                easing: 'ease-in'
+            })
+        })
+    }
+
+    let about_me_kitty_move = () => {
         
+        about_me_kitty.animate (
+            {transform: 'translateX(0)'}
+            ,
+            {
+                delay: 1000,
+                duration: 2000,
+                fill: 'forwards'
+            }
+        )
 
-    }, intro_title_letter.length*50+1300);
+        setTimeout(()=> {
+            about_me_kitty.style.transformOrigin='14% bottom'
+            about_me_kitty.animate ([
+                {transform: 'rotateZ(0deg)'},
+                {transform: 'rotateZ(-5deg)'},
+                {transform: 'rotateZ(0deg)'}
+            ]
+            , {
+                duration: 2000,
+                iterations: 'Infinity'
+            });
+        },3000)
+    }
 
+    window.addEventListener('scroll', ()=> {
+        if(window.scrollY>about_me$.offsetTop-scroll_cat()) {
+            about_me_back_fadein();
+            about_me_kitty_move();
+        }
+    });
 
+    //About me 콘텐츠
 
+    let descri_explain=document.querySelectorAll('.descri_explain');
+    let am_timer=10000;
+
+    [].forEach.call(descri_explain, (cat, idx)=> {
+        cat.classList.add(`de${idx}`);
+    });
+
+    const am_h3_arr=['접착제', '두더지', '일개미'];
+
+    let idc_h3_entire=document.querySelector('.idc_h3_entire');
+    let idc_h3=idc_h3_entire.querySelector('h3');
+    
+    
+    // let idxes=1;
+    // setInterval(()=>{
+    //     if(idxes==3) idxes=0;
+    //     document.querySelector(`.de${idxes}`).style.display='block';
+    //     document.querySelector(`.de${idxes-1}`).style.display='none';
+    //     idxes++;
+    // },1000);
+
+    function am_changer(cat1, cat2) {
+        let current=document.querySelector(`.de${cat1}`);
+        let current_sub=current.querySelectorAll('div');
+
+        let next=document.querySelector(`.de${cat2}`);
+        let next_sub=next.querySelectorAll('div');
+
+        [].forEach.call(next_sub, (cat) => {
+            cat.classList.add('next_style');
+        });
+
+        [].forEach.call(current_sub, (cat, idx) => {
+            cat.animate([
+                {top: '0', opacity:1},
+                {top: '2em', opacity:0}
+            ],
+            {
+                duration: 500,
+                delay: 500*idx,
+                fill: 'forwards'
+            });
+        });
+
+        setTimeout(()=> {
+            current.style.display='none';
+            next.style.display='block';
+        },1000);
+
+        setTimeout(()=> {
+            [].forEach.call(next_sub, (cat, idx) => {
+                cat.animate({top:'0', opacity:1},
+                {
+                    duration: 500,
+                    delay: 500*idx,
+                    fill: 'forwards'
+                });
+            });
+        },1000)
+    }
+
+    const am_h3_changer = (cat2) => {
+        idc_h3.innerHTML = am_h3_arr[cat2];
+        idc_h3.innerHTML = idc_h3.textContent.replace(/\S/g, "<span class='idc_letter'>$&</span>");
+
+        let idc_letter=document.getElementsByClassName('idc_letter');
+
+        [].forEach.call(idc_letter, (cat, idx)=> {
+            cat.style.position='relative';
+            cat.style.display='inline-block';
+            cat.animate([
+                {top: '-0.0em', rotate: '0deg'},
+                {top: '-0.5em', rotate: '-10deg'},
+                {top: '-0.5em', rotate: '-0deg'},
+                {top: '-0.5em', rotate: '10deg'},
+                {top: '-0.5em', rotate: '0deg'},
+                {top: '-0.5em', rotate: '-10deg'},
+                {top: '-0.5em', rotate: '0deg'},
+                {top: '0', rotate: '0deg'}
+            ]
+            , {
+                duration: 500,
+                delay: 200*idx
+            })
+        });
+
+    }
+
+    let gauge_current=document.querySelector('.gauge_current');
+
+    const am_gauge = () => {
+        gauge_current.animate([
+            {width: '0%'},
+            {width: '100%'} 
+        ],
+        {
+            duration: am_timer
+        })
+    }
+
+    am_h3_changer(0);
+    am_gauge();
+    let am_idx=0;
+
+    const am_contents_changer = () => {
+            if(am_idx==descri_explain.length-1) {
+                am_changer(am_idx, 0);
+                am_idx=0;
+            }
+            else {
+                am_changer(am_idx, am_idx+1);
+                am_idx++;
+            }
+
+            am_h3_changer(am_idx);
+            am_gauge();
+
+    }
+
+    setInterval(am_contents_changer, am_timer);
 
     //화면 너비에 따른 도시 야경 사진 변화
 
     const spec_urban = () => {
-        if(bighead_width<semi_cat) my_specs_urban_img.src='../img/main/my_specs_urban.png';
+        if(w_width<semi_cat) my_specs_urban_img.src='../img/main/my_specs_urban.png';
         else my_specs_urban_img.src='../img/main/my_specs_urban_pc.png';
-    } 
+    }
 
     spec_urban();
 
-
     window.addEventListener('resize', () => {
         spec_urban();
-
     })
 
 });
