@@ -966,8 +966,6 @@ main {
                         }
                     }
 
-
-
                     .descri_gauge {
                         
                         display: flex;
@@ -976,34 +974,18 @@ main {
                         width: 100%;
                         margin: 0 auto;
                         @include nyan_small_margin;
-
-                        @include responsive(tablet-cat) {
-                            width: 90%;
-                        }
-
-                        @include responsive(semi-cat) {
-                            width: 650px;
-                        }
-
-                        @include responsive(huge-cat) {
-                            width: 850px;
-                        }
                         
-                        .current_num {
-                            width: 10%;
-                        }
-
                         .num {
-                            font-size: calc(10px + 1vw);
+                            font-size: calc(6px + 2vw);
                             text-align: center;
                             cursor: pointer;
 
                             @include responsive(tablet-cat) {
-                                font-size: calc(8px + 1vw);
+                                font-size: calc(10px + 1vw);
                             }
 
                             @include responsive(semi-cat) {
-                                font-size: 18px;
+                                font-size: 21px;
                             }
 
                             @include responsive(huge-cat) {
@@ -1011,9 +993,33 @@ main {
                             }
                         }
 
+                        .gauge_toggle {
+                            cursor: pointer;
+                            width: 10%;
+                            text-align: center;
+
+                            @include responsive(tablet-cat) {
+                                //
+                            }
+
+                            @include responsive(semi-cat) {
+                                width: 80px;
+                            }
+
+                            @include responsive(huge-cat) {
+                                font-size: 100px;
+                            }
+
+                            img {
+                                margin: 0 auto;
+                                width: 50%;
+                                display: block;
+                            }
+                        }
+
                         .gauge {
-                        
-                            width: 60%;
+                            
+                            width: 50%;
                             margin: 0 10px;
 
                             @include responsive(tablet-cat) {
@@ -1025,7 +1031,7 @@ main {
                             }
 
                             @include responsive(huge-cat) {
-                                width: 580px;
+                                width: 480px;
                             }
 
                             .gauge_entire {
@@ -1051,7 +1057,7 @@ main {
                                 }
 
                                 .gauge_current {
-                                    width: 40%;
+                                    width: 0%;
                                     height: inherit;
                                     border-radius: inherit;
                                     background-color: rgba($color: #ffffff, $alpha: 0.7);
@@ -1075,7 +1081,7 @@ main {
                             display: flex;
                             justify-content: space-around;
                             align-items: center;
-                            width: 30%;
+                            width: 60%;
 
                             .num {
                                 width: 45%;

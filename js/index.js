@@ -88,6 +88,7 @@ window.addEventListener('load', () => {
         kit_height=bighead$.offsetHeight;
         w_height=window.innerHeight;
         w_width=window.innerWidth;
+        window_y_axis=window.scrollY+window.innerHeight;
     });
 
     //===========스크롤 애니메이션 수치============//
@@ -109,8 +110,6 @@ window.addEventListener('load', () => {
             return 350;
         }
     }
-
-    console.log(scroll_cat())
 
     //===========배경화면 타일 애니메이션============//
     
@@ -872,7 +871,6 @@ window.addEventListener('load', () => {
     
     //About me 고양이
     let about_me$=document.querySelector('.main_aboutme');
-    let stop_timer='null';
     let about_me_back=document.querySelector('.about_me_back');
     let about_me_base=about_me_back.getElementsByClassName('about_me_base');
 
@@ -899,9 +897,6 @@ window.addEventListener('load', () => {
 
     about_me_kitty_set();
     
-    window.addEventListener('resize', ()=>{
-        about_me_kitty_set()
-    });
     
     const about_me_back_fadein = () => {
         [].forEach.call(about_me_base, (cat, idx)=>{
@@ -916,10 +911,13 @@ window.addEventListener('load', () => {
         })
     }
 
+    about_me_kitty.style.opacity=0;
+
+
     let about_me_kitty_move = () => {
         
         about_me_kitty.animate (
-            {transform: 'translateX(0)'}
+            {transform: 'translateX(0)', opacity: 1}
             ,
             {
                 delay: 1000,
@@ -942,36 +940,59 @@ window.addEventListener('load', () => {
         },3000)
     }
 
+    //about_me 콘텐츠 박스
+    let about_me_descri=document.querySelector('.about_me_descri');
+
+    function about_me_descri_set() {
+        let about_me_descri_w=about_me_descri.offsetWidth;
+        about_me_descri.style.position=`relative`;
+        about_me_descri.style.right=`${-about_me_descri_w}px`;
+        about_me_descri.style.opacity=`0`
+    }
+
+    function about_me_descri_move() {
+        about_me_descri.animate({
+            right: 0, opacity: 1
+        },
+        {
+            duration: 1000,
+            easing: 'ease-in',
+            fill: 'forwards'
+        })
+    }
+
+    about_me_descri_set();
+    
+
+    //화면 너비 변경에 따른 about_me 위치 재선정
+    window.addEventListener('resize', ()=>{
+        about_me_kitty_set();
+        about_me_descri_set();
+    });
+
+    //aboutme 최종 애니메이션
+
     window.addEventListener('scroll', ()=> {
-        if(window.scrollY>about_me$.offsetTop-scroll_cat()) {
+        if(window.scrollY+w_height>about_me$.offsetTop+scroll_cat()) {
             about_me_back_fadein();
             about_me_kitty_move();
+            about_me_descri_move();
         }
     });
 
     //About me 콘텐츠
 
     let descri_explain=document.querySelectorAll('.descri_explain');
-    let am_timer=10000;
+    let am_timer=5000;
 
     [].forEach.call(descri_explain, (cat, idx)=> {
         cat.classList.add(`de${idx}`);
     });
 
-    const am_h3_arr=['접착제', '두더지', '일개미'];
-
+    
     let idc_h3_entire=document.querySelector('.idc_h3_entire');
     let idc_h3=idc_h3_entire.querySelector('h3');
     
-    
-    // let idxes=1;
-    // setInterval(()=>{
-    //     if(idxes==3) idxes=0;
-    //     document.querySelector(`.de${idxes}`).style.display='block';
-    //     document.querySelector(`.de${idxes-1}`).style.display='none';
-    //     idxes++;
-    // },1000);
-
     function am_changer(cat1, cat2) {
         let current=document.querySelector(`.de${cat1}`);
         let current_sub=current.querySelectorAll('div');
@@ -1012,6 +1033,8 @@ window.addEventListener('load', () => {
         },1000)
     }
 
+    const am_h3_arr=['접착제', '두더지', '일개미'];
+
     const am_h3_changer = (cat2) => {
         idc_h3.innerHTML = am_h3_arr[cat2];
         idc_h3.innerHTML = idc_h3.textContent.replace(/\S/g, "<span class='idc_letter'>$&</span>");
@@ -1051,7 +1074,7 @@ window.addEventListener('load', () => {
         })
     }
 
-    am_h3_changer(0);
+    // am_h3_changer(0);
     am_gauge();
     let am_idx=0;
 
@@ -1070,7 +1093,32 @@ window.addEventListener('load', () => {
 
     }
 
-    setInterval(am_contents_changer, am_timer);
+    let am_interval=setInterval(am_contents_changer, am_timer);
+    
+
+    let gauge_toggle=document.querySelector('.gauge_toggle');
+    let gauge_toggle_img=gauge_toggle.querySelector('img');
+
+    let am_toggle=true;
+
+    
+    //정지 및 재생
+    gauge_toggle.onclick=function(e) {
+        if(am_toggle) {
+            gauge_current.style.display='none';
+            clearInterval(am_interval);
+            gauge_toggle_img.src='./img/main/about_me_play.png';
+            am_toggle=false;
+        }
+        
+        else {
+            gauge_current.style.display='block';
+            am_gauge();
+            am_interval=setInterval(am_contents_changer, am_timer);
+            gauge_toggle_img.src='./img/main/about_me_pause.png';
+            am_toggle=true;
+        }
+    }    
 
     //화면 너비에 따른 도시 야경 사진 변화
 

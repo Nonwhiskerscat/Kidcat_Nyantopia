@@ -1310,43 +1310,21 @@ main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_gauge 
   }
 }
 
-@media screen and (min-width: 768px) {
-  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_gauge {
-    width: 90%;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_gauge {
-    width: 650px;
-  }
-}
-
-@media screen and (min-width: 1600px) {
-  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_gauge {
-    width: 850px;
-  }
-}
-
-main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_gauge .current_num {
-  width: 10%;
-}
-
 main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_gauge .num {
-  font-size: calc(10px + 1vw);
+  font-size: calc(6px + 2vw);
   text-align: center;
   cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {
   main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_gauge .num {
-    font-size: calc(8px + 1vw);
+    font-size: calc(10px + 1vw);
   }
 }
 
 @media screen and (min-width: 1200px) {
   main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_gauge .num {
-    font-size: 18px;
+    font-size: 21px;
   }
 }
 
@@ -1356,8 +1334,32 @@ main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_gauge 
   }
 }
 
+main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_gauge .gauge_toggle {
+  cursor: pointer;
+  width: 10%;
+  text-align: center;
+}
+
+@media screen and (min-width: 1200px) {
+  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_gauge .gauge_toggle {
+    width: 80px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_gauge .gauge_toggle {
+    font-size: 100px;
+  }
+}
+
+main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_gauge .gauge_toggle img {
+  margin: 0 auto;
+  width: 50%;
+  display: block;
+}
+
 main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_gauge .gauge {
-  width: 60%;
+  width: 50%;
   margin: 0 10px;
 }
 
@@ -1369,7 +1371,7 @@ main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_gauge 
 
 @media screen and (min-width: 1600px) {
   main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_gauge .gauge {
-    width: 580px;
+    width: 480px;
   }
 }
 
@@ -1403,7 +1405,7 @@ main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_gauge 
 }
 
 main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_gauge .gauge .gauge_entire .gauge_current {
-  width: 40%;
+  width: 0%;
   height: inherit;
   border-radius: inherit;
   background-color: rgba(255, 255, 255, 0.7);
@@ -1413,7 +1415,7 @@ main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_gauge 
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 30%;
+  width: 60%;
 }
 
 main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_gauge .rest_num .num {
