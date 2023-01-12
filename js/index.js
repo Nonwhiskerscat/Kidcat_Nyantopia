@@ -944,6 +944,23 @@ window.addEventListener('load', () => {
     //about_me 콘텐츠 박스
     let about_me_descri=document.querySelector('.about_me_descri');
 
+    function am_minHeight() {
+        if(w_width<tablet_cat) {
+            about_me_descri.style.minHeight=`${about_me_descri.offsetHeight+20}px`;
+        }
+    
+        else if(w_width<semi_cat) {
+            about_me_descri.style.minHeight=`${about_me_descri.offsetHeight+40}px`;
+        }
+    
+        else {
+            about_me_descri.style.minHeight=`none`;
+        }
+    }
+    
+    am_minHeight();
+
+
     function about_me_descri_set() {
         let about_me_descri_w=about_me_descri.offsetWidth;
         about_me_descri.style.position=`relative`;
@@ -972,13 +989,18 @@ window.addEventListener('load', () => {
     });
 
     //aboutme 최종 애니메이션
-
+    
+    let am_scroll=true;
     window.addEventListener('scroll', ()=> {
-        if(window.scrollY+w_height>about_me$.offsetTop+about_me$.offsetHeight/2) {
-            about_me_back_fadein();
-            about_me_kitty_move();
-            about_me_descri_move();
+        if(am_scroll) {
+            if(window.scrollY+w_height>about_me$.offsetTop+about_me$.offsetHeight/2) {
+                about_me_back_fadein();
+                about_me_kitty_move();
+                about_me_descri_move();
+                am_scroll=false;
+            }
         }
+
     });
 
     //About me 콘텐츠
@@ -1196,7 +1218,8 @@ window.addEventListener('load', () => {
             {transform: 'translateY(150%)', opacity: 0, offset: 0},
             {transform: 'translateY(150%) scaleY(1)' , opacity: 1, offset: 0.0001},
             {transform: 'translateY(10%) scaleY(1)', opacity: 1, offset: 0.8},
-            {transform: 'translateY(0) scaleY(0)', opacity: 1},
+            {transform: 'translateY(0) scaleY(0.1)', opacity: 1},
+            {transform: 'translateY(0) scaleY(0.1)', opacity: 0},
         ]
         ,{
             duration: 1500,
@@ -1301,7 +1324,7 @@ window.addEventListener('load', () => {
         
             {
                 "id": 5,
-                "tag": "Node.js",
+                "tag": "NodeJs",
                 "name": "Node.js",
                 "prof": 54,
                 "freq": 80,
@@ -1538,7 +1561,6 @@ window.addEventListener('load', () => {
             else {
                 if(window.scrollY+w_height>main_myskills$.offsetTop+main_myskills$.offsetHeight/2) {
                     mk_gauge_ani_entire();
-                    console.log(main_myskills$.offsetTop+main_myskills$.offsetHeight*2);
                     mk_scroll=false;
                 }
             }
@@ -1558,6 +1580,121 @@ window.addEventListener('load', () => {
     let mk_skills_big=document.querySelector('.mk_skills_big');
     
     mk_skills_big.style.opacity="0";
+
+    //잠자는 고양이 효과
+
+    let mk_kitty_entire=document.querySelector('.mk_kitty_entire');
+    mk_kitty_entire.classList.add('mk_kitty_style');
+    let mk_kitty_zzz=mk_kitty_entire.getElementsByTagName('p');
+    console.log(mk_kitty_zzz)
+
+    function mk_kitty_drop() {
+        mk_kitty_entire.animate([
+            {transform: "translateY(-50%)", opacity: 0},
+            {transform: "translateY(0%)", opacity: 1},
+            {transform: "translateY(-20%)", opacity: 1},
+            {transform: "translateY(0%)", opacity: 1},
+            {transform: "translateY(-10%)", opacity: 1},
+            {transform: "translateY(0%)", opacity: 1},
+            {transform: "translateY(-5%)", opacity: 1},
+            {transform: "translateY(0%)", opacity: 1}
+        ],
+        {
+            duration: 3000,
+            easing: 'linear',
+            fill: 'forwards'
+        });
+
+        setTimeout(()=>{
+            mk_kitty_entire.style.transformOrigin="center bottom"
+            mk_kitty_entire.animate([
+                {rotate: "0"},
+                {rotate: "5deg"},
+                {rotate: "0deg"},
+                {rotate: "-5deg"},
+                {rotate: "0deg"}
+            ],
+            {
+                duration: 3000,
+                easing: 'linear',
+                iterations: 'Infinity'
+            });
+
+            setInterval(()=> {
+                [].forEach.call(mk_kitty_zzz, (cat, idx)=> {
+                    cat.animate([
+                        {opacity: 1},
+                        {opacity: 1, offset: 0.99},
+                        {opacity: 0}
+                    ]
+                        , {
+                        duration: 2000-500*idx,
+                        delay:500*idx,
+                        fill:'forwards'
+
+                    })
+                })
+            }, 2000);
+
+        },3000);
+
+
+    }
+
+    let mk_kitty_scroll=true;
+
+    window.addEventListener('scroll', ()=> {
+        if(mk_kitty_scroll) {
+            if(window.scrollY+w_height>main_myskills$.offsetTop+main_myskills$.offsetHeight/2) {
+                mk_kitty_drop();
+                mk_kitty_scroll=false;
+            }
+        }
+    });
+
+
+    //hover
+
+    let mkd_name=document.querySelector('.mkd_name');
+    let mkd_work=document.querySelector('.mkd_work');
+    let mkd_summ=document.querySelector('.mkd_summ');
+    let mkd_bcolor=document.querySelectorAll('.mkd_bcolor');
+
+    mkd_work.innerHTML=`${mcl$[3].work}`;
+    mkd_summ.innerHTML=`${mcl$[3].summ}`;
+    mkd_name.innerHTML=`${mcl$[3].name}`;
+    
+    [].forEach.call(mkd_bcolor, (cat)=> {
+        cat.style.backgroundColor=mcl$[3].tone;
+    });
+
+
+    [].forEach.call(mk_skill_cod, (cat, idx)=> {
+        cat.addEventListener('click', () => {
+            mk_kitty_entire.style.display='none';
+            mk_skills_big.style.opacity=1;
+            mkd_work.innerHTML=`${mcl$[idx].work}`;
+            mkd_summ.innerHTML=`${mcl$[idx].summ}`;
+            mkd_name.innerHTML=`${mcl$[idx].name}`;
+
+            [].forEach.call(mkd_bcolor, (cat, kitty)=> {
+                cat.style.backgroundColor=mcl$[idx].tone;
+
+            });
+
+            mkd_bcolor[0].style.width=`${mcl$[idx].prof}%`;
+            mkd_bcolor[1].style.width=`${mcl$[idx].freq}%`;
+
+        });
+    });
+
+    let mk_close=document.querySelector('.mk_close');
+    
+    mk_close.addEventListener('click', () => {
+        mk_kitty_entire.style.display='block';
+        mk_skills_big.style.opacity=0;
+    });
+
 
 
 
@@ -1587,6 +1724,9 @@ window.addEventListener('load', () => {
             }
         }
     });
+
+    
+
 
 
 

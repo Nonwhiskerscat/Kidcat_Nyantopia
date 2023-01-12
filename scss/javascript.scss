@@ -69,3 +69,8 @@ span.mk_highlight {
     transform: translateY(150%) scaleY(1);
     transform-origin: top;
 }
+
+.mk_kitty_style {
+    transform: translateY(-50%);
+    opacity: 0;
+}

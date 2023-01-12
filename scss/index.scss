@@ -1620,6 +1620,7 @@ main {
             }
 
             .mk_skills_kitty {
+                z-index: 2;
                 position: relative;
                 margin: 0 auto;
                 margin-top: $regular_margin_p;
@@ -1692,6 +1693,7 @@ main {
                     }
 
                     .mk_detail {
+                        
                         width: 80%;
                         position: absolute;
                         top: 50%;
@@ -1712,8 +1714,8 @@ main {
                         }
 
                         h4 {
-                            color: $html;
-                            font-size: calc(12px + 2vw);
+                            color: white;
+                            font-size: calc(6px + 4vw);
 
                             @include responsive(tablet-cat) {
                                 font-size: calc(14px + 2vw);
@@ -1858,6 +1860,7 @@ main {
 
 
                             h5 {
+                                
                                 font-size: calc(8px + 2vw);
                                 margin-top: calc(-1px + 3vw);
 
@@ -1967,6 +1970,7 @@ main {
                     }
 
                     p {
+                        opacity: 0;
                         position: absolute;
                         font-size: calc(6px + 3vw);
                         font-weight: bold;
@@ -1979,18 +1983,24 @@ main {
                         }
 
                         @include responsive(semi-cat) {
-                            font-size: 28px;
+                            font-size: 24px;
                             top: 240px;
                             right: 170px;
                         }
 
-                        &:nth-child(1) {
+                        @include responsive(huge-cat) {
+                            font-size: 32px;
+                            top: 270px;
+                            right: 190px;
+                        }
+
+                        &.fi_p {
                             //
                         }
 
-                        &:nth-child(2) {
+                        &.sc_p {
                             right: 47%;
-                            top: 16%;
+                            top: 17%;
                             scale: 1.2;
 
                             @include responsive(tablet-cat) {
@@ -1999,15 +2009,20 @@ main {
                             }
 
                             @include responsive(semi-cat) {
-                                top: 240px;
-                                right: 170px;
+                                top: 225px;
+                                right: 195px;
+                            }
+
+                            @include responsive(huge-cat) {
+                                top: 250px;
+                                right: 220px;
                             }
 
                         }
 
-                        &:nth-child(3) {
+                        &.th_p {
                             right: 52.5%;
-                            top: 12%;
+                            top: 14%;
                             scale: 1.4;
 
                             @include responsive(tablet-cat) {
@@ -2016,8 +2031,13 @@ main {
                             }
 
                             @include responsive(semi-cat) {
-                                top: 240px;
-                                right: 170px;
+                                top: 210px;
+                                right: 220px;
+                            }
+
+                            @include responsive(huge-cat) {
+                                top: 230px;
+                                right: 255px;
                             }
                         }
 
@@ -2081,6 +2101,7 @@ main {
                         .mk_skill {
                             width: 33%;
                             position: relative;
+                            z-index: 3;
     
                             @include responsive(tablet-cat) {
                                 width: 25%;
