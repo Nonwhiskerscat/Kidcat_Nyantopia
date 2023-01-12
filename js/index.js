@@ -1475,8 +1475,21 @@ window.addEventListener('load', () => {
     let mk_skill_gph=mk_graphic.getElementsByClassName('mk_skill');
     let mk_skills_kitty=document.querySelector('.mk_skills_kitty');
 
-    console.log(mk_skill_cod);
-    console.log(mk_skill_gph);
+    function svg_kitty(cat){
+        if(cat<tablet_cat) {
+            return 'calc(calc(-20px + 30vw)';
+        }
+    
+        else if(cat<semi_cat) {
+            return 'calc(calc(-10px + 20vw)';
+        }
+    
+        else if(cat<huge_cat) {
+            return '120px';
+        }
+    
+        return '160px';
+    }
 
     function mk_gauge_ani(cat, kitty) {
         cat.animate({
@@ -1540,23 +1553,13 @@ window.addEventListener('load', () => {
             mk_gauge_ani_entire();
         },0)
 
-    })
+    });
 
-    function svg_kitty(cat){
-        if(cat<tablet_cat) {
-            return 'calc(calc(-20px + 30vw)';
-        }
+    let mk_skills_big=document.querySelector('.mk_skills_big');
     
-        else if(cat<semi_cat) {
-            return 'calc(calc(-10px + 20vw)';
-        }
-    
-        else if(cat<huge_cat) {
-            return '120px';
-        }
-    
-        return '160px';
-    }
+    mk_skills_big.style.opacity="0";
+
+
 
     //==============footer==============//
 

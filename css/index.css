@@ -2319,22 +2319,78 @@ main .main_myskills .mk_main .mk_skills_kitty .mk_skills_big .mk_detail .mk_clos
     margin-top: 25px;
   }
 }
-main .main_myskills .mk_main .mk_skills_kitty img.mk_skills_kitty {
+main .main_myskills .mk_main .mk_skills_kitty .mk_kitty_entire {
   position: absolute;
   left: 0;
   top: 0;
+}
+main .main_myskills .mk_main .mk_skills_kitty .mk_kitty_entire img.mk_skills_kitty {
   display: block;
   width: 100%;
 }
 @media screen and (min-width: 1200px) {
-  main .main_myskills .mk_main .mk_skills_kitty img.mk_skills_kitty {
-    scale: 1.25;
-    top: 90px;
+  main .main_myskills .mk_main .mk_skills_kitty .mk_kitty_entire img.mk_skills_kitty {
+    scale: 1.1;
+    top: 80px;
   }
 }
 @media screen and (min-width: 1600px) {
-  main .main_myskills .mk_main .mk_skills_kitty img.mk_skills_kitty {
-    top: 120px;
+  main .main_myskills .mk_main .mk_skills_kitty .mk_kitty_entire img.mk_skills_kitty {
+    top: 100px;
+  }
+}
+main .main_myskills .mk_main .mk_skills_kitty .mk_kitty_entire p {
+  position: absolute;
+  font-size: calc(6px + 3vw);
+  font-weight: bold;
+  color: #e87d9e;
+  top: 20%;
+  right: 42.5%;
+}
+@media screen and (min-width: 768px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_kitty_entire p {
+    font-size: calc(6px + 2vw);
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_kitty_entire p {
+    font-size: 28px;
+    top: 240px;
+    right: 170px;
+  }
+}
+main .main_myskills .mk_main .mk_skills_kitty .mk_kitty_entire p:nth-child(2) {
+  right: 47%;
+  top: 16%;
+  scale: 1.2;
+}
+@media screen and (min-width: 768px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_kitty_entire p:nth-child(2) {
+    right: 47%;
+    top: 16%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_kitty_entire p:nth-child(2) {
+    top: 240px;
+    right: 170px;
+  }
+}
+main .main_myskills .mk_main .mk_skills_kitty .mk_kitty_entire p:nth-child(3) {
+  right: 52.5%;
+  top: 12%;
+  scale: 1.4;
+}
+@media screen and (min-width: 768px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_kitty_entire p:nth-child(3) {
+    right: 52.5%;
+    top: 12%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_kitty_entire p:nth-child(3) {
+    top: 240px;
+    right: 170px;
   }
 }
 @media screen and (min-width: 1200px) {

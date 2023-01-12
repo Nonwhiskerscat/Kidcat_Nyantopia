@@ -1939,30 +1939,94 @@ main {
 
                 }
 
-                img.mk_skills_kitty {
+                .mk_kitty_entire {
                     position: absolute;
                     left: 0;
                     top: 0;
-                    display: block;
-                    width: 100%;
 
-                    // display: none;
-
-                    @include responsive(tablet-cat) {
-                        //
+                    img.mk_skills_kitty {
+                        display: block;
+                        width: 100%;
+    
+                        // display: none;
+    
+                        @include responsive(tablet-cat) {
+                            //
+                        }
+    
+                        @include responsive(semi-cat) {
+                            scale: 1.1;
+                            top: 80px;
+    
+                        }
+    
+                        @include responsive(huge-cat) {
+                            top: 100px;
+                        }
+    
                     }
 
-                    @include responsive(semi-cat) {
-                        scale: 1.25;
-                        top: 90px;
+                    p {
+                        position: absolute;
+                        font-size: calc(6px + 3vw);
+                        font-weight: bold;
+                        color: $identity;
+                        top: 20%;
+                        right: 42.5%;
 
+                        @include responsive(tablet-cat) {
+                            font-size: calc(6px + 2vw);
+                        }
+
+                        @include responsive(semi-cat) {
+                            font-size: 28px;
+                            top: 240px;
+                            right: 170px;
+                        }
+
+                        &:nth-child(1) {
+                            //
+                        }
+
+                        &:nth-child(2) {
+                            right: 47%;
+                            top: 16%;
+                            scale: 1.2;
+
+                            @include responsive(tablet-cat) {
+                                right: 47%;
+                                top: 16%;
+                            }
+
+                            @include responsive(semi-cat) {
+                                top: 240px;
+                                right: 170px;
+                            }
+
+                        }
+
+                        &:nth-child(3) {
+                            right: 52.5%;
+                            top: 12%;
+                            scale: 1.4;
+
+                            @include responsive(tablet-cat) {
+                                right: 52.5%;
+                                top: 12%;
+                            }
+
+                            @include responsive(semi-cat) {
+                                top: 240px;
+                                right: 170px;
+                            }
+                        }
+
+
+                        
                     }
-
-                    @include responsive(huge-cat) {
-                        top: 120px;
-                    }
-
                 }
+
+
             }
 
             .nyan_zone {
