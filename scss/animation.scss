@@ -200,6 +200,18 @@
     }
 }
 
+@keyframes oo {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes xx {
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+
 
 
 

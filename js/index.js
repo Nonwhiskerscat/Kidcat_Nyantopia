@@ -113,68 +113,68 @@ window.addEventListener('load', () => {
 
     //===========배경화면 타일 애니메이션============//
     
-    // function createTile() {
-    //     const el = document.createElement('img');
-    //     let el_rand=Math.ceil(Math.random()*5);
-    //     let el_rot=`${Math.random()*360}deg`
-    //     el.src=`../img/etc/kidcat_back_${el_rand}.png`;
-    //     el.classList.add('tile');
-    //     el.style.marginLeft = `${randomPosition()-el.offsetWidth}px`;
-    //     el.style.rotate=el_rot;
-    //     kit.insertBefore(el, kit.firstChild);
-    // }
+    function createTile() {
+        const el = document.createElement('img');
+        let el_rand=Math.ceil(Math.random()*5);
+        let el_rot=`${Math.random()*360}deg`
+        el.src=`../img/etc/kidcat_back_${el_rand}.png`;
+        el.classList.add('tile');
+        el.style.marginLeft = `${randomPosition()-el.offsetWidth}px`;
+        el.style.rotate=el_rot;
+        kit.insertBefore(el, kit.firstChild);
+    }
 
-    // function createTiles() {
-    //     for(let i = 0; i<kit_height/10; i++) {
-    //         createTile();
-    //     }
-    // }
+    function createTiles() {
+        for(let i = 0; i<kit_height/10; i++) {
+            createTile();
+        }
+    }
 
-    // function removeTiles() {
-    //     kit.innerHTML='';
-    // }
+    function removeTiles() {
+        kit.innerHTML='';
+    }
 
-    // function randomPosition() {
-    //     return (Math.random() * kit_width);
-    // }
+    function randomPosition() {
+        return (Math.random() * kit_width);
+    }
 
-    // function tilesBlink() {
-    //     let tiles=document.querySelectorAll('.tile');
-    //     [].forEach.call(tiles, function(tiles) {
-    //         tiles.animate([
-    //             {opacity:0},
-    //             {opacity:1},
-    //             {opacity:0}
-    //             ],
-    //         {
-    //             duration: Math.random()*3000+2000,
-    //             delay: Math.random()*1000,
-    //             easing: 'linear',
-    //             iterations: Infinity
-    //         })
-    //     });
-    // }
+    function tilesBlink() {
+        let tiles=document.querySelectorAll('.tile');
+        [].forEach.call(tiles, function(tiles) {
+            tiles.animate([
+                {opacity:0},
+                {opacity:1},
+                {opacity:0}
+                ],
+            {
+                duration: Math.random()*3000+2000,
+                delay: Math.random()*1000,
+                easing: 'linear',
+                iterations: Infinity
+            })
+        });
+    }
 
-    // kit.style.height=`${kit_height-footer_road.offsetHeight}px`;
+    kit.style.height=`${kit_height-footer_road.offsetHeight}px`;
 
-    // setTimeout(()=> {
-    //     createTiles();
-    //     tilesBlink();
+    setTimeout(()=> {
+        createTiles();
+        tilesBlink();
         
-    // }, 6600)
+    }, 6600)
 
-    // window.addEventListener('resize', ()=> {
-    //     clearTimeout(kit_timer);
-    //     kit_width=bighead$.offsetWidth;
-    //     kit_height=bighead$.offsetHeight;
-    //     kit.style.height=`${kit_height}px`;
-    //     removeTiles();
+    window.addEventListener('resize', ()=> {
+        clearTimeout(kit_timer);
+        kit_width=bighead$.offsetWidth;
+        kit_height=bighead$.offsetHeight;
+        kit.style.height=`${kit_height}px`;
+        removeTiles();
 
-    //     kit_timer=setTimeout(()=> {
-    //         createTiles();
-    //         tilesBlink();
-    //     },300)
-    // });
+        kit_timer=setTimeout(()=> {
+            createTiles();
+            tilesBlink();
+        },300)
+    });
 
 
 
@@ -973,7 +973,7 @@ window.addEventListener('load', () => {
     //aboutme 최종 애니메이션
 
     window.addEventListener('scroll', ()=> {
-        if(window.scrollY+w_height>about_me$.offsetTop+scroll_cat()) {
+        if(window.scrollY+w_height>about_me$.offsetTop+about_me$.offsetHeight/2) {
             about_me_back_fadein();
             about_me_kitty_move();
             about_me_descri_move();
@@ -983,6 +983,7 @@ window.addEventListener('load', () => {
     //About me 콘텐츠
 
     let descri_explain=document.querySelectorAll('.descri_explain');
+    let descri_explain_div=document.querySelectorAll('.descri_explain div');
     let am_timer=5000;
 
     [].forEach.call(descri_explain, (cat, idx)=> {
@@ -1062,7 +1063,10 @@ window.addEventListener('load', () => {
 
     }
 
+    //about me 게이지
+
     let gauge_current=document.querySelector('.gauge_current');
+    
 
     const am_gauge = () => {
         gauge_current.animate([
@@ -1074,24 +1078,44 @@ window.addEventListener('load', () => {
         })
     }
 
-    // am_h3_changer(0);
     am_gauge();
+
+    //about me 세미타이틀
+
+    let rest_list=document.getElementsByClassName('rest_list');
+    [].forEach.call(rest_list, (cat,idx)=> {
+        cat.querySelector('p').classList.add(`rest_list_${idx}`);
+    });
+
+    document.querySelector(`.rest_list_0`).classList.add('common_under');
+
     let am_idx=0;
+    
+    const am_semi_title = (cat1, cat2) => {
+        document.querySelector(`.rest_list_${cat1}`).classList.remove('common_under');
+        document.querySelector(`.rest_list_${cat2}`).classList.add('common_under');
+    }
+
 
     const am_contents_changer = () => {
+        
             if(am_idx==descri_explain.length-1) {
                 am_changer(am_idx, 0);
+                am_semi_title(am_idx, 0);
                 am_idx=0;
             }
             else {
                 am_changer(am_idx, am_idx+1);
+                am_semi_title(am_idx, am_idx+1);
                 am_idx++;
             }
 
             am_h3_changer(am_idx);
             am_gauge();
-
     }
+
+    //정지 및 재생
+
 
     let am_interval=setInterval(am_contents_changer, am_timer);
     
@@ -1101,8 +1125,8 @@ window.addEventListener('load', () => {
 
     let am_toggle=true;
 
+
     
-    //정지 및 재생
     gauge_toggle.onclick=function(e) {
         if(am_toggle) {
             gauge_current.style.display='none';
@@ -1120,6 +1144,26 @@ window.addEventListener('load', () => {
         }
     }    
 
+    //선택 및 재실행
+
+    const semi_click = (current_idx, new_idx) => {
+
+        rest_list[new_idx].addEventListener('click', ()=>{
+            console.log(current_idx);
+            console.log(new_idx);
+            
+            if(new_idx==current_idx) {
+                null;
+            }
+
+            else {
+                am_changer(current_idx, new_idx);
+                am_gauge();
+                am_h3_changer(new_idx);
+            }
+        },false)
+    }
+
     //화면 너비에 따른 도시 야경 사진 변화
 
     const spec_urban = () => {
@@ -1131,6 +1175,65 @@ window.addEventListener('load', () => {
 
     window.addEventListener('resize', () => {
         spec_urban();
-    })
+    });
+
+    // 이건 폭죽 효과
+
+    let main_myspecs$=document.querySelector('.main_myspecs');
+    let ms_kitty_img=document.querySelectorAll('.ms_contents_grp img');
+    let ms_kitty_txt=document.querySelectorAll('.ms_kitty_txt');
+    let ms_contents_fw=document.querySelectorAll('.ms_contents_fw');
+
+    for(let ms=0;ms<ms_kitty_img.length;ms++) {
+        ms_kitty_img[ms].classList.add('kitty_img_add');
+        ms_kitty_txt[ms].classList.add('kitty_txt_add');
+        ms_contents_fw[ms].classList.add('contents_fw_add');
+    }
+
+    const spec_fireworks = (cat) => {
+        ms_contents_fw[cat].animate([
+            {transform: 'translateY(150%)', opacity: 0, offset: 0},
+            {transform: 'translateY(150%) scaleY(1)' , opacity: 1, offset: 0.0001},
+            {transform: 'translateY(10%) scaleY(1)', offset: 0.8},
+            {transform: 'translateY(0) scaleY(0)'},
+        ]
+        ,{
+            duration: 1500,
+            fill: 'forwards'
+        });
+
+        ms_kitty_img[cat].animate(
+            {scale: 1, opacity: 1}
+        ,{
+            delay: 1500,
+            duration: 500,
+            fill: 'forwards'
+        });
+
+        ms_kitty_txt[cat].animate(
+            {transform: 'translateY(0)', opacity: 1}
+        ,{
+            delay: 2000,
+            duration: 500,
+            fill: 'forwards'
+        });
+    }
+
+    let ms_scroll=true;
+
+    window.addEventListener('scroll', ()=> {
+        if(ms_scroll) {
+            if(window.scrollY+w_height>main_myspecs$.offsetTop+main_myspecs$.offsetTop/2) {
+            [].forEach.call(ms_kitty_img, (cat, idx) => {
+                    setTimeout(()=>{spec_fireworks(idx)}, idx*500);
+                });
+            ms_scroll=false;
+            }
+        }
+    });
+
+    
+
 
 });
+

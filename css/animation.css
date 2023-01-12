@@ -22,7 +22,6 @@
     transform: rotateZ(5deg);
   }
 }
-
 @keyframes header_gnb_icon {
   0% {
     transform: translateY(0%);
@@ -34,7 +33,6 @@
     transform: translateY(0%);
   }
 }
-
 @keyframes header_gnb_mobile {
   0% {
     transform: rotateZ(0);
@@ -52,7 +50,6 @@
     transform: rotateZ(0deg);
   }
 }
-
 @keyframes cursor_blink {
   0% {
     opacity: 0;
@@ -64,7 +61,6 @@
     opacity: 0;
   }
 }
-
 @keyframes cat_jump {
   0% {
     transform: translateY(0%);
@@ -76,39 +72,45 @@
     transform: translateY(0%);
   }
 }
-
 @keyframes line1 {
   from {
-    stroke-dasharray: calc(calc(-20px + 30vw) * 0.8 * 3.1415926535);
+    stroke-dasharray: calc((-20px + 30vw) * 0.8 * 3.1415926535);
   }
   to {
-    stroke-dashoffset: calc(calc(-20px + 30vw) * 0.8 * 0.07 * 3.1415926535);
+    stroke-dashoffset: calc((-20px + 30vw) * 0.8 * 0.07 * 3.1415926535);
   }
 }
-
 @keyframes line2 {
   from {
-    stroke-dasharray: calc(calc(-10px + 20vw) * 0.8 * 3.1415926535);
+    stroke-dasharray: calc((-10px + 20vw) * 0.8 * 3.1415926535);
   }
   to {
-    stroke-dashoffset: calc(calc(-10px + 20vw) * 0.8 * 0.07 * 3.1415926535);
+    stroke-dashoffset: calc((-10px + 20vw) * 0.8 * 0.07 * 3.1415926535);
   }
 }
-
 @keyframes line3 {
   from {
-    stroke-dasharray: calc(120px * 0.8 * 3.1415926535);
+    stroke-dasharray: 301.592894736px;
   }
   to {
-    stroke-dashoffset: calc(120px * 0.8 * 0.07 * 3.1415926535);
+    stroke-dashoffset: 21.1115026315px;
   }
 }
-
 @keyframes line4 {
   from {
-    stroke-dasharray: calc(160px * 0.8 * 3.1415926535);
+    stroke-dasharray: 402.123859648px;
   }
   to {
-    stroke-dashoffset: calc(160px * 0.8 * 0.07 * 3.1415926535);
+    stroke-dashoffset: 28.1486701754px;
+  }
+}
+@keyframes oo {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes xx {
+  100% {
+    transform: rotate(-360deg);
   }
 }

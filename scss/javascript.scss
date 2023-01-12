@@ -1,5 +1,6 @@
 @import './style.scss';
 @import './responsive.scss';
+@import './mixin.scss';
 
 .no {
     display: none;
@@ -17,7 +18,6 @@
 // .gnb_scroll {
 //     overflow: initial!important;
 // }
-
 
 
 .header_fix {
@@ -48,4 +48,24 @@ span.mk_highlight {
 .next_style {
     top: 2em;
     opacity: 0;
+}
+
+.common_under {
+    @include common_under;
+}
+
+.kitty_img_add {
+    scale: 0;
+    opacity: 0;
+}
+
+.kitty_txt_add {
+    opacity: 0;
+    transform: translateY(15%);
+}
+
+.contents_fw_add {
+    opacity: 0;
+    transform: translateY(150%) scaleY(1);
+    transform-origin: top;
 }
