@@ -43,6 +43,39 @@ footer {
 
         .footer_icons {
             position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translate(-50%);
+
+            @include responsive(tablet-cat) {
+                bottom: 13%;
+            }
+
+            @include responsive(semi-cat) {
+                bottom: 15%;
+            }
+
+            @include responsive(huge-cat) {
+                //
+            }
+
+            img {
+                width: calc(10px + 3vw);
+
+                @include responsive(tablet-cat) {
+                    width: calc(20px + 3vw);
+                }
+    
+                @include responsive(semi-cat) {
+                    width: 50px;
+                }
+    
+                @include responsive(huge-cat) {
+                    width: 60px;
+
+                }
+            }
+
         }
 
         .footer_information {
@@ -51,6 +84,10 @@ footer {
             left: 50%;
             translate: -50% 0;
             width: 100%;
+
+            @include responsive(tablet-cat) {
+                bottom: 5%;
+            }
 
             p {
                 text-align: center;
@@ -76,10 +113,10 @@ footer {
 
                 q {
                     @include nyan_petit_margin;
-                    display: block;
-                    font-size: calc(-4px + 3vw);
+                    display: none;
                     
                     @include responsive(tablet-cat) {
+                        display: block;
                         font-size: calc(2px + 2vw);
                     }
 

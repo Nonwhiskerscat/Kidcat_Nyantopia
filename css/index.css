@@ -2367,13 +2367,13 @@ main .main_myskills .mk_main .nyan_zone .mk_icons {
     margin-top: 0;
   }
 }
-main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex {
+main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone {
   display: flex;
   flex-wrap: wrap;
   position: relative;
 }
 @media screen and (min-width: 1200px) {
-  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone {
     animation: oo 90s linear infinite;
     width: 720px;
     height: 720px;
@@ -2382,138 +2382,134 @@ main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex {
   }
 }
 @media screen and (min-width: 1600px) {
-  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone {
     width: 900px;
     height: 900px;
   }
 }
-main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill {
+main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill {
   width: 33%;
   position: relative;
 }
 @media screen and (min-width: 768px) {
-  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill {
     width: 25%;
   }
 }
 @media screen and (min-width: 1200px) {
-  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill {
     animation: oo 90s infinite linear reverse;
     width: 150px;
     position: absolute;
   }
-  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill:nth-child(1) {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill:nth-child(1) {
     top: 0%;
     left: 50%;
     translate: -50% -50%;
   }
-  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill:nth-child(2) {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill:nth-child(2) {
     top: 15%;
     left: 85%;
     translate: -50% -50%;
   }
-  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill:nth-child(3) {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill:nth-child(3) {
     left: 100%;
     top: 50%;
     translate: -50% -50%;
   }
-  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill:nth-child(4) {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill:nth-child(4) {
     left: 85%;
     top: 85%;
     translate: -50% -50%;
   }
-  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill:nth-child(5) {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill:nth-child(5) {
     left: 50%;
     top: 100%;
     translate: -50% -50%;
   }
-  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill:nth-child(6) {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill:nth-child(6) {
     left: 15%;
     top: 85%;
     translate: -50% -50%;
   }
-  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill:nth-child(7) {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill:nth-child(7) {
     left: 0%;
     top: 50%;
     translate: -50% -50%;
   }
-  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill:nth-child(8) {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill:nth-child(8) {
     left: 15%;
     top: 15%;
     translate: -50% -50%;
   }
 }
 @media screen and (min-width: 1600px) {
-  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill {
     width: 200px;
   }
 }
-main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill:nth-child(n+4) {
+main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill:nth-child(n+4) {
   margin-top: 7px;
 }
 @media screen and (min-width: 768px) {
-  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill:nth-child(n+4) {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill:nth-child(n+4) {
     margin-top: 0;
   }
 }
 @media screen and (min-width: 768px) {
-  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill:nth-child(n+5) {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill:nth-child(n+5) {
     margin-top: 10px;
   }
 }
 @media screen and (min-width: 1200px) {
-  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill:nth-child(n+5) {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill:nth-child(n+5) {
     margin-top: 0;
   }
 }
-@media screen and (min-width: 768px) {
-  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill:last-child {
-    display: none;
-  }
-}
-main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill img {
+main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill img {
   width: 80%;
   margin: 0 auto;
   display: block;
 }
-main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart {
+main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill .mk_chart {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -45%);
 }
 @media screen and (min-width: 768px) {
-  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill .mk_chart {
     transform: translate(-50%, -45%);
   }
 }
-main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart {
+main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill .mk_chart .chart {
   position: relative;
 }
-main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart svg {
+main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill .mk_chart .chart svg {
   width: calc(-20px + 30vw);
   height: calc(-20px + 30vw);
 }
 @media screen and (min-width: 768px) {
-  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart svg {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill .mk_chart .chart svg {
     width: calc(-10px + 20vw);
     height: calc(-10px + 20vw);
   }
 }
 @media screen and (min-width: 1200px) {
-  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart svg {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill .mk_chart .chart svg {
     width: 120px;
     height: 120px;
   }
 }
 @media screen and (min-width: 1600px) {
-  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart svg {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill .mk_chart .chart svg {
     width: 160px;
     height: 160px;
   }
 }
-main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart svg circle {
+main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill .mk_chart .chart svg circle {
   fill: transparent;
+  opacity: 0.9;
   stroke-width: calc(4px + 1vw);
   stroke-dasharray: calc((-20px + 30vw) * 0.8 * 3.1415926535);
   stroke-dashoffset: calc((-20px + 30vw) * 0.8 * 3.1415926535);
@@ -2521,88 +2517,84 @@ main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_char
   transform: rotate(-90deg);
   transform-origin: center;
   stroke-linecap: round;
-  animation: line1 3s forwards;
 }
 @media screen and (min-width: 768px) {
-  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart svg circle {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill .mk_chart .chart svg circle {
     stroke-width: calc(5px + 1vw);
     stroke-dasharray: calc((-10px + 20vw) * 0.8 * 3.1415926535);
     stroke-dashoffset: calc((-10px + 20vw) * 0.8 * 3.1415926535);
-    animation: line2 3s forwards;
   }
 }
 @media screen and (min-width: 1200px) {
-  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart svg circle {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill .mk_chart .chart svg circle {
     stroke-width: 12px;
     stroke-dasharray: 301.592894736px;
     stroke-dashoffset: 301.592894736px;
-    animation: line3 3s forwards;
   }
 }
 @media screen and (min-width: 1600px) {
-  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart svg circle {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill .mk_chart .chart svg circle {
     stroke-width: 16px;
     stroke-dasharray: 402.123859648px;
     stroke-dashoffset: 402.123859648px;
-    animation: line4 3s forwards;
   }
 }
-main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart .chart_data {
+main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill .mk_chart .chart .chart_data {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
-main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart .chart_data h4 {
+main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill .mk_chart .chart .chart_data h4 {
   font-size: calc(-4px + 4vw);
 }
 @media screen and (min-width: 768px) {
-  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart .chart_data h4 {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill .mk_chart .chart .chart_data h4 {
     font-size: calc(4px + 2vw);
   }
 }
 @media screen and (min-width: 1200px) {
-  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart .chart_data h4 {
-    font-size: 21px;
+  main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill .mk_chart .chart .chart_data h4 {
+    font-size: 18px;
   }
 }
 @media screen and (min-width: 1600px) {
-  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart .chart_data h4 {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill .mk_chart .chart .chart_data h4 {
     font-size: 24px;
   }
 }
-main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart .chart_data p {
+main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill .mk_chart .chart .chart_data p {
   margin-top: 7px;
   font-size: calc(4px + 4vw);
 }
 @media screen and (min-width: 768px) {
-  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart .chart_data p {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill .mk_chart .chart .chart_data p {
     margin-top: 10px;
   }
 }
 @media screen and (min-width: 1200px) {
-  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart .chart_data p {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill .mk_chart .chart .chart_data p {
     margin-top: 12px;
   }
 }
 @media screen and (min-width: 1600px) {
-  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart .chart_data p {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill .mk_chart .chart .chart_data p {
     margin-top: 15px;
   }
 }
 @media screen and (min-width: 768px) {
-  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart .chart_data p {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill .mk_chart .chart .chart_data p {
     font-size: calc(2px + 3vw);
   }
 }
 @media screen and (min-width: 1200px) {
-  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart .chart_data p {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill .mk_chart .chart .chart_data p {
     font-size: 24px;
   }
 }
 @media screen and (min-width: 1600px) {
-  main .main_myskills .mk_main .nyan_zone .mk_icons .icons_flex .mk_skill .mk_chart .chart .chart_data p {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill .mk_chart .chart .chart_data p {
     font-size: 32px;
   }
 }

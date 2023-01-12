@@ -1990,7 +1990,7 @@ main {
                         //
                     }
     
-                    .icons_flex {
+                    .mk_skill_zone {
                         display: flex;
                         flex-wrap: wrap;
                         position: relative;
@@ -2006,7 +2006,6 @@ main {
                             height: 720px;
                             display: block;
                             margin: 0 auto;
-                            // background-color: rgb(255, 221, 221);
 
                         }
         
@@ -2058,7 +2057,7 @@ main {
                             &:last-child {
                                 //
                                 @include responsive(tablet-cat) {
-                                    display: none;
+                                    //
                                 }
     
                             }
@@ -2107,6 +2106,7 @@ main {
     
                                         circle {
                                             fill: transparent;
+                                            opacity: 0.9;
                                             stroke-width: calc(4px + 1vw);
                                             stroke-dasharray: calc(calc(-20px + 30vw) * 0.8 * 3.1415926535);
                                             stroke-dashoffset: calc(calc(-20px + 30vw) * 0.8 * 3.1415926535);
@@ -2114,13 +2114,11 @@ main {
                                             transform: rotate(-90deg);
                                             transform-origin: center;
                                             stroke-linecap: round;
-                                            animation: line1 3s forwards;
     
                                             @include responsive(tablet-cat) {
                                                 stroke-width: calc(5px + 1vw);
                                                 stroke-dasharray: calc(calc(-10px + 20vw) * 0.8 * 3.1415926535);
                                                 stroke-dashoffset: calc(calc(-10px + 20vw) * 0.8 * 3.1415926535);
-                                                animation: line2 3s forwards;
 
                                             }
 
@@ -2128,7 +2126,6 @@ main {
                                                 stroke-width: 12px;
                                                 stroke-dasharray: calc(120px * 0.8 * 3.1415926535);
                                                 stroke-dashoffset: calc(120px * 0.8 * 3.1415926535);
-                                                animation: line3 3s forwards;
 
                                             }
 
@@ -2136,7 +2133,6 @@ main {
                                                 stroke-width: 16px;
                                                 stroke-dasharray: calc(160px * 0.8 * 3.1415926535);
                                                 stroke-dashoffset: calc(160px * 0.8 * 3.1415926535);
-                                                animation: line4 3s forwards;
 
 
                                             }
@@ -2158,7 +2154,7 @@ main {
                                             }
 
                                             @include responsive(semi-cat) {
-                                                font-size: 21px;
+                                                font-size: 18px;
                                             }
 
                                             @include responsive(huge-cat) {
