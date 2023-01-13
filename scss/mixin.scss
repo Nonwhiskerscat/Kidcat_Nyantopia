@@ -621,7 +621,7 @@
     }
 }
 
-@mixin proj_common_contents($idd, $svg1, $svg2, $svg3) {
+@mixin proj_common_contents($idd, $col1, $col2, $col3) {
     
     .proj_info {
 
@@ -638,18 +638,20 @@
                 .tone_flex {
                     .tone_cat {
                         &:nth-child(1) {
-                            img {
-                                filter: $svg1;
+                            path {
+                                fill: $col1;
                             }
                         }
                         &:nth-child(2) {
-                            img {
-                                filter: $svg2;
+                            path {
+                                fill: $col2;
+                                stroke-width: 2;
+                                stroke-linejoin: bevel;
                             }
                         }
                         &:nth-child(3) {
-                            img {
-                                filter: $svg3;
+                            path {
+                                fill: $col3;
 
                             }
                         }

@@ -1620,7 +1620,7 @@ main {
             }
 
             .mk_skills_kitty {
-                z-index: 2;
+                z-index: 4;
                 position: relative;
                 margin: 0 auto;
                 margin-top: $regular_margin_p;
@@ -1633,13 +1633,13 @@ main {
                 @include responsive(semi-cat) {
                     width: 440px;
                     margin-top: 0;
-                    margin: 0 auto;
-                    padding: calc(440px / 3) 0;
+                    margin: calc(440px / 3) auto;
                 }
 
                 @include responsive(huge-cat) {
                     width:540px;
-                    padding: calc(540px / 3) 0;
+                    margin-top: calc(540px / 3);
+                    margin-bottom: calc(540px / 3);
                 }
 
                 .mk_skills_big {
@@ -1917,6 +1917,7 @@ main {
                         }
 
                         .mk_close {
+                            top: 0;
                             cursor: pointer;
                             font-size: calc(8px + 2vw);
                             @include nyan_tiny_margin;
@@ -1945,7 +1946,19 @@ main {
                 .mk_kitty_entire {
                     position: absolute;
                     left: 0;
-                    top: 0;
+                    top: 15%;
+
+                    @include responsive(tablet-cat) {
+                        //
+                    }
+
+                    @include responsive(semi-cat) {
+                        top: -15%;
+                    }
+
+                    @include responsive(huge-cat) {
+                        
+                    }
 
                     img.mk_skills_kitty {
                         display: block;
@@ -1959,12 +1972,11 @@ main {
     
                         @include responsive(semi-cat) {
                             scale: 1.1;
-                            top: 80px;
     
                         }
     
                         @include responsive(huge-cat) {
-                            top: 100px;
+                            //
                         }
     
                     }
@@ -1984,14 +1996,14 @@ main {
 
                         @include responsive(semi-cat) {
                             font-size: 24px;
-                            top: 240px;
-                            right: 170px;
+                            top: 27.5%;
+                            right: 40.5%;
                         }
 
                         @include responsive(huge-cat) {
                             font-size: 32px;
-                            top: 270px;
-                            right: 190px;
+                            top: 29.5%;
+                            right: 41.5%;
                         }
 
                         &.fi_p {
@@ -2009,13 +2021,13 @@ main {
                             }
 
                             @include responsive(semi-cat) {
-                                top: 225px;
-                                right: 195px;
+                                top: 25.5%;
+                                right: 45%;
                             }
 
                             @include responsive(huge-cat) {
-                                top: 250px;
-                                right: 220px;
+                                top: 27.5%;
+                                right: 46.5%;
                             }
 
                         }
@@ -2031,13 +2043,13 @@ main {
                             }
 
                             @include responsive(semi-cat) {
-                                top: 210px;
-                                right: 220px;
+                                top: 23.5%;
+                                right: 50.5%;
                             }
 
                             @include responsive(huge-cat) {
-                                top: 230px;
-                                right: 255px;
+                                top: 25%;
+                                right: 52.5%;
                             }
                         }
 
@@ -2059,6 +2071,7 @@ main {
 
 
                 .mk_icons {
+                    background-color: transparent;
 
                     @include nyan_mezo_margin;
     
@@ -2101,7 +2114,6 @@ main {
                         .mk_skill {
                             width: 33%;
                             position: relative;
-                            z-index: 3;
     
                             @include responsive(tablet-cat) {
                                 width: 25%;
@@ -2158,6 +2170,7 @@ main {
                             }
     
                             .mk_chart {
+                                cursor: pointer;
                                 position: absolute;
                                 top: 50%;
                                 left: 50%;
@@ -2194,7 +2207,6 @@ main {
                                             opacity: 0.9;
                                             stroke-width: calc(4px + 1vw);
                                             stroke-dasharray: calc(calc(-20px + 30vw) * 0.8 * 3.1415926535);
-                                            stroke-dashoffset: calc(calc(-20px + 30vw) * 0.8 * 3.1415926535);
                                             stroke: $html;
                                             transform: rotate(-90deg);
                                             transform-origin: center;
@@ -2203,21 +2215,18 @@ main {
                                             @include responsive(tablet-cat) {
                                                 stroke-width: calc(5px + 1vw);
                                                 stroke-dasharray: calc(calc(-10px + 20vw) * 0.8 * 3.1415926535);
-                                                stroke-dashoffset: calc(calc(-10px + 20vw) * 0.8 * 3.1415926535);
 
                                             }
 
                                             @include responsive(semi-cat) {
                                                 stroke-width: 12px;
                                                 stroke-dasharray: calc(120px * 0.8 * 3.1415926535);
-                                                stroke-dashoffset: calc(120px * 0.8 * 3.1415926535);
 
                                             }
 
                                             @include responsive(huge-cat) {
                                                 stroke-width: 16px;
                                                 stroke-dasharray: calc(160px * 0.8 * 3.1415926535);
-                                                stroke-dashoffset: calc(160px * 0.8 * 3.1415926535);
 
 
                                             }
@@ -2636,7 +2645,6 @@ main {
                                         flex-wrap: wrap;
                                         margin-top: $tiny_margin_p;
                                         height: calc(10vw + 4px);
-                                        justify-content: space-around;
     
                                         
                                         @include responsive(tablet-cat) {
@@ -2659,7 +2667,7 @@ main {
                                             margin: 0 auto;
                                             width: calc(100% / 3);
                                             
-                                            img {
+                                            svg {
                                                 width: 75%;
                                                 display: block;
                                                 margin: 0 auto;
@@ -2713,25 +2721,19 @@ main {
 
             .proj_kopc {
                 .proj_contents {
-                    @include proj_common_contents($kopc, $kopc_f1, $kopc_f2, $kopc_f3);
+                    @include proj_common_contents($kopc, $kopc_t1, $kopc_t2, $kopc_t3);
                 }
             }
 
             .proj_FAHotel {
                 .proj_contents {
-                    @include proj_common_contents($FAHotel, $FAHotel_f1, $FAHotel_f2, none);
+                    @include proj_common_contents($FAHotel, $FAHotel_t1, $FAHotel_t2, none);
                 }
             }
 
             .proj_kidcat {
                 .proj_contents {
-                    @include proj_common_contents($kidcat, $kidcat_f1, none, none);
-
-
-                    .tone_cat {
-                        margin: 0 auto;
-                        width: calc(100% / 2) !important;
-                    }
+                    @include proj_common_contents($kidcat, $kidcat_t1, $kidcat_t2, none);
                 }
             }
 

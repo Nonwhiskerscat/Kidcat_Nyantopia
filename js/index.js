@@ -1275,7 +1275,7 @@ window.addEventListener('load', () => {
                 "freq": 100,
                 "tone": "#e54d26",
                 "work": "웹사이트 제작 및 리뉴얼",
-                "summ": "HTML5 하나 만으로도 <span class='common_under'>웹사이트의 기반</span>을 다질 수 있으며 <span class='common_under'>Visual Code를 사용하지 않고도 구현이 가능</span>"
+                "summ": "<span class='common_under'>웹사이트의 기반</span>을 다질 수 있으며 <span class='common_under'>Visual Code를 사용하지 않고도 구현이 가능</span>"
             },
         
             {
@@ -1341,7 +1341,7 @@ window.addEventListener('load', () => {
                 "freq": 40,
                 "tone": "#659bd3",
                 "work": "ArrayList, Binary Tree를 활용한 데이터 관리",
-                "summ": "데이터를 관리할 수 있는 프로그램, 이 외에도 <span class='common_under'>Graph를 활용한 최단거리 계산 프로그램 구현 가능</span>"
+                "summ": "데이터를 관리할 수 있는 프로그램, <span class='common_under'>Graph를 활용한 최단거리 계산 프로그램 구현 가능</span>"
             },
         
             {
@@ -1451,7 +1451,7 @@ window.addEventListener('load', () => {
     //아이콘 생성
 
     const mk_coding = document.querySelector('.mk_icons .mcl');
-    const mk_graphic = document.querySelector('.mk_icons .mgl');
+    const mk_graphic = document.querySelector('.mk_icons .mgl');    
 
     let mk_skills_cod='';
     let mk_skills_gph='';
@@ -1515,9 +1515,14 @@ window.addEventListener('load', () => {
     }
 
     function mk_gauge_ani(cat, kitty) {
-        cat.animate({
-            strokeDashoffset: `calc(${svg_kitty(w_width)}*0.8*${Math.PI}*${1-(kitty.prof*0.01)})`
-        },
+        cat.animate([
+            {
+                strokeDashoffset: `calc(${svg_kitty(w_width)}*0.8*${Math.PI})`
+            },
+            {
+                strokeDashoffset: `calc(${svg_kitty(w_width)}*0.8*${Math.PI}*${1-(kitty.prof*0.01)})`
+            }
+        ],
         {
             duration: 3000,
             fill: 'forwards'
@@ -1534,8 +1539,6 @@ window.addEventListener('load', () => {
         cat.querySelector('circle').style.stroke=`${mgl$[idx].tone}`;
 
     });
-
-
 
     function mk_gauge_ani_entire() {
         [].forEach.call(mk_skill_cod, (cat, idx) => {
@@ -1652,7 +1655,6 @@ window.addEventListener('load', () => {
         }
     });
 
-
     //hover
 
     let mkd_name=document.querySelector('.mkd_name');
@@ -1660,33 +1662,52 @@ window.addEventListener('load', () => {
     let mkd_summ=document.querySelector('.mkd_summ');
     let mkd_bcolor=document.querySelectorAll('.mkd_bcolor');
 
-    mkd_work.innerHTML=`${mcl$[3].work}`;
-    mkd_summ.innerHTML=`${mcl$[3].summ}`;
-    mkd_name.innerHTML=`${mcl$[3].name}`;
-    
-    [].forEach.call(mkd_bcolor, (cat)=> {
-        cat.style.backgroundColor=mcl$[3].tone;
-    });
-
-
-    [].forEach.call(mk_skill_cod, (cat, idx)=> {
-        cat.addEventListener('click', () => {
-            mk_kitty_entire.style.display='none';
-            mk_skills_big.style.opacity=1;
-            mkd_work.innerHTML=`${mcl$[idx].work}`;
-            mkd_summ.innerHTML=`${mcl$[idx].summ}`;
-            mkd_name.innerHTML=`${mcl$[idx].name}`;
-
-            [].forEach.call(mkd_bcolor, (cat, kitty)=> {
-                cat.style.backgroundColor=mcl$[idx].tone;
-
-            });
-
-            mkd_bcolor[0].style.width=`${mcl$[idx].prof}%`;
-            mkd_bcolor[1].style.width=`${mcl$[idx].freq}%`;
-
+    function mkk_gauge_ani(kitty, prof, freq) {
+        kitty[0].animate([
+            {width: `0`},
+            {width: `${prof}%`}
+        ],
+            
+        {
+            duration: 1000,
+            fill: 'forwards'
         });
-    });
+
+        kitty[1].animate([
+            {width: `0`},
+            {width: `${freq}%`}
+        ],
+        {
+            duration: 1000,
+            fill: 'forwards'
+        });
+    }
+
+    function mkk_changer(cat1, cat2) {
+        [].forEach.call(cat1, (cat, idx)=> {
+            cat.addEventListener('click', () => {
+                if(w_width<semi_cat) window.scrollTo({top: main_myskills$.offsetTop, behavior:'smooth'});
+                mk_kitty_entire.style.display='none';
+                mk_skills_big.style.opacity=1;
+                mkd_work.innerHTML=`${cat2[idx].work}`;
+                mkd_summ.innerHTML=`${cat2[idx].summ}`;
+                mkd_name.innerHTML=`${cat2[idx].name}`;
+    
+                [].forEach.call(mkd_bcolor, (cat, kitty)=> {
+                    cat.style.backgroundColor=cat2[idx].tone;    
+                });
+
+                mkk_gauge_ani(mkd_bcolor,cat2[idx].prof, cat2[idx].freq)
+    
+                // mkd_bcolor[0].style.width=`${cat2[idx].prof}%`;
+                // mkd_bcolor[1].style.width=`${cat2[idx].freq}%`;
+    
+            });
+        });
+    }
+
+    mkk_changer(mk_skill_cod, mcl$);
+    mkk_changer(mk_skill_gph, mgl$);
 
     let mk_close=document.querySelector('.mk_close');
     
@@ -1695,8 +1716,260 @@ window.addEventListener('load', () => {
         mk_skills_big.style.opacity=0;
     });
 
+    //skills gnb
+
+    let mk_gnb_all = document.querySelectorAll('.mk_gnb_flex li');
 
 
+
+    let mk_gnb_kitty = document.querySelectorAll('.mk_gnb_kitty');
+
+    console.log(mk_gnb_kitty[0]);
+    console.log(mk_gnb_kitty[1]);
+
+    [].forEach.call(mk_gnb_all, (cat, idx) => {
+        cat.addEventListener('click', ()=> {
+            mk_gauge_ani_entire();
+
+            if(idx) {
+                mk_toggle(mk_coding, mk_graphic);
+                mk_kitty_tag(mk_gnb_kitty[0], mk_gnb_kitty[1]);
+                mk_underbar(cat.previousElementSibling, cat);
+            }
+
+            else {
+                mk_toggle(mk_graphic, mk_coding);
+                mk_kitty_tag(mk_gnb_kitty[1], mk_gnb_kitty[0]);
+                mk_underbar(cat.nextElementSibling, cat);
+
+            }
+        });
+    });
+
+    function mk_toggle(cat1, cat2) {
+        cat1.style.display='none';
+
+        if(w_width<semi_cat) {
+            cat2.style.display='flex';
+        }
+        else cat2.style.display='block';
+        
+    }
+
+    function mk_underbar(cat1, cat2) {
+        cat1.classList.remove('common_under');
+        cat2.classList.add('common_under');
+
+    }
+
+    function mk_kitty_tag(cat1, cat2) {
+        cat1.innerHTML='';
+        cat2.innerHTML='<img src="./img/main/my_skills_gnb_cat.png" alt="GNB냥">'
+    }
+
+    //resize 버그 개선
+
+    function mk_resize(cat) {
+        if(cat.style.display!='none') {
+            if(w_width<semi_cat) {
+                cat.style.display='flex'
+            }
+            else cat.style.display='block'
+        }
+    }
+
+    window.addEventListener('resize', () => {
+        mk_resize(mk_coding);
+        mk_resize(mk_graphic);
+
+    });
+
+    //Projects
+
+    let pjdata={
+        "React_Nodejs": 
+        [
+            {
+                "idx": 0,
+                "tag": "고보협",
+                "name": "고양이 보호협회",
+                "tone_num": 3,
+                "tone_filt": [
+
+                ],
+                "peri": "웹사이트 제작 및 리뉴얼",
+                "summ": "<span class='common_under'>웹사이트의 기반</span>을 다질 수 있으며 <span class='common_under'>Visual Code를 사용하지 않고도 구현이 가능</span>"
+            },
+        
+            {
+                "id": 1,
+                "tag": "SASS",
+                "name": "SASS, CSS3",
+                "prof": 92,
+                "freq": 100,
+                "tone": "#cd6799",
+                "work": "레이아웃 제작 및 스타일 적용",
+                "summ": "웹 페이지의 <span class='common_under'>모든 스타일을 적용</span>할 수 있으며, mixin을 활용하여 <span class='common_under'>반응형 웹 제작 가능</span>"
+            },
+        
+            {
+                "id": 2,
+                "tag": "JS",
+                "name": "Javascript",
+                "prof": 91,
+                "freq": 100,
+                "tone": "#dab92c",
+                "work": "동적 인터페이스 구현",
+                "summ": "웹 페이지의 애니메이션을 구현할 수 있으며 다양한 <span class='common_under'>이벤트를 활용</span>하여 게임 제작이 가능"
+            },
+        
+            {
+                "id": 3,
+                "tag": "JQuery",
+                "name": "J-Query",
+                "prof": 86,
+                "freq": 95,
+                "tone": "#0060a9",
+                "work": "플러그인 위주 웹페이지 제작",
+                "summ": "코드펜 및 플러그인을 활용하여 <span class='common_under'>응용된 인터페이스 구현 가능</span>"
+            },
+        
+            {
+                "id": 4,
+                "tag": "React",
+                "name": "React",
+                "prof": 70,
+                "freq": 85,
+                "tone": "#00d8ff",
+                "work": "Todo-list 제작 및 클론코딩",
+                "summ": "Redux, Router를 활용하여 <span class='common_under'>반복된 레이아웃 위주의 홈페이지 제작 가능</span>"
+            },
+        
+            {
+                "id": 5,
+                "tag": "NodeJs",
+                "name": "Node.js",
+                "prof": 54,
+                "freq": 80,
+                "tone": "#80bd01",
+                "work": "Todo-app제작 및 서버 구축",
+                "summ": "<span class='common_under'>SQL 및 데이터 베이스</span> 기반으로 웹에 저장된 데이터 수정 및 삭제 가능"
+            },
+        
+            {
+                "id": 6,
+                "tag": "C, C++",
+                "name": "C, C++",
+                "prof": 53,
+                "freq": 40,
+                "tone": "#659bd3",
+                "work": "ArrayList, Binary Tree를 활용한 데이터 관리",
+                "summ": "데이터를 관리할 수 있는 프로그램, <span class='common_under'>Graph를 활용한 최단거리 계산 프로그램 구현 가능</span>"
+            },
+        
+            {
+                "id": 7,
+                "tag": "Java",
+                "name": "Java",
+                "prof": 41,
+                "freq": 30,
+                "tone": "#e21722",
+                "work": "객체지향을 활용한 게임 제작",
+                "summ": "Linked List, Array List 데이터 관리, Polygon Editor와 같은 <span class='common_under'>간단한 GUI 프로그래밍</span> 가능. "
+            }
+        ],
+    
+        "mk_skills_graphic": 
+        [
+            {
+                "id": 8,
+                "tag": "AI",
+                "name": "일러스트레이터",
+                "prof": 100,
+                "freq": 100,
+                "tone": "#ff9a00",
+                "work": "아이콘 및 캐릭터 드로잉",
+                "summ": "모든 Tool을 활용할 수 있으며 <span class='common_under'>2D 그래픽 대부분 범주의 작업 가능</span>"
+            },
+        
+            {
+                "id": 9,
+                "tag": "PS",
+                "name": "포토샵",
+                "prof": 95,
+                "freq": 100,
+                "tone": "#31a8ff",
+                "work": "웹 시안 디자인 작업",
+                "summ": "고난이도의 사진 편집 및 <span class='common_under'>웹 사이트 레이아웃, 와이어프레임 설계, 시안 디자인 가능</span>"
+            },
+        
+            {
+                "id": 10,
+                "tag": "ID",
+                "name": "인디자인",
+                "prof": 83,
+                "freq": 73,
+                "tone": "#ff3366",
+                "work": "서적, 템플릿 디자인 및 제작",
+                "summ": "<span class='common_under'>마스터, 문자, 단락 스타일</span>을 활용하여 참고서&소설책 제작, 광고 홍보 템플릿 제작 가능"
+            },
+        
+            {
+                "id": 11,
+                "tag": "XD",
+                "name": "Adobe XD",
+                "prof": 79,
+                "freq": 63,
+                "tone": "#ff61f6",
+                "work": "워크플로우 제작 및 시연",
+                "summ": "다양한 웹 페이지 혹은 앱 디자인이 가능, <span class='common_under'>워크플로우 기반 앱의 인터페이스 구현 가능</span>"
+            },
+        
+            {
+                "id": 12,
+                "tag": "An",
+                "name": "애니메이터",
+                "prof": 55,
+                "freq": 27,
+                "tone": "#fa0f00",
+                "work": "간단한 애니메이션 제작",
+                "summ": "표정, 워킹 애니메이션 등을 기반으로 <span class='common_under'>단편 애니메이션, GIF 형식의 이모티콘 제작</span> 가능"
+            },
+        
+            {
+                "id": 13,
+                "tag": "Pr",
+                "name": "프리미어",
+                "prof": 46,
+                "freq": 30,
+                "tone": "#9999ff",
+                "work": "단편 영상 제작 및 편집",
+                "summ": "<span class='common_under'>편집, 수정, 필터, 오디오 등을 조작</span>하여 영화 예고편 편집 및 다큐멘터리 제작 가능"
+            },
+        
+            {
+                "id": 14,
+                "tag": "Ae",
+                "name": "애프터이펙트",
+                "prof": 60,
+                "freq": 44,
+                "tone": "#bc75fc",
+                "work": "Ai 파일 중심의 애니메이션 제작",
+                "summ": "일러스트 기반의 인트로 영상 제작, <span class='common_under'>캐릭터 일러스트를 활용한 모션그래픽 제작 가능</span>"
+            },
+        
+            {
+                "id": 15,
+                "tag": "MAYA",
+                "name": "MAYA",
+                "prof": 72,
+                "freq": 36,
+                "tone": "#8bc2c9",
+                "work": "3D 모델링, 리깅, 애니메이션",
+                "summ": "3D 캐릭터 모델링이 기본적으로 가능, <span class='common_under'>Skeletion 및 Joint 기능을 활용하여 리깅작업으로 캐릭터 애니메이션 구현</span> 가능"
+            }
+        ]
+    }
 
     //==============footer==============//
 
@@ -1724,13 +1997,5 @@ window.addEventListener('load', () => {
             }
         }
     });
-
-    
-
-
-
-
-
-
 });
 
