@@ -1697,12 +1697,12 @@ window.addEventListener('load', () => {
                     </div>
                     `;
                 });
-                return kitty;
+
+                document.querySelector('.projs').innerHTML=kitty;
         
             }
 
-            document.querySelector('.projs').innerHTML=proj_generator(res.data.React, pj_frame);
-
+            proj_generator(res.data.Javascript,pj_frame);
 
             
         }
