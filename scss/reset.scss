@@ -79,7 +79,7 @@ body {
 
   @include responsive(mobile-cat) {
     display: block;
-    overflow: hidden;
+    // overflow: hidden;
   }
 }
 

@@ -1620,7 +1620,7 @@ main {
             }
 
             .mk_skills_kitty {
-                z-index: 4;
+                
                 position: relative;
                 margin: 0 auto;
                 margin-top: $regular_margin_p;
@@ -1631,6 +1631,7 @@ main {
                 }
 
                 @include responsive(semi-cat) {
+                    z-index: 2;
                     width: 440px;
                     margin-top: 0;
                     margin: calc(440px / 3) auto;
@@ -2059,6 +2060,28 @@ main {
                 }
 
 
+                .mk_back_img {
+                    position: absolute;
+                    width: 200vw;  
+                    top: 0;
+                    left: -60%;
+                    z-index: -2;
+
+                    @include responsive(semi-cat) {
+                        display: none;
+                    }
+
+                    img {
+                        width: 100%;
+
+                        @include responsive(tablet-cat) {
+                            width: 75%
+                        }
+                    }
+
+
+                }
+
             }
 
             .nyan_zone {
@@ -2301,20 +2324,20 @@ main {
                 justify-content: space-between;
 
                 @include responsive(tablet-cat) {
-                    width: 100%;
+                    width: 70%;
                 }
 
                 @include responsive(semi-cat) {
-                    width: 980px;
+                    width: 780px;
                 }
 
                 @include responsive(huge-cat) {
-                    width: 1180px;
+                    width: 880px;
                 }
                 
 
                 li {
-                    font-size: calc(8px + 2vw);
+                    font-size: calc(10px + 2vw);
                     display: flex;
                     flex-direction: column;
                     align-items: center;
@@ -2323,53 +2346,18 @@ main {
                     text-align: center;
 
                     @include responsive(tablet-cat) {
-                        font-size: calc(8px + 1vw);
-                        width: calc(100% / 5);
+                        font-size: calc(12px + 1vw);
+                        width: calc(100% / 3);
                     } 
     
                     @include responsive(semi-cat) {
-                        font-size: 21px;
-    
+                        font-size: 32px;
+
                     }
-    
+
                     @include responsive(huge-cat) {
-                        font-size: 24px;
-    
-                    }
+                        font-size: 36px;
 
-                    &:nth-child(1), &:nth-child(5) {
-                        display: none;
-
-                        @include responsive(tablet-cat) {
-                            display: block;
-                        }
-
-                        @include responsive(semi-cat) {
-
-                        }
-
-                        @include  responsive(huge-cat) {
-                            //
-                        }
-                    }
-
-                    &:nth-child(3) {
-                        font-size: calc(18px + 2vw);
-                        color: $identity;
-                        font-weight: bold;
-
-                        @include responsive(tablet-cat) {
-                            font-size: calc(18px + 1vw);
-                        }
-
-                        @include responsive(semi-cat) {
-                            font-size: 36px;
-                        }
-
-                        @include responsive(huge-cat) {
-                            font-size: 40px;
-        
-                        }
                     }
                     
                 }
@@ -2381,20 +2369,20 @@ main {
                     margin-bottom: 5px;
 
                     img {
-                        width: calc(16px + 5vw);
+                        width: calc(20px + 5vw);
                         display: block;
                         animation: cat_jump ease-in 1s infinite;
 
                         @include responsive(tablet-cat) {
-                            width: calc(14px + 5vw);
+                            width: calc(18px + 5vw);
                         } 
     
                         @include responsive(semi-cat) {
-                            width: 60px;
+                            width: 80px;
                         }
     
                         @include responsive(huge-cat) {
-                            width: 80px;
+                            width: 100px;
                         }
                     }
                 }

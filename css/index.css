@@ -1947,7 +1947,6 @@ main .main_myskills .mk_main {
   }
 }
 main .main_myskills .mk_main .mk_skills_kitty {
-  z-index: 4;
   position: relative;
   margin: 0 auto;
   margin-top: 40px;
@@ -1960,6 +1959,7 @@ main .main_myskills .mk_main .mk_skills_kitty {
 }
 @media screen and (min-width: 1200px) {
   main .main_myskills .mk_main .mk_skills_kitty {
+    z-index: 2;
     width: 440px;
     margin-top: 0;
     margin: 146.6666666667px auto;
@@ -2414,6 +2414,26 @@ main .main_myskills .mk_main .mk_skills_kitty .mk_kitty_entire p.th_p {
     right: 52.5%;
   }
 }
+main .main_myskills .mk_main .mk_skills_kitty .mk_back_img {
+  position: absolute;
+  width: 200vw;
+  top: 0;
+  left: -60%;
+  z-index: -2;
+}
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_back_img {
+    display: none;
+  }
+}
+main .main_myskills .mk_main .mk_skills_kitty .mk_back_img img {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  main .main_myskills .mk_main .mk_skills_kitty .mk_back_img img {
+    width: 75%;
+  }
+}
 @media screen and (min-width: 1200px) {
   main .main_myskills .mk_main .nyan_zone {
     position: absolute;
@@ -2821,21 +2841,21 @@ main .main_projects .proj_gnb .proj_gnb_flex {
 }
 @media screen and (min-width: 768px) {
   main .main_projects .proj_gnb .proj_gnb_flex {
-    width: 100%;
+    width: 70%;
   }
 }
 @media screen and (min-width: 1200px) {
   main .main_projects .proj_gnb .proj_gnb_flex {
-    width: 980px;
+    width: 780px;
   }
 }
 @media screen and (min-width: 1600px) {
   main .main_projects .proj_gnb .proj_gnb_flex {
-    width: 1180px;
+    width: 880px;
   }
 }
 main .main_projects .proj_gnb .proj_gnb_flex li {
-  font-size: calc(8px + 2vw);
+  font-size: calc(10px + 2vw);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2845,46 +2865,18 @@ main .main_projects .proj_gnb .proj_gnb_flex li {
 }
 @media screen and (min-width: 768px) {
   main .main_projects .proj_gnb .proj_gnb_flex li {
-    font-size: calc(8px + 1vw);
-    width: 20%;
+    font-size: calc(12px + 1vw);
+    width: 33.3333333333%;
   }
 }
 @media screen and (min-width: 1200px) {
   main .main_projects .proj_gnb .proj_gnb_flex li {
-    font-size: 21px;
+    font-size: 32px;
   }
 }
 @media screen and (min-width: 1600px) {
   main .main_projects .proj_gnb .proj_gnb_flex li {
-    font-size: 24px;
-  }
-}
-main .main_projects .proj_gnb .proj_gnb_flex li:nth-child(1), main .main_projects .proj_gnb .proj_gnb_flex li:nth-child(5) {
-  display: none;
-}
-@media screen and (min-width: 768px) {
-  main .main_projects .proj_gnb .proj_gnb_flex li:nth-child(1), main .main_projects .proj_gnb .proj_gnb_flex li:nth-child(5) {
-    display: block;
-  }
-}
-main .main_projects .proj_gnb .proj_gnb_flex li:nth-child(3) {
-  font-size: calc(18px + 2vw);
-  color: #e87d9e;
-  font-weight: bold;
-}
-@media screen and (min-width: 768px) {
-  main .main_projects .proj_gnb .proj_gnb_flex li:nth-child(3) {
-    font-size: calc(18px + 1vw);
-  }
-}
-@media screen and (min-width: 1200px) {
-  main .main_projects .proj_gnb .proj_gnb_flex li:nth-child(3) {
     font-size: 36px;
-  }
-}
-@media screen and (min-width: 1600px) {
-  main .main_projects .proj_gnb .proj_gnb_flex li:nth-child(3) {
-    font-size: 40px;
   }
 }
 main .main_projects .proj_gnb .proj_gnb_flex .proj_gnb_kitty {
@@ -2892,23 +2884,23 @@ main .main_projects .proj_gnb .proj_gnb_flex .proj_gnb_kitty {
   margin-bottom: 5px;
 }
 main .main_projects .proj_gnb .proj_gnb_flex .proj_gnb_kitty img {
-  width: calc(16px + 5vw);
+  width: calc(20px + 5vw);
   display: block;
   animation: cat_jump ease-in 1s infinite;
 }
 @media screen and (min-width: 768px) {
   main .main_projects .proj_gnb .proj_gnb_flex .proj_gnb_kitty img {
-    width: calc(14px + 5vw);
+    width: calc(18px + 5vw);
   }
 }
 @media screen and (min-width: 1200px) {
   main .main_projects .proj_gnb .proj_gnb_flex .proj_gnb_kitty img {
-    width: 60px;
+    width: 80px;
   }
 }
 @media screen and (min-width: 1600px) {
   main .main_projects .proj_gnb .proj_gnb_flex .proj_gnb_kitty img {
-    width: 80px;
+    width: 100px;
   }
 }
 main .main_projects .big_nyan {
