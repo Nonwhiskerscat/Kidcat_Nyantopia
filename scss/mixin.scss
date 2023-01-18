@@ -603,22 +603,11 @@
 }
 
 @mixin button_hover {
-    transition: all 0.5s linear;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    content: '';
-    width: 100%;
-    height: 100%;
-    left: -100%;
+
 }
 
 @mixin button_letter_hover {
-    color: #000620;
-    &::after {
-        left: 0%;
-    }
+    color: #000620 !important;
 }
 
 @mixin proj_common_contents($idd, $col1, $col2, $col3) {
@@ -660,21 +649,6 @@
             }
     }
 
-    .info_btn_grp {
-
-        &>button {
-
-            background-color: $idd;
-            border-color: $idd;    
-            color: $idd;
-
-            &::after {
-                background-color: $idd;
-            }
-
-        }
-
-    }
     
 }
 
@@ -718,12 +692,22 @@
 
         &:hover {
             @include button_letter_hover;
+
+            .btn_after {
+                left: 0;
+            }
         }
 
-        &::after {
-            z-index: -1;
+        .btn_after {
             background-color: $color;
-            @include button_hover;
+            transition: all 0.3s linear;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            left: -100%;
         }
 
         p {

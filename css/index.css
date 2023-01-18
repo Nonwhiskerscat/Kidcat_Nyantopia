@@ -1545,7 +1545,27 @@ main .main_myspecs .my_specs_contents .ms_contents_grp .ms_contents_txt {
   }
 }
 main .main_myspecs .my_specs_contents .ms_contents_grp .ms_contents_txt h4 {
+  width: fit-content;
+  margin: 0 auto;
+  color: #e87d9e;
+  z-index: -1;
+  box-shadow: inset 0 calc((10px + 1vw) / -2) 0 rgba(232, 125, 158, 0.3);
   font-size: calc(6px + 3vw);
+}
+@media screen and (min-width: 768px) {
+  main .main_myspecs .my_specs_contents .ms_contents_grp .ms_contents_txt h4 {
+    box-shadow: inset 0 calc((6px + 1vw) / -2) 0 rgba(232, 125, 158, 0.3);
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_myspecs .my_specs_contents .ms_contents_grp .ms_contents_txt h4 {
+    box-shadow: inset 0 -9px 0 rgba(232, 125, 158, 0.3);
+  }
+}
+@media screen and (min-width: 1600px) {
+  main .main_myspecs .my_specs_contents .ms_contents_grp .ms_contents_txt h4 {
+    box-shadow: inset 0 -10.5px 0 rgba(232, 125, 158, 0.3);
+  }
 }
 @media screen and (min-width: 768px) {
   main .main_myspecs .my_specs_contents .ms_contents_grp .ms_contents_txt h4 {
@@ -1573,7 +1593,7 @@ main .main_myspecs .my_specs_contents .ms_contents_grp .ms_contents_txt h4.h4_ev
 main .main_myspecs .my_specs_contents .ms_contents_grp .ms_contents_txt h5 {
   margin-top: 7px;
   font-size: calc(7px + 2vw);
-  color: #e87d9e;
+  color: #fcf8ac;
 }
 @media screen and (min-width: 768px) {
   main .main_myspecs .my_specs_contents .ms_contents_grp .ms_contents_txt h5 {
@@ -2855,18 +2875,18 @@ main .main_projects .proj_gnb .proj_gnb_flex {
   }
 }
 main .main_projects .proj_gnb .proj_gnb_flex li {
+  margin: 0 auto;
   font-size: calc(10px + 2vw);
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  width: 33.3333333333%;
+  width: fit-content;
   text-align: center;
 }
 @media screen and (min-width: 768px) {
   main .main_projects .proj_gnb .proj_gnb_flex li {
     font-size: calc(12px + 1vw);
-    width: 33.3333333333%;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -2935,6 +2955,9 @@ main .main_projects .projs {
     padding: 120px 0;
   }
 }
+main .main_projects .projs > div {
+  position: relative;
+}
 main .main_projects .projs > div:nth-child(n+2) {
   margin-top: 150px;
 }
@@ -2997,6 +3020,7 @@ main .main_projects .projs > div .proj_flex .proj_photo {
 }
 main .main_projects .projs > div .proj_flex .proj_photo img.proj_mockup {
   display: block;
+  position: relative;
   width: 100%;
 }
 main .main_projects .projs > div .proj_flex .proj_photo img.proj_nyanbal {
@@ -3046,6 +3070,7 @@ main .main_projects .projs > div .proj_flex .proj_contents .proj_title {
   display: flex;
   width: 100%;
   align-items: center;
+  position: relative;
 }
 main .main_projects .projs > div .proj_flex .proj_contents .proj_title .title_img {
   width: 15%;
@@ -3093,6 +3118,9 @@ main .main_projects .projs > div .proj_flex .proj_contents .proj_title .title_tx
 }
 main .main_projects .projs > div .proj_flex .proj_contents .proj_info {
   width: 100%;
+}
+main .main_projects .projs > div .proj_flex .proj_contents .proj_info > div {
+  position: relative;
 }
 main .main_projects .projs > div .proj_flex .proj_contents .proj_info .proj_detail {
   margin-top: 40px;
@@ -3273,8 +3301,8 @@ main .main_projects .projs > div .proj_flex .proj_contents .proj_info .info_btn_
   overflow: hidden;
   background-color: transparent;
   transition: all 0.5s linear;
-  border-color: 0;
-  color: 0;
+  border-color: none;
+  color: none;
 }
 @media screen and (min-width: 1200px) {
   main .main_projects .projs > div .proj_flex .proj_contents .proj_info .info_btn_grp > button {
@@ -3287,20 +3315,18 @@ main .main_projects .projs > div .proj_flex .proj_contents .proj_info .info_btn_
   }
 }
 main .main_projects .projs > div .proj_flex .proj_contents .proj_info .info_btn_grp > button:hover {
-  color: #000620;
+  color: #000620 !important;
 }
-main .main_projects .projs > div .proj_flex .proj_contents .proj_info .info_btn_grp > button:hover::after {
-  left: 0%;
+main .main_projects .projs > div .proj_flex .proj_contents .proj_info .info_btn_grp > button:hover .btn_after {
+  left: 0;
 }
-main .main_projects .projs > div .proj_flex .proj_contents .proj_info .info_btn_grp > button::after {
-  z-index: -1;
-  background-color: 0;
-  transition: all 0.5s linear;
+main .main_projects .projs > div .proj_flex .proj_contents .proj_info .info_btn_grp > button .btn_after {
+  background-color: none;
+  transition: all 0.3s linear;
   position: absolute;
   top: 0;
   left: 0;
   display: block;
-  content: "";
   width: 100%;
   height: 100%;
   left: -100%;
@@ -3502,72 +3528,6 @@ main .main_projects .projs > div:nth-child(3) .proj_photo img.proj_back:last-chi
     top: 2%;
     left: -35%;
   }
-}
-main .main_projects .projs .proj_kopc .proj_contents .proj_info .proj_detail p .info_highlight {
-  color: #e7a335;
-}
-main .main_projects .projs .proj_kopc .proj_contents .proj_info .info_tone .tone_flex .tone_cat:nth-child(1) path {
-  fill: #e7a335;
-}
-main .main_projects .projs .proj_kopc .proj_contents .proj_info .info_tone .tone_flex .tone_cat:nth-child(2) path {
-  fill: #333333;
-  stroke-width: 2;
-  stroke-linejoin: bevel;
-}
-main .main_projects .projs .proj_kopc .proj_contents .proj_info .info_tone .tone_flex .tone_cat:nth-child(3) path {
-  fill: #ffffff;
-}
-main .main_projects .projs .proj_kopc .proj_contents .info_btn_grp > button {
-  background-color: #e7a335;
-  border-color: #e7a335;
-  color: #e7a335;
-}
-main .main_projects .projs .proj_kopc .proj_contents .info_btn_grp > button::after {
-  background-color: #e7a335;
-}
-main .main_projects .projs .proj_FAHotel .proj_contents .proj_info .proj_detail p .info_highlight {
-  color: #c3dded;
-}
-main .main_projects .projs .proj_FAHotel .proj_contents .proj_info .info_tone .tone_flex .tone_cat:nth-child(1) path {
-  fill: #fefdf0;
-}
-main .main_projects .projs .proj_FAHotel .proj_contents .proj_info .info_tone .tone_flex .tone_cat:nth-child(2) path {
-  fill: #422d13;
-  stroke-width: 2;
-  stroke-linejoin: bevel;
-}
-main .main_projects .projs .proj_FAHotel .proj_contents .proj_info .info_tone .tone_flex .tone_cat:nth-child(3) path {
-  fill: none;
-}
-main .main_projects .projs .proj_FAHotel .proj_contents .info_btn_grp > button {
-  background-color: #c3dded;
-  border-color: #c3dded;
-  color: #c3dded;
-}
-main .main_projects .projs .proj_FAHotel .proj_contents .info_btn_grp > button::after {
-  background-color: #c3dded;
-}
-main .main_projects .projs .proj_kidcat .proj_contents .proj_info .proj_detail p .info_highlight {
-  color: #e87d9e;
-}
-main .main_projects .projs .proj_kidcat .proj_contents .proj_info .info_tone .tone_flex .tone_cat:nth-child(1) path {
-  fill: #e87d9e;
-}
-main .main_projects .projs .proj_kidcat .proj_contents .proj_info .info_tone .tone_flex .tone_cat:nth-child(2) path {
-  fill: #000620;
-  stroke-width: 2;
-  stroke-linejoin: bevel;
-}
-main .main_projects .projs .proj_kidcat .proj_contents .proj_info .info_tone .tone_flex .tone_cat:nth-child(3) path {
-  fill: none;
-}
-main .main_projects .projs .proj_kidcat .proj_contents .info_btn_grp > button {
-  background-color: #e87d9e;
-  border-color: #e87d9e;
-  color: #e87d9e;
-}
-main .main_projects .projs .proj_kidcat .proj_contents .info_btn_grp > button::after {
-  background-color: #e87d9e;
 }
 main .main_contactme {
   margin-top: 150px;
@@ -3966,20 +3926,18 @@ main .main_contactme .cm_flex .cm_contents_area .cm_not_hidden .cm_btn_grp > but
   }
 }
 main .main_contactme .cm_flex .cm_contents_area .cm_not_hidden .cm_btn_grp > button:hover {
-  color: #000620;
+  color: #000620 !important;
 }
-main .main_contactme .cm_flex .cm_contents_area .cm_not_hidden .cm_btn_grp > button:hover::after {
-  left: 0%;
+main .main_contactme .cm_flex .cm_contents_area .cm_not_hidden .cm_btn_grp > button:hover .btn_after {
+  left: 0;
 }
-main .main_contactme .cm_flex .cm_contents_area .cm_not_hidden .cm_btn_grp > button::after {
-  z-index: -1;
+main .main_contactme .cm_flex .cm_contents_area .cm_not_hidden .cm_btn_grp > button .btn_after {
   background-color: white;
-  transition: all 0.5s linear;
+  transition: all 0.3s linear;
   position: absolute;
   top: 0;
   left: 0;
   display: block;
-  content: "";
   width: 100%;
   height: 100%;
   left: -100%;
@@ -4436,20 +4394,18 @@ main .main_contactme .cm_flex .cm_contents_area .cm_hidden .cm_hd_main form .cmh
   }
 }
 main .main_contactme .cm_flex .cm_contents_area .cm_hidden .cm_hd_main form .cmh_btn_grp > button:hover {
-  color: #000620;
+  color: #000620 !important;
 }
-main .main_contactme .cm_flex .cm_contents_area .cm_hidden .cm_hd_main form .cmh_btn_grp > button:hover::after {
-  left: 0%;
+main .main_contactme .cm_flex .cm_contents_area .cm_hidden .cm_hd_main form .cmh_btn_grp > button:hover .btn_after {
+  left: 0;
 }
-main .main_contactme .cm_flex .cm_contents_area .cm_hidden .cm_hd_main form .cmh_btn_grp > button::after {
-  z-index: -1;
+main .main_contactme .cm_flex .cm_contents_area .cm_hidden .cm_hd_main form .cmh_btn_grp > button .btn_after {
   background-color: white;
-  transition: all 0.5s linear;
+  transition: all 0.3s linear;
   position: absolute;
   top: 0;
   left: 0;
   display: block;
-  content: "";
   width: 100%;
   height: 100%;
   left: -100%;

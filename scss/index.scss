@@ -1354,6 +1354,9 @@ main {
                     }
 
                     h4 {
+                        width: fit-content;
+                        margin: 0 auto;
+                        @include common_under;
                         font-size: calc(6px + 3vw);
 
                         @include responsive(tablet-cat) {
@@ -1394,7 +1397,7 @@ main {
                     h5 {
                         @include nyan_petit_margin;
                         font-size: calc(7px + 2vw);
-                        color: $identity;
+                        color: $second;
 
                         @include responsive(tablet-cat) {
                             font-size: calc(8px + 1vw);
@@ -2337,17 +2340,18 @@ main {
                 
 
                 li {
+                    margin: 0 auto;
                     font-size: calc(10px + 2vw);
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     cursor: pointer;
-                    width: calc(100% / 3);
+                    width: fit-content;
                     text-align: center;
 
                     @include responsive(tablet-cat) {
                         font-size: calc(12px + 1vw);
-                        width: calc(100% / 3);
+
                     } 
     
                     @include responsive(semi-cat) {
@@ -2418,6 +2422,7 @@ main {
             &>div {
                 @include proj_margin;
                 @include proj_flex_order;
+                position: relative;
 
                 .proj_flex {
                     display: flex;
@@ -2459,6 +2464,7 @@ main {
     
                         img.proj_mockup {
                             display: block;
+                            position: relative;
                             width: 100%;
                         }
     
@@ -2494,6 +2500,7 @@ main {
                             display: flex;
                             width: 100%;
                             align-items: center;
+                            position: relative;
     
                             .title_img {
                                 width: 15%;
@@ -2543,6 +2550,10 @@ main {
                         .proj_info {
     
                             width: 100%;
+
+                            &>div {
+                                position: relative;
+                            }
     
                             .proj_detail {
                                 margin-top: $regular_margin_p;
@@ -2673,31 +2684,28 @@ main {
                                 }
     
                                 .desc_txt {
-    
                                 
-                                        text-align: justify;
-                                        font-size: calc(8px + 2vw);
+                                    text-align: justify;
+                                    font-size: calc(8px + 2vw);
+                                    line-height: 2em;
+    
+                                    @include responsive(tablet-cat) {
+                                        font-size: calc(8px + 1.1vw);
+                                    }
+
+                                    @include responsive(semi-cat) {
+                                        font-size: 24px;
                                         line-height: 2em;
-        
-                                        @include responsive(tablet-cat) {
-                                            font-size: calc(8px + 1.1vw);
-                                        }
-    
-                                        @include responsive(semi-cat) {
-                                            font-size: 24px;
-                                            line-height: 2em;
-                                        }
-    
-                                        @include responsive(semi-cat) {
-                                            font-size: 28px;
-                                        }
-        
-    
+                                    }
+
+                                    @include responsive(semi-cat) {
+                                        font-size: 28px;
+                                    }
                                 }
                             }    
                             
                             .info_btn_grp {
-                                @include common_btn(0);
+                                @include common_btn(none);
                             }
                         }
                     }
@@ -2705,24 +2713,6 @@ main {
 
                 @include proj_back_img;
 
-            }
-
-            .proj_kopc {
-                .proj_contents {
-                    @include proj_common_contents($kopc, $kopc_t1, $kopc_t2, $kopc_t3);
-                }
-            }
-
-            .proj_FAHotel {
-                .proj_contents {
-                    @include proj_common_contents($FAHotel, $FAHotel_t1, $FAHotel_t2, none);
-                }
-            }
-
-            .proj_kidcat {
-                .proj_contents {
-                    @include proj_common_contents($kidcat, $kidcat_t1, $kidcat_t2, none);
-                }
             }
 
         }

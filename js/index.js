@@ -22,10 +22,12 @@ window.addEventListener('load', () => {
     let w_height=window.innerHeight;
     let w_width=window.innerWidth;
 
-    //body, html, bighead
+    //body, html, bighead, nyan_zone
     let html$=document.querySelector('html');
     let bighead$=document.querySelector('.bighead');
     let bighead_width=bighead$.offsetWidth;
+    let nyan_zone=document.querySelectorAll('.nyan_zone');
+    let n_width=nyan_zone[0].offsetWidth;
 
     //background(tile)
     let kit=document.querySelector('.tile_back');
@@ -89,11 +91,12 @@ window.addEventListener('load', () => {
         w_height=window.innerHeight;
         w_width=window.innerWidth;
         window_y_axis=window.scrollY+window.innerHeight;
+        n_width=nyan_zone[0].offsetWidth;
     });
 
     //===========스크롤 애니메이션 수치============//
 
-    function scroll_cat() {
+    function nyan_cat() {
         if(w_width<tablet_cat) {
             return 200;
         }
@@ -167,7 +170,6 @@ window.addEventListener('load', () => {
         mit_timer=setTimeout(()=> {
             createTiles();
             tilesBlink();
-            console.log('resize');
         },500)
     });
 
@@ -1177,8 +1179,6 @@ window.addEventListener('load', () => {
     const semi_click = (current_idx, new_idx) => {
 
         rest_list[new_idx].addEventListener('click', ()=>{
-            console.log(current_idx);
-            console.log(new_idx);
             
             if(new_idx==current_idx) {
                 null;
@@ -1282,7 +1282,6 @@ window.addEventListener('load', () => {
     axios.get(mk_data_url)
     .then(
         (res) => {
-            console.log("통신결과", '양호');
             let mcl$=res.data.mk_skills_coding;
             let mgl$=res.data.mk_skills_graphic;
 
@@ -1418,8 +1417,7 @@ window.addEventListener('load', () => {
             let mk_kitty_entire=document.querySelector('.mk_kitty_entire');
             mk_kitty_entire.classList.add('mk_kitty_style');
             let mk_kitty_zzz=mk_kitty_entire.getElementsByTagName('p');
-            console.log(mk_kitty_zzz)
-        
+
             function mk_kitty_drop() {
                 mk_kitty_entire.animate([
                     {transform: "translateY(-50%)", opacity: 0},
@@ -1440,7 +1438,7 @@ window.addEventListener('load', () => {
                 setTimeout(()=>{
                     mk_kitty_entire.style.transformOrigin="center bottom"
                     mk_kitty_entire.animate([
-                        {rotate: "0"},
+                        {rotate: "0deg"},
                         {rotate: "5deg"},
                         {rotate: "0deg"},
                         {rotate: "-5deg"},
@@ -1547,9 +1545,8 @@ window.addEventListener('load', () => {
         
             let mk_gnb_all = document.querySelectorAll('.mk_gnb_flex li');
             let mk_gnb_kitty = document.querySelectorAll('.mk_gnb_kitty');
-        
-            console.log(mk_gnb_kitty[0]);
-            console.log(mk_gnb_kitty[1]);
+            mk_gnb_all[0].classList.add('common_under');
+
         
             [].forEach.call(mk_gnb_all, (cat, idx) => {
                 cat.addEventListener('click', ()=> {
@@ -1605,7 +1602,6 @@ window.addEventListener('load', () => {
             window.addEventListener('resize', () => {
                 mk_resize(mk_coding);
                 mk_resize(mk_graphic);
-        
             });
         }
     ).catch(err=> {
@@ -1613,6 +1609,7 @@ window.addEventListener('load', () => {
     });
     //Projects
 
+    let main_projects$=document.querySelector('.main_projects');
     const pj_data_url="https://nonwhiskerscat.github.io/kidcat_nyantopia/json/my_projects.json";
 
 
@@ -1620,14 +1617,13 @@ window.addEventListener('load', () => {
     .then(
         (res) => {
 
-            console.log("통신결과", '양호');
 
             let pj_frame='';
-            console.log(res.data.Javascript[0].tag)
+            let projs=document.querySelector('.projs');
 
             function proj_generator(cat, kitty) {
                 [].forEach.call(cat, (neko, idx) => {
-                    console.log(neko);
+
                     kitty+=
                     `
                     <div class="proj_${neko.tag}">
@@ -1656,22 +1652,18 @@ window.addEventListener('load', () => {
                                         <div class="info_tone">
                                             <h5>톤 앤 매너</h5>
                                             <div class="tone_flex">
-                                                <div class="tone_cat">
-                                                    <svg id="tone_cat_${neko.tag}_1" data-name="레이어 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 47.59">
-                                                        <path class="tone_kitty" d="M47.74,14.65c-.39-4.56-1.85-13.73-5.83-14.58-3.3-.7-7.6,3.75-10.39,7.23,0,0,0,0,0,0-.66-.07-1.27-.14-1.85-.2-.6-.06-1.16-.11-1.72-.15-.69-.05-1.37-.09-2.09-.1-.28,0-.56,0-.85,0h0c-.29,0-.58,0-.85,0-.73,.02-1.41,.05-2.1,.1-.56,.04-1.12,.1-1.72,.16-.57,.06-1.18,.13-1.84,.2,0,0,0,0,0,0C15.69,3.82,11.39-.63,8.08,.07,4.1,.92,2.65,10.09,2.26,14.65,.88,18.63,.12,21.78,0,27.21c-.27,13.31,11.19,20.38,24.99,20.38h0c13.8,0,25.26-7.07,24.99-20.38-.11-5.43-.87-8.58-2.25-12.56Z"/>
-                                                    </svg>
-                                                </div>                                                   
+                                                ${tone_genterator(neko)}
                                             </div>
                                         </div>
     
                                         <div class="info_date">
                                             <h5>작업 기간</h5>
-                                            <p class="p_date"><span class="info_highlight">${neko.peri}</span>일</p>
+                                            <p class="p_date"><span style="color:${neko.main_tone}" class="info_highlight">${neko.peri}</span>일</p>
                                         </div>
     
                                         <div class="info_per">
                                             <h5>작업 인원</h5>
-                                            <p class="p_per"><span class="info_highlight">${neko.con}</span>명</p>
+                                            <p class="p_per"><span style="color:${neko.main_tone}" class="info_highlight">${neko.con}</span>명</p>
                                         </div>
                                     </div>
     
@@ -1683,12 +1675,18 @@ window.addEventListener('load', () => {
                                     </div>
     
                                     <div class="info_btn_grp">
-                                        <button class="btn_design">
-                                            <p class="btn_txt">Design Note</p>
+                                        <button class="btn_design" style="border-color:${neko.main_tone};">
+                                            <p class="btn_txt" style="color:${neko.main_tone}">Design Note</p>
+                                            <span class="btn_after" style="background-color:${neko.main_tone}">
+                                                <p class="btn_txt" style="color:${background$}">디자인 노트</p>
+                                            </span>
                                         </button>
     
-                                        <button class="btn_web">
-                                            <p class="btn_txt">Website</p>
+                                        <button class="btn_web" style="border-color:${neko.main_tone};">
+                                            <p class="btn_txt" style="color:${neko.main_tone}">Website</p>
+                                            <span class="btn_after" style="background-color:${neko.main_tone}">
+                                                <p class="btn_txt" style="color:${background$}">웹사이트</p>
+                                            </span>
                                         </button>
                                     </div>
                                 </div>
@@ -1698,11 +1696,207 @@ window.addEventListener('load', () => {
                     `;
                 });
 
-                document.querySelector('.projs').innerHTML=kitty;
-        
+                projs.innerHTML=kitty;
             }
 
-            proj_generator(res.data.Javascript,pj_frame);
+            function tone_genterator(cat) {
+
+                let kitty=''
+
+                if(cat.tone_count) {
+                    for(let pjt=0;pjt<cat.tone_count;pjt++) {
+                        kitty+=`
+                        <div class="tone_cat tone_${cat.tag}" style="width:${100/cat.tone_count}%">
+                            <svg id="tone_cat_${cat.tag}_${pjt}" data-name="레이어 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 47.59">
+                                <path style="fill: ${cat.tone[pjt]}; stroke: ${cat.stroke[pjt]}; stroke-width: 2px; stroke-linejoin:'round'" class="tone_kitty" d="M47.74,14.65c-.39-4.56-1.85-13.73-5.83-14.58-3.3-.7-7.6,3.75-10.39,7.23,0,0,0,0,0,0-.66-.07-1.27-.14-1.85-.2-.6-.06-1.16-.11-1.72-.15-.69-.05-1.37-.09-2.09-.1-.28,0-.56,0-.85,0h0c-.29,0-.58,0-.85,0-.73,.02-1.41,.05-2.1,.1-.56,.04-1.12,.1-1.72,.16-.57,.06-1.18,.13-1.84,.2,0,0,0,0,0,0C15.69,3.82,11.39-.63,8.08,.07,4.1,.92,2.65,10.09,2.26,14.65,.88,18.63,.12,21.78,0,27.21c-.27,13.31,11.19,20.38,24.99,20.38h0c13.8,0,25.26-7.07,24.99-20.38-.11-5.43-.87-8.58-2.25-12.56Z"/>
+                            </svg>
+                        </div>
+
+                        `;
+                    }
+                }
+                else kitty=`
+                <div class="tone_cat tone_${cat.tag}">
+                    <h1>X</h1>
+                </div>
+                `;
+
+                return kitty;
+            }
+
+            proj_generator(res.data.Webpage,pj_frame);    
+            
+            let proj=projs.children;
+            
+            // let proj_nyanbal=cat.querySelector('.proj_nyanbal');
+            let pj_big_nyan=main_projects$.querySelector('.big_nyan');
+
+            function pj_ready() {
+                [].forEach.call(proj, (cat, idx)=> {
+                    let proj_photo=cat.querySelector('.proj_photo');
+                    let proj_back=cat.querySelectorAll('.proj_back');
+
+                    let pj_cont=cat.querySelector('.proj_contents');
+                    let pj_title=pj_cont.querySelector('.proj_title');
+                    let pj_info=pj_cont.querySelector('.proj_info');
+                    let pj_infos=pj_info.children;
+
+                    function pj_reset(kitty1, kitty2, kitty3) {
+                        [].forEach.call(proj_back,(cat)=> {
+                            cat.style.scale=0;
+                        });
+        
+                        if(idx%4==0) {
+                            kitty1.style.left=`-${n_width}px`;
+                            kitty1.style.rotate=`15deg`
+                            kitty1.style.top=`-${nyan_cat()}px`;
+                        }
+        
+                        else if(idx%4==1) {
+                            kitty1.style.right=`-${n_width}px`;
+                            kitty1.style.rotate=`-15deg`
+                            kitty1.style.top=`-${nyan_cat()}px`;
+                        }
+        
+                        else if(idx%4==2)  {
+                            kitty1.style.left=`-${n_width}px`;
+                            kitty1.style.rotate=`-15deg`
+                            kitty1.style.top=`${nyan_cat()}px`;
+                        }
+        
+                        else {
+                            kitty1.style.right=`-${n_width}px`;
+                            kitty1.style.rotate=`15deg`
+                            kitty1.style.top=`${nyan_cat()}px`;
+                        }
+
+                        if(idx%2==1) {
+                            kitty2.style.left=`-${n_width}px`;
+                            [].forEach.call(kitty3, (cat) => {
+                                cat.style.left=`-${n_width}px`;
+                            });
+                        }
+        
+                        else {
+                            kitty2.style.right=`-${n_width}px`;
+                            [].forEach.call(kitty3, (cat) => {
+                                cat.style.right=`-${n_width}px`;
+                            });
+                        }
+                    }
+
+                    pj_reset(proj_photo, pj_title, pj_infos);
+
+                    window.addEventListener('scroll', ()=> {
+                        if(window.scrollY+w_height>pj_big_nyan.offsetTop+cat.offsetTop+cat.offsetHeight/2) {
+                            pj_kitty_ani(idx);
+                        }
+                    });
+
+                    let pj_gnb_li=document.querySelectorAll('.proj_gnb_flex li');
+                    [].forEach.call(pj_gnb_li, (cat, idx) => {
+                        let pj_gnb_kitty=cat.querySelector('.proj_gnb_kitty');
+                        if(idx==0) {
+                            cat.classList.add('common_under');
+                            pj_gnb_kitty.innerHTML='<img src="./img/main/my_skills_gnb_cat.png" alt="gnb_kitty">';
+                        }
+
+                        cat.addEventListener('click', ()=>{
+
+                            cat.classList.add('common_under');
+                            pj_gnb_kitty.innerHTML='<img src="./img/main/my_skills_gnb_cat.png" alt="gnb_kitty">';
+                            pj_reset(proj_photo, pj_title, pj_infos);
+                            pj_kitty_ani(idx);
+                            let pj_frame='';
+                            if(idx==0) proj_generator(res.data.Webpage,pj_frame);
+                            else if(idx==1) proj_generator(res.data.Javascript,pj_frame);
+                            else proj_generator(res.data.React,pj_frame);
+
+                        })
+                    })
+
+
+
+                    function pj_kitty_ani(neko) {
+
+                        if(neko%2==0) {
+                            proj_photo.animate(
+                                {left: 0, top: 0, rotate: '0deg'}
+                            ,
+                            {
+                                duration: 3000,
+                                fill: 'forwards',
+                                easing: 'linear'
+                            });
+
+                            pj_title.animate({
+                                right: 0
+                            }, {
+                                easing: 'linear',
+                                duration: 1000,
+                                delay: 1000,
+                                fill: 'forwards'
+                            });
+
+                            [].forEach.call(pj_infos, (cat, idx) => {
+                                cat.animate({right:0}, {
+                                    easing: 'linear',
+                                    duration: 1000,
+                                    delay: 1200 + 200*idx,
+                                    fill: 'forwards'
+                                });
+                            });
+                        }
+
+                        else {
+                            proj_photo.animate(
+                                {right: 0, top: 0,rotate: '0deg'},
+                            {
+                                duration: 3000,
+                                fill: 'forwards',
+                                easing: 'linear'
+                            });
+
+                            pj_title.animate({
+                                left: 0
+                            },
+                            {
+                                easing: 'linear',
+                                duration: 1000,
+                                delay: 1000,
+                                fill: 'forwards'
+                            });
+
+                            [].forEach.call(pj_infos, (cat, idx) => {
+                                cat.animate({left:0}, {
+                                    easing: 'linear',
+                                    duration: 1000,
+                                    delay: 1200 + 200*idx,
+                                    fill: 'forwards'
+                                });
+                            });
+                        }
+
+                        [].forEach.call(proj_back,(cat, idx)=> {
+                            cat.animate({scale: 1}, {
+                                duration: 500,
+                                delay: 1000+200*idx,
+                                fill: 'forwards'
+                            })
+                        });
+
+
+
+                        
+                    }
+                });
+    
+            }
+
+            pj_ready();
+
+
+
 
             
         }
@@ -1710,13 +1904,18 @@ window.addEventListener('load', () => {
         console.error('에러발생: ', err);
     });
 
+
+
     //==============footer==============//
 
     //발자국 svg 효과
-
     let footer_trace=document.querySelector('.footer_trace');
+    svgTraces(footer_trace);
+
+
     let traces_g=footer_trace.querySelectorAll('g');
     let traces_scroll=true;
+
 
     document.addEventListener('scroll', ()=> {
         if(traces_scroll) {

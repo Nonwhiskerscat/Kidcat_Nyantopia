@@ -1,9 +1,11 @@
+@import './style.scss';
+
 html {
     overflow: overlay;
 
     &::-webkit-scrollbar-track
     {
-        -webkit-box-shadow: inset 0 0 6px #e87d9e;
+        -webkit-box-shadow: inset 0 0 6px $identity;
         border-radius: 8px;
     }
 
@@ -19,12 +21,12 @@ html {
         background-image: -webkit-linear-gradient(-90deg,
         transparent 0%,
         transparent 5%,
-        #e87d9e 5%,
-        #e87d9e 15%,
+        $identity 5%,
+        $identity 15%,
         transparent 15%,
         transparent 20%,
-        #e87d9e 20%,
-        #e87d9e 30%,
+        $identity 20%,
+        $identity 30%,
         transparent 30%,
         transparent)
     }
@@ -34,7 +36,7 @@ html {
 
         &::-webkit-scrollbar-track
         {
-            -webkit-box-shadow: inset 0 0 6px #e87d9e;
+            -webkit-box-shadow: inset 0 0 6px $identity;
             border-radius: 8px;
         }
     
@@ -49,18 +51,41 @@ html {
             background-image: -webkit-linear-gradient(-90deg,
             transparent 0%,
             transparent 5%,
-            #e87d9e 5%,
-            #e87d9e 15%,
+            $identity 5%,
+            $identity 15%,
             transparent 15%,
             transparent 20%,
-            #e87d9e 20%,
-            #e87d9e 30%,
+            $identity 20%,
+            $identity 30%,
             transparent 30%,
             transparent)
         }
     
     }
 
+}
 
+::selection {
+
+    background:$identity;
+    color: #FFF;
+    text-shadow: none;
+
+}
+
+::-moz-selection {
+
+    background:$identity;
+    color: #FFF;
+    text-shadow: none;
+
+}
+
+::-webkit-selection {
+
+    background:$identity;
+    color: #FFF;
+    text-shadow: none;
+    
 }
 
