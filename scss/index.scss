@@ -2947,6 +2947,7 @@ main {
                     }
 
                     .cm_btn_grp {
+                        display: block;
                         @include common_btn(white);
 
                         button {

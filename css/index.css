@@ -3271,6 +3271,7 @@ main .main_projects .projs > div .proj_flex .proj_contents .proj_info .info_desc
 main .main_projects .projs > div .proj_flex .proj_contents .proj_info .info_btn_grp {
   margin-top: 25px;
   display: flex;
+  width: 100%;
   justify-content: space-between;
 }
 @media screen and (min-width: 768px) {
@@ -3407,7 +3408,7 @@ main .main_projects .projs > div:nth-child(1) .proj_photo img.proj_back:last-chi
 main .main_projects .projs > div:nth-child(2) .proj_photo img.proj_nyanbal {
   left: 20%;
   top: 45%;
-  rotate: -110deg;
+  rotate: -120deg;
   width: 30%;
 }
 @media screen and (min-width: 768px) {
@@ -3880,8 +3881,10 @@ main .main_contactme .cm_flex .cm_contents_area .cm_not_hidden .cm_greet p .cm_h
   color: #e87d9e;
 }
 main .main_contactme .cm_flex .cm_contents_area .cm_not_hidden .cm_btn_grp {
+  display: block;
   margin-top: 25px;
   display: flex;
+  width: 100%;
   justify-content: space-between;
 }
 @media screen and (min-width: 768px) {
@@ -4350,6 +4353,7 @@ main .main_contactme .cm_flex .cm_contents_area .cm_hidden .cm_hd_main form .cm_
 main .main_contactme .cm_flex .cm_contents_area .cm_hidden .cm_hd_main form .cmh_btn_grp {
   margin-top: 25px;
   display: flex;
+  width: 100%;
   justify-content: space-between;
 }
 @media screen and (min-width: 768px) {
