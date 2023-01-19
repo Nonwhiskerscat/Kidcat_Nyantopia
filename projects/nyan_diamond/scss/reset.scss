@@ -1,0 +1,105 @@
+@import "./style.scss";
+@import "./responsive.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+
+}
+
+.no {
+    display: none;
+}
+
+.on {
+    display: inline;
+}
+
+
+.bighead {
+    // display: flex;
+    // align-items: center;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    min-height: 100vh;
+
+    &::before{
+        content: "";
+        background: url(../img/back/background.png);
+        background-size: cover;
+        opacity: 0.5;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+    }
+}
+
+html, body {
+    color: white;
+    // font-family: 'IBMPlexSansKR-Regular';
+}
+
+// h1 {
+//     font-family: $highlight;
+// }
+
+// h2 {
+//     font-family: $highlight;
+// }
+
+// h3 {
+//     font-family: $highlight;
+// }
+
+// h4 {
+//     font-family: $highlight;
+// }
+
+// h5 {
+//     font-family: $highlight;
+// }
+
+// h6 {
+//     font-family: $highlight;
+// }
+
+table, th,  tr, td {
+    border: none;
+    border-collapse: collapse;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+input, button {
+    outline: none;
+}
+
+// .container {
+//     // background-color: red;
+//     position: relative;
+//     width: 90%;
+//     margin: 0 auto;
+//     // background-color: royalblue;
+
+//     @include responsive(semi-cat) {
+//         width: 93.75%;
+//         // background-color: fuchsia;
+//     }
+
+//     @include responsive(pc-cat) {
+//         // background-color: darkorange;
+//         max-width: 1180px;
+//     }
+// }
+
+
