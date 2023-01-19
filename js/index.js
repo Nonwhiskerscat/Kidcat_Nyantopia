@@ -29,10 +29,7 @@ window.addEventListener('load', () => {
     let nyan_zone=document.querySelectorAll('.nyan_zone');
     let n_width=nyan_zone[0].offsetWidth;
 
-    //background(tile)
-    let kit=document.querySelector('.tile_back');
-    let kit_width=bighead$.offsetWidth;
-    let kit_height=bighead$.offsetHeight;
+
 
     //header(logo)
     let header$=document.querySelector('header');
@@ -82,10 +79,14 @@ window.addEventListener('load', () => {
 
     //footer(images)
     let footer_road=document.querySelector('.footer_road');
+    let footer_kitty=document.querySelector('.footer_kitty');
 
 
     //===========resize에 따라 변하는 요소==========//
     window.addEventListener('resize', ()=> {
+        let kit_height=bighead$.offsetHeight;
+        let kit_width=bighead$.offsetWidth;
+
         kit_width=bighead$.offsetWidth;
         kit_height=bighead$.offsetHeight;
         w_height=window.innerHeight;
@@ -115,8 +116,13 @@ window.addEventListener('load', () => {
     }
 
     //===========배경화면 타일 애니메이션============//
+
+    //background(tile)
+    let kit=document.querySelector('.tile_back');
+
     
     function createTile() {
+
         const el = document.createElement('img');
         let el_rand=Math.ceil(Math.random()*5);
         let el_rot=`${Math.random()*360}deg`
@@ -128,6 +134,8 @@ window.addEventListener('load', () => {
     }
 
     function createTiles() {
+        let kit_height=bighead$.offsetHeight;
+        kit.style.height=`${kit_height-footer_road.offsetHeight+footer_kitty.offsetHeight/1.2}px`;
         for(let i = 0; i<kit_height/10; i++) {
             createTile();
         }
@@ -138,6 +146,7 @@ window.addEventListener('load', () => {
     }
 
     function randomPosition() {
+        let kit_width=bighead$.offsetWidth;
         return (Math.random() * kit_width);
     }
 
@@ -161,6 +170,9 @@ window.addEventListener('load', () => {
     let mit_timer=null;
 
     window.addEventListener('resize', ()=> {
+        let kit_width=bighead$.offsetWidth;
+        let kit_height=bighead$.offsetHeight;
+
         clearTimeout(mit_timer);
         kit_width=bighead$.offsetWidth;
         kit_height=bighead$.offsetHeight;
@@ -173,9 +185,9 @@ window.addEventListener('load', () => {
         },500)
     });
 
-    kit.style.height=`${kit_height-footer_road.offsetHeight}px`;
 
     setTimeout(()=> {
+
         createTiles();
         tilesBlink();
         
@@ -2071,4 +2083,36 @@ window.addEventListener('load', () => {
             }
         }
     });
+
+    //일출 효과
+
+    
+    function ft_set() {
+        let footer_kitty_h=footer_kitty.offsetHeight;
+        footer_kitty.style.transform=`translateY(${footer_kitty_h}px)`;
+    }
+
+    function sun_rising() {
+        footer_kitty.animate({transform: 'translateY(0)'}, {
+            duration: 4500,
+            easing: 'linear',
+            fill: "forwards"
+        });
+    }
+    ft_set();
+
+    let ft_scroll=true;
+    let footer_important=document.querySelector('.footer_important')
+
+    window.addEventListener('scroll', () => {
+        if(ft_scroll) {
+            if(window.scrollY+w_height>footer_important.offsetTop+footer_important.offsetHeight/2)
+            sun_rising();
+        }
+    })
+
+
+    window.addEventListener('resize', () => {
+        ft_set();
+    })
 });
