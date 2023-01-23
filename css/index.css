@@ -484,26 +484,26 @@ main .main_aboutme {
   }
 }
 
-main .main_aboutme .main_h2 .nyan_zone_h2 {
+main .main_aboutme .main_h2 .nyan_h2_flex {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
 @media screen and (min-width: 768px) {
-  main .main_aboutme .main_h2 .nyan_zone_h2 {
+  main .main_aboutme .main_h2 .nyan_h2_flex {
     flex-direction: row;
   }
 }
 
-main .main_aboutme .main_h2 .nyan_zone_h2 .title_trace_area {
+main .main_aboutme .main_h2 .nyan_h2_flex .title_trace_area {
   position: relative;
   width: calc(15px + 3vw);
   margin: 0 auto;
 }
 
 @media screen and (min-width: 768px) {
-  main .main_aboutme .main_h2 .nyan_zone_h2 .title_trace_area {
+  main .main_aboutme .main_h2 .nyan_h2_flex .title_trace_area {
     margin: 0;
     width: calc(30px + 2vw);
     height: calc(20px + 2vw);
@@ -512,25 +512,25 @@ main .main_aboutme .main_h2 .nyan_zone_h2 .title_trace_area {
 }
 
 @media screen and (min-width: 1200px) {
-  main .main_aboutme .main_h2 .nyan_zone_h2 .title_trace_area {
+  main .main_aboutme .main_h2 .nyan_h2_flex .title_trace_area {
     width: 50px;
     height: 40px;
   }
 }
 
 @media screen and (min-width: 1600px) {
-  main .main_aboutme .main_h2 .nyan_zone_h2 .title_trace_area {
+  main .main_aboutme .main_h2 .nyan_h2_flex .title_trace_area {
     width: 60px;
     height: 48px;
   }
 }
 
-main .main_aboutme .main_h2 .nyan_zone_h2 .title_trace_area > img {
+main .main_aboutme .main_h2 .nyan_h2_flex .title_trace_area > img {
   width: 100%;
 }
 
 @media screen and (min-width: 768px) {
-  main .main_aboutme .main_h2 .nyan_zone_h2 .title_trace_area > img {
+  main .main_aboutme .main_h2 .nyan_h2_flex .title_trace_area > img {
     margin: 0;
     position: absolute;
     width: 40%;
@@ -538,29 +538,29 @@ main .main_aboutme .main_h2 .nyan_zone_h2 .title_trace_area > img {
 }
 
 @media screen and (min-width: 1200px) {
-  main .main_aboutme .main_h2 .nyan_zone_h2 .title_trace_area > img {
+  main .main_aboutme .main_h2 .nyan_h2_flex .title_trace_area > img {
     width: 20px;
   }
 }
 
 @media screen and (min-width: 1600px) {
-  main .main_aboutme .main_h2 .nyan_zone_h2 .title_trace_area > img {
+  main .main_aboutme .main_h2 .nyan_h2_flex .title_trace_area > img {
     width: 24px;
   }
 }
 
 @media screen and (min-width: 768px) {
-  main .main_aboutme .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(1) {
+  main .main_aboutme .main_h2 .nyan_h2_flex .title_trace_area > img:nth-child(1) {
     bottom: 0;
   }
 }
 
-main .main_aboutme .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(2) {
+main .main_aboutme .main_h2 .nyan_h2_flex .title_trace_area > img:nth-child(2) {
   display: none;
 }
 
 @media screen and (min-width: 768px) {
-  main .main_aboutme .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(2) {
+  main .main_aboutme .main_h2 .nyan_h2_flex .title_trace_area > img:nth-child(2) {
     display: block;
     right: 0%;
     top: 60%;
@@ -568,39 +568,39 @@ main .main_aboutme .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(2) {
   }
 }
 
-main .main_aboutme .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(3) {
+main .main_aboutme .main_h2 .nyan_h2_flex .title_trace_area > img:nth-child(3) {
   display: none;
 }
 
 @media screen and (min-width: 768px) {
-  main .main_aboutme .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(3) {
+  main .main_aboutme .main_h2 .nyan_h2_flex .title_trace_area > img:nth-child(3) {
     display: block;
     left: 45%;
     transform: translateX(-50%);
   }
 }
 
-main .main_aboutme .main_h2 .nyan_zone_h2 .title_text_area h2 {
+main .main_aboutme .main_h2 .nyan_h2_flex .title_text_area h2 {
   text-align: center;
   font-size: calc(6px + 6vw);
   margin-top: 7px;
 }
 
 @media screen and (min-width: 768px) {
-  main .main_aboutme .main_h2 .nyan_zone_h2 .title_text_area h2 {
-    font-size: calc(6px + 4vw);
+  main .main_aboutme .main_h2 .nyan_h2_flex .title_text_area h2 {
+    font-size: calc(12px + 2vw);
     margin-top: 0;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  main .main_aboutme .main_h2 .nyan_zone_h2 .title_text_area h2 {
+  main .main_aboutme .main_h2 .nyan_h2_flex .title_text_area h2 {
     font-size: 36px;
   }
 }
 
 @media screen and (min-width: 1600px) {
-  main .main_aboutme .main_h2 .nyan_zone_h2 .title_text_area h2 {
+  main .main_aboutme .main_h2 .nyan_h2_flex .title_text_area h2 {
     font-size: 40px;
   }
 }
@@ -1466,26 +1466,26 @@ main .main_myspecs {
   }
 }
 
-main .main_myspecs .main_h2 .nyan_zone_h2 {
+main .main_myspecs .main_h2 .nyan_h2_flex {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
 @media screen and (min-width: 768px) {
-  main .main_myspecs .main_h2 .nyan_zone_h2 {
+  main .main_myspecs .main_h2 .nyan_h2_flex {
     flex-direction: row;
   }
 }
 
-main .main_myspecs .main_h2 .nyan_zone_h2 .title_trace_area {
+main .main_myspecs .main_h2 .nyan_h2_flex .title_trace_area {
   position: relative;
   width: calc(15px + 3vw);
   margin: 0 auto;
 }
 
 @media screen and (min-width: 768px) {
-  main .main_myspecs .main_h2 .nyan_zone_h2 .title_trace_area {
+  main .main_myspecs .main_h2 .nyan_h2_flex .title_trace_area {
     margin: 0;
     width: calc(30px + 2vw);
     height: calc(20px + 2vw);
@@ -1494,25 +1494,25 @@ main .main_myspecs .main_h2 .nyan_zone_h2 .title_trace_area {
 }
 
 @media screen and (min-width: 1200px) {
-  main .main_myspecs .main_h2 .nyan_zone_h2 .title_trace_area {
+  main .main_myspecs .main_h2 .nyan_h2_flex .title_trace_area {
     width: 50px;
     height: 40px;
   }
 }
 
 @media screen and (min-width: 1600px) {
-  main .main_myspecs .main_h2 .nyan_zone_h2 .title_trace_area {
+  main .main_myspecs .main_h2 .nyan_h2_flex .title_trace_area {
     width: 60px;
     height: 48px;
   }
 }
 
-main .main_myspecs .main_h2 .nyan_zone_h2 .title_trace_area > img {
+main .main_myspecs .main_h2 .nyan_h2_flex .title_trace_area > img {
   width: 100%;
 }
 
 @media screen and (min-width: 768px) {
-  main .main_myspecs .main_h2 .nyan_zone_h2 .title_trace_area > img {
+  main .main_myspecs .main_h2 .nyan_h2_flex .title_trace_area > img {
     margin: 0;
     position: absolute;
     width: 40%;
@@ -1520,29 +1520,29 @@ main .main_myspecs .main_h2 .nyan_zone_h2 .title_trace_area > img {
 }
 
 @media screen and (min-width: 1200px) {
-  main .main_myspecs .main_h2 .nyan_zone_h2 .title_trace_area > img {
+  main .main_myspecs .main_h2 .nyan_h2_flex .title_trace_area > img {
     width: 20px;
   }
 }
 
 @media screen and (min-width: 1600px) {
-  main .main_myspecs .main_h2 .nyan_zone_h2 .title_trace_area > img {
+  main .main_myspecs .main_h2 .nyan_h2_flex .title_trace_area > img {
     width: 24px;
   }
 }
 
 @media screen and (min-width: 768px) {
-  main .main_myspecs .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(1) {
+  main .main_myspecs .main_h2 .nyan_h2_flex .title_trace_area > img:nth-child(1) {
     bottom: 0;
   }
 }
 
-main .main_myspecs .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(2) {
+main .main_myspecs .main_h2 .nyan_h2_flex .title_trace_area > img:nth-child(2) {
   display: none;
 }
 
 @media screen and (min-width: 768px) {
-  main .main_myspecs .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(2) {
+  main .main_myspecs .main_h2 .nyan_h2_flex .title_trace_area > img:nth-child(2) {
     display: block;
     right: 0%;
     top: 60%;
@@ -1550,39 +1550,39 @@ main .main_myspecs .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(2) {
   }
 }
 
-main .main_myspecs .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(3) {
+main .main_myspecs .main_h2 .nyan_h2_flex .title_trace_area > img:nth-child(3) {
   display: none;
 }
 
 @media screen and (min-width: 768px) {
-  main .main_myspecs .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(3) {
+  main .main_myspecs .main_h2 .nyan_h2_flex .title_trace_area > img:nth-child(3) {
     display: block;
     left: 45%;
     transform: translateX(-50%);
   }
 }
 
-main .main_myspecs .main_h2 .nyan_zone_h2 .title_text_area h2 {
+main .main_myspecs .main_h2 .nyan_h2_flex .title_text_area h2 {
   text-align: center;
   font-size: calc(6px + 6vw);
   margin-top: 7px;
 }
 
 @media screen and (min-width: 768px) {
-  main .main_myspecs .main_h2 .nyan_zone_h2 .title_text_area h2 {
-    font-size: calc(6px + 4vw);
+  main .main_myspecs .main_h2 .nyan_h2_flex .title_text_area h2 {
+    font-size: calc(12px + 2vw);
     margin-top: 0;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  main .main_myspecs .main_h2 .nyan_zone_h2 .title_text_area h2 {
+  main .main_myspecs .main_h2 .nyan_h2_flex .title_text_area h2 {
     font-size: 36px;
   }
 }
 
 @media screen and (min-width: 1600px) {
-  main .main_myspecs .main_h2 .nyan_zone_h2 .title_text_area h2 {
+  main .main_myspecs .main_h2 .nyan_h2_flex .title_text_area h2 {
     font-size: 40px;
   }
 }
@@ -2072,26 +2072,26 @@ main .main_myskills {
   }
 }
 
-main .main_myskills .main_h2 .nyan_zone_h2 {
+main .main_myskills .main_h2 .nyan_h2_flex {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
 @media screen and (min-width: 768px) {
-  main .main_myskills .main_h2 .nyan_zone_h2 {
+  main .main_myskills .main_h2 .nyan_h2_flex {
     flex-direction: row;
   }
 }
 
-main .main_myskills .main_h2 .nyan_zone_h2 .title_trace_area {
+main .main_myskills .main_h2 .nyan_h2_flex .title_trace_area {
   position: relative;
   width: calc(15px + 3vw);
   margin: 0 auto;
 }
 
 @media screen and (min-width: 768px) {
-  main .main_myskills .main_h2 .nyan_zone_h2 .title_trace_area {
+  main .main_myskills .main_h2 .nyan_h2_flex .title_trace_area {
     margin: 0;
     width: calc(30px + 2vw);
     height: calc(20px + 2vw);
@@ -2100,25 +2100,25 @@ main .main_myskills .main_h2 .nyan_zone_h2 .title_trace_area {
 }
 
 @media screen and (min-width: 1200px) {
-  main .main_myskills .main_h2 .nyan_zone_h2 .title_trace_area {
+  main .main_myskills .main_h2 .nyan_h2_flex .title_trace_area {
     width: 50px;
     height: 40px;
   }
 }
 
 @media screen and (min-width: 1600px) {
-  main .main_myskills .main_h2 .nyan_zone_h2 .title_trace_area {
+  main .main_myskills .main_h2 .nyan_h2_flex .title_trace_area {
     width: 60px;
     height: 48px;
   }
 }
 
-main .main_myskills .main_h2 .nyan_zone_h2 .title_trace_area > img {
+main .main_myskills .main_h2 .nyan_h2_flex .title_trace_area > img {
   width: 100%;
 }
 
 @media screen and (min-width: 768px) {
-  main .main_myskills .main_h2 .nyan_zone_h2 .title_trace_area > img {
+  main .main_myskills .main_h2 .nyan_h2_flex .title_trace_area > img {
     margin: 0;
     position: absolute;
     width: 40%;
@@ -2126,29 +2126,29 @@ main .main_myskills .main_h2 .nyan_zone_h2 .title_trace_area > img {
 }
 
 @media screen and (min-width: 1200px) {
-  main .main_myskills .main_h2 .nyan_zone_h2 .title_trace_area > img {
+  main .main_myskills .main_h2 .nyan_h2_flex .title_trace_area > img {
     width: 20px;
   }
 }
 
 @media screen and (min-width: 1600px) {
-  main .main_myskills .main_h2 .nyan_zone_h2 .title_trace_area > img {
+  main .main_myskills .main_h2 .nyan_h2_flex .title_trace_area > img {
     width: 24px;
   }
 }
 
 @media screen and (min-width: 768px) {
-  main .main_myskills .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(1) {
+  main .main_myskills .main_h2 .nyan_h2_flex .title_trace_area > img:nth-child(1) {
     bottom: 0;
   }
 }
 
-main .main_myskills .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(2) {
+main .main_myskills .main_h2 .nyan_h2_flex .title_trace_area > img:nth-child(2) {
   display: none;
 }
 
 @media screen and (min-width: 768px) {
-  main .main_myskills .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(2) {
+  main .main_myskills .main_h2 .nyan_h2_flex .title_trace_area > img:nth-child(2) {
     display: block;
     right: 0%;
     top: 60%;
@@ -2156,39 +2156,39 @@ main .main_myskills .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(2) 
   }
 }
 
-main .main_myskills .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(3) {
+main .main_myskills .main_h2 .nyan_h2_flex .title_trace_area > img:nth-child(3) {
   display: none;
 }
 
 @media screen and (min-width: 768px) {
-  main .main_myskills .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(3) {
+  main .main_myskills .main_h2 .nyan_h2_flex .title_trace_area > img:nth-child(3) {
     display: block;
     left: 45%;
     transform: translateX(-50%);
   }
 }
 
-main .main_myskills .main_h2 .nyan_zone_h2 .title_text_area h2 {
+main .main_myskills .main_h2 .nyan_h2_flex .title_text_area h2 {
   text-align: center;
   font-size: calc(6px + 6vw);
   margin-top: 7px;
 }
 
 @media screen and (min-width: 768px) {
-  main .main_myskills .main_h2 .nyan_zone_h2 .title_text_area h2 {
-    font-size: calc(6px + 4vw);
+  main .main_myskills .main_h2 .nyan_h2_flex .title_text_area h2 {
+    font-size: calc(12px + 2vw);
     margin-top: 0;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  main .main_myskills .main_h2 .nyan_zone_h2 .title_text_area h2 {
+  main .main_myskills .main_h2 .nyan_h2_flex .title_text_area h2 {
     font-size: 36px;
   }
 }
 
 @media screen and (min-width: 1600px) {
-  main .main_myskills .main_h2 .nyan_zone_h2 .title_text_area h2 {
+  main .main_myskills .main_h2 .nyan_h2_flex .title_text_area h2 {
     font-size: 40px;
   }
 }
@@ -3219,26 +3219,26 @@ main .main_projects {
   }
 }
 
-main .main_projects .main_h2 .nyan_zone_h2 {
+main .main_projects .main_h2 .nyan_h2_flex {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
 @media screen and (min-width: 768px) {
-  main .main_projects .main_h2 .nyan_zone_h2 {
+  main .main_projects .main_h2 .nyan_h2_flex {
     flex-direction: row;
   }
 }
 
-main .main_projects .main_h2 .nyan_zone_h2 .title_trace_area {
+main .main_projects .main_h2 .nyan_h2_flex .title_trace_area {
   position: relative;
   width: calc(15px + 3vw);
   margin: 0 auto;
 }
 
 @media screen and (min-width: 768px) {
-  main .main_projects .main_h2 .nyan_zone_h2 .title_trace_area {
+  main .main_projects .main_h2 .nyan_h2_flex .title_trace_area {
     margin: 0;
     width: calc(30px + 2vw);
     height: calc(20px + 2vw);
@@ -3247,25 +3247,25 @@ main .main_projects .main_h2 .nyan_zone_h2 .title_trace_area {
 }
 
 @media screen and (min-width: 1200px) {
-  main .main_projects .main_h2 .nyan_zone_h2 .title_trace_area {
+  main .main_projects .main_h2 .nyan_h2_flex .title_trace_area {
     width: 50px;
     height: 40px;
   }
 }
 
 @media screen and (min-width: 1600px) {
-  main .main_projects .main_h2 .nyan_zone_h2 .title_trace_area {
+  main .main_projects .main_h2 .nyan_h2_flex .title_trace_area {
     width: 60px;
     height: 48px;
   }
 }
 
-main .main_projects .main_h2 .nyan_zone_h2 .title_trace_area > img {
+main .main_projects .main_h2 .nyan_h2_flex .title_trace_area > img {
   width: 100%;
 }
 
 @media screen and (min-width: 768px) {
-  main .main_projects .main_h2 .nyan_zone_h2 .title_trace_area > img {
+  main .main_projects .main_h2 .nyan_h2_flex .title_trace_area > img {
     margin: 0;
     position: absolute;
     width: 40%;
@@ -3273,29 +3273,29 @@ main .main_projects .main_h2 .nyan_zone_h2 .title_trace_area > img {
 }
 
 @media screen and (min-width: 1200px) {
-  main .main_projects .main_h2 .nyan_zone_h2 .title_trace_area > img {
+  main .main_projects .main_h2 .nyan_h2_flex .title_trace_area > img {
     width: 20px;
   }
 }
 
 @media screen and (min-width: 1600px) {
-  main .main_projects .main_h2 .nyan_zone_h2 .title_trace_area > img {
+  main .main_projects .main_h2 .nyan_h2_flex .title_trace_area > img {
     width: 24px;
   }
 }
 
 @media screen and (min-width: 768px) {
-  main .main_projects .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(1) {
+  main .main_projects .main_h2 .nyan_h2_flex .title_trace_area > img:nth-child(1) {
     bottom: 0;
   }
 }
 
-main .main_projects .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(2) {
+main .main_projects .main_h2 .nyan_h2_flex .title_trace_area > img:nth-child(2) {
   display: none;
 }
 
 @media screen and (min-width: 768px) {
-  main .main_projects .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(2) {
+  main .main_projects .main_h2 .nyan_h2_flex .title_trace_area > img:nth-child(2) {
     display: block;
     right: 0%;
     top: 60%;
@@ -3303,39 +3303,39 @@ main .main_projects .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(2) 
   }
 }
 
-main .main_projects .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(3) {
+main .main_projects .main_h2 .nyan_h2_flex .title_trace_area > img:nth-child(3) {
   display: none;
 }
 
 @media screen and (min-width: 768px) {
-  main .main_projects .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(3) {
+  main .main_projects .main_h2 .nyan_h2_flex .title_trace_area > img:nth-child(3) {
     display: block;
     left: 45%;
     transform: translateX(-50%);
   }
 }
 
-main .main_projects .main_h2 .nyan_zone_h2 .title_text_area h2 {
+main .main_projects .main_h2 .nyan_h2_flex .title_text_area h2 {
   text-align: center;
   font-size: calc(6px + 6vw);
   margin-top: 7px;
 }
 
 @media screen and (min-width: 768px) {
-  main .main_projects .main_h2 .nyan_zone_h2 .title_text_area h2 {
-    font-size: calc(6px + 4vw);
+  main .main_projects .main_h2 .nyan_h2_flex .title_text_area h2 {
+    font-size: calc(12px + 2vw);
     margin-top: 0;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  main .main_projects .main_h2 .nyan_zone_h2 .title_text_area h2 {
+  main .main_projects .main_h2 .nyan_h2_flex .title_text_area h2 {
     font-size: 36px;
   }
 }
 
 @media screen and (min-width: 1600px) {
-  main .main_projects .main_h2 .nyan_zone_h2 .title_text_area h2 {
+  main .main_projects .main_h2 .nyan_h2_flex .title_text_area h2 {
     font-size: 40px;
   }
 }
@@ -4194,26 +4194,26 @@ main .main_contactme {
   }
 }
 
-main .main_contactme .main_h2 .nyan_zone_h2 {
+main .main_contactme .main_h2 .nyan_h2_flex {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
 @media screen and (min-width: 768px) {
-  main .main_contactme .main_h2 .nyan_zone_h2 {
+  main .main_contactme .main_h2 .nyan_h2_flex {
     flex-direction: row;
   }
 }
 
-main .main_contactme .main_h2 .nyan_zone_h2 .title_trace_area {
+main .main_contactme .main_h2 .nyan_h2_flex .title_trace_area {
   position: relative;
   width: calc(15px + 3vw);
   margin: 0 auto;
 }
 
 @media screen and (min-width: 768px) {
-  main .main_contactme .main_h2 .nyan_zone_h2 .title_trace_area {
+  main .main_contactme .main_h2 .nyan_h2_flex .title_trace_area {
     margin: 0;
     width: calc(30px + 2vw);
     height: calc(20px + 2vw);
@@ -4222,25 +4222,25 @@ main .main_contactme .main_h2 .nyan_zone_h2 .title_trace_area {
 }
 
 @media screen and (min-width: 1200px) {
-  main .main_contactme .main_h2 .nyan_zone_h2 .title_trace_area {
+  main .main_contactme .main_h2 .nyan_h2_flex .title_trace_area {
     width: 50px;
     height: 40px;
   }
 }
 
 @media screen and (min-width: 1600px) {
-  main .main_contactme .main_h2 .nyan_zone_h2 .title_trace_area {
+  main .main_contactme .main_h2 .nyan_h2_flex .title_trace_area {
     width: 60px;
     height: 48px;
   }
 }
 
-main .main_contactme .main_h2 .nyan_zone_h2 .title_trace_area > img {
+main .main_contactme .main_h2 .nyan_h2_flex .title_trace_area > img {
   width: 100%;
 }
 
 @media screen and (min-width: 768px) {
-  main .main_contactme .main_h2 .nyan_zone_h2 .title_trace_area > img {
+  main .main_contactme .main_h2 .nyan_h2_flex .title_trace_area > img {
     margin: 0;
     position: absolute;
     width: 40%;
@@ -4248,29 +4248,29 @@ main .main_contactme .main_h2 .nyan_zone_h2 .title_trace_area > img {
 }
 
 @media screen and (min-width: 1200px) {
-  main .main_contactme .main_h2 .nyan_zone_h2 .title_trace_area > img {
+  main .main_contactme .main_h2 .nyan_h2_flex .title_trace_area > img {
     width: 20px;
   }
 }
 
 @media screen and (min-width: 1600px) {
-  main .main_contactme .main_h2 .nyan_zone_h2 .title_trace_area > img {
+  main .main_contactme .main_h2 .nyan_h2_flex .title_trace_area > img {
     width: 24px;
   }
 }
 
 @media screen and (min-width: 768px) {
-  main .main_contactme .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(1) {
+  main .main_contactme .main_h2 .nyan_h2_flex .title_trace_area > img:nth-child(1) {
     bottom: 0;
   }
 }
 
-main .main_contactme .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(2) {
+main .main_contactme .main_h2 .nyan_h2_flex .title_trace_area > img:nth-child(2) {
   display: none;
 }
 
 @media screen and (min-width: 768px) {
-  main .main_contactme .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(2) {
+  main .main_contactme .main_h2 .nyan_h2_flex .title_trace_area > img:nth-child(2) {
     display: block;
     right: 0%;
     top: 60%;
@@ -4278,39 +4278,39 @@ main .main_contactme .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(2)
   }
 }
 
-main .main_contactme .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(3) {
+main .main_contactme .main_h2 .nyan_h2_flex .title_trace_area > img:nth-child(3) {
   display: none;
 }
 
 @media screen and (min-width: 768px) {
-  main .main_contactme .main_h2 .nyan_zone_h2 .title_trace_area > img:nth-child(3) {
+  main .main_contactme .main_h2 .nyan_h2_flex .title_trace_area > img:nth-child(3) {
     display: block;
     left: 45%;
     transform: translateX(-50%);
   }
 }
 
-main .main_contactme .main_h2 .nyan_zone_h2 .title_text_area h2 {
+main .main_contactme .main_h2 .nyan_h2_flex .title_text_area h2 {
   text-align: center;
   font-size: calc(6px + 6vw);
   margin-top: 7px;
 }
 
 @media screen and (min-width: 768px) {
-  main .main_contactme .main_h2 .nyan_zone_h2 .title_text_area h2 {
-    font-size: calc(6px + 4vw);
+  main .main_contactme .main_h2 .nyan_h2_flex .title_text_area h2 {
+    font-size: calc(12px + 2vw);
     margin-top: 0;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  main .main_contactme .main_h2 .nyan_zone_h2 .title_text_area h2 {
+  main .main_contactme .main_h2 .nyan_h2_flex .title_text_area h2 {
     font-size: 36px;
   }
 }
 
 @media screen and (min-width: 1600px) {
-  main .main_contactme .main_h2 .nyan_zone_h2 .title_text_area h2 {
+  main .main_contactme .main_h2 .nyan_h2_flex .title_text_area h2 {
     font-size: 40px;
   }
 }
