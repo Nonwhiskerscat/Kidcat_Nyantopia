@@ -2977,9 +2977,10 @@ main {
                         width: fit-content;
 
                         h3 {
+                            @include common_under;
                             position: relative;
                             font-size: calc(8px + 4vw);
-                            color: white;
+                            color: $identity;
                             text-align: center;
                             width: fit-content;
 
@@ -2995,30 +2996,30 @@ main {
                                 //
                             }
 
-                            &::after {
-                                content: '';
-                                display: block;
-                                height: calc(2px + 0.5vw);
-                                margin-top: 5px;
-                                border-radius: 1000px;
-                                width: 150%;
-                                background-color: white;
-                                translate: -5%;
+                            // &::after {
+                            //     content: '';
+                            //     display: block;
+                            //     height: calc(2px + 0.5vw);
+                            //     margin-top: 5px;
+                            //     border-radius: 1000px;
+                            //     width: 150%;
+                            //     background-color: white;
+                            //     translate: -5%;
 
-                                @include responsive(tablet-cat) {
-                                    height: calc(1px + 0.5vw);
-                                    translate: 0;
-                                    width: 135%;
-                                }
+                            //     @include responsive(tablet-cat) {
+                            //         height: calc(1px + 0.5vw);
+                            //         translate: 0;
+                            //         width: 135%;
+                            //     }
                     
-                                @include responsive(semi-cat) {
-                                    height: 6px;
-                                }
+                            //     @include responsive(semi-cat) {
+                            //         height: 6px;
+                            //     }
                     
-                                @include responsive(huge-cat) {
-                                    //
-                                }
-                            }
+                            //     @include responsive(huge-cat) {
+                            //         //
+                            //     }
+                            // }
                         }
 
                         .cm_hd_kitty {

@@ -147,7 +147,7 @@
 
 @mixin nyan_common_h2 {
     .main_h2 {
-        .nyan_zone_h2 {
+        .nyan_h2_flex {
             display: flex;
             align-items: center;
             flex-direction: column;
@@ -271,7 +271,7 @@
                     margin-top: $petit_margin_p;
 
                     @include responsive(tablet-cat) {
-                        font-size: calc(6px + 4vw);
+                        font-size: calc(12px + 2vw);
                         margin-top: 0;
                     }
 
