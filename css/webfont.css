@@ -1,16 +1,61 @@
 @charset "UTF-8";
 /*제목 전용 폰트*/
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yomogi&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap");
 @font-face {
-  font-family: 'ImcreSoojin';
+  font-family: "ImcreSoojin";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.3/ImcreSoojin.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
-
 /*본문 전용 폰트*/
 @font-face {
-  font-family: 'GoyangIlsan';
+  font-family: "GoyangIlsan";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GoyangIlsan.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
+/*고보협*/
+@font-face {
+  font-family: "210 GureumGothic 030"; /* 폰트 명 */
+  font-style: normal; /* 폰트 스타일 설정 */
+  src: url("../font/210_ICOIOOICOIIOOTF_030.eot"); /* IE9 미만 */
+  src: local("210 GureumGothic 030"), url("../font/210_구름고딕OTF_030.woff2") format("woff2"), url("../font/210_ICOIOOICOIIOOTF_030.woff") format("woff"), url("../font/210_ICOIOOICOIIOOTF_030.ttf") format("truetype"), url("../font/210_ICOIOOICOIIOOTF_030.svg") format("svg"); /* TTF에서도 커버가 안되는 기기들에 대한 대응 */
+}
+@font-face {
+  font-family: "210 GureumGothic 050"; /* 폰트 명 */
+  font-style: normal; /* 폰트 스타일 설정 */
+  src: url("../font/210_ICOIOOICOIIOOTF_050.eot"); /* IE9 미만 */
+  src: local("210 GureumGothic 050"), url("../font/210_구름고딕OTF_050.woff2") format("woff2"), url("../font/210_ICOIOOICOIIOOTF_050.woff") format("woff"), url("../font/210_ICOIOOICOIIOOTF_050.ttf") format("truetype"), url("../font/210_ICOIOOICOIIOOTF_050.svg") format("svg"); /* TTF에서도 커버가 안되는 기기들에 대한 대응 */
+}
+/*페어몬트*/
+@font-face {
+  font-family: "LEMONMILK-Light"; /* 폰트 명 */
+  font-style: normal; /* 폰트 스타일 설정 */
+  src: url("../font/LEMONMILK-Light.eot"); /* IE9 미만 */
+  src: local("Kakao-aLt"), url("../font/LEMONMILK-Light.woff2") format("woff2"), url("../font/LEMONMILK-Light.woff") format("woff"), url("../font/LEMONMILK-Light.ttf") format("truetype"), url("../font/LEMONMILK-Light.svg") format("svg"); /* TTF에서도 커버가 안되는 기기들에 대한 대응 */
+}
+@font-face {
+  font-family: "SCoreDream";
+  font-weight: 300;
+  font-style: normal;
+  src: url(https://cdn.jsdelivr.net/gh/webfontworld/SCoreDream/SCoreDream3.woff2) format("woff2"), url(https://cdn.jsdelivr.net/gh/webfontworld/SCoreDream/SCoreDream3.woff) format("woff");
+  font-display: swap;
+}
+/*숫자야구*/
+@font-face {
+  font-family: "IBMPlexSansKR-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Yeongdo-Rg";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/Yeongdo-Rg.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/*냥 다이아몬드*/
+/*유키가미 노와*/

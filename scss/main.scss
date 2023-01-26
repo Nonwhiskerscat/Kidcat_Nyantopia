@@ -1,0 +1,3120 @@
+@import './style.scss';
+@import './responsive.scss';
+@import './mixin.scss';
+@import './animation.scss';
+
+main {
+    .rending {
+
+    }
+
+    .intro_matte {
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        // width: 100%;
+        // height: 100%;
+    }
+
+    .main_intro {
+
+        // background-color: rgb(255, 199, 199);
+
+        @include responsive(tablet-cat) {
+            //
+        }
+
+        @include responsive(semi-cat) {
+
+        }
+
+        @include responsive(huge-cat) {
+            //
+        }
+
+        .nyan_1 {  
+
+            
+            .first_flex {
+                position: relative;
+
+                .intro_images {
+                    margin: 0 auto;
+                    position: relative;
+                    height: fit-content;
+                    width: fit-content;
+                    // animation: intro_kitty infinite 3s linear;
+                    transform-origin: 40% center;
+                    margin-top: $large_margin_p;
+        
+                    & img {
+                        display: block;
+                    }
+                    
+                    .intro_kitty {
+                        width: calc(150px + 20vw);
+        
+                        @include responsive(tablet-cat) {
+                            width: calc(180px + 20vw);
+                        }
+                
+                        @include responsive(semi-cat) {
+                            width: 400px;
+                        }
+                
+                        @include responsive(huge-cat) {
+                            width: 480px;
+                        }
+                    }
+        
+                    .intro_lines {
+                        
+                        img {
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            width: calc(24px + 2vw);
+        
+                            @include responsive(tablet-cat) {
+                                width: calc(28px + 2vw);
+                            }
+                    
+                            @include responsive(semi-cat) {
+                                width: 65px;
+                            }
+                    
+                            @include responsive(huge-cat) {
+                                width: 80px;
+                            }
+        
+                            &:nth-child(1) {
+                                left: 20%;
+                                top: -10%;
+                                rotate:10deg;
+                            }
+        
+                            &:nth-child(2) {
+                                top: 93%;
+                                left: 10%;
+                                rotate: 245deg;
+                            }
+        
+                            &:nth-child(3) {
+                                top: 50%;
+                                left: 88%;
+                                rotate: 150deg;
+                            }
+                        }
+                    }
+        
+                    .intro_click {
+        
+                        .intro_click_hi {
+                            color: $gray1;
+                            position: absolute;
+                            top: 70%;
+                            right: -10%;
+                            font-size: calc(12px + 1.5vw);
+                            transform: scale(0);
+        
+                            @include responsive(tablet-cat) {
+                                font-size: calc(14px + 1vw);
+                            }
+        
+                            @include responsive(semi-cat) {
+                                font-size: 24px;
+                            }
+                    
+                            @include responsive(huge-cat) {
+                                font-size: 33px;
+                            }
+        
+                        }
+                    }
+
+                    .intro_wave {
+                        display: block;
+                        position: absolute;
+                        width: calc(200px + 10vw);
+                        height: calc(200px + 10vw);
+                        background: white;
+                        opacity: 0.5;
+                        box-shadow: 0px 0px 30px 30px white;
+                        border-radius: 250px;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        z-index: -2;
+
+                        @include responsive(tablet-cat) {
+                            width: calc(250px + 10vw);
+                            height: calc(250px + 10vw);
+                        }
+
+                        @include responsive(semi-cat) {
+                            width: 400px;
+                            height: 400px;
+                        }
+
+                        @include responsive(huge-cat) {
+                            width: 450px;
+                            height: 450px;
+                        }
+
+                        &>div {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            translate: -50% -50%;
+                            width: 200%;
+                            height: 200%;
+                            scale: 0;
+                            border-radius: 50%;
+
+                            &:first-child {
+                                display: block;
+                                border: 5px dashed white;
+
+                            }
+
+                            &:last-child {
+                                display: block;
+                                border: 5px solid white;
+                            }
+                        }
+                    }
+                    
+                }
+        
+                .intro_title {
+                    @include nyan_mezo_margin;
+                    margin-top: $mid_margin_p;
+        
+                    @include responsive(tablet-cat) {
+                        //
+                    }
+            
+                    @include responsive(semi-cat) {
+                        width: 1180px;
+
+                    }
+            
+                    @include responsive(huge-cat) {
+                        width: 1380px;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+        
+                    .intro_h2 {
+                        position: relative;
+        
+                        h2 {
+                            color: rgba($color: #fff, $alpha: 0.3);
+                            text-align: center;
+                            letter-spacing: 1px;
+                            font-size: calc(12px + 3vw);
+        
+                            @include responsive(tablet-cat) {
+                                font-size: calc(8px + 2vw);
+                            }
+                    
+                            @include responsive(semi-cat) {
+                                font-size: 56px;
+                                text-align: left;
+                                letter-spacing: 2px;
+                            }
+                    
+                            @include responsive(huge-cat) {
+                                font-size: 60px;
+                            }
+                            
+                        }
+                    }
+        
+                    .intro_h1 {
+                        position: relative;
+                        @include nyan_tiny_margin; 
+        
+                        @include responsive(tablet-cat) {
+                            //
+                        }
+                
+                        @include responsive(semi-cat) {
+                            display: flex;
+                            width: fit-content;
+                            margin-left: auto;
+                            align-items: center;
+                            justify-content: space-between;
+                            
+                        }
+                
+                        @include responsive(huge-cat) {
+                            
+                        }
+        
+                        h1 {
+                            color: rgba($color: #fff, $alpha: 0.3);
+                            letter-spacing: 1px;
+                            text-align: center;
+                            font-size: calc(20px + 4vw);
+        
+                            @include responsive(tablet-cat) {
+                                font-size: calc(20px + 5vw);
+                            }
+                    
+                            @include responsive(semi-cat) {
+                                font-size: 76px;
+                                letter-spacing: 2px;
+                                width: fit-content;
+                            }
+                    
+                            @include responsive(huge-cat) {
+                                font-size: 90px;
+                            }
+                            
+                        }
+        
+                        img {
+                            display: none;
+        
+                            @include responsive(tablet-cat) {
+                                //
+                            }
+                    
+                            @include responsive(semi-cat) {
+                                display: block;
+                                width: 100px;
+                                margin-left: 20px;
+                            }
+                    
+                            @include responsive(huge-cat) {
+                                width: 120px;
+                                margin-left: 30px;
+                            }
+        
+                        }
+                    }
+        
+                }
+            }
+
+
+    
+
+        }
+
+    }
+    
+
+    .main_aboutme {
+        @include nyan_large_margin;
+        @include nyan_common_h2;
+
+        .nyan_zone {
+
+            .about_me_contents {
+                @include nyan_mid_margin;
+                display: flex;
+                flex-direction: column;
+
+                @include responsive(tablet-cat) {
+                    flex-direction: row;
+                    align-items: center;
+                }
+
+                @include responsive(semi-cat) {
+                    //
+                }
+
+                @include responsive(huge-cat) {
+                    //
+                }
+
+                .about_me_illust {
+                    position: relative;
+
+                    @include responsive(tablet-cat) {
+                        width: 50%;
+                    }
+    
+                    @include responsive(semi-cat) {
+                        width: 480px;
+                    }
+    
+                    @include responsive(huge-cat) {
+                        width: 680px;
+                    }
+
+                    .about_me_back {
+                        position: relative;
+                        
+                        width: 81.25%;
+                        margin: 0 auto;
+                        height: fit-content;
+
+                        @include responsive(tablet-cat) {
+                            width: 80%;
+                            margin: 0;
+                            left: -20%;
+                        }
+
+                        @include responsive(semi-cat) {
+                            width: 400px;
+                            left: -120px;
+                        }
+
+                        @include responsive(huge-cat) {
+                            width: 500px;                            
+                        }
+                        
+                        &>img {
+                            position: relative;
+                            display: block;
+                            width: 81.25%;
+                            margin: 0 auto;
+                            transform: translateX(-10%);
+
+                            @include responsive(tablet-cat) {
+                                transform: translate(0);
+                                margin: 0;
+                                width: 100%;
+                            }
+
+                            @include responsive(semi-cat) {
+                                //
+                            }
+
+                            @include responsive(huge-cat) {
+                                //
+                            }
+
+                            &:first-child {
+                                position: relative;
+
+                                @include responsive(tablet-cat) {
+                                    //
+                                }
+    
+                                @include responsive(semi-cat) {
+                                    //
+                                }
+    
+                                @include responsive(huge-cat) {
+                                    //
+                                }
+
+                            }
+
+                            &:nth-child(2) {
+                                position: absolute;
+                                top: -0.5%;
+                                right: 6%;
+
+                                
+                                @include responsive(tablet-cat) {
+                                    top: -3%;
+                                    right: auto;
+                                    left: 3%;
+
+                                }
+    
+                                @include responsive(semi-cat) {
+                                    //
+                                }
+    
+                                @include responsive(huge-cat) {
+                                    //
+                                }
+
+                            }
+
+                            &.Seoyong {
+                                position: absolute;
+                                top: 0;
+                                left: 50%;
+                                transform: translateX(-60%);
+
+                                @include responsive(tablet-cat) {
+                                    left: 0;
+                                    transform: translateX(0%);
+
+                                }
+    
+                                @include responsive(semi-cat) {
+
+                                }
+    
+                                @include responsive(huge-cat) {
+                                    //
+                                }
+                            }
+                        }
+
+                        .about_me_front {
+
+                            &>img {
+                                position: absolute;
+                                top: 0;
+
+                                @include responsive(tablet-cat) {
+                                    //
+                                }
+    
+                                @include responsive(semi-cat) {
+                                    //
+                                }
+    
+                                @include responsive(huge-cat) {
+                                    //
+                                }
+
+                                &:first-child {
+                                    width: 60%;
+                                    right: 15%;
+                                    top: -10%;
+                                    rotate: rotateZ(-10deg);
+
+                                    @include responsive(tablet-cat) {
+                                        top: -15%;
+                                        left: 35%;
+                                        width:80%;
+                                    }
+        
+                                    @include responsive(semi-cat) {
+                                        //
+                                    }
+        
+                                    @include responsive(huge-cat) {
+                                        //
+                                    }
+                                }
+                                
+
+                                &:nth-child(2) {
+                                    right: 25%;
+                                    top: -7%;
+                                    width: 8%;
+
+                                    @include responsive(tablet-cat) {
+                                        right: 0%;
+                                        top: -10%;
+                                        width: 10%;
+                                    }
+        
+                                    @include responsive(semi-cat) {
+                                        //
+                                    }
+        
+                                    @include responsive(huge-cat) {
+                                        //
+                                    }
+                                }
+
+                                &:nth-child(3) {
+                                    top: 8%;
+                                    right: 10%;
+                                    width: 8%;
+
+                                    @include responsive(tablet-cat) {
+                                        right: -20%;
+                                        top: 5%;
+                                        width: 10%;
+                                    }
+        
+                                    @include responsive(semi-cat) {
+                                        //
+                                    }
+        
+                                    @include responsive(huge-cat) {
+                                        //
+                                    }
+                                }
+
+                                &:last-child {
+                                    top: 75%;
+                                    right: 3%;
+                                    width: 10%;
+
+                                    @include responsive(tablet-cat) {
+                                        right: -30%;
+                                        top: 78%;
+                                        width: 12%;
+                                    }
+        
+                                    @include responsive(semi-cat) {
+                                        //
+                                    }
+        
+                                    @include responsive(huge-cat) {
+                                        //
+                                    }
+                                }
+
+                            }
+    
+                        }
+
+                    }
+                }
+
+                .about_me_descri {
+                    margin-top: $mezo_margin_p;
+
+                    @include responsive(tablet-cat) {
+                        margin-top: 0;
+                        width: 70%;
+                    }
+
+                    @include responsive(semi-cat) {
+                        width: 680px;
+                    }
+
+                    @include responsive(huge-cat) {
+                        width: 880px;
+                    }
+
+                    .descri_idc {
+
+                        //
+
+                        @include responsive(tablet-cat) {
+                            display: flex;
+                            align-items:baseline;
+
+                        }
+
+                        @include responsive(semi-cat) {
+                        }
+
+
+                        .idc_h3_entire {
+                            position: relative;
+                            width: fit-content;
+                            height: fit-content;
+                            padding: calc(1px + 1.5vw) calc(12px + 2vw);
+                            margin: 0 auto;
+
+                            @include responsive(tablet-cat) {
+                                margin: 0;
+                                padding: calc(1px + 1.5vw) calc(8px + 2vw);
+                            }
+
+                            @include responsive(semi-cat) {
+                                padding: 15px 30px;
+                                width: fit-content;
+                                
+                            }
+
+                            @include responsive(huge-cat) {
+                                padding: 18px 36px;
+
+                            }
+
+                            h3 {
+                                font-size: calc(24px + 3vw);
+
+                                @include responsive(tablet-cat) {
+                                    font-size: calc(18px + 2vw);
+                                    width: fit-content;
+                                }
+    
+                                @include responsive(semi-cat) {
+                                    font-size: 48px;
+                                }
+    
+                                @include responsive(huge-cat) {
+                                    font-size: 54px;
+                                }
+                            }
+    
+                            &>span {
+                                position: absolute;
+                                width: 20%;
+                                height: 3.5px;
+                                background-color: $identity;
+                                top: 0px;
+                                left: 0px;
+
+                                @include responsive(tablet-cat) {
+                                    width: 25%;
+                                }
+                                
+                                @include responsive(semi-cat) {
+                                    width: 40px;
+                                    height: 4.5px;
+                                }
+
+                                @include responsive(huge-cat) {
+                                    width: 50px;
+                                    height: 5px;
+                                }
+
+                                &:first-child {
+                                    //
+                                }
+
+                                &:nth-child(2) {
+                                    rotate: (90deg);
+                                    transform-origin: left top;
+                                }
+
+                                &:nth-child(3), &:last-child {
+                                    top: auto;
+                                    left: auto;
+                                    bottom: 0;
+                                    right: 0;
+                                }
+
+                                &:last-child {
+                                    transform: rotateZ(90deg);
+                                    transform-origin: right bottom;
+                                }
+                            }
+                        }
+
+                        .idc_rest {
+                            position: relative;
+                            width: fit-content;
+                            margin: 0 auto;
+                            height: calc(18px + 1vw);
+                            display: flex;
+                            margin-top: $petit_margin_p;
+
+                            @include responsive(tablet-cat) {
+                                margin: 0;
+                                margin-left: 20px;
+
+                            }
+
+                            @include responsive(semi-cat) {
+                                height:auto;
+                                
+                                
+                            }
+
+                            @include responsive(huge-cat) {
+                                
+                            }
+
+                            
+
+                            &>p {
+                                font-size: calc(14px + 2vw);
+
+                                @include responsive(tablet-cat) {
+                                    font-size: calc(10px + 2vw);
+                                    width: fit-content;
+                                }
+
+                                @include responsive(semi-cat) {
+                                    font-size: 36px;
+                                }
+
+                                @include responsive(huge-cat) {
+                                    font-size: 40px;
+
+                                }
+                            }
+
+                            .idc_developer {
+                                margin-right: 10px;
+                                position: relative;
+
+                                @include responsive(tablet-cat) {
+                                    
+                                }
+
+                                @include responsive(semi-cat) {
+                                    top: 0;
+
+                                }
+
+                            }
+
+                            .idc_seoyong {
+
+
+                                @include responsive(tablet-cat) {
+
+                                    .omit {
+                                        display: none;
+                                    }
+
+                                }
+
+                                @include responsive(semi-cat) {
+
+                                    .omit {
+                                        display: inline;
+                                    }
+                                }
+
+                                @include responsive(huge-cat) {
+                                    //
+                                }
+
+                            }
+                        }
+
+                    }
+
+                    .descri_comment {
+                        
+                        @include nyan_small_margin;
+                        text-align: center;
+                        position: relative;
+                        margin-top: $regular_margin_p;
+
+                        h4 {
+                            font-size: calc(6px + 2vw);
+                            color: $identity;
+
+                            @include responsive(tablet-cat) {
+                                font-size: calc(8px + 1vw);
+                            }
+
+                            @include responsive(semi-cat) {
+                                font-size: 18px;
+                            }
+
+                            @include responsive(huge-cat) {
+                                font-size: 21px;
+
+                            }
+
+                        }
+
+                        .descri_cursor {
+                            display: inline-block;
+                            border-radius: 1.5px;
+                            height: 3px;
+                            width: calc(6px + 2vw);
+                            margin-left: 5px;
+                            background-color: $identity;
+                            animation: cursor_blink 0.5s linear infinite;
+
+                            @include responsive(tablet-cat) {
+                                width: calc(8px + 1vw);
+                            }
+
+                            @include responsive(semi-cat) {
+                                width: 24px;
+                                height: 4px;
+                            }
+
+                            @include responsive(huge-cat) {
+                                width: 28px
+                            }
+
+                            &.n2 {
+                                margin-left: 3px;
+                                background-color: white;
+
+                                @include responsive(tablet-cat) {
+                                    width: calc(8px + 1vw);
+                                }
+    
+                                @include responsive(semi-cat) {
+                                    width: 24px;
+                                    height: 4px;
+                                }
+    
+                                @include responsive(huge-cat) {
+                                    width: 28px
+    
+                                }
+                            }
+
+                        }
+
+                        p {
+                            @include nyan_petit_margin;
+                            margin-top: $tiny_margin_p;
+                            font-size: calc(8px + 2vw);
+                            line-height: 2em;
+
+                            @include responsive(tablet-cat) {
+                                font-size: calc(8px + 1vw);
+                            }
+
+                            @include responsive(semi-cat) {
+                                line-height: 1.5em;
+                                font-size: 21px;
+                                
+                            }
+
+                            @include responsive(huge-cat) {
+                                font-size: 24px;
+
+                            }
+
+                            br {
+                                //
+
+                                @include responsive(m450-cat) {
+                                    display: none;
+                                }
+                            }
+
+                        }
+
+                    }
+
+                    .descri_explains {
+                        @include nyan_small_margin;
+
+                        .descri_explain {
+
+    
+                            .explain_title {
+                                position: relative;
+    
+                                p {
+                                    font-size: calc(10px + 1vw);
+                                    line-height: 2em;
+                                    text-align: justify;
+    
+                                    @include responsive(tablet-cat) {
+                                        font-size: calc(8px + 1vw);
+                                    }
+            
+                                    @include responsive(semi-cat) {
+                                        font-size: 24px;
+                                    }
+            
+                                    @include responsive(huge-cat) {
+                                        font-size: 28px;
+                                    }
+    
+                                    span.descri_keyword {
+                                        color: $identity;
+                                        display: block;
+                                        text-align: center;
+                                        font-size: 2em;
+                                        margin-bottom: $petit_margin_p;
+    
+                                        @include responsive(tablet-cat) {
+                                            display: inline;
+                                            text-align: justify;
+                                            font-size: 1.5em;
+                                            margin-bottom: $petit_margin_t;
+                                        }
+                
+                                        @include responsive(semi-cat) {
+                                            font-size: 36px;
+                                            margin-bottom: $petit_margin_s;
+                                        }
+                
+                                        @include responsive(huge-cat) {
+                                            font-size: 40px;
+                                            margin-bottom: $petit_margin_h;
+                                        }
+                                    }
+                                }
+    
+                            }
+    
+                            .explain_contents {
+                                @include nyan_tiny_margin;
+                                position: relative;
+
+                                p {
+                                    font-size: calc(10px + 1vw);
+                                    line-height: 2em;
+                                    text-align: justify;
+                                    position: relative;
+    
+                                    @include responsive(tablet-cat) {
+                                        font-size: calc(6px + 1vw);
+                                    }
+        
+                                    @include responsive(semi-cat) {
+                                        font-size: 18px;
+                                        
+                                    }
+        
+                                    @include responsive(huge-cat) {
+                                        font-size: 21px;
+        
+                                    }
+
+                                    .am_under {
+                                    
+                                        @include common_under;
+
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .descri_gauge {
+                        
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 100%;
+                        margin: 0 auto;
+                        @include nyan_small_margin;
+                        
+                        .num {
+
+                            p {
+                                width: fit-content;
+                                margin: 0 auto;
+                                font-size: calc(6px + 2vw);
+                                text-align: center;
+                                cursor: pointer;
+    
+                                @include responsive(tablet-cat) {
+                                    font-size: calc(10px + 1vw);
+                                }
+    
+                                @include responsive(semi-cat) {
+                                    font-size: 21px;
+                                }
+    
+                                @include responsive(huge-cat) {
+                                    font-size: 24px;
+                                }
+                            }
+
+                        }
+
+                        .gauge_toggle {
+                            cursor: pointer;
+                            width: 10%;
+                            text-align: center;
+
+                            @include responsive(tablet-cat) {
+                                //
+                            }
+
+                            @include responsive(semi-cat) {
+                                width: 80px;
+                            }
+
+                            @include responsive(huge-cat) {
+                                font-size: 100px;
+                            }
+
+                            img {
+                                margin: 0 auto;
+                                width: 50%;
+                                display: block;
+                            }
+                        }
+
+                        .gauge {
+                            
+                            width: 50%;
+                            margin: 0 10px;
+
+                            @include responsive(tablet-cat) {
+                                //
+                            }
+
+                            @include responsive(semi-cat) {
+                                width: 380px;
+                            }
+
+                            @include responsive(huge-cat) {
+                                width: 480px;
+                            }
+
+                            .gauge_entire {
+                                position: relative;
+                                width: 100%;
+                                height: 2px;
+                                border-radius: 1px;
+                                background-color: rgba($color: #ffffff, $alpha: 0.3);
+
+                                @include responsive(tablet-cat) {
+                                    height: 3px;
+                                    border-radius: 1.5px;
+                                }
+    
+                                @include responsive(semi-cat) {
+                                    height: 4px;
+                                    border-radius: 2px;
+                                }
+    
+                                @include responsive(huge-cat) {
+                                    height: 5px;
+                                    border-radius: 2.5px;
+                                }
+
+                                .gauge_current {
+                                    width: 0%;
+                                    height: inherit;
+                                    border-radius: inherit;
+                                    background-color: rgba($color: #ffffff, $alpha: 0.7);
+
+                                    @include responsive(tablet-cat) {
+                                        //
+                                    }
+        
+                                    @include responsive(semi-cat) {
+                                        //
+                                    }
+        
+                                    @include responsive(huge-cat) {
+                                        //
+                                    }
+                                }
+                            }
+                        }
+
+                        .rest_num {
+                            display: flex;
+                            justify-content: space-around;
+                            align-items: center;
+                            width: 60%;
+
+                            .num {
+                                width: 45%;
+                            }
+
+                            .gauge_line {
+                                display: block;
+                                height: calc(10px + 1vw);
+                                width: 2px;
+                                background-color: #fff;
+                                
+                            }
+                        }
+                    }
+                }
+            }
+        }  
+    }
+
+    .main_myspecs {
+        @include nyan_large_margin;
+        @include nyan_common_h2;
+        overflow: hidden;
+
+
+        .my_specs_back {
+            display: none;
+            position: relative;
+            z-index: -2;
+            &>div {
+                position: absolute;
+                width: calc(500px + 50vw);
+
+                &>img {
+
+                    &:first-child {
+
+                    }
+
+                    &:last-child {
+                        position: absolute;
+                        top: 5%;
+                        left: 0;
+                    }
+                }
+            }
+
+            .n1 {
+
+                img {
+                    //
+                }
+            }
+
+            .n2 {
+
+                img {
+                    //
+                }
+            }
+
+            .n3 {
+
+
+                img {
+                    //
+                }
+            }
+
+            .ms_back {
+
+
+            }
+        }
+
+        .my_specs_contents {
+            margin: 0 auto;
+            @include nyan_mid_margin;
+            width: 90%;
+            
+
+            @include responsive(tablet-cat) {
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+
+            }
+            
+            .ms_contents_grp {
+                position: relative;
+
+                width: 55%;
+                max-width: 300px;
+
+                @include responsive(tablet-cat) {
+                    width: 26%;
+                    max-width: none;
+                }
+
+                @include responsive(semi-cat) {
+                    margin: 0 auto;
+                    width: 33.333333333333%;
+                }
+
+                &:nth-child(even) {
+                    margin-left: auto;
+
+                    @include responsive(tablet-cat) {
+                        margin-left: 0;
+                    }
+
+                    @include responsive(semi-cat) {
+                        //
+                    }
+
+                    @include responsive(huge-cat) {
+                        //
+                    }
+                }
+
+                &:nth-child(n+4) {
+
+                    //
+
+                    @include responsive(tablet-cat) {
+                        margin-top: $mezo_margin_t;
+                    }
+
+                    @include responsive(semi-cat) {
+                        margin-top: $mezo_margin_s;
+
+                    }
+
+                    @include responsive(huge-cat) {
+                        margin-top: $mezo_margin_h;
+
+                    }
+
+                }
+
+                &:nth-child(3n+2) {
+                    
+                    @include responsive(tablet-cat) {
+                        top: 80px;
+                    }
+
+                    @include responsive(semi-cat) {
+                        top: 0
+                    }
+
+                    @include responsive(huge-cat) {
+                        //
+                    }
+                }
+
+                &:nth-child(1) {
+
+                    @include responsive(semi-cat) {
+                        top: -3em;
+                        left: -5em;
+                    }
+
+                    @include responsive(huge-cat) {
+                        top: -4.5em;
+                        left: -7.5em;
+                    }
+
+                }
+
+                &:nth-child(2) {
+
+                    @include responsive(semi-cat) {
+                        top: 3em;
+                        left: -5em;
+                    }
+
+                    @include responsive(huge-cat) {
+                        top: 4.5em;
+                        left: -7.5em;
+                    }
+
+                }
+
+                &:nth-child(3) {
+
+                    @include responsive(semi-cat) {
+                        top:  0;
+                        left: -7em;
+                    }
+
+                    @include responsive(huge-cat) {
+                        left: -10.5em;
+                    }
+
+                }
+
+                &:nth-child(4) {
+
+                    @include responsive(semi-cat) {
+                        top:  -2em;
+                        left: 4em;
+                    }
+
+                    @include responsive(huge-cat) {
+                        top: -3em;
+                        left: 6em;
+                    }
+
+                }
+
+                &:nth-child(5) {
+
+                    @include responsive(semi-cat) {
+                        top:  3em;
+                        left: 6em;
+                    }
+
+                    @include responsive(huge-cat) {
+                        top: 4.5em;
+                        left: 9em;
+                    
+                    }
+
+                }
+
+                &:nth-child(6) {
+                    @include responsive(semi-cat) {
+                        top:  -3em;
+                        left: 3.5em;
+                    }
+
+                    @include responsive(huge-cat) {
+                        top: -4.5em;
+                        left: 5.25em;
+                    }
+                }
+                
+                img {
+                    width: 100%;
+                    
+                    @include responsive(tablet-cat) {
+                        //
+                    }
+
+                    @include responsive(semi-cat) {
+                        width: 250px;
+                        display: block;
+                        margin: 0 auto;
+                    }
+
+                    @include responsive(huge-cat) {
+                        width: 300px;
+                    }
+                }
+
+
+
+                .ms_contents_txt {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    text-align: center;
+                    width: 100%;
+
+                    @include responsive(tablet-cat) {
+                        //
+                    }
+
+                    @include responsive(semi-cat) {
+                        width: 250px;
+                        margin: 0 auto;
+
+                    }
+
+                    @include responsive(huge-cat) {
+                        //
+                    }
+
+                    h4 {
+                        width: fit-content;
+                        margin: 0 auto;
+                        @include common_under;
+                        font-size: calc(6px + 3vw);
+
+                        @include responsive(tablet-cat) {
+                            font-size: calc(12px + 1vw);
+                        }
+    
+                        @include responsive(semi-cat) {
+                            font-size: 24px;
+
+                        }
+    
+                        @include responsive(huge-cat) {
+                            font-size: 28px;
+                        }
+
+                        
+
+                        &.h4_even {
+                            margin-top: 20px;
+                            
+                            @include responsive(tablet-cat) {
+                                //
+    
+                            }
+        
+                            @include responsive(semi-cat) {
+                                //
+                            }
+
+                            @include responsive(huge-cat) {
+                                margin-top: 25px;
+                            }
+
+                        }
+
+                    }
+
+                    h5 {
+                        @include nyan_petit_margin;
+                        font-size: calc(7px + 2vw);
+                        color: $second;
+
+                        @include responsive(tablet-cat) {
+                            font-size: calc(8px + 1vw);
+                        }
+    
+                        @include responsive(semi-cat) {
+                            font-size: 18px;
+
+                        }
+    
+                        @include responsive(huge-cat) {
+                            font-size: 21px;
+                        }
+
+                    }
+
+                    p {
+                        @include nyan_tiny_margin;
+                        
+                        font-size: calc(7px + 2vw);
+
+                        @include responsive(tablet-cat) {
+                            font-size: calc(8px + 1vw);
+                        }
+    
+                        @include responsive(semi-cat) {
+                            font-size: 21px;
+                            margin-top: 15px;
+
+                        }
+    
+                        @include responsive(huge-cat) {
+                            margin-top: 20px;
+                            font-size: 24px;
+                        }
+                    }
+                }
+
+                .ms_contents_fw {
+                    position: absolute;
+                    display: block;
+                    width: calc(2px + 0.5vw);
+                    height: calc(75px + 10vw);
+                    border-radius: 10px;
+                    background-color: #fff;
+                    background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,1) 100%);
+                    // top: 200%;
+                    top: 50%;
+                    left: 50%;
+
+                    @include responsive(tablet-cat) {
+                        width: calc(0.5vw);
+                        height: calc(75px + 5vw);
+                        border-radius: 10px;
+                    }
+
+                    @include responsive(semi-cat) {
+                        width: 5px;
+                        height: 150px;
+                    }
+
+                    @include responsive(huge-cat) {
+                        width: 6px;
+                        height: 180px;
+                    }
+                }
+            }
+        }
+
+        .my_specs_urban {
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+            margin-top: 150px;
+
+
+            @include responsive(tablet-cat) {
+                margin-top: 200px;
+            }
+
+            @include responsive(semi-cat) {
+                margin-top: 200px;
+            }
+
+            @include responsive(huge-cat) {
+                margin-top: 300px;
+            }
+
+
+            &>img {
+                width: 100%;
+                margin: 0 auto;
+                display: block;
+            }
+
+            .urban_gradient {
+                position: absolute;
+                bottom: 8%;
+                width: 100%;
+                height: 200px;
+                display: block;
+                background: rgb(232,125,158);
+                background: linear-gradient(180deg, rgba(232,125,158,0) 0%, rgba(232,125,158,1) 100%);
+                z-index: -2;
+
+                @include responsive(tablet-cat) {
+                    height: 300px;
+                }
+
+                @include responsive(semi-cat) {
+                    height: 400px;
+                }
+
+                @include responsive(huge-cat) {
+                    height: 500px;
+                }
+            }
+        }
+
+    }
+
+    .main_myskills {
+        @include nyan_big_margin;
+        @include nyan_common_h2;
+
+
+        .my_skills_gnb {
+            @include nyan_small_margin;
+
+            .mk_gnb_flex {
+                width: 50%;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+
+                @include responsive(tablet-cat) {
+                    width: 30%;
+                } 
+
+                @include responsive(semi-cat) {
+                    width: 480px;
+
+                }
+
+                @include responsive(huge-cat) {
+                    width: 510px;
+
+                }
+
+                li {
+                    font-size: calc(12px + 2vw);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    cursor: pointer;
+                    
+
+                    @include responsive(tablet-cat) {
+                        font-size: calc(16px + 1vw);
+                    } 
+
+                    @include responsive(semi-cat) {
+                        font-size: 36px;
+
+                    }
+
+                    @include responsive(huge-cat) {
+                        font-size: 40px;
+
+                    }
+
+                    .mk_gnb_kitty {
+                        display: block;
+                        margin-bottom: 5px;
+
+                        img {
+                            width: calc(20px + 5vw);
+                            display: block;
+                            animation: cat_jump ease-in 1s infinite;
+
+                            @include responsive(tablet-cat) {
+                                width: calc(18px + 5vw);
+                            } 
+        
+                            @include responsive(semi-cat) {
+                                width: 80px;
+                            }
+        
+                            @include responsive(huge-cat) {
+                                width: 100px;
+                            }
+                        }
+                    }
+
+
+                }
+
+
+            }
+        }
+
+        .mk_main {
+
+            position: relative;
+
+
+            @include responsive(tablet-cat) {
+                //
+            }
+
+            @include responsive(semi-cat) {
+                width: 960px;
+                margin: 0 auto;
+                margin-top: $mezo_margin_s;
+                display: flex;
+                align-items: center;
+            }
+
+            @include responsive(huge-cat) {
+                width: 1080px;
+                margin-top: $mezo_margin_h;
+            }
+
+            .mk_skills_kitty {
+                
+                position: relative;
+                margin: 0 auto;
+                margin-top: $regular_margin_p;
+                width: 80%;
+
+                @include responsive(tablet-cat) {
+                    width: 60%;
+                }
+
+                @include responsive(semi-cat) {
+                    z-index: 2;
+                    width: 440px;
+                    margin-top: 0;
+                    margin: calc(440px / 3) auto;
+                }
+
+                @include responsive(huge-cat) {
+                    width:540px;
+                    margin-top: calc(540px / 3);
+                    margin-bottom: calc(540px / 3);
+                }
+
+                .mk_skills_big {
+                    width: 90%;
+                    margin: 0 auto;
+
+                    @include responsive(tablet-cat) {
+                        width: 80%;
+                    }
+    
+                    @include responsive(semi-cat) {
+                        width: 440px;
+                        
+                    }
+    
+                    @include responsive(huge-cat) {
+                        width: 540px;
+                        
+                    }
+
+                    .mk_skills_img {
+                        display: block;
+                        margin: 0 auto;
+
+                        @include responsive(tablet-cat) {
+                            //
+                        }
+        
+                        @include responsive(semi-cat) {
+                        }
+        
+                        @include responsive(huge-cat) {
+                            
+                        }
+
+                        img {
+                            width: 100%;
+
+                            @include responsive(tablet-cat) {
+                                //
+                            }
+            
+                            @include responsive(semi-cat) {
+                                //
+                            }
+            
+                            @include responsive(huge-cat) {
+                                
+                            }
+                        }
+                    }
+
+                    .mk_detail {
+                        
+                        width: 80%;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -46%);
+                        text-align: center;
+
+                        @include responsive(tablet-cat) {
+                            //
+                        }
+        
+                        @include responsive(semi-cat) {
+                            width: 440px;
+                        }
+        
+                        @include responsive(huge-cat) {
+                            width: 540px;
+                        }
+
+                        h4 {
+                            color: white;
+                            font-size: calc(6px + 4vw);
+
+                            @include responsive(tablet-cat) {
+                                font-size: calc(14px + 2vw);
+                            }
+
+                            @include responsive(semi-cat) {
+                                font-size: 32px;
+                            }
+
+                            @include responsive(huge-cat) {
+                                font-size: 36px;
+
+                            }
+                        }
+
+                        .skills_gauge {
+                            text-align: justify;
+                            width: 80%;
+                            margin: 0 auto;
+                            @include nyan_petit_margin;
+                            margin-top: calc(-4px + 4vw);
+
+                            @include responsive(tablet-cat) {
+                                width: 70%;
+                            }
+
+                            @include responsive(semi-cat) {
+                                width: 280px;
+                                margin-top: 10px;
+                            }
+
+                            @include responsive(huge-cat) {
+                                width: 360px;
+                                margin-top: 15px;
+                            }
+
+                            &>div {
+                                
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+
+                                &:nth-child(2) {
+                                    margin-top: 5px;
+
+                                    @include responsive(tablet-cat) {
+                                        margin-top: 6px;
+                                    }
+
+                                    @include responsive(semi-cat) {
+                                        margin-top: 8px;
+                                    }
+
+                                    @include responsive(huge-cat) {
+                                        margin-top: 10px;
+                                    }
+                                }
+
+
+
+                                p {
+                                    font-size: calc(1px + 3vw);
+
+                                    @include responsive(tablet-cat) {
+                                        font-size: calc(2px + 1.5vw);
+                                    }
+
+                                    @include responsive(semi-cat) {
+                                        font-size: 16px;
+                                    }
+
+                                    @include responsive(huge-cat) {
+                                        font-size: 21px;
+                                    }
+
+                                }
+
+                                .gauge_entire {
+                                    position: relative;
+                                    width: 60%;
+                                    height: 5px;
+                                    border-radius: 2.5px;
+                                    background-color: rgba($color: #fff, $alpha: 0.5);
+
+                                    @include responsive(tablet-cat) {
+                                        height: 6px;
+                                        border-radius: 3px;
+                                    }
+
+                                    @include responsive(semi-cat) {
+                                        width: 70%;
+                                    }
+
+                                    @include responsive(huge-cat) {
+                                        height: 7px;
+                                        border-radius: 3.5px;
+                                    }
+
+                                    .gauge_colored {
+                                        position: absolute;
+                                        display: block;
+                                        width: 90%;
+                                        height: inherit;
+                                        border-radius: inherit;
+                                        top: 0;
+                                        left: 0;
+                                        background-color: $html;
+
+                                        @include responsive(tablet-cat) {
+                                            //
+                                        }
+    
+                                        @include responsive(semi-cat) {
+                                            //
+                                        }
+    
+                                        @include responsive(huge-cat) {
+                                            //
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
+
+                        .skills_descri {
+                            width: 80%;
+                            margin: 0 auto;
+                            @include nyan_petit_margin;
+
+                            @include responsive(tablet-cat) {
+                                width: 70%;
+                            }
+
+                            @include responsive(semi-cat) {
+                                width: calc(480px * 0.7);
+                            }
+
+                            @include responsive(huge-cat) {
+                                width: calc(580px * 0.7);
+                            }
+
+
+                            h5 {
+                                
+                                font-size: calc(8px + 2vw);
+                                margin-top: calc(-1px + 3vw);
+
+                                @include responsive(tablet-cat) {
+                                    margin-top: calc(-12px + 3vw);
+                                    font-size: calc(6px + 2vw);
+                                }
+    
+                                @include responsive(semi-cat) {
+                                    font-size: 21px;
+                                    margin-top: 12px;
+                                }
+    
+                                @include responsive(huge-cat) {
+                                    font-size: 28px;
+                                    margin-top: 20px;
+
+                                }
+                            }
+
+                            p {
+                                @include nyan_petit_margin;
+                                font-size: calc(1px + 2.5vw);
+                                text-align: center;
+                                line-height: 1.5em;
+
+                                @include responsive(tablet-cat) {
+                                    font-size: calc(1px + 1.5vw)
+                                }
+    
+                                @include responsive(semi-cat) {
+                                    font-size: 16px;
+                                }
+    
+                                @include responsive(huge-cat) {
+                                    font-size: 21px;
+                                }
+                            }
+
+                            .mk_works {
+
+                                @include my_skills_works_margin;
+
+                            }
+
+                            .mk_summary {
+
+                                @include my_skills_works_margin;
+
+                                p {
+                                    text-align: justify;
+                                }
+                            }
+                        }
+
+                        .mk_close {
+                            top: 0;
+                            cursor: pointer;
+                            font-size: calc(8px + 2vw);
+                            @include nyan_tiny_margin;
+                            margin-top: calc(-4px + 4vw);
+
+                            @include responsive(tablet-cat) {
+                                margin-top: calc(-12px + 3vw);
+                                font-size: calc(6px + 2vw);
+
+                            }
+
+                            @include responsive(semi-cat) {
+                                font-size: 24px;
+                                margin-top: 20px;
+                            }
+
+                            @include responsive(huge-cat) {
+                                font-size: 32px;
+                                margin-top: 25px;
+                            }
+                        }
+                    }
+
+                }
+
+                .mk_kitty_entire {
+                    position: absolute;
+                    left: 0;
+                    top: 15%;
+
+                    @include responsive(tablet-cat) {
+                        //
+                    }
+
+                    @include responsive(semi-cat) {
+                        top: -15%;
+                    }
+
+                    @include responsive(huge-cat) {
+                        
+                    }
+
+                    img.mk_skills_kitty {
+                        display: block;
+                        width: 100%;
+    
+                        // display: none;
+    
+                        @include responsive(tablet-cat) {
+                            //
+                        }
+    
+                        @include responsive(semi-cat) {
+                            scale: 1.1;
+    
+                        }
+    
+                        @include responsive(huge-cat) {
+                            //
+                        }
+    
+                    }
+
+                    p {
+                        opacity: 0;
+                        position: absolute;
+                        font-size: calc(6px + 3vw);
+                        font-weight: bold;
+                        color: $identity;
+                        top: 20%;
+                        right: 42.5%;
+
+                        @include responsive(tablet-cat) {
+                            font-size: calc(6px + 2vw);
+                        }
+
+                        @include responsive(semi-cat) {
+                            font-size: 24px;
+                            top: 27.5%;
+                            right: 40.5%;
+                        }
+
+                        @include responsive(huge-cat) {
+                            font-size: 32px;
+                            top: 29.5%;
+                            right: 41.5%;
+                        }
+
+                        &.fi_p {
+                            //
+                        }
+
+                        &.sc_p {
+                            right: 47%;
+                            top: 17%;
+                            scale: 1.2;
+
+                            @include responsive(tablet-cat) {
+                                right: 47%;
+                                top: 16%;
+                            }
+
+                            @include responsive(semi-cat) {
+                                top: 25.5%;
+                                right: 45%;
+                            }
+
+                            @include responsive(huge-cat) {
+                                top: 27.5%;
+                                right: 46.5%;
+                            }
+
+                        }
+
+                        &.th_p {
+                            right: 52.5%;
+                            top: 14%;
+                            scale: 1.4;
+
+                            @include responsive(tablet-cat) {
+                                right: 52.5%;
+                                top: 12%;
+                            }
+
+                            @include responsive(semi-cat) {
+                                top: 23.5%;
+                                right: 50.5%;
+                            }
+
+                            @include responsive(huge-cat) {
+                                top: 25%;
+                                right: 52.5%;
+                            }
+                        }
+
+
+                        
+                    }
+                }
+
+
+                .mk_back_img {
+                    position: absolute;
+                    width: 200vw;  
+                    top: 0;
+                    left: -60%;
+                    z-index: -2;
+
+                    @include responsive(semi-cat) {
+                        display: none;
+                    }
+
+                    img {
+                        width: 100%;
+
+                        @include responsive(tablet-cat) {
+                            width: 75%
+                        }
+                    }
+
+
+                }
+
+            }
+
+            .nyan_zone {
+
+                @include responsive(semi-cat) {
+                    position: absolute;
+                    top: 0;
+                    margin: 0;
+                }
+
+
+                .mk_icons {
+                    background-color: transparent;
+
+                    @include nyan_mezo_margin;
+    
+                    @include responsive(tablet-cat) {
+    
+                    }
+    
+                    @include responsive(semi-cat) {
+                        margin-top: 0;
+                    }
+    
+                    @include responsive(huge-cat) {
+                        //
+                    }
+    
+                    .mk_skill_zone {
+                        display: flex;
+                        flex-wrap: wrap;
+                        position: relative;
+    
+    
+                        @include responsive(tablet-cat) {
+                            //
+                        }
+        
+                        @include responsive(semi-cat) {
+                            animation: oo 90s linear infinite;
+                            width: 720px;
+                            height: 720px;
+                            display: block;
+                            margin: 0 auto;
+
+                        }
+        
+                        @include responsive(huge-cat) {
+                            width: 900px;
+                            height: 900px;
+                        }
+    
+                        .mk_skill {
+                            width: 33%;
+                            position: relative;
+    
+                            @include responsive(tablet-cat) {
+                                width: 25%;
+                            }
+
+                            @include responsive(semi-cat) {
+                                animation: oo 90s infinite linear reverse;
+                                @include ferris_wheel;
+                                width: 150px;
+                                position: absolute;
+                            }
+
+                            @include responsive(huge-cat) {
+                                width: 200px;
+                            }
+    
+    
+    
+                            &:nth-child(n+4) {
+                                margin-top: $petit_margin_p;
+    
+                                @include responsive(tablet-cat) {
+                                    margin-top: 0;
+                                }
+                            }
+    
+                            &:nth-child(n+5) {
+                                //
+                                @include responsive(tablet-cat) {
+                                    margin-top: $petit_margin_t;
+                                }
+    
+                                @include responsive(semi-cat) {
+                                    margin-top: 0;
+                                }
+                            }
+    
+                            &:last-child {
+                                //
+                                @include responsive(tablet-cat) {
+                                    //
+                                }
+    
+                            }
+
+
+
+
+    
+                            img {
+                                width: 80%;
+                                margin: 0 auto;
+                                display: block;
+                            }
+    
+                            .mk_chart {
+                                cursor: pointer;
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -45%);
+    
+                                @include responsive(tablet-cat) {
+                                    transform: translate(-50%, -45%);
+                                }
+    
+                                .chart {
+                                    position: relative;
+    
+                                    svg {
+                                        width: calc(-20px + 30vw);
+                                        height: calc(-20px + 30vw);
+    
+                                        @include responsive(tablet-cat) {
+                                            width: calc(-10px + 20vw);
+                                            height: calc(-10px + 20vw);
+                                        }
+
+                                        @include responsive(semi-cat) {
+                                            width: 120px;
+                                            height: 120px;
+                                        }
+
+                                        @include responsive(huge-cat) {
+                                            width: 160px;
+                                            height: 160px;
+                                        }
+    
+                                        circle {
+                                            fill: transparent;
+                                            opacity: 0.9;
+                                            stroke-width: calc(4px + 1vw);
+                                            stroke-dasharray: calc(calc(-20px + 30vw) * 0.8 * 3.1415926535);
+                                            stroke: $html;
+                                            transform: rotate(-90deg);
+                                            transform-origin: center;
+                                            stroke-linecap: round;
+    
+                                            @include responsive(tablet-cat) {
+                                                stroke-width: calc(5px + 1vw);
+                                                stroke-dasharray: calc(calc(-10px + 20vw) * 0.8 * 3.1415926535);
+
+                                            }
+
+                                            @include responsive(semi-cat) {
+                                                stroke-width: 12px;
+                                                stroke-dasharray: calc(120px * 0.8 * 3.1415926535);
+
+                                            }
+
+                                            @include responsive(huge-cat) {
+                                                stroke-width: 16px;
+                                                stroke-dasharray: calc(160px * 0.8 * 3.1415926535);
+
+
+                                            }
+                                        }
+                                    }
+    
+                                    .chart_data {
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 50%;
+                                        transform: translate(-50%, -50%);
+                                        text-align: center;
+    
+                                        h4 {
+                                            font-size: calc(-4px + 4vw);
+    
+                                            @include responsive(tablet-cat) {
+                                                font-size: calc(4px + 2vw)
+                                            }
+
+                                            @include responsive(semi-cat) {
+                                                font-size: 18px;
+                                            }
+
+                                            @include responsive(huge-cat) {
+                                                font-size: 24px;
+                                            }
+                                        }
+                                        
+    
+                                        p {
+                                            @include nyan_petit_margin;
+                                            font-size: calc(4px + 4vw);
+    
+                                            @include responsive(tablet-cat) {
+                                                font-size: calc(2px + 3vw);
+                                            }
+
+                                            @include responsive(semi-cat) {
+                                                font-size: 24px;
+                                            }
+
+                                            @include responsive(huge-cat) {
+                                                font-size: 32px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .main_projects {
+        
+        @include nyan_large_margin;
+        @include nyan_common_h2;
+
+        .proj_gnb {
+            @include nyan_small_margin;
+
+            .proj_gnb_flex {
+
+                display: flex;
+                align-items: flex-end;
+                margin: 0 auto;
+                width: fit-content;
+                width: 90%;
+                justify-content: space-between;
+
+                @include responsive(tablet-cat) {
+                    width: 70%;
+                }
+
+                @include responsive(semi-cat) {
+                    width: 780px;
+                }
+
+                @include responsive(huge-cat) {
+                    width: 880px;
+                }
+                
+
+                li {
+                    margin: 0 auto;
+                    font-size: calc(10px + 2vw);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    cursor: pointer;
+                    width: fit-content;
+                    text-align: center;
+
+                    @include responsive(tablet-cat) {
+                        font-size: calc(12px + 1vw);
+
+                    } 
+    
+                    @include responsive(semi-cat) {
+                        font-size: 32px;
+
+                    }
+
+                    @include responsive(huge-cat) {
+                        font-size: 36px;
+
+                    }
+                    
+                }
+
+
+    
+                .proj_gnb_kitty {
+                    display: block;
+                    margin-bottom: 5px;
+
+                    img {
+                        width: calc(20px + 5vw);
+                        display: block;
+                        animation: cat_jump ease-in 1s infinite;
+
+                        @include responsive(tablet-cat) {
+                            width: calc(18px + 5vw);
+                        } 
+    
+                        @include responsive(semi-cat) {
+                            width: 80px;
+                        }
+    
+                        @include responsive(huge-cat) {
+                            width: 100px;
+                        }
+                    }
+                }
+
+
+            }
+        }
+
+        .big_nyan {
+            margin: 0 auto;
+
+            @include responsive(tablet-cat) {
+
+            }
+
+            @include responsive(semi-cat) {
+                
+            }
+
+            @include responsive(huge-cat) {
+                overflow: hidden;
+                max-width: 2000px;
+            }
+        }
+
+        .projs {
+            @include nyan_mid_margin;
+
+            @include responsive(semi-cat) {
+                padding: $mezo_margin_h 0;
+            }
+
+            &>div {
+                @include proj_margin;
+                @include proj_flex_order;
+                position: relative;
+
+                .proj_flex {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+    
+                    @include responsive(tablet-cat) {
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                        
+                    }
+    
+                    @include responsive(semi-cat) {
+                        //
+                    }
+    
+                    @include responsive(huge-cat) {
+    
+                    }
+    
+                    .proj_photo {
+                        width: 80%;
+                        margin: 0 auto;
+                        position: relative;
+    
+                        @include responsive(tablet-cat) {
+                            width: 40%;
+                        }
+        
+                        @include responsive(semi-cat) {
+                            width: 480px;
+    
+                        }
+        
+                        @include responsive(huge-cat) {
+                            width: 580px;
+                        }
+    
+                        img.proj_mockup {
+                            display: block;
+                            position: relative;
+                            width: 100%;
+                        }
+    
+                        img.proj_nyanbal {
+                            position: absolute;
+                            transform-origin: center top;
+                        }
+    
+                        img.proj_back {
+                            position: absolute;
+                            z-index: -2;
+                        }
+                    }
+    
+                    .proj_contents {
+                        @include nyan_mid_margin;
+                        width: 100%;
+    
+                        @include responsive(tablet-cat) {
+                            width: 55%;
+                            margin-top: 0;
+                        }
+        
+                        @include responsive(semi-cat) {
+                            width: 580px;
+                        }
+        
+                        @include responsive(huge-cat) {
+                            width: 780px;
+                        }
+    
+                        .proj_title {
+                            display: flex;
+                            width: 100%;
+                            align-items: center;
+                            position: relative;
+    
+                            .title_img {
+                                width: 15%;
+    
+                                img {
+                                    display: block;
+                                    width: 100%;
+                                }
+                            }
+    
+                            .title_txt {
+                                margin-left: 20px;
+    
+                                @include responsive(tablet-cat) {
+                                    margin-left: 15px;
+                                }
+    
+                                @include responsive(semi-cat) {
+                                    margin-left: 20px;
+                                }
+                
+                                @include responsive(huge-cat) {
+                                    margin-left: 30px;
+                                }
+    
+                                h4 {
+                                    color: white;
+                                    font-size: calc(4px + 4vw);
+    
+                                    @include responsive(tablet-cat) {
+                                        font-size: calc(6px + 2vw);
+                                    }
+    
+                                    @include responsive(semi-cat) {
+                                        font-size: 32px;
+                                    }
+                    
+                                    @include responsive(huge-cat) {
+                                        font-size: 40px;
+                                    }
+                                    
+                                }
+                            }
+    
+                        }
+    
+                        .proj_info {
+    
+                            width: 100%;
+
+                            &>div {
+                                position: relative;
+                            }
+    
+                            .proj_detail {
+                                margin-top: $regular_margin_p;
+                                display: flex;
+                                width: 100%;
+                                justify-content: space-around;
+    
+                                @include responsive(tablet-cat) {
+                                    margin-top: $small_margin_p;
+                                }
+    
+                                @include responsive(semi-cat) {
+                                    margin-top: $small_margin_s;
+    
+                                }
+                
+                                @include responsive(huge-cat) {
+                                    margin-top: $small_margin_h;
+                                }
+    
+                                &>div {
+                                    width: calc(100% / 3);
+                                    text-align: center;
+
+    
+                                    h5 {
+                                        font-size: calc(3vw + 6px);
+    
+                                        @include responsive(tablet-cat) {
+                                            font-size: calc(2vw + 2px);
+    
+                                        }
+            
+                                        @include responsive(semi-cat) {
+                                            font-size: 24px;
+                                        }
+                        
+                                        @include responsive(huge-cat) {
+                                            font-size: 32px;
+                                        }
+                                    }
+    
+                                    p {
+                                        margin-top: $tiny_margin_p;
+                                        font-size: calc(3vw + 6px);
+    
+                                        @include responsive(tablet-cat) {
+                                            font-size: calc(2vw + 1px);
+                                            margin-top: $petit_margin_t;
+    
+                                        }
+            
+                                        @include responsive(semi-cat) {
+                                            font-size: 24px;
+                                        }
+                        
+                                        @include responsive(huge-cat) {
+                                            font-size: 32px;
+                                        }
+    
+                                        .info_highlight {
+                                            font-size: calc(10vw + 4px);
+    
+                                            @include responsive(tablet-cat) {
+                                                font-size: calc(6vw);
+        
+                                            }
+                
+                                            @include responsive(semi-cat) {
+                                                font-size: 80px;
+                                            }
+                            
+                                            @include responsive(huge-cat) {
+                                                font-size: 96px;
+                                            }
+    
+                                        }
+                                    }
+                                }
+    
+                                .info_tone {
+                                    
+                                    .tone_flex {
+                                        width: 60%;
+                                        margin: 0 auto;
+                                        display: flex;
+                                        align-items: center;
+                                        flex-wrap: wrap;
+                                        margin-top: $tiny_margin_p;
+                                        height: calc(10vw + 4px);
+    
+                                        
+                                        @include responsive(tablet-cat) {
+                                            height: calc(6vw);
+                                            margin-top: $petit_margin_t;                                      
+                                        }
+            
+                                        @include responsive(semi-cat) {
+                                            height: 80px;
+                                            margin-top: $petit_margin_s;                                      
+                                        }
+                        
+                                        @include responsive(huge-cat) {
+                                            height: 96px;
+                                            margin-top: $petit_margin_h;                                      
+                                        }
+                                        
+    
+                                        .tone_cat {
+                                            margin: 0 auto;
+                                            width: calc(100% / 3);
+                                            
+                                            svg {
+                                                width: 75%;
+                                                display: block;
+                                                margin: 0 auto;
+                                            }
+                                        }
+                                    }                               
+                                }
+                            }
+    
+                            .info_desc {
+                                margin-top: $regular_margin_p;
+    
+                                @include responsive(tablet-cat) {
+                                    margin-top: $small_margin_p;
+                                }
+    
+                                .desc_txt {
+                                
+                                    text-align: justify;
+                                    font-size: calc(8px + 2vw);
+                                    line-height: 2em;
+    
+                                    @include responsive(tablet-cat) {
+                                        font-size: calc(8px + 1.1vw);
+                                    }
+
+                                    @include responsive(semi-cat) {
+                                        font-size: 24px;
+                                        line-height: 2em;
+                                    }
+
+                                    @include responsive(semi-cat) {
+                                        font-size: 28px;
+                                    }
+                                }
+                            }    
+                            
+                            .info_btn_grp {
+                                @include common_btn(none);
+                            }
+                        }
+                    }
+                }
+
+                @include proj_back_img;
+
+            }
+
+        }
+
+    }
+
+    .main_contactme {
+        @include nyan_large_margin;
+        @include nyan_common_h2;
+
+        .cm_flex {
+            margin-top: $big_margin_p;
+            display: flex;
+            flex-direction: column;
+
+            @include responsive(tablet-cat) {
+                margin-top: $regular_margin_t;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            @include responsive(semi-cat) {
+                margin-top: $mezo_margin_s;
+            }
+
+            @include responsive(huge-cat) {
+                margin-top: $large_margin_p;
+            }
+
+            .cm_img_area {
+                
+                position: relative;
+                width: 100%;
+
+                @include responsive(tablet-cat) {
+                    width: 30%;
+                }
+    
+                @include responsive(semi-cat) {
+                    width: 480px;
+                }
+    
+                @include responsive(huge-cat) {
+                    width: 680px;
+                }
+
+                img {
+                    
+                    &:first-child { // 고양이
+                        position: relative;
+                        display: block;
+                        width: 40%;
+                        margin: 0 auto;
+
+                        @include responsive(tablet-cat) {
+                            width: 80%;
+                        }
+            
+                        @include responsive(semi-cat) {
+                            width: 300px;
+                        }
+            
+                        @include responsive(huge-cat) {
+                            width: 400px;
+                        }
+
+                    }
+
+                    &:nth-child(2) { // 우산
+                        position: absolute;
+                        top: -24%;
+                        left: 34%;
+                        width: 55%;
+                        rotate: -5deg;
+                        transform-origin: bottom center;
+                        animation: header_gnb_mobile 5s linear infinite;
+
+                        @include responsive(tablet-cat) {
+                            width: 110%;
+                            top: -25%;
+                            left: 17.5%;
+                            
+                        }
+            
+                        @include responsive(semi-cat) {
+                            width: 400px;
+                            top: -22%;
+                            left: 26%;
+                        }
+            
+                        @include responsive(huge-cat) {
+                            width: 540px;
+                            top: -23.5%;
+                            left: 26.5%;
+                        }
+                    }
+                }
+
+                
+            }
+
+            .cm_contents_area {
+                position: relative;
+                width: 100%;
+
+                @include responsive(tablet-cat) {
+                    width: 60%;
+                }
+    
+                @include responsive(semi-cat) {
+                    width: 580px;
+                }
+    
+                @include responsive(huge-cat) {
+                    width: 780px;
+                }
+
+                .cm_not_hidden {
+                    margin-top: $mezo_margin_p;
+
+                    @include responsive(tablet-cat) {
+                        margin-top: 0;
+                    }
+        
+                    @include responsive(semi-cat) {
+                        //
+                    }
+        
+                    @include responsive(huge-cat) {
+                        //
+                    }
+
+                    .cm_title {
+                        width: 100%;
+                        font-size: calc(3px + 4vw);
+
+                        @include responsive(tablet-cat) {
+                            font-size: calc(1px + 3vw);
+                        }
+
+                        @include responsive(semi-cat) {
+                            font-size: 32px;
+                        }
+            
+                        @include responsive(huge-cat) {
+                            font-size: 36px
+                        }
+
+                        .cm_upper {
+                            //
+                        }
+
+                        .cm_lower {
+                            
+                            @include nyan_petit_margin;
+                            width: fit-content;
+                        
+                            .cm_lower_flex {
+                                
+                                display: flex;
+                                width: fit-content;
+                                align-items: center;
+                            
+                                h2 {
+                                    margin-right: 5px;
+                                    margin-left: auto;
+
+                                    @include responsive(tablet-cat) {
+                                        margin-right: 10px;
+                                    }
+                        
+                                    @include responsive(semi-cat) {
+                                        margin-right: 5px;
+                                    }
+                        
+                                    @include responsive(huge-cat) {
+                                        //
+                                    }
+                                    
+                                }
+    
+                                img {
+                                    display: block;
+                                    width: 15%;
+
+                                    @include responsive(tablet-cat) {
+                                        //
+                                    }
+                        
+                                    @include responsive(semi-cat) {
+                                        width: 16%
+                                    }
+                        
+                                    @include responsive(huge-cat) {
+                                        width: 17.5%
+                                    }
+                                }
+
+                            }
+
+                            
+                            
+                        }
+                    }
+
+                    .cm_greet {
+
+                        p {
+                            @include nyan_small_margin;
+                            text-align: justify;
+                            font-size: calc(6px + 3vw);
+                            line-height: 2em;
+
+                            @include responsive(tablet-cat) {
+                                font-size: calc(6px + 2vw);
+                            }
+                
+                            @include responsive(semi-cat) {
+                                font-size: 28px;
+                            }
+                
+                            @include responsive(huge-cat) {
+                                font-size: 32px;
+                            }
+
+                            .cm_highlight {
+                                color: $identity;
+                            }
+                        }
+
+                    }
+
+                    .cm_btn_grp {
+                        display: block;
+                        @include common_btn(white);
+
+                        button {
+                            @include common_btn_plus;
+                        }
+
+                    }
+                }
+
+                .cm_hidden {
+                    margin-top: $mezo_margin_p;
+
+                    @include responsive(tablet-cat) {
+                        margin-top: 0;
+                    }
+        
+                    @include responsive(semi-cat) {
+                        //
+                    }
+        
+                    @include responsive(huge-cat) {
+                        //
+                    }
+
+                    .cm_hd_title {
+                        position: relative;
+                        width: fit-content;
+
+                        h3 {
+                            @include common_under;
+                            position: relative;
+                            font-size: calc(8px + 4vw);
+                            color: $identity;
+                            text-align: center;
+                            width: fit-content;
+
+                            @include responsive(tablet-cat) {
+                                font-size: calc(8px + 3vw);
+                            }
+                
+                            @include responsive(semi-cat) {
+                                font-size: 40px;
+                            }
+                
+                            @include responsive(huge-cat) {
+                                //
+                            }
+
+                            // &::after {
+                            //     content: '';
+                            //     display: block;
+                            //     height: calc(2px + 0.5vw);
+                            //     margin-top: 5px;
+                            //     border-radius: 1000px;
+                            //     width: 150%;
+                            //     background-color: white;
+                            //     translate: -5%;
+
+                            //     @include responsive(tablet-cat) {
+                            //         height: calc(1px + 0.5vw);
+                            //         translate: 0;
+                            //         width: 135%;
+                            //     }
+                    
+                            //     @include responsive(semi-cat) {
+                            //         height: 6px;
+                            //     }
+                    
+                            //     @include responsive(huge-cat) {
+                            //         //
+                            //     }
+                            // }
+                        }
+
+                        .cm_hd_kitty {
+                            position: absolute;
+                            width: 20%;
+                            top: -40%;
+                            right: -35%;
+
+                            @include responsive(tablet-cat) {
+                                
+                                top: -45%;
+                                right: -30%;
+                            }
+                
+                            @include responsive(semi-cat) {
+                                //
+                            }
+                
+                            @include responsive(huge-cat) {
+                                //
+                            }
+
+                            img {
+                                display: block;
+                                width: 100%;
+                            }
+
+                        }
+                    }
+
+                    .cm_hd_main {
+                        @include nyan_small_margin;
+
+                        form {
+
+                            .cm_form_flex {
+                                display: flex;
+                                flex-direction: column;
+
+                                @include responsive(tablet-cat) {
+
+                                }
+
+                                @include responsive(semi-cat) {
+                                }
+
+                                @include responsive(huge-cat) {
+                                    flex-direction: row;
+                                    justify-content: space-between;
+                                }
+
+                                &>div {
+                                    @include cm_form_div;
+
+                                }
+
+                                .cm_name {
+                                    margin-top: 0;
+
+                                    @include responsive(huge-cat) {
+                                        width: 47.5%;
+                                    }
+                                }
+
+                                .cm_email {
+                                    @include responsive(huge-cat) {
+                                        width: 47.5%;
+                                        margin-top: 0;
+                                    }
+                                }
+
+                            }
+
+                            .cm_message {
+                                @include cm_form_div;
+                                align-items: flex-start;
+                                flex-direction: column;
+
+                                @include responsive(huge-cat) {
+                                    margin-top: $tiny_margin_h;
+
+                                }
+                            }
+                            
+                            .cmh_btn_grp {
+                                @include common_btn(white);
+        
+                                button {
+                                    @include common_btn_plus;
+                                }
+                            }
+                        }    
+                    }
+                }
+            }
+        }
+    }
+}

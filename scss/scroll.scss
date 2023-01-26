@@ -63,6 +63,38 @@ html {
     
     }
 
+    .design_note {
+        overflow: overlay;
+
+        &::-webkit-scrollbar-track
+        {
+            -webkit-box-shadow: inset 0 0 6px $identity;
+            border-radius: 8px;
+        }
+    
+        &::-webkit-scrollbar
+        {
+            width: 8px;
+        }
+    
+        &::-webkit-scrollbar-thumb
+        {
+            background: rgb(31,31,31);
+            background-image: -webkit-linear-gradient(-90deg,
+            transparent 0%,
+            transparent 5%,
+            $identity 5%,
+            $identity 15%,
+            transparent 15%,
+            transparent 20%,
+            $identity 20%,
+            $identity 30%,
+            transparent 30%,
+            transparent)
+        }
+    
+    }
+
 }
 
 ::selection {

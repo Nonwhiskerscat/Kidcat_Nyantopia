@@ -1,8 +1,9 @@
-function design_note() {
+function design_note(cat) {
     let kitty='';
+    console.log(cat.backtone);
     kitty+=
     `
-    <div class="design_note dn_${dnote.tag_name}">
+    <div class="design_note dn_${cat.tag_name}">
     <div class="dn_matte" />
     <div class="nyan_zone">
         <div class="close_flex">
@@ -12,23 +13,23 @@ function design_note() {
             <h4>CLOSE</h4>
         </div>
         <div class="design_bighead">
-                <div class="design_header">
+                <div class="design_header" style="background-color:${cat.backtone}">
                     <div class="semi_nyan_zone">
                         <div class="dh_flex">
 
                             <div class="dh_contents">
                                 <h5>Website</h5>
                                 <div class="dh_h4_flex">
-                                    <h4 style="color: ${dnote.color}">${dh.title}</h4>
-                                    <span class="kitty_dhicon">kitty</span>
+                                    <h4 style="color: ${cat.color}">${cat.header.title}</h4>
+                                    <span class="kitty_dhicon">${cat_svg(cat.color)}</span>
                                 </div>
                                 <div class="icon_entire">
-                                    <div class="icon_flex git_${dnote.tag_name}">
+                                    <div class="icon_flex git_${cat.tag_name}">
                                         <img src="./img/Design_note/design_github.png" alt="디자인 깃허브">
                                         <p>Github</p>
                                     </div>
 
-                                    <div class="icon_flex web_${dnote.tag_name}">
+                                    <div class="icon_flex web_${cat.tag_name}">
                                         <img src="./img/Design_note/design_link.png" alt="디자인 웹링크">
                                         <p>Weblink</p>
                                     </div>
@@ -37,7 +38,7 @@ function design_note() {
                             </div>
 
                             <div class="dh_img">
-                                <img src="./img/main/pj_${dnote.tag_name}_mockup.png" alt="목업이미지">
+                                <img src="./img/main/pj_${cat.tag_name}_mockup.png" alt="목업이미지">
                             </div>
                         </div>    
                     </div>
@@ -45,7 +46,7 @@ function design_note() {
                 </div>
 
                 <div class="design_body">
-                    <div class="dn_overview dover_${dnote.tag_name}">
+                    <div class="dn_overview dover_${cat.tag_name}">
                         <div class="main_h2">
                             <div class="semi_nyan_zone">
                                 <div class="nyan_h2_flex">
@@ -63,9 +64,9 @@ function design_note() {
 
                         <div class="semi_nyan_zone">
                             <div class="ov_flex">
-                                <div class="ov_img_area ov${dnote.dn_id} no">
-                                    <img src="./img/Design_note/overview_${dnote.dn_id}_bd.png" alt="#">
-                                    <img src="./img/Design_note/overview_${dnote.dn_id}_hd.png" alt="#">
+                                <div class="ov_img_area ov${cat.dn_id}">
+                                    <img src="./img/Design_note/overview_${cat.dn_id}_bd.png" alt="#">
+                                    <img src="./img/Design_note/overview_${cat.dn_id}_hd.png" alt="#">
                                 </div>
 
                                 <div class="ov_cts_area">
@@ -73,26 +74,26 @@ function design_note() {
                                         <div class="h4_left"></div>
                                         <h4>Period</h4>
                                     </div>
-                                    <p class="ov_period">${dover.period[0]} ~ ${dover.period[1]}(${dover.date}일)</p>
+                                    <p class="ov_period">${cat.ov.period[0]} ~ ${cat.ov.period[1]}(${cat.ov.date}일)</p>
 
                                     <div class="ov_h4_flex">
                                         <div class="h4_left"></div>
                                         <h4>Mission</h4>
                                     </div>
-                                    <p class="ov_mission">${dover.mission}</p>
+                                    <p class="ov_mission">${cat.ov.mission}</p>
 
                                     <div class="ov_h4_flex">
                                         <div class="h4_left"></div>
                                         <h4>Tools</h4>
                                     </div>
-                                    <p class="ov_tool">${dover.tools}</p>
+                                    <p class="ov_tool">${cat.ov.tools}</p>
                                 </div>
                             </div>
                         </div>
 
                     </div>
 
-                    <div class="dn_tnm dtnm_${dnote.tag_name} style="display: ${dtnm.contain};"">
+                    <div class="dn_tnm dtnm_${cat.tag_name}" style="display: ${cat.tnm.contain};">
                         <div class="main_h2">
                             <div class="semi_nyan_zone">
                                 <div class="nyan_h2_flex">
@@ -110,7 +111,7 @@ function design_note() {
 
                         <div class="semi_nyan_zone">
                             <div class="dn_tone_entire">
-                                ${put_dtnm(dtnm.count, dtnm)}
+                                ${put_dtnm(cat.tnm.count, cat.tnm)}
                             </div>
                         </div>
                         
@@ -118,7 +119,7 @@ function design_note() {
 
                     </div>
 
-                    <div class="dn_font dfont_${dnote.tag_name} style="display: ${dfont.contain};"">
+                    <div class="dn_font dfont_${cat.tag_name}" style="display: ${cat.font.contain};">
                         <div class="main_h2">
                             <div class="semi_nyan_zone">
                                 <div class="nyan_h2_flex">
@@ -137,7 +138,7 @@ function design_note() {
                         <div class="semi_nyan_zone">
                             <div class="dn_font_entire">
 
-                                ${put_dfont(dfont.count, dfont)}
+                                ${put_dfont(cat.font.count, cat.font)}
 
                             </div>
 
@@ -145,7 +146,7 @@ function design_note() {
                         </div>
                     </div>
 
-                    <div class="dn_grid dgrid_${dnote.tag_name}" style="display: ${dgrid.contain};">
+                    <div class="dn_grid dgrid_${cat.tag_name}" style="display: ${cat.grid.contain};">
                         <div class="main_h2">
                             <div class="semi_nyan_zone">
                                 <div class="nyan_h2_flex">
@@ -164,14 +165,14 @@ function design_note() {
                         <div class="semi_nyan_zone">
                             <div class="dn_grid_entire">
 
-                            ${put_dgrid(dgrid.count, dgrid)}
+                            ${put_dgrid(cat.grid.count, cat.grid)}
 
                             </div>
 
                         </div>
                     </div>
 
-                    <div class="dn_bi dbi_${dnote.tag_name} style="display: ${dbi.contain};"">
+                    <div class="dn_bi dbi_${cat.tag_name}" style="display: ${cat.bi.contain};">
                         <div class="main_h2">
                             <div class="semi_nyan_zone">
                                 <div class="nyan_h2_flex">
@@ -190,7 +191,7 @@ function design_note() {
                         <div class="semi_nyan_zone">
                             <div class="dn_logo_entire">
 
-                            ${put_dbi(dbi.count, dbi)}
+                            ${put_dbi(cat, cat.bi.count, cat.bi)}
 
                             </div>
 
@@ -198,7 +199,7 @@ function design_note() {
 
                     </div>
 
-                    <div class="dn_result dres_${dnote.tag_name}">
+                    <div class="dn_result dres_${cat.tag_name}">
                         <div class="main_h2">
                             <div class="semi_nyan_zone">
                                 <div class="nyan_h2_flex">
@@ -217,16 +218,8 @@ function design_note() {
                         <div class="semi_nyan_zone">
 
                             <div class="dn_result_entire">
-                                <div class="dn_result_kit dbi_${neko}">
-                                    <div class="ov_h4_flex">
-                                        <div class="h4_left"></div>
-                                        <h4>Main-Page</h4>
-                                    </div>
+                                ${put_dres(cat, cat.result.count, cat.result)}
 
-                                    <div class="dn_result_img">
-                                        <img src="./img/Design_note/fhotel/${dres.result_tag[neko]}_result.png" alt="결과1">
-                                    </div>
-                                </div>
                             </div>
 
                         </div>
@@ -234,10 +227,9 @@ function design_note() {
                     </div>
                 </div>
 
-                <div class="design_end">
+                <div class="design_end" style="background-color: ${cat.backtone}">
                     <div class="de_flex">
-                        <img src="./img/Design_note/dn_scroll_up.png" alt="스크롤업">
-                        <h4>Scroll Up</h4>
+                        <h4 style="color: ${cat.color}">Scroll Up</h4>
                     </div>
 
                 </div>
@@ -260,9 +252,10 @@ function design_note() {
 
 function put_dtnm(meow, felis) { // meow: 루프 횟수, cat: 데이터 push 위치, felis: 데이터 이름
     let kitty='';
-    for(let neko=0;neko<meow;meow++) {
+    for(let neko=0;neko<meow;neko++) {
+        
         kitty+=`
-        <div class="dn_tone_flex ${dnote.tag_name}_cl${neko}">
+        <div class="dn_tone_flex dtnm_${neko}">
             <div class="dn_tone_cat">
                 <svg id="dn_tone_cat_${neko}" data-name="레이어 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 47.59">
                     <path style="fill: ${felis.colors[neko].hex}; stroke-width: 2px; stroke-linejoin:'round'" class="tone_kitty" d="M47.74,14.65c-.39-4.56-1.85-13.73-5.83-14.58-3.3-.7-7.6,3.75-10.39,7.23,0,0,0,0,0,0-.66-.07-1.27-.14-1.85-.2-.6-.06-1.16-.11-1.72-.15-.69-.05-1.37-.09-2.09-.1-.28,0-.56,0-.85,0h0c-.29,0-.58,0-.85,0-.73,.02-1.41,.05-2.1,.1-.56,.04-1.12,.1-1.72,.16-.57,.06-1.18,.13-1.84,.2,0,0,0,0,0,0C15.69,3.82,11.39-.63,8.08,.07,4.1,.92,2.65,10.09,2.26,14.65,.88,18.63,.12,21.78,0,27.21c-.27,13.31,11.19,20.38,24.99,20.38h0c13.8,0,25.26-7.07,24.99-20.38-.11-5.43-.87-8.58-2.25-12.56Z"/>
@@ -286,18 +279,18 @@ function put_dtnm(meow, felis) { // meow: 루프 횟수, cat: 데이터 push 위
 
 function put_dfont(meow, felis) {
     let kitty='';
-    for(let neko=0;neko<meow;meow++) {
+    for(let neko=0;neko<meow;neko++) {
         kitty+=
         `
         <div class="dn_font_kit dfont_${neko}">
             <div class="ov_h4_flex">
                 <div class="h4_left"></div>
-                <h4>${felis.family[neko].title};</h4>
+                <h4>${felis.family[neko].title}</h4>
             </div>
     
-            <div class="kit_font" style="font-family: ${felis.family[neko].name};">
+            <div class="kit_font" style="font-family: '${felis.family[neko].name}';">
                 <div class="kit_title">
-                    <p class="dn_kit_title">Lemon Milk</p>
+                    <p class="dn_kit_title">${felis.family[neko].title}</p>
                 </div>
     
                 <div class="kit_sub">
@@ -317,7 +310,7 @@ function put_dfont(meow, felis) {
 
 function put_dgrid(meow, felis) {
     let kitty='';
-    for(let neko=0;neko<meow;meow++) {
+    for(let neko=0;neko<meow;neko++) {
         kitty+=
         `
         <div class="dn_grid_kit dgrid_${neko}">
@@ -373,9 +366,9 @@ function put_dgrid(meow, felis) {
     
 }
 
-function put_dbi(meow, felis) {
+function put_dbi(cat, meow, felis) {
     let kitty='';
-    for(let neko=0;neko<meow;meow++) {
+    for(let neko=0;neko<meow;neko++) {
         kitty+=
         `
         <div class="dn_logo_kit dbi_${neko}">
@@ -385,7 +378,7 @@ function put_dbi(meow, felis) {
             </div>
         
             <div class="dn_logo_img">
-                <img src="./img/Design_note/fhotel/${felis.bi_tag[neko]}_logo.png" alt="로고1">
+                <img src="./img/Design_note/${cat.tag_name}/${felis.bi_tag[neko]}_logo.png" alt="로고1">
             </div>
         
         </div>
@@ -395,9 +388,9 @@ function put_dbi(meow, felis) {
     return kitty;
 }
 
-function put_dres(meow, felis) {
+function put_dres(cat, meow, felis) {
     let kitty='';
-    for(let neko=0;neko<meow;meow++) {
+    for(let neko=0;neko<meow;neko++) {
         kitty+=
         `
         <div class="dn_result_kit dbi_${neko}">
@@ -407,7 +400,7 @@ function put_dres(meow, felis) {
             </div>
 
             <div class="dn_result_img">
-                <img src="./img/Design_note/fhotel/${felis.result_tag[neko]}_result.png" alt="결과1">
+                <img src="./img/Design_note/${cat.tag_name}/${felis.result_tag[neko]}_result.png" alt="결과1">
             </div>
         </div>
         `

@@ -1,0 +1,1011 @@
+@import './style.scss';
+@import './mixin.scss';
+@import './responsive.scss';
+
+//reset
+
+.semi_nyan_zone {
+    margin: 0 auto;
+    position: relative;
+    width: 95%;
+    // background-color: tan;
+
+    @include responsive(tablet-cat) {
+        width: 95%;
+    }
+
+    @include responsive(semi-cat) {
+        width: 100%;
+        max-width: 980px;
+    }
+
+    @include responsive(huge-cat) {
+        width: 100%;
+        max-width: 1380px;
+
+    }
+
+
+}
+
+.design_note {
+    top: 0;
+    left: 0;
+    background-color:rgba($color: #000, $alpha: 0.5);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    transform-origin: left top;
+
+    .close_flex {
+        @include design_note_close;
+    }
+
+    .design_bighead {
+        border-radius: 30px;
+        width: 100%;
+        @include responsive(tablet-cat) {
+            border-radius: 40px;
+
+        }
+    
+        @include responsive(semi-cat) {
+            border-radius: 50px;
+
+        }
+    
+        @include responsive(huge-cat) {
+            border-radius: 60px;
+        }
+
+        .design_header {
+            border-radius: inherit;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            background-color: $background;
+
+            .dh_flex {
+                display: flex;
+                flex-direction: column;
+            ;
+
+                @include responsive(tablet-cat) {
+                    flex-direction: row;
+                    justify-content: space-between
+                }
+
+                .dh_contents {
+                    @include nyan_regular_margin;
+                    width: 100%;
+
+                    @include responsive(tablet-cat) {
+                        width: 50%;
+                    }
+
+                    @include responsive(semi-cat) {
+                        width: 480px;
+                    }
+
+                    @include responsive(huge-cat) {
+                        width: 580px;
+                    }
+
+                    h5 {
+                        text-align: center;
+                        font-size: calc(8px + 3vw);
+
+                        @include responsive(tablet-cat) {
+                            text-align: justify;
+                            font-size: calc(8px + 2vw);
+                        }
+
+                        @include responsive(semi-cat) {
+                            font-size: 32px;
+                        }
+
+                        @include responsive(pc-cat) {
+                            font-size: 40px;
+                        }
+                    }
+
+                    .dh_h4_flex {
+                        text-align: center;
+                        width: fit-content;
+                        margin: 0 auto;
+                        @include nyan_small_margin;
+                        display: flex;
+                        align-items: flex-end;
+
+                        @include responsive(tablet-cat) {
+                            margin-left: 0;
+                            margin-right: 0;
+                            text-align: justify;
+                        }
+
+                        h4 {
+                            font-size: calc(12px + 4vw);
+                            line-height: 1.5em;
+    
+                            @include responsive(tablet-cat) {
+                                font-size: calc(16px + 2vw);
+                            }
+    
+                            @include responsive(semi-cat) {
+                                font-size: 48px;
+                            }
+    
+                            @include responsive(huge-cat) {
+                                font-size: 54px;
+                            }
+                        }
+    
+                        .kitty_dhicon {
+                            margin-left: $petit_margin_p;
+                            line-height: 1.5em;
+                            display: none;
+                        
+                            @include responsive(tablet-cat) {
+                                display: block;
+                                margin-left: $petit_margin_t;
+                            } 
+
+                            @include responsive(semi-cat) {
+                                margin-left: $petit_margin_s;
+                            }
+
+                            @include responsive(huge-cat) {
+                                margin-left: $petit_margin_h;
+                            }
+    
+                            
+                            svg {
+                                height: calc(1.1 * calc(12px + 4vw));
+
+                                @include responsive(tablet-cat) {
+                                    height: calc(1.1 * calc(16px + 2vw));
+                                }
+        
+                                @include responsive(semi-cat) {
+                                    height: calc(48px * 1.1);
+                                }
+        
+                                @include responsive(huge-cat) {
+                                    height: calc(54px * 1.1);
+                                }
+
+                                
+                            }
+                        }
+                    }
+
+                    .icon_entire {
+                        margin: 0 auto;
+                        @include nyan_mezo_margin;
+                        display: flex;
+                        justify-content: space-between;
+                        width: 70%;
+                        max-width: 400px;
+
+                        @include responsive(tablet-cat) {
+                            margin-left: 0;
+                            margin-right: 0;
+                            justify-content: baseline;
+                            width: fit-content;
+                            max-width: none;
+                        }
+
+                        .icon_flex {
+                            display: flex;
+                            align-items: center;
+                            cursor: pointer;
+
+
+                            &:first-child {
+                                margin-right: $small_margin_p;
+
+                                @include responsive(tablet-cat) {
+                                    margin-right: $regular_margin_t;
+
+                                }
+                            }
+
+                            &:hover {
+
+                                img {
+                                    animation: cat_jump 1s infinite ease-in-out;
+
+                                }
+                            }
+
+                            img {
+                                display: block;
+                                width: calc(20px + 3vw);
+                                margin-right: $petit_margin_p;
+
+                                @include responsive(tablet-cat) {
+                                    width: calc(20px + 2vw);
+                                    margin-right: $petit_margin_t;
+                                }
+
+                                @include responsive(semi-cat) {
+                                    width: 48px;
+                                }
+
+                                @include responsive(huge-cat) {
+                                    width: 54px;
+                                }
+                                
+                            }
+    
+                            p {
+                                font-size: calc(12px + 2vw);
+
+                                @include responsive(tablet-cat) {
+                                    font-size: calc(16px + 1vw);
+                                }
+
+                                @include responsive(semi-cat) {
+                                    font-size: 32px;
+                                }
+
+                                @include responsive(huge-cat) {
+                                    font-size: 36px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .dh_img {
+                    margin-top: $mezo_margin_p;
+                    width: 100%;
+
+                    @include responsive(tablet-cat) {
+                        width: 50%;
+                        margin-top: 0;
+                    }
+
+                    @include responsive(semi-cat) {
+                        width: 480px;
+                    }
+
+                    @include responsive(huge-cat) {
+                        width: 680px;
+                    }
+
+                    img {
+                        display: block;
+                        width: 100%;
+                        position: relative;
+                        top: 1.2em;
+
+                        @include responsive(tablet-cat) {
+                            top: 1.3em;
+                        }
+
+                        @include responsive(semi-cat) {
+                            top: 2.5em;
+                        }
+
+                        @include responsive(huge-cat) {
+                            top: 3em;
+                        }
+                    }
+
+
+                }
+            }
+        }
+
+        .design_body {
+            background-color: $dn_back;
+            color: $background;
+            padding: $mezo_margin_p 0;
+
+            @include responsive(tablet-cat) {
+                padding: $mezo_margin_t 0;
+            }
+
+            @include responsive(semi-cat) {
+                padding: $mezo_margin_s 0;
+            }
+
+            @include responsive(huge-cat) {
+                padding: $mezo_margin_h 0;
+            }
+
+            .dn_overview {
+                @include nyan_dn_h2;
+
+                .ov_flex {
+                    @include nyan_small-margin;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    @include responsive(tablet-cat) {
+                        flex-direction: row;
+                        justify-content: space-between;
+                    }
+
+                    .ov_img_area {
+                        width: 100%;
+                        position: relative;
+
+                        @include responsive(tablet-cat) {
+                            width: 50%;
+                        }
+
+                        @include responsive(semi-cat) {
+                            width: 480px;
+                        }
+
+                        @include responsive(huge-cat) {
+                            width: 680px;
+                        }
+
+                        img {
+                            display: block;
+
+                            &:first-child {
+                                width: 80%;
+                                margin: 0 auto;
+
+                            }
+
+                            &:last-child {
+                                position: absolute;
+                                transform-origin: center bottom;
+                                animation: header_gnb_mobile 3s infinite linear;
+                            }
+                        }
+
+
+                    }
+
+                    .ov1 {
+                        img {
+                            &:last-child {
+                                width: 28%;
+                                top: 2.5%;
+                                left: 50%;
+                                translate: -57%;
+                            }
+                        }
+                    }
+
+                    .ov2 {
+                        img {
+                            &:last-child {
+                                width: 30%;
+                                top: 17%;
+                                right: 20%;
+                            }
+                        }
+                    }
+
+                    .ov3 {
+                        img {
+                            &:last-child {
+                                width: 35%;
+                                top: 10%;
+                                left: 12.5%;
+                            }
+                        }
+
+                    }
+
+                    .ov_cts_area {
+                        width: 100%;
+                        text-align: center;
+
+                        @include responsive(tablet-cat) {
+                            width: 50%;
+                            text-align: justify;
+                        }
+
+                        @include responsive(semi-cat) {
+                            width: 480px;
+                        }
+
+                        @include responsive(huge-cat) {
+                            width: 680px;
+                        }
+
+                        .ov_h4_flex {
+                            @include nyan_dn_h4;
+
+                            &:first-child {
+                                margin-top: $mezo_margin_p;
+
+                                @include responsive(tablet-cat) {
+                                    margin-top: 0;
+                                }
+
+                            }
+                        }
+
+
+                        p {
+                            @include nyan_petit_margin;
+                            font-size: calc(6px + 2vw);
+                            color: $dn_txt;
+
+                            @include responsive(tablet-cat) {
+                                font-size: calc(8px + 1vw);
+                            }
+
+                            @include responsive(semi-cat) {
+                                font-size: 20px;
+                            }
+
+                            @include responsive(huge-cat) {
+                                font-size: 28px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .dn_tnm {
+                @include nyan_big_margin;
+                @include nyan_dn_h2;
+
+                .dn_tone_entire {
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+
+                    @include responsive(tablet-cat) {
+                        flex-direction: row;
+                        justify-content: space-between;
+                    }
+
+                    .dn_tone_flex {
+                        @include nyan_regular_margin;
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+
+                        @include responsive(tablet-cat) {
+                            width: 45%;
+                        }
+
+                        @include responsive(semi-cat) {
+                            width: 480px;
+                        }
+
+                        @include responsive(huge-cat) {
+                            width: 680px;
+                        }
+
+                        .dn_tone_cat {
+                            position: relative;
+                            width: 40%;
+
+                            svg {
+                                display: block;
+                                width: 80%;
+                            }
+
+                            h5.dn_hex {
+                                color: $dn_back;
+                                text-align: center;
+                                width: fit-content;
+                                position: absolute;
+                                font-size: calc(4px + 3vw);
+                                top: 50%;
+                                left: 40%;
+                                translate: -50% -20%;
+
+                                @include responsive(tablet-cat) {
+                                    font-size: calc(9px + 1vw)
+                                }
+                        
+                                @include responsive(semi-cat) {
+                                    font-size: 20px;
+                                }
+                        
+                                @include responsive(huge-cat) {
+                                    font-size: 24px;
+                                }
+
+                                
+                            }
+                        }
+
+                        .dn_tone_txt {
+                            width: 60%;
+
+                            h4 {
+                                // position: relative;
+                                font-size: calc(8px + 3vw);
+                        
+                                @include responsive(tablet-cat) {
+                                    font-size: calc(8px + 2vw)
+                                }
+                        
+                                @include responsive(semi-cat) {
+                                    font-size: 28px;
+                                }
+                        
+                                @include responsive(huge-cat) {
+                                    font-size: 36px;
+                                }
+                            }
+
+                            h5 {
+                                font-size: calc(4px + 3vw);
+                                margin-top: 2px;
+
+                                @include responsive(tablet-cat) {
+                                    font-size: calc(9px + 1vw);
+                                    margin-top: 3px;
+                                }
+                        
+                                @include responsive(semi-cat) {
+                                    font-size: 20px;
+                                    margin-top: 5px;
+                                }
+                        
+                                @include responsive(huge-cat) {
+                                    font-size: 24px;
+                                    margin-top: 7px;
+                                }
+
+                            }
+
+                            p {
+                                margin-top: 5px;
+                                color: $dn_txt;
+                                font-size: calc(4px + 2vw);
+
+                                @include responsive(tablet-cat) {
+                                    font-size: calc(6px + 1vw);
+                                    margin-top: 6px;
+                                }
+
+                                @include responsive(semi-cat) {
+                                    font-size: 16px;
+                                    margin-top: 8px;
+                                }
+
+                                @include responsive(huge-cat) {
+                                    font-size: 20px;
+
+                                }
+
+                                &:last-child {
+                                    margin-top: 0;
+
+                                    @include responsive(tablet-cat) {
+                                        margin-top: 2px;
+                                    }
+
+                                    @include responsive(tablet-cat) {
+                                        margin-top: 4px;
+                                    }
+
+                                    @include responsive(tablet-cat) {
+                                        margin-top: 6px;
+                                    }
+
+                                }
+                                
+                            }
+                        }
+                    }
+                }
+            }
+
+            .dn_font {
+                @include nyan_big_margin;
+                @include nyan_dn_h2;
+
+                .dn_font_entire {
+                    display: flex;
+                    flex-direction: column;
+
+                    @include responsive(tablet-cat) {
+                        flex-direction: row;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
+                    }
+
+                    .dn_font_kit {
+                        @include nyan_small_margin;
+                        width: 100%;
+                        
+                        @include responsive(tablet-cat) {
+                            width: 45%;
+                        }
+
+                        @include responsive(semi-cat) {
+                            width: 480px;
+                        }
+
+                        @include responsive(huge-cat) {
+                            width: 680px;
+                        }
+
+                        .ov_h4_flex {
+                            @include nyan_dn_h4;
+                        }
+
+                        .kit_font {
+                            @include nyan_small_margin;
+
+                            .kit_title {
+                                padding: 0.5em 0;
+                                background-color: rgba($color: $background, $alpha: 0.1);
+                                border-radius: 0.5em;
+
+                                @include responsive(tablet-cat) {
+                                    border-radius: 0.75em;
+                                    padding: 0.75em 0;
+                                    border-radius: 0.75em;
+                                }
+
+                                @include responsive(semi-cat) {
+                                    border-radius: 1em;
+                                    padding: 1em 0;
+                                    border-radius: 1em;                                }
+
+                                @include responsive(huge-cat) {
+                                    //                              
+                                }
+                                p.dn_kit_title {
+                                    text-align: center;
+                                    font-size: calc(12px + 3vw);
+
+                                    @include responsive(tablet-cat) {
+                                        font-size: calc(14px + 2vw);
+                                    }
+
+                                    @include responsive(semi-cat) {
+                                        font-size: 40px;
+                                    }
+
+                                    @include responsive(huge-cat) {
+                                        font-size: 48px;
+                                    }
+
+                                }
+
+                                
+
+                                
+                            }
+
+                            .kit_sub {
+                                color: $dn_txt;
+                                @include nyan_tiny_margin;
+
+                                p {
+                                    text-align: justify;
+                                    font-size: calc(8px + 2vw);
+
+                                    @include responsive(tablet-cat) {
+                                        font-size: calc(8px + 1vw);
+                                    }
+
+                                    @include responsive(semi-cat) {
+                                        font-size: 20px;
+                                    }
+                                    
+
+                                    @include responsive(huge-cat) {
+                                        font-size: 24px;
+                                    }
+                                    
+
+
+                                    &:nth-child(n+2){
+                                        margin-top: 3px;
+
+
+                                        @include responsive(tablet-cat) {
+                                            margin-top: 5px;
+                                        }
+                                        
+
+                                        @include responsive(semi-cat) {
+                                            margin-top: 8px;
+                                        }
+                                        
+
+
+                                        @include responsive(huge-cat) {
+                                            margin-top: 10px;
+                                        }
+                                    }
+                                }
+
+                                    
+
+                                
+                            }
+                        }
+                    }
+                }
+            }
+
+            .dn_grid {
+                @include nyan_big_margin;
+                @include nyan_dn_h2;
+
+                .dn_grid_entire {
+                    display: flex;
+                    flex-direction: column;
+
+                    @include responsive(tablet-cat) {
+                        flex-direction: row;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
+                    }
+
+                    .dn_grid_kit {
+                        @include nyan_small_margin;
+                        width: 100%;
+                        
+                        @include responsive(tablet-cat) {
+                            width: 45%;
+                        }
+
+                        @include responsive(semi-cat) {
+                            width: 480px;
+                        }
+
+                        @include responsive(huge-cat) {
+                            width: 680px;
+                        }
+
+                        .ov_h4_flex {
+                            @include nyan_dn_h4;
+                        }
+
+                        .kit_grid {
+
+                            .kit_grid_flex {
+                                display: flex;
+                                @include nyan_tiny_margin;
+
+                                &>div {
+                                    width: 25%;
+                                    text-align: center;
+
+                                    .grid_title {
+                                        
+                                        font-size: calc(6px + 2vw);
+                                        padding: 0.5em;
+                                        border-radius: 0.5em;
+                                        background-color: rgba($color: $background, $alpha: 0.1);
+
+                                        @include responsive(tablet-cat) {
+                                            font-size: calc(8px + 1vw);
+                                            background-color: rgba($color: $background, $alpha: 0.1);
+                                        }
+
+                                        @include responsive(semi-cat) {
+                                            font-size: 20px;
+                                        }
+
+                                        @include responsive(huge-cat) {
+                                            font-size: 24px;
+                                        }
+                                    }
+
+                                    .grid_cts {
+                                        padding: 1em;
+                                        border-radius: 1em;
+                                        background-color: rgba($color: $background, $alpha: 0.05);
+                                        font-size: calc(2px + 2vw);
+                                        color: $dn_txt;
+
+                                        @include responsive(tablet-cat) {
+                                            font-size: calc(6px + 1vw);
+                                        }
+
+                                        @include responsive(semi-cat) {
+                                            font-size: 16px;
+                                        }
+
+                                        @include responsive(huge-cat) {
+                                            font-size: 21px;
+                                        }
+
+                                        span {
+                                            color: $background;
+                                            display: block;
+                                            font-size: calc(12px + 2vw);
+
+                                            @include responsive(tablet-cat) {
+                                                font-size: calc(18px + 1vw);
+                                            }
+
+                                            @include responsive(semi-cat) {
+                                                font-size: 36px;
+                                            }
+
+                                            @include responsive(huge-cat) {
+                                                font-size: 48px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+
+                    }
+                }
+
+            }
+
+            .dn_bi {
+                @include nyan_big_margin;
+                @include nyan_dn_h2;
+
+                .dn_logo_entire {
+                    display: flex;
+                    flex-direction: column;
+
+                    @include responsive(tablet-cat) {
+                        flex-direction: row;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
+                    }
+
+                    .dn_logo_kit {
+                        @include nyan_small_margin;
+                        width: 100%;
+                        
+                        @include responsive(tablet-cat) {
+                            width: 45%;
+                        }
+
+                        @include responsive(semi-cat) {
+                            width: 480px;
+                        }
+
+                        @include responsive(huge-cat) {
+                            width: 680px;
+                        }
+
+                        .ov_h4_flex {
+                            @include nyan_dn_h4;
+                        }
+
+                        .dn_logo_img {
+                            @include nyan_tiny_margin;
+
+                            img {
+                                width: 100%;
+
+                                @include responsive(tablet-cat) {
+                                    width: 90%;
+                                }
+                            }
+                        }
+                    }
+
+
+                }
+            }
+
+            .dn_result {
+                @include nyan_big_margin;
+                @include nyan_dn_h2;
+
+                .dn_result_entire {
+                    display: flex;
+                    flex-direction: column;
+
+                    @include responsive(tablet-cat) {
+                        flex-direction: row;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
+                    }
+
+                    .dn_result_kit {
+                        @include nyan_small_margin;
+                        width: 100%;
+                        
+                        @include responsive(tablet-cat) {
+                            width: 45%;
+                        }
+
+                        @include responsive(semi-cat) {
+                            width: 480px;
+                        }
+
+                        @include responsive(huge-cat) {
+                            width: 680px;
+                        }
+
+                        .ov_h4_flex {
+                            @include nyan_dn_h4;
+                        }
+
+                        .dn_result_img {
+                            @include nyan_tiny_margin;
+
+                            img {
+                                width: 100%;
+
+                                @include responsive(tablet-cat) {
+                                    width: 90%;
+                                }
+                            }
+                        }
+                    }
+
+
+                }
+            }
+
+
+
+        }
+
+        .design_end {
+            border-radius: inherit;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            background-color: $background;
+
+            .de_flex {
+                display: flex;
+                width: fit-content;
+                margin: 0 auto;
+                padding: 0.5em;
+                align-items: center;
+
+                @include responsive(semi-cat) {
+                    padding: 1em;
+                }
+            }
+
+            img {
+                display: block;
+                height: calc(6px + 2vw);
+                margin-right: $petit_margin_p;
+
+                @include responsive(tablet-cat) {
+                    height: calc(8px + 1vw);
+                    margin-right: $petit_margin_t;
+                }
+
+                @include responsive(semi-cat) {
+                    height: 28px;
+                    margin-right: $petit_margin_s;
+                }
+
+                @include responsive(huge-cat) {
+                    height: 36px;
+                    margin-right: $petit_margin_h;
+                }
+            }
+
+            h4 {
+                font-size: calc(6px + 2vw);
+
+                @include responsive(tablet-cat) {
+                    font-size: calc(8px + 1vw);
+                }
+
+                @include responsive(semi-cat) {
+                    font-size: 28px;
+                }
+
+                @include responsive(huge-cat) {
+                    font-size: 36px;
+                }
+            }
+
+        }
+
+    }
+
+}
+

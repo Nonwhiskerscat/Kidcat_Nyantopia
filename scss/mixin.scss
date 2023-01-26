@@ -603,7 +603,6 @@
 }
 
 @mixin button_hover {
-
 }
 
 @mixin button_letter_hover {
@@ -909,6 +908,142 @@
 
     @include responsive(huge-cat) {
         box-shadow: inset 0 -10.5px 0 rgba($color: $identity, $alpha: 0.3);
+
+    }
+}
+
+@mixin design_note_close {
+    display: flex;
+    width: fit-content;
+    margin: 0 auto;
+    cursor: pointer;
+    align-items: center;
+    padding: $small_margin_p 0;
+
+    @include responsive(tablet-cat) {
+        padding: $small_margin_t 0;
+
+    }
+
+    @include responsive(semi-cat) {
+        padding: $small_margin_s 0;
+
+    }
+
+    @include responsive(pc-cat) {
+        padding: $small_margin_h 0;
+
+    }
+
+    svg {
+        width: calc(6px + 3vw);
+        margin-right: $tiny_margin_p;
+        fill: $dn_back;
+
+        @include responsive(tablet-cat) {
+            width: calc(12px + 2vw);
+            margin-right: $tiny_margin_t;
+        }
+
+        @include responsive(semi-cat) {
+            width: 40px;
+            margin-right: $tiny_margin_s;
+        }
+
+        @include responsive(pc-cat) {
+            width: 48px;
+            margin-right: $tiny_margin_h;
+        }
+    }
+
+    h4 {
+        color: $dn_back;
+        font-size: calc(6px + 3vw);
+
+        @include responsive(tablet-cat) {
+            font-size: calc(12px + 2vw);
+        }
+
+        @include responsive(semi-cat) {
+            font-size: 40px;
+        }
+
+        @include responsive(huge-cat) {
+            font-size: 48px;
+        }
+
+    }
+}
+
+@mixin nyan_dn_h2 {
+    @include nyan_common_h2;
+    h2 {
+        color: $background;
+    }
+}
+
+@mixin nyan_dn_h4 {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    margin-top: $small_margin_p;
+    width: fit-content;
+
+    @include responsive(tablet-cat) {
+        margin-left: 0;
+        margin-top: $small_margin_t;
+    }
+
+    @include responsive(semi-cat) {
+        margin-top: $small_margin_s;
+    }
+
+    @include responsive(huge-cat) {
+        margin_top: $small_margin_h;
+    }
+
+
+
+    .h4_left {
+        display: none;
+
+        @include responsive(tablet-cat) {
+            display: block;
+            width: 5px;
+            height: calc(8px + 2vw);
+            background-color: $background;
+            margin-right: $petit_margin_t;
+        }
+
+        @include responsive(semi-cat) {
+            width: 6px;
+            height: 28px;
+            margin-right: $petit_margin_s;
+        }
+
+        @include responsive(huge-cat) {
+            width: 7px;
+            height: 36px;
+            margin-right: $petit_margin_h;
+        }
+    }
+
+    h4 {
+        // position: relative;
+        font-size: calc(8px + 3vw);
+
+        @include responsive(tablet-cat) {
+            font-size: calc(8px + 2vw)
+        }
+
+        @include responsive(semi-cat) {
+            font-size: 28px;
+        }
+
+        @include responsive(huge-cat) {
+            font-size: 36px;
+        }
+
 
     }
 }

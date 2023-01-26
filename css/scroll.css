@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /*=================중단점=================*/
 /*=================톤앤매너=================*/
+/*=============디자인노트=================*/
 /*=================톤앤매너(스킬)=================*/
 /*=================아이덴티티 칼라=================*/
 /*=================폰트패밀리=================*/
@@ -8,37 +9,44 @@
 html {
   overflow: overlay;
 }
-
 html::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px #e87d9e;
   border-radius: 8px;
 }
-
 html::-webkit-scrollbar {
   width: 8px;
 }
-
 html::-webkit-scrollbar-thumb {
-  background: #1f1f1f;
+  background: rgb(31, 31, 31);
   border-radius: 8px;
   background-image: -webkit-linear-gradient(-90deg, transparent 0%, transparent 5%, #e87d9e 5%, #e87d9e 15%, transparent 15%, transparent 20%, #e87d9e 20%, #e87d9e 30%, transparent 30%, transparent);
 }
-
 html .gnb_nyan {
   overflow: overlay;
 }
-
 html .gnb_nyan::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px #e87d9e;
   border-radius: 8px;
 }
-
 html .gnb_nyan::-webkit-scrollbar {
   width: 8px;
 }
-
 html .gnb_nyan::-webkit-scrollbar-thumb {
-  background: #1f1f1f;
+  background: rgb(31, 31, 31);
+  background-image: -webkit-linear-gradient(-90deg, transparent 0%, transparent 5%, #e87d9e 5%, #e87d9e 15%, transparent 15%, transparent 20%, #e87d9e 20%, #e87d9e 30%, transparent 30%, transparent);
+}
+html .design_note {
+  overflow: overlay;
+}
+html .design_note::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px #e87d9e;
+  border-radius: 8px;
+}
+html .design_note::-webkit-scrollbar {
+  width: 8px;
+}
+html .design_note::-webkit-scrollbar-thumb {
+  background: rgb(31, 31, 31);
   background-image: -webkit-linear-gradient(-90deg, transparent 0%, transparent 5%, #e87d9e 5%, #e87d9e 15%, transparent 15%, transparent 20%, #e87d9e 20%, #e87d9e 30%, transparent 30%, transparent);
 }
 

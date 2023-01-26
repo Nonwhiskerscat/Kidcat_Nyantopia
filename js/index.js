@@ -126,7 +126,7 @@ window.addEventListener('load', () => {
         const el = document.createElement('img');
         let el_rand=Math.ceil(Math.random()*5);
         let el_rot=`${Math.random()*360}deg`
-        el.src=`../img/etc/kidcat_back_${el_rand}.png`;
+        el.src=`./img/etc/kidcat_back_${el_rand}.png`;
         el.classList.add('tile');
         el.style.marginLeft = `${randomPosition()-el.offsetWidth}px`;
         el.style.rotate=el_rot;
@@ -209,7 +209,7 @@ window.addEventListener('load', () => {
     // 헤더 로고 클릭 시 링크 이동
 
     header_logo.addEventListener('click', function() {
-        location.href='../index.html';
+        location.href='./index.html';
     })
 
     // 헤더 로고 글자 효과
@@ -319,6 +319,7 @@ window.addEventListener('load', () => {
                     );
                 }
                 gnb_nyan.classList.add('gnb_on');
+                document.body.classList.add('not_scroll');
                 gnb_icon.src="./img/header/jelly_back_short.png";
             }
         
@@ -338,6 +339,7 @@ window.addEventListener('load', () => {
                     );
                 }
                 gnb_nyan.classList.remove('gnb_on');
+                document.body.classList.remove('not_scroll');
                 gnb_icon.src="./img/header/jelly_front_short.png";
             }
     });
@@ -656,7 +658,7 @@ window.addEventListener('load', () => {
 
     intro_images.addEventListener('click', ()=> {
         let kitty_meow_id=Math.floor((Math.random()*8));
-        let audio = new Audio(`../audio/kitty_meow_${kitty_meow_id}.wav`);
+        let audio = new Audio(`./audio/kitty_meow_${kitty_meow_id}.wav`);
         audio.play();
 
         let kitty_jump;
@@ -1208,8 +1210,8 @@ window.addEventListener('load', () => {
     //화면 너비에 따른 도시 야경 사진 변화
 
     const spec_urban = () => {
-        if(w_width<semi_cat) my_specs_urban_img.src='../img/main/my_specs_urban.png';
-        else my_specs_urban_img.src='../img/main/my_specs_urban_pc.png';
+        if(w_width<semi_cat) my_specs_urban_img.src='./img/main/msurban.png';
+        else my_specs_urban_img.src='./img/main/msurbanpc.png';
     }
 
     spec_urban();
@@ -1630,9 +1632,12 @@ window.addEventListener('load', () => {
     .then(
         (res) => {
 
-
             let pj_frame='';
             let projs=document.querySelector('.projs');
+
+            let webp_dt=res.data.Webpage;
+            let java_dt=res.data.Javascript;
+            let react_dt=res.data.React;
 
             function proj_generator(cat, kitty) {
                 [].forEach.call(cat, (neko, idx) => {
@@ -1737,7 +1742,7 @@ window.addEventListener('load', () => {
                 return kitty;
             }
 
-            proj_generator(res.data.Webpage,pj_frame);
+            proj_generator(webp_dt,pj_frame);
 
             let pj_gnb_li=document.querySelectorAll('.proj_gnb_flex li');
 
@@ -1913,7 +1918,103 @@ window.addEventListener('load', () => {
                     }
                 });
             }
+
             pj_ani_entire(pj_scroll);
+
+            let design_note_in=document.querySelector('.design_note');
+            design_note_in.style.scale=0;
+
+
+            function dnSetter(kitty) {
+                let design_btns=document.querySelectorAll('.btn_design');
+                dn_modal(design_btns, kitty);
+            }
+
+            dnSetter(webp_dt);
+
+            function webSetter(kitty) {
+                let link_btns=document.querySelectorAll('.btn_web');
+                [].forEach.call(link_btns, (cat, idx) => {
+                    cat.addEventListener('click', () => {
+                        kitty[idx].web_link ? window.open(kitty[idx].web_link) : alert('미완성된 사이트입니다.');
+                    })
+                })
+            }
+
+            webSetter(webp_dt);
+
+
+
+
+
+
+            function dn_modal(kitty, meow) {
+                [].forEach.call(kitty, (cat, idx) => {
+                    cat.addEventListener('click', function() {
+                        let k= document.querySelector('html').scrollTop;
+                        let dnote=meow[idx].dnote;
+                        design_note_in.innerHTML=design_note(dnote);
+                        document.body.classList.add('not_scroll');
+                        document.body.style.top=`-${k}px`;
+    
+                        let design_bigheads=design_note_in.children;
+                        [].forEach.call(design_bigheads, (cat) => {
+                            cat.style.opacity= 0;
+    
+                        })
+    
+                        design_note_in.animate({scale: 1},{
+                            duration: 500,
+                            fill: "forwards"
+                        });
+    
+                        setTimeout(() => {
+                            [].forEach.call(design_bigheads, (cat, idx) => {
+                                cat.animate({opacity: 1}, {
+                                    duration: 500,
+                                    delay: 200*idx,
+                                    easing: 'ease-in-out',
+                                    fill: 'forwards'
+                                });
+                            });
+    
+                        }, 500);
+    
+                        
+                        let close_btns=document.querySelectorAll('.design_note .close_flex');
+    
+                        [].forEach.call(close_btns, (cat) => {
+                            cat.addEventListener('click', function() {
+                                document.body.classList.remove('not_scroll');
+                                [].forEach.call(design_bigheads, (cat, idx) => {
+                                    cat.animate({opacity: 0}, {
+                                        duration: 200,
+                                        delay: 200*idx,
+                                        easing: 'ease-in-out',
+                                        fill: 'forwards'
+                                    })
+                                });
+    
+                                setTimeout(() => {
+                                    design_note_in.animate({scale: 0},{
+                                        duration: 500,
+                                        fill: "forwards"
+                                    })
+
+                                    design_note_in.innerHTML='';
+                                }, 200)
+    
+                                window.scrollTo({top:k});
+    
+                            });
+                        });
+                    });
+                });
+            }
+
+            // dn_modal(web_btns, webp_dt);
+            // dn_modal(java_btns, java_dt);
+            // dn_modal(react_btns, react_dt);
         }
     ).catch(err=> {
         console.error('에러발생: ', err);
@@ -1942,7 +2043,6 @@ window.addEventListener('load', () => {
         let cm_contents_area_w=cm_contents_area.offsetWidth;
 
         [].forEach.call(cm_main_div, cat => {
-            console.log(cm_main_div)
             cat.style.opacity=0;
             cat.style.transform=`translate(${cm_contents_area_w}px, ${nyan_cat()}px)`;
         });
@@ -1960,7 +2060,6 @@ window.addEventListener('load', () => {
     cm_contents_set();
 
     let cm_kitty_icon=document.querySelector('.cm_lower_flex img');
-
 
     window.addEventListener('scroll', () => {
         if(cm_scroll) {
@@ -1997,7 +2096,16 @@ window.addEventListener('load', () => {
         }
     });
 
+    // 이메일 보내기
+
     let cm_btn_email=document.querySelector('.btn_send_email');
+
+    function link_email(kitty) {
+        kitty.addEventListener('click', () => {
+            window.location.href="mailto:nonwhiskerscat@gmail.com?subject=키드캣님 질문 있습니다!";
+        });
+    }
+
     link_email(cm_btn_email);
 
     function cm_contents_toggle(kitty1, kitty2) {
@@ -2026,7 +2134,6 @@ window.addEventListener('load', () => {
                 }
 
                 else cat.style.display='block';
-                console.log(cat);
                 cat.animate({
                     transform:`translate(0,0)`, opacity: 1
                 }, {
@@ -2085,8 +2192,6 @@ window.addEventListener('load', () => {
     });
 
     //일출 효과
-
-    
     function ft_set() {
         let footer_kitty_h=footer_kitty.offsetHeight;
         footer_kitty.style.transform=`translateY(${footer_kitty_h}px)`;
