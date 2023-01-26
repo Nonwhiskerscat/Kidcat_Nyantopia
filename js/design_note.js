@@ -1,6 +1,5 @@
 function design_note(cat) {
     let kitty='';
-    console.log(cat.backtone);
     kitty+=
     `
     <div class="design_note dn_${cat.tag_name}">
@@ -24,12 +23,12 @@ function design_note(cat) {
                                     <span class="kitty_dhicon">${cat_svg(cat.color)}</span>
                                 </div>
                                 <div class="icon_entire">
-                                    <div class="icon_flex git_${cat.tag_name}">
+                                    <div class="icon_flex link_git">
                                         <img src="./img/Design_note/design_github.png" alt="디자인 깃허브">
                                         <p>Github</p>
                                     </div>
 
-                                    <div class="icon_flex web_${cat.tag_name}">
+                                    <div class="icon_flex link_web">
                                         <img src="./img/Design_note/design_link.png" alt="디자인 웹링크">
                                         <p>Weblink</p>
                                     </div>
@@ -229,7 +228,7 @@ function design_note(cat) {
 
                 <div class="design_end" style="background-color: ${cat.backtone}">
                     <div class="de_flex">
-                        <h4 style="color: ${cat.color}">Scroll Up</h4>
+                        <h4 style="color: ${cat.color}">Kidcat Nyantopia</h4>
                     </div>
 
                 </div>

@@ -60,19 +60,30 @@ footer {
             }
 
             img {
+                position: relative;
+                cursor: pointer;
                 width: calc(10px + 3vw);
+                margin-right: $petit_margin_p;
 
                 @include responsive(tablet-cat) {
+                    margin-right: $petit_margin_t;
                     width: calc(20px + 3vw);
                 }
     
                 @include responsive(semi-cat) {
-                    width: 50px;
+                    margin-right: $petit_margin_s;
+                    width: 60px;
                 }
     
                 @include responsive(huge-cat) {
-                    width: 60px;
+                    margin-right: $petit_margin_h;
+                    width: 80px;
 
+                }
+
+                &:hover {
+                    rotate: 30deg;
+                    transition: rotate 0.2s linear;
                 }
             }
 

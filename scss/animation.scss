@@ -66,70 +66,6 @@
 }
 
 
-// @keyframes header_gnb_cat {
-//     0% {
-//         transform:rotateZ(0);
-//     }
-
-//     24% {
-//         transform:rotateZ(0);
-//     }
-
-//     25% {
-//         transform:rotateZ(1deg);
-//     }
-
-//     49% {
-//         transform:rotateZ(1deg);
-//     }
-
-//     50% {
-//         transform:rotateZ(0deg);
-//     }
-
-//     74% {
-//         transform:rotateZ(0deg);
-//     }
-
-//     75% {
-//         transform:rotateZ(-1deg);
-//     }
-
-//     99% {
-//         transform:rotateZ(-1deg);
-//     }
-
-//     100% {
-//         transform:rotateZ(0);
-//     }
-// }
-
-
-
-// @keyframes intro_kitty {
-
-//         0% {
-//             transform:rotateZ(5deg);
-//         }
-    
-//         25% {
-//             transform:rotateZ(-5deg);
-//         }
-    
-//         50% {
-//             transform:rotateZ(5deg);
-//         }
-    
-//         75% {
-//             transform:rotateZ(15deg);
-//         }
-    
-//         100% {
-//             transform:rotateZ(5deg);
-//         }
-    
-// }
-
 @keyframes cursor_blink {
     0% {
         opacity: 0;
@@ -205,15 +141,6 @@
         transform: rotate(360deg);
     }
 }
-
-@keyframes xx {
-    100%{
-        transform: rotate(-360deg);
-    }
-}
-
-
-
 
 // 
 

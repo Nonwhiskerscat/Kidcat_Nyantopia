@@ -1374,11 +1374,14 @@ window.addEventListener('load', () => {
         
             [].forEach.call(mk_skill_cod, (cat, idx) => {
                 cat.querySelector('circle').style.stroke=`${mcl$[idx].tone}`;
+                cat.style.scale=0;
+                cat.style.opacity=0;
             });
         
             [].forEach.call(mk_skill_gph, (cat, idx) => {
                 cat.querySelector('circle').style.stroke=`${mgl$[idx].tone}`;
-        
+                cat.style.scale=0;
+                cat.style.opacity=0;
             });
         
             function mk_gauge_ani_entire() {
@@ -1397,6 +1400,7 @@ window.addEventListener('load', () => {
                 if(mk_scroll) {
                     if(w_width<semi_cat) {
                         if(window.scrollY+w_height>main_myskills$.offsetTop+main_myskills$.offsetHeight/2+mk_skills_kitty.offsetHeight) {
+                            mk_icons_ani(mk_skill_cod);
                             mk_gauge_ani_entire();
                             mk_scroll=false;
                         }
@@ -1404,6 +1408,7 @@ window.addEventListener('load', () => {
         
                     else {
                         if(window.scrollY+w_height>main_myskills$.offsetTop+main_myskills$.offsetHeight/2) {
+                            mk_icons_ani(mk_skill_cod);
                             mk_gauge_ani_entire();
                             mk_scroll=false;
                         }
@@ -1427,7 +1432,7 @@ window.addEventListener('load', () => {
             
             mk_skills_big.style.opacity="0";
         
-            //잠자는 고양이 효과
+            //잠자는 고양이 효과 + 요소 나타내기 효과
         
             let mk_kitty_entire=document.querySelector('.mk_kitty_entire');
             mk_kitty_entire.classList.add('mk_kitty_style');
@@ -1496,6 +1501,24 @@ window.addEventListener('load', () => {
                     }
                 }
             });
+
+            function mk_icons_ani(kitty) {
+
+                [].forEach.call(kitty, (cat, idx) => {
+
+                    cat.animate([
+                        {scale: 0, opacity: 0},
+                        {scale: 1, opacity: 1}
+                    ], {
+                        fill: 'forwards',
+                        easing: 'ease-in-out',
+                        duration: 500,
+                        delay: 200*idx
+                    })
+                })
+            }
+
+
         
             //hover
         
@@ -1571,12 +1594,14 @@ window.addEventListener('load', () => {
                         mk_toggle(mk_coding, mk_graphic);
                         mk_kitty_tag(mk_gnb_kitty[0], mk_gnb_kitty[1]);
                         mk_underbar(cat.previousElementSibling, cat);
+                        mk_icons_ani(mk_skill_gph);
                     }
         
                     else {
                         mk_toggle(mk_graphic, mk_coding);
                         mk_kitty_tag(mk_gnb_kitty[1], mk_gnb_kitty[0]);
                         mk_underbar(cat.nextElementSibling, cat);
+                        mk_icons_ani(mk_skill_cod);
         
                     }
                 });
@@ -1761,9 +1786,23 @@ window.addEventListener('load', () => {
                     [].forEach.call(pj_gnb_li, cat2=>{cat2.classList.remove('common_under')})
                     cat2.classList.add('common_under');
                     pj_gnb_kitty.innerHTML='<img src="./img/main/my_skills_gnb_cat.png" alt="gnb_kitty">';
-                    if(idx2==0) proj_generator(res.data.Webpage,pj_frame);
-                    else if(idx2==1) proj_generator(res.data.Javascript,pj_frame);
-                    else proj_generator(res.data.React,pj_frame);
+                    if(idx2==0)  {
+                        proj_generator(res.data.Webpage,pj_frame);
+                        dnSetter(webp_dt);
+                        webSetter(webp_dt);
+                    }
+
+                    else if(idx2==1)  {
+                        proj_generator(res.data.Javascript,pj_frame);
+                        dnSetter(java_dt);
+                        webSetter(java_dt);
+                    }
+
+                    else {
+                        proj_generator(res.data.React,pj_frame);
+                        dnSetter(react_dt);
+                        webSetter(react_dt);
+                    }
 
                     cat2.classList.add('re-ani');
                     pj_ani_entire(pj_scroll2);
@@ -1930,7 +1969,6 @@ window.addEventListener('load', () => {
                 dn_modal(design_btns, kitty);
             }
 
-            dnSetter(webp_dt);
 
             function webSetter(kitty) {
                 let link_btns=document.querySelectorAll('.btn_web');
@@ -1941,6 +1979,7 @@ window.addEventListener('load', () => {
                 })
             }
 
+            dnSetter(webp_dt);
             webSetter(webp_dt);
 
 
@@ -1951,11 +1990,11 @@ window.addEventListener('load', () => {
             function dn_modal(kitty, meow) {
                 [].forEach.call(kitty, (cat, idx) => {
                     cat.addEventListener('click', function() {
-                        let k= document.querySelector('html').scrollTop;
+                        let dn_top= document.querySelector('html').scrollTop;
                         let dnote=meow[idx].dnote;
                         design_note_in.innerHTML=design_note(dnote);
                         document.body.classList.add('not_scroll');
-                        document.body.style.top=`-${k}px`;
+                        document.body.style.top=`-${dn_top}px`;
     
                         let design_bigheads=design_note_in.children;
                         [].forEach.call(design_bigheads, (cat) => {
@@ -1981,9 +2020,9 @@ window.addEventListener('load', () => {
                         }, 500);
     
                         
-                        let close_btns=document.querySelectorAll('.design_note .close_flex');
+                        let dn_close_btns=document.querySelectorAll('.design_note .close_flex');
     
-                        [].forEach.call(close_btns, (cat) => {
+                        [].forEach.call(dn_close_btns, (cat) => {
                             cat.addEventListener('click', function() {
                                 document.body.classList.remove('not_scroll');
                                 [].forEach.call(design_bigheads, (cat, idx) => {
@@ -2004,17 +2043,29 @@ window.addEventListener('load', () => {
                                     design_note_in.innerHTML='';
                                 }, 200)
     
-                                window.scrollTo({top:k});
+                                window.scrollTo({top:dn_top});
     
                             });
                         });
+
+                        let dn_git_link=document.querySelector('.link_git');
+                        let dn_git_web=document.querySelector('.link_web');
+
+
+
+                        dn_git_link.addEventListener('click', () => {
+                            window.open(dnote.header.git_link);
+                        });
+
+                        dn_git_web.addEventListener('click', () => {
+                            dnote.header.web_link? window.open(dnote.header.web_link) : alert('미완성된 사이트입니다.');
+                        });
+
+
                     });
                 });
             }
 
-            // dn_modal(web_btns, webp_dt);
-            // dn_modal(java_btns, java_dt);
-            // dn_modal(react_btns, react_dt);
         }
     ).catch(err=> {
         console.error('에러발생: ', err);
@@ -2194,30 +2245,74 @@ window.addEventListener('load', () => {
     //일출 효과
     function ft_set() {
         let footer_kitty_h=footer_kitty.offsetHeight;
-        footer_kitty.style.transform=`translateY(${footer_kitty_h}px)`;
+        footer_kitty.style.transform=`translateY(${footer_kitty_h/2}px)`;
     }
 
     function sun_rising() {
         footer_kitty.animate({transform: 'translateY(0)'}, {
-            duration: 4500,
+            duration: 2000,
             easing: 'linear',
             fill: "forwards"
         });
     }
+
     ft_set();
 
     let ft_scroll=true;
-    let footer_important=document.querySelector('.footer_important')
+    let footer_important=document.querySelector('.footer_important');
+
+    function icon_ani(nyan, kitty) {
+        nyan.animate([
+            {top: '0'},
+            {top: `${0.4*Math.pow(-1,kitty)}rem`},
+            {top: '0'},
+            {top: `${-0.4*Math.pow(-1,kitty)}rem`},
+            {top: '0'}
+        ]
+        , {
+            iterations: "Infinity",
+            duration: 2000,
+            easing: 'linear'
+        });
+    }
 
     window.addEventListener('scroll', () => {
         if(ft_scroll) {
-            if(window.scrollY+w_height>footer_important.offsetTop+footer_important.offsetHeight/2)
-            sun_rising();
+            if(window.scrollY+w_height>footer_important.offsetTop+footer_important.offsetHeight/2) {
+                
+                sun_rising();
+
+                let footer_icons = document.querySelectorAll('.footer_icons .icon_flex img');
+
+                [].forEach.call(footer_icons, (cat, idx) => {
+    
+                    icon_ani(cat, idx);
+    
+                    cat.addEventListener('click', () => {
+                        switch(idx) {
+                            case 0: window.open('https://github.com/Nonwhiskerscat'); break;
+                            case 1: window.open('https://open.kakao.com/o/sN6NzS0e'); break;
+                            case 2: document.location.href='tel:010-9084-9222'; break;
+                            case 3: window.scrollTo({top:0, behavior:'smooth'}); break;
+                            case 4: window.open('https://kidcatnyantopia.tistory.com/'); break;
+                        }
+                    })
+                });
+
+                ft_scroll=false;
+            }
+
+
         }
     })
 
-
     window.addEventListener('resize', () => {
         ft_set();
-    })
+    });
+
+    //footer 아이콘 
+
+
+
+
 });

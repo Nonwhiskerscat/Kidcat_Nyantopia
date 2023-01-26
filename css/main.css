@@ -138,11 +138,6 @@
     transform: rotate(360deg);
   }
 }
-@keyframes xx {
-  100% {
-    transform: rotate(-360deg);
-  }
-}
 main .main_intro .nyan_1 .first_flex {
   position: relative;
 }
@@ -623,18 +618,6 @@ main .main_aboutme .nyan_zone .about_me_contents .about_me_illust .about_me_back
     top: -3%;
     right: auto;
     left: 3%;
-  }
-}
-main .main_aboutme .nyan_zone .about_me_contents .about_me_illust .about_me_back > img.Seoyong {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-60%);
-}
-@media screen and (min-width: 768px) {
-  main .main_aboutme .nyan_zone .about_me_contents .about_me_illust .about_me_back > img.Seoyong {
-    left: 0;
-    transform: translateX(0%);
   }
 }
 main .main_aboutme .nyan_zone .about_me_contents .about_me_illust .about_me_back .about_me_front > img {

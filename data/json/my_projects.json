@@ -1,0 +1,913 @@
+{
+    "Webpage": 
+    [
+        {
+            "idx": 0,
+            "tag": "kopc",
+            "name": "한국 고양이 보호협회(KOPC)",
+            "tone_count": 2,
+            "main_tone": "#E7A335", 
+            "tone": ["#E7A335","#333333"],
+            "stroke": ["none", "none"],
+            "con": 1,
+            "peri": 20,
+            "web_link":"https://newkopc.github.io/",
+            "summ": "레트로한 디자인과 투박한 정보 위주로 구성이 되어 있던 고양이 보호협회의 사이트를 <span class='common_under'>현대의 트렌드에 맞게 리뉴얼하여 인터페이스적인 요소와 비쥬얼적인 요소를 한 층 업그레이드</span> 시켰습니다.",
+            "dnote": {
+                "tag_name": "kopc",
+                "dn_id": 1,
+                "color": "#E7A335",
+                "backtone": "#333333",
+
+                "header": {
+                    "title": "한국 고양이<br>보호협회(고보협)",
+                    "git_link":"https://github.com/newkopc/newkopc.github.io",
+                    "web_link":"https://newkopc.github.io/"
+                },
+
+                "ov": {
+                    "period": ["2022.09.15", "2022.10.05"],
+                    "date": 20,
+                    "mission": "한국 고양이 보호협회 메인페이지 리뉴얼 및 로고제작",
+                    "tools": "HTML, CSS, J-Query, 일러스트레이터, 포토샵"
+                },
+                
+                "tnm": {
+                    "contain": "block",
+                    "count": 2,
+                    "colors": [
+                        {
+                            "kor": "캣 오렌지",
+                            "eng": "Cat Orange",
+                            "hex": "#E7A335",
+                            "rgb": ["231", "163", "53"],
+                            "hsb": ["37", "79", "56"],
+                            "let_color": "#333333"
+                        },
+                        {
+                            "kor": "캣 차콜",
+                            "eng": "Cat Charcoal",
+                            "hex": "#333333",
+                            "rgb": ["51", "51", "51"],
+                            "hsb": ["0", "0", "20"],
+                            "let_color": "#E7A335"
+                        }
+                    ]
+                },
+
+                "font": {
+                    "contain": "block",
+                    "count": 2,
+                    "family": [
+                        {
+                            "title":"210 구름고딕 030",
+                            "name": "210 GureumGothic 030"
+                        },
+                        {
+                            "title":"210 구름고딕 050",
+                            "name": "210 GureumGothic 050"
+                        }
+                    ]
+                },
+
+                "grid": {
+                    "contain": "block",
+                    "count": 1,
+                    "grid_entire": [
+                        {
+                            "screen": "PC",
+                            "break": ["1600", "px"],
+                            "col": ["80", "px"],
+                            "gut": ["20", "px"],
+                            "cols": ["16", "columns"]
+                        }
+                    ]
+                },
+
+                "bi": {
+                    "contain": "block",
+                    "count": 2,
+                    "bi_tag": ["Korean", "International"]
+                },
+
+                "result": {
+                    "count": 2,
+                    "result_tag": ["Dark", "Light"]
+                }
+
+            }
+        },
+
+        {
+            "idx": 1,
+            "tag": "fhotel",
+            "name": "페어몬트 앰배서더 호텔 서울",
+            "tone_count": 3,
+            "main_tone": "#c3dded", 
+            "tone": ["#fefdf0", "#422d13", "#b80000"],
+            "stroke": ["none", "none", "none"],
+            "con": 4,
+            "peri": 35,
+            "web_link":"https://1sthotel.github.io/",
+            "summ": "여느 호텔 사이트와 달리 레트로하고 이용하기 힘든 기존 호텔 사이트에 <span class='common_under'>디자인적인 요소와 인터페이스적인 요소를 한 층 업그레이드</span> 시켜 새로운 사이트로 리뉴얼 하였고 로그인, 정보수정, 회원가입, 고객센터 등과 같은 <span class='common_under'>부수적인 기능</span>들을 추가하였습니다.",
+            "dnote": {
+                "tag_name": "fhotel",
+                "dn_id": 2,
+                "color": "#fefdf0",
+                "backtone": "#422d13",
+
+                "header": {
+                    "title": "페어몬트<br> 앰배서더 호텔 서울",
+                    "git_link":"https://github.com/1stHotel/1stHotel.github.io",
+                    "web_link":"https://1sthotel.github.io/"
+                },
+
+                "ov": {
+                    "period": ["2022.10.13", "2022.11.17"],
+                    "date": 35,
+                    "mission": "페어몬트 앰배서더 호텔 공식 사이트 리뉴얼 및 로고제작",
+                    "tools": "HTML, CSS, SCSS, J-Query, Javascript, 일러스트레이터, 포토샵"
+                },
+                
+                "tnm": {
+                    "contain": "block",
+                    "count": 5,
+                    "colors": [
+                        {
+                            "kor": "어바니티 베이지",
+                            "eng": "Urbanity Beige",
+                            "hex": "#FEFDF0",
+                            "rgb": ["254", "253", "240"],
+                            "hsb": ["56", "6", "99"],
+                            "let_color": "#422d13"
+                        },
+                        {
+                            "kor": "고져스 브라운",
+                            "eng": "Gorgeous Brown",
+                            "hex": "#422D13",
+                            "rgb": ["42", "27", "13"],
+                            "hsb": ["29", "69", "16"],
+                            "let_color": "#fefdf0"
+                        },
+                        {
+                            "kor": "글로리어스 네이비",
+                            "eng": "Glorious Navy",
+                            "hex": "#000044",
+                            "rgb": ["0", "0", "102"],
+                            "hsb": ["7", "35", "57"],
+                            "let_color": "#ffffff"
+                        },
+                        {
+                            "kor": "로얄 크림슨",
+                            "eng": "Royal Crimson",
+                            "hex": "#B80000",
+                            "rgb": ["173", "31", "36"],
+                            "hsb": ["358", "83", "67"],
+                            "let_color": "#ffffff"
+                        },
+                        {
+                            "kor": "럭셔리 골드",
+                            "eng": "Luxury Gold",
+                            "hex": "#996600",
+                            "rgb": ["153", "102", "0"],
+                            "hsb": ["40", "100", "60"],
+                            "let_color": "#ffffff"
+                        }
+                    ]
+                },
+
+                "font": {
+                    "contain": "block",
+                    "count": 2,
+                    "family": [
+                        {
+                            "title":"Lemon Milk",
+                            "name": "LEMONMILK-Light"
+                        },
+                        {
+                            "title":"에스코어 드림",
+                            "name": "SCoreDream"
+                        }
+                    ]
+                },
+
+                "grid": {
+                    "contain": "block",
+                    "count": 2,
+                    "grid_entire": [
+                        {
+                            "screen": "Mobile",
+                            "break": ["320", "px"],
+                            "col": ["20.5", "percent"],
+                            "gut": ["5.13", "percent"],
+                            "cols": ["4", "columns"]
+                        },
+                        {
+                            "screen": "PC",
+                            "break": ["1400", "px"],
+                            "col": ["80", "px"],
+                            "gut": ["20", "px"],
+                            "cols": ["14", "columns"]
+                        }
+
+                    ]
+                },
+
+                "bi": {
+                    "contain": "block",
+                    "count": 2,
+                    "bi_tag": ["Main", "Alter"]
+                },
+
+                "result": {
+                    "count": 2,
+                    "result_tag": ["Main", "Room"]
+                }
+
+            }
+        },
+
+        {
+            "idx": 2,
+            "tag": "kidcat",
+            "name": "Kidcat Nyantopia",
+            "tone_count": 2,
+            "main_tone": "#e87d9e", 
+            "tone": ["#e87d9e","#000620"],
+            "stroke": ["none", "#e87d9e"],
+            "con": 1,
+            "peri": 44,
+            "web_link":"https://github.com/Nonwhiskerscat/Kidcat_Nyantopia",
+            "summ": "일반적인 포트폴리오와 달리 <span class='common_under'>개성적인 요소를 부각시키기 위해 캐릭터를 삽입</span>하였으며, 바닐라 자바스크립트 코딩으로 <span class='common_under'>자바스크립트의 역량이 다소 높다는 것을 강조</span>하며 제작했습니다. ",
+            "dnote": {
+                "tag_name": "kidcat",
+                "dn_id": 3,
+                "color": "#e87d9e",
+                "backtone": "#000620",
+
+                "header": {
+                    "title": "Kidcat<br>Nyantopia",
+                    "git_link":"https://github.com/Nonwhiskerscat/Kidcat_Nyantopia",
+                    "web_link":"https://github.com/Nonwhiskerscat/Kidcat_Nyantopia"
+                },
+
+                "ov": {
+                    "period": ["2022.12.14", "2023.01.27"],
+                    "date": 44,
+                    "mission": "개인 프로필 페이지 제작 및 캐릭터 디자인",
+                    "tools": "HTML, CSS, SCSS, Javascript, 일러스트레이터, 포토샵"
+                },
+                
+                "tnm": {
+                    "contain": "block",
+                    "count": 2,
+                    "colors": [
+                        {
+                            "kor": "키드캣 핑크",
+                            "eng": "Kidcat Pink",
+                            "hex": "#E87D9E",
+                            "rgb": ["232", "125", "158"],
+                            "hsb": ["341", "46", "91"],
+                            "let_color": "#fff"
+                        },
+                        {
+                            "kor": "키드캣 블루",
+                            "eng": "Kidcat Blue",
+                            "hex": "#000620",
+                            "rgb": ["0", "6", "32"],
+                            "hsb": ["229", "100", "13"],
+                            "let_color": "#e87d9e"
+                        }
+                    ]
+                },
+
+                "font": {
+                    "contain": "block",
+                    "count": 1,
+                    "family": [
+                        {
+                            "title":"아임크리 수진",
+                            "name": "ImcreSoojin"
+                        }
+                    ]
+                },
+
+                "grid": {
+                    "contain": "block",
+                    "count": 4,
+                    "grid_entire": [
+                        {
+                            "screen": "Mobile",
+                            "break": ["320", "px"],
+                            "col": ["21.9", "percent"],
+                            "gut": ["2.5", "percent"],
+                            "cols": ["4", "columns"]
+                        },
+                        {
+                            "screen": "Tablet",
+                            "break": ["768", "px"],
+                            "col": ["9.8", "percent"],
+                            "gut": ["2.6", "percent"],
+                            "cols": ["8", "columns"]
+                        },
+                        {
+                            "screen": "PC",
+                            "break": ["1200", "px"],
+                            "col": ["80", "px"],
+                            "gut": ["20", "px"],
+                            "cols": ["12", "columns"]
+                        },
+                        {
+                            "screen": "Huge-PC",
+                            "break": ["1600", "px"],
+                            "col": ["80", "px"],
+                            "gut": ["20", "px"],
+                            "cols": ["16", "columns"]
+                        }
+                    ]
+                },
+
+                "bi": {
+                    "contain": "block",
+                    "count": 2,
+                    "bi_tag": ["Common", "Alter"]
+                },
+
+                "result": {
+                    "count": 2,
+                    "result_tag": ["Main", "Design"]
+                }
+
+            }
+        }
+    ],
+
+    "Javascript": 
+    [
+        {
+            "idx": 3,
+            "tag": "yagu",
+            "name": "Nyan Baseball",
+            "tone_count": 2,
+            "main_tone": "#579434", 
+            "tone": ["#579434","#fff000"],
+            "stroke": ["none", "none"],
+            "con": 1,
+            "peri": 12,
+            "web_link":"https://nyanbaseball2.github.io",
+            "summ": "J-Query를 일절 사용하지 않고 오직 <span class='common_under'>바닐라 자바스크립트 만</span>으로 숫자 야구 게임을 제작하였고, <span class='common_under'>기존 룰에서 점수 계산, 상점 기능을 추가</span>하여 재미를 한 층 더 높였습니다.",
+            "dnote": {
+                "tag_name": "yagu",
+                "dn_id": 2,
+                "color": "#fff000",
+                "backtone": "#183508",
+
+                "header": {
+                    "title": "Nyan Baseball",
+                    "git_link":"https://github.com/Nonwhiskerscat/nyan_baseball",
+                    "web_link":"https://nyanbaseball2.github.io"
+                },
+
+                "ov": {
+                    "period": ["2022.12.01", "2023.12.12"],
+                    "date": 12,
+                    "mission": "바닐라 자바스크립트로 숫자야구게임 구현",
+                    "tools": "HTML, CSS, SCSS, Javascript, 일러스트레이터, 포토샵"
+                },
+                
+                "tnm": {
+                    "contain": "block",
+                    "count": 2,
+                    "colors": [
+                        {
+                            "kor": "그라운드 그린",
+                            "eng": "Ground Green",
+                            "hex": "#579434",
+                            "rgb": ["87", "148", "52"],
+                            "hsb": ["98", "65", "58"],
+                            "let_color": "#fff000"
+                        },
+                        {
+                            "kor": "스트라이크 옐로우",
+                            "eng": "Strike Yellow",
+                            "hex": "#FFF000",
+                            "rgb": ["255", "240", "0"],
+                            "hsb": ["56", "100", "50"],
+                            "let_color": "#579434"
+                        }
+                    ]
+                },
+
+                "font": {
+                    "contain": "block",
+                    "count": 2,
+                    "family": [
+                        {
+                            "title":"IBMPlex",
+                            "name": "IBMPlexSansKR-Regular"
+                        }, 
+
+                        {
+                            "title":"영도체",
+                            "name": "Yeongdo-Rg"
+                        }
+                    ]
+                },
+
+                "grid": {
+                    "contain": "block",
+                    "count": 3,
+                    "grid_entire": [
+                        {
+                            "screen": "Mobile",
+                            "break": ["390", "px"],
+                            "col": ["20", "percent"],
+                            "gut": ["3.3", "percent"],
+                            "cols": ["4", "columns"]
+                        },
+                        {
+                            "screen": "Tablet",
+                            "break": ["768", "px"],
+                            "col": ["79", "percent"],
+                            "gut": ["2.2", "percent"],
+                            "cols": ["8", "columns"]
+                        },
+                        {
+                            "screen": "PC",
+                            "break": ["1200", "px"],
+                            "col": ["80", "px"],
+                            "gut": ["20", "px"],
+                            "cols": ["12", "columns"]
+                        }
+                    ]
+                },
+
+                "bi": {
+                    "contain": "none",
+                    "count": 0,
+                    "bi_tag": null
+                },
+
+                "result": {
+                    "count": 4,
+                    "result_tag": ["Main", "Method", "Game", "Result"]
+                }
+
+            }
+        },
+
+        {
+            "idx": 4,
+            "tag": "5x5",
+            "name": "Kidcat 5X5 Game",
+            "tone_count": 2,
+            "main_tone": "#fcf8ac", 
+            "tone": ["#fcf8ac","#e87d9e"],
+            "stroke": ["none", "none"],
+            "con": 1,
+            "peri": 8,
+            "web_link":"https://kidcat5x5game.github.io/",
+            "summ": "<span class='common_under'>퍼스널 아이덴티티 캐릭터와 일러스트를 적절히 활용하여 디자인</span> 하였고, 3X3 TIC-TAC-TOE 게임판을 5X5 형식으로 업그레이드 하였고 <span class='common_under'>가상의 객체를 하나 내세워 승패가 결정되도록 하는 프로그램을 개발</span>하였습니다.",
+            "dnote": {
+                "tag_name": "5x5",
+                "dn_id": 3,
+                "color": "#fcf8ac",
+                "backtone": "#333333",
+
+                "header": {
+                    "title": "Kidcat<br>5X5 Game",
+                    "git_link":"https://github.com/kidcat5X5game/kidcat5X5game.github.io",
+                    "web_link":"https://kidcat5x5game.github.io/"
+                },
+
+                "ov": {
+                    "period": ["2023.01.12", "2023.01.19"],
+                    "date": 8,
+                    "mission": "바닐라 자바스크립트로 5X5 TIC-TAC-TOE 게임 구현",
+                    "tools": "HTML, CSS, SCSS, Javascript, 일러스트레이터"
+                },
+                
+                "tnm": {
+                    "contain": "block",
+                    "count": 2,
+                    "colors": [
+                        {
+                            "kor": "키드캣 옐로우",
+                            "eng": "Kidcat Yellow",
+                            "hex": "#FCF8AC",
+                            "rgb": ["252", "248", "172"],
+                            "hsb": ["57", "32", "99"],
+                            "let_color": "#000620"
+                        },
+                        {
+                            "kor": "키드캣 핑크",
+                            "eng": "Kidcat Pink",
+                            "hex": "#E87D9e",
+                            "rgb": ["232", "125", "158"],
+                            "hsb": ["341", "46", "91"],
+                            "let_color": "#fff"
+                        }
+                    ]
+                },
+
+                "font": {
+                    "contain": "block",
+                    "count": 1,
+                    "family": [
+                        {
+                            "title":"아임크리 수진",
+                            "name": "ImcreSoojin"
+                        } 
+                    ]
+                },
+
+                "grid": {
+                    "contain": "block",
+                    "count": 3,
+                    "grid_entire": [
+                        {
+                            "screen": "Mobile",
+                            "break": ["320", "px"],
+                            "col": ["21.9", "percent"],
+                            "gut": ["2.5", "percent"],
+                            "cols": ["4", "columns"]
+                        },
+                        {
+                            "screen": "Tablet",
+                            "break": ["768", "px"],
+                            "col": ["9.8", "percent"],
+                            "gut": ["2.6", "percent"],
+                            "cols": ["8", "columns"]
+                        },
+                        {
+                            "screen": "PC",
+                            "break": ["1400", "px"],
+                            "col": ["80", "px"],
+                            "gut": ["20", "px"],
+                            "cols": ["12", "columns"]
+                        }
+                    ]
+                },
+
+                "bi": {
+                    "contain": "none",
+                    "count": 0,
+                    "bi_tag": null
+                },
+
+                "result": {
+                    "count": 2,
+                    "result_tag": ["Main", "Game"]
+                }
+
+            }
+        },
+
+        {
+            "idx": 5,
+            "tag": "dia",
+            "name": "Nyan Diamond",
+            "tone_count": 2,
+            "main_tone": "#f3f3f3", 
+            "tone": ["#f3f3f3","#cff3fa"],
+            "stroke": ["none", "none"],
+            "con": 1,
+            "peri": "?",
+            "web_link": null,
+            "summ": "바닐라 자바 스크립트를 활용하여 4차 산업 스마트 시대에 가장 많이 사용하며 <span class='common_under'>재화 구매 가격을 기반으로 한 거스름돈을 계산할 수 있는 키오스크를 구현</span>하였고, 그 중에서 국내에 존재하지 않는 다이아몬드 키오스크를 신박하게 제작하였습니다.",
+            "dnote": {
+                "tag_name": "dia",
+                "dn_id": 1,
+                "color": "#cff3fa",
+                "backtone": "#333333",
+
+                "header": {
+                    "title": "Nyan Diamond",
+                    "git_link":"https://github.com/Nonwhiskerscat/NyanDiamond",
+                    "web_link": null
+                },
+
+                "ov": {
+                    "period": ["2023.??.??", "2023.??.??"],
+                    "date": "미정",
+                    "mission": "바닐라 자바스크립트로 키오스크 프로그램 구현",
+                    "tools": "HTML, CSS, SCSS, Javascript, 일러스트레이터, 포토샵"
+                },
+                
+                "tnm": {
+                    "contain": "block",
+                    "count": 2,
+                    "colors": [
+                        {
+                            "kor": "화이트",
+                            "eng": "White",
+                            "hex": "#FFFFFF",
+                            "rgb": ["255", "255", "255"],
+                            "hsb": ["0", "0", "100"],
+                            "let_color": "#333333"
+                        },
+                        {
+                            "kor": "다이아 스카이블루",
+                            "eng": "Kidcat Pink",
+                            "hex": "#CFF3FA",
+                            "rgb": ["207", "243", "250"],
+                            "hsb": ["190", "17", "98"],
+                            "let_color": "#000620"
+                        }
+                    ]
+                },
+
+                "font": {
+                    "contain": "block",
+                    "count": 1,
+                    "family": [
+                        {
+                            "title":"Josefin Slab",
+                            "name": "Josefin Slab"
+                        } 
+                    ]
+                },
+
+                "grid": {
+                    "contain": "block",
+                    "count": 3,
+                    "grid_entire": [
+                        {
+                            "screen": "Mobile",
+                            "break": ["320", "px"],
+                            "col": ["21.9", "percent"],
+                            "gut": ["2.5", "percent"],
+                            "cols": ["4", "columns"]
+                        },
+                        {
+                            "screen": "Tablet",
+                            "break": ["768", "px"],
+                            "col": ["9.8", "percent"],
+                            "gut": ["2.6", "percent"],
+                            "cols": ["8", "columns"]
+                        },
+                        {
+                            "screen": "PC",
+                            "break": ["1400", "px"],
+                            "col": ["80", "px"],
+                            "gut": ["20", "px"],
+                            "cols": ["12", "columns"]
+                        }
+                    ]
+                },
+
+                "bi": {
+                    "contain": "none",
+                    "count": 0,
+                    "bi_tag": null
+                },
+
+                "result": {
+                    "count": 5,
+                    "result_tag": ["Intro", "Main", "Basket", "Result", "Shop"]
+                }
+
+            }
+        }
+    ],
+
+    "React": 
+    [
+        {
+            "idx": 6,
+            "tag": "tdl",
+            "name": "To Do List",
+            "tone_count": 0,
+            "main_tone": "#e2e4ee", 
+            "tone": [""],
+            "stroke": [""],
+            "con": 1,
+            "peri": 7,
+            "web_link":"https://nyantodolist.github.io/",
+            "summ": "React-App 플랫폼을 기반으로 Todolist를 제작하여 <span class='common_under'>일정 추가, 체크, 삭제, 수정 기능을 구현</span>하였고 이 외에 Date 객체를 활용하여 자정까지 남은 시간을 계산하는 기능도 첨가하였습니다.",
+            "dnote": {
+                "tag_name": "tdl",
+                "dn_id": 3,
+                "color": "#e2e4ee",
+                "backtone": "#000620",
+
+                "header": {
+                    "title": "To Do List",
+                    "git_link":"https://github.com/Nonwhiskerscat/todolist",
+                    "web_link":"https://nyantodolist.github.io/"
+                },
+
+                "ov": {
+                    "period": ["2023.??.??", "2023.??.??"],
+                    "date": "미정",
+                    "mission": "리액트를 기반으로 일정 추가, 삭제, 수정 기능 구현",
+                    "tools": "HTML, CSS, SCSS, Javascript, React, Yarn, 일러스트레이터"
+                },
+                
+                "tnm": {
+                    "contain": "none",
+                    "count": 0,
+                    "colors": null
+                },
+
+                "font": {
+                    "contain": "block",
+                    "count": 1,
+                    "family": [
+                        {
+                            "title":"아임크리 수진",
+                            "name": "ImcreSoojin"
+                        }
+                    ]
+                },
+
+                "grid": {
+                    "contain": "none",
+                    "count": 0,
+                    "grid_entire": null
+                },
+
+                "bi": {
+                    "contain": "none",
+                    "count": 0,
+                    "bi_tag": null
+                },
+
+                "result": {
+                    "count": 2,
+                    "result_tag": ["Main", "Modify"]
+                }
+
+            }
+        },
+
+        {
+            "idx": 7,
+            "tag": "tda",
+            "name": "To Do App",
+            "tone_count": 0,
+            "main_tone": "#ceda6f", 
+            "tone": [""],
+            "stroke": [""],
+            "con": 1,
+            "peri": 5,
+            "web_link":"https://github.com/Nonwhiskerscat/todoapp",
+            "summ": "Node.js를 활용하여 기능마다 링크를 부여하였고, MongoDB를 활용하여 <span class='common_under'>데이터 베이스에 저장된 데이터를 직접 조작</span>할 수 있도록 App을 제작하였습니다. 그리고 <span class='common_under'>SQL에 저장 되지 않은 ID/PW에 대해서는 로그인이 되지 않는</span> 기능도 구현해봤습니다.",
+            "dnote": {
+                "tag_name": "tda",
+                "dn_id": 1,
+                "color": "#ceda6f",
+                "backtone": "#333333",
+
+                "header": {
+                    "title": "To Do App",
+                    "git_link":"https://github.com/Nonwhiskerscat/todoapp",
+                    "web_link":"https://github.com/Nonwhiskerscat/todoapp/"
+                },
+
+                "ov": {
+                    "period": ["2023.01.08", "2023.01.12"],
+                    "date": "5",
+                    "mission": "SQL을 통해 저장된 데이터 수정 및 관리",
+                    "tools": "HTML, CSS, SCSS, Javascript, Yarn, Nodejs"
+                },
+                
+                "tnm": {
+                    "contain": "none",
+                    "count": 0,
+                    "colors": null
+                },
+
+                "font": {
+                    "contain": "block",
+                    "count": 1,
+                    "family": [
+                        {
+                            "title":"아임크리 수진",
+                            "name": "ImcreSoojin"
+                        }
+                    ]
+                },
+
+                "grid": {
+                    "contain": "none",
+                    "count": 0,
+                    "grid_entire": null
+                },
+
+                "bi": {
+                    "contain": "none",
+                    "count": 0,
+                    "bi_tag": null
+                },
+
+                "result": {
+                    "count": 2,
+                    "result_tag": ["Main", "Data"]
+                }
+
+            }
+            
+        },
+
+        {
+            "idx": 8,
+            "tag": "yuki",
+            "name": "유키가미 노와 클론코딩",
+            "tone_count": 2,
+            "main_tone": "#ffdcf4", 
+            "tone": ["#fe71bd","#cff3fa"],
+            "stroke": ["none", "none"],
+            "con": 1,
+            "peri": 7,
+            "web_link": null,
+            "summ": "React를 활용하여 유키가미 노와 프로필 페이지를 Clone Coding하였고, <span class='common_under'>리덕스 및 라우터 기능을 활용하여 실제 웹 사이트에 접속한 것처럼 구현</span>하였습니다.",
+            "dnote": {
+                "tag_name": "yuki",
+                "dn_id": 2,
+                "color": "#ffdcf4",
+                "backtone": "#03343a",
+
+                "header": {
+                    "title": "유키가미 노와<br>리액트 클론코딩",
+                    "git_link":"https://github.com/yukigaminowa2/yukigaminowa2.github.io",
+                    "web_link": null
+                },
+
+                "ov": {
+                    "period": ["2023.01.08", "2023.01.12"],
+                    "date": "5",
+                    "mission": "SQL을 통해 저장된 데이터 수정 및 관리",
+                    "tools": "HTML, CSS, SCSS, Javascript, Yarn, Nodejs"
+                },
+                
+                "tnm": {
+                    "contain": "block",
+                    "count": 3,
+                    "colors": [
+                        {
+                            "kor": "스카이 블루",
+                            "eng": "Sky Blue",
+                            "hex": "#CFF3FA",
+                            "rgb": ["207", "243", "250"],
+                            "hsb": ["190", "17", "98"],
+                            "let_color": "#000620"
+                        },
+                        {
+                            "kor": "딥 핑크",
+                            "eng": "Deep Pink",
+                            "hex": "#FE71BD",
+                            "rgb": ["254", "113", "189"],
+                            "hsb": ["328", "56", "100"],
+                            "let_color": "#fff"
+                        },
+                        {
+                            "kor": "라이티시 핑크",
+                            "eng": "Lightish Pink",
+                            "hex": "#FFDCF4",
+                            "rgb": ["255", "220", "244"],
+                            "hsb": ["319", "14", "100"],
+                            "let_color": "#fe71bd"
+                        }
+                    ]
+                },
+
+                "font": {
+                    "contain": "block",
+                    "count": 3,
+                    "family": [
+                        {
+                            "title":"よもぎ",
+                            "name": "Yomogi"
+                        },
+                        {
+                            "title":"ZEN紅道",
+                            "name": "Zen Kurenaido"
+                        },
+                        {
+                            "title":"ノトサンス JP",
+                            "name": "Noto Sans JP"
+                        }
+                    ]
+                },
+
+                "grid": {
+                    "contain": "none",
+                    "count": 0,
+                    "grid_entire": null
+                },
+
+                "bi": {
+                    "contain": "none",
+                    "count": 0,
+                    "bi_tag": null
+                },
+
+                "result": {
+                    "count": 2,
+                    "result_tag": ["Home", "News"]
+                }
+            }
+        }
+    ]
+}

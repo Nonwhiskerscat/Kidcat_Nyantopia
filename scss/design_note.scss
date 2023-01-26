@@ -952,7 +952,6 @@
             border-radius: inherit;
             border-top-left-radius: 0;
             border-top-right-radius: 0;
-            background-color: $background;
 
             .de_flex {
                 display: flex;
@@ -963,27 +962,6 @@
 
                 @include responsive(semi-cat) {
                     padding: 1em;
-                }
-            }
-
-            img {
-                display: block;
-                height: calc(6px + 2vw);
-                margin-right: $petit_margin_p;
-
-                @include responsive(tablet-cat) {
-                    height: calc(8px + 1vw);
-                    margin-right: $petit_margin_t;
-                }
-
-                @include responsive(semi-cat) {
-                    height: 28px;
-                    margin-right: $petit_margin_s;
-                }
-
-                @include responsive(huge-cat) {
-                    height: 36px;
-                    margin-right: $petit_margin_h;
                 }
             }
 
