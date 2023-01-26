@@ -275,6 +275,8 @@ header {
                         display: none;
                         color: white;
 
+                        @include nyan_common_hover;
+
                         @include responsive(tablet-cat) {
                             display: none;
                         }

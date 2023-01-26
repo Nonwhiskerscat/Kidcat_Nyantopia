@@ -537,14 +537,17 @@ main {
 
                 .about_me_descri {
                     margin-top: $mezo_margin_p;
+                    min-height: 610px;
 
                     @include responsive(tablet-cat) {
                         margin-top: 0;
                         width: 70%;
+                        min-height: 575px;
                     }
 
                     @include responsive(semi-cat) {
                         width: 680px;
+                        min-height: none;
                     }
 
                     @include responsive(huge-cat) {
@@ -762,48 +765,6 @@ main {
 
                         }
 
-                        .descri_cursor {
-                            display: inline-block;
-                            border-radius: 1.5px;
-                            height: 3px;
-                            width: calc(6px + 2vw);
-                            margin-left: 5px;
-                            background-color: $identity;
-                            animation: cursor_blink 0.5s linear infinite;
-
-                            @include responsive(tablet-cat) {
-                                width: calc(8px + 1vw);
-                            }
-
-                            @include responsive(semi-cat) {
-                                width: 24px;
-                                height: 4px;
-                            }
-
-                            @include responsive(huge-cat) {
-                                width: 28px
-                            }
-
-                            &.n2 {
-                                margin-left: 3px;
-                                background-color: white;
-
-                                @include responsive(tablet-cat) {
-                                    width: calc(8px + 1vw);
-                                }
-    
-                                @include responsive(semi-cat) {
-                                    width: 24px;
-                                    height: 4px;
-                                }
-    
-                                @include responsive(huge-cat) {
-                                    width: 28px
-    
-                                }
-                            }
-
-                        }
 
                         p {
                             @include nyan_petit_margin;
@@ -944,6 +905,7 @@ main {
                                 font-size: calc(6px + 2vw);
                                 text-align: center;
                                 cursor: pointer;
+                                @include nyan_common_hover;
     
                                 @include responsive(tablet-cat) {
                                     font-size: calc(10px + 1vw);
@@ -1532,6 +1494,7 @@ main {
                     flex-direction: column;
                     align-items: center;
                     cursor: pointer;
+                    @include nyan_common_hover;
                     
 
                     @include responsive(tablet-cat) {
@@ -2090,6 +2053,18 @@ main {
                     @include responsive(huge-cat) {
                         //
                     }
+
+                    .ferris_first {
+                        @include responsive(semi-cat) {
+                            animation: ferris_wheel 90s linear infinite;
+                        }
+                    }
+
+                    .mk_skill {
+                        @include responsive(semi-cat) {
+                            animation: ferris_wheel 90s linear reverse infinite;
+                        }
+                    }
     
                     .mk_skill_zone {
                         display: flex;
@@ -2102,7 +2077,6 @@ main {
                         }
         
                         @include responsive(semi-cat) {
-                            animation: oo 90s linear infinite;
                             width: 720px;
                             height: 720px;
                             display: block;
@@ -2114,6 +2088,7 @@ main {
                             width: 900px;
                             height: 900px;
                         }
+
     
                         .mk_skill {
                             width: 33%;
@@ -2124,7 +2099,7 @@ main {
                             }
 
                             @include responsive(semi-cat) {
-                                animation: oo 90s infinite linear reverse;
+                                // animation: oo 90s infinite linear reverse;
                                 @include ferris_wheel;
                                 width: 150px;
                                 position: absolute;
@@ -2326,6 +2301,7 @@ main {
                     cursor: pointer;
                     width: fit-content;
                     text-align: center;
+                    @include nyan_common_hover;
 
                     @include responsive(tablet-cat) {
                         font-size: calc(12px + 1vw);

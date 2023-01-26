@@ -1,6 +1,14 @@
 @import './style.scss';
 @import './responsive.scss';
 
+@mixin nyan_common_hover {
+
+
+    &:hover {
+        animation: nyan_hover_tone 1s linear infinite;
+    }
+}
+
 @mixin nyan_petit_margin {
     margin-top: $petit_margin_p;
 

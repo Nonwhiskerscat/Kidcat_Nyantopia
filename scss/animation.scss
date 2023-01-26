@@ -94,53 +94,35 @@
     }
 }
 
-@keyframes line1 {
-    from {
-        stroke-dasharray: calc(calc(-20px + 30vw) * 0.8 * 3.1415926535);  
-    }
 
-    to {
-        stroke-dashoffset: calc(calc(-20px + 30vw) * 0.8 * 0.07 * 3.1415926535);
-    }
-}
-
-@keyframes line2 {
-    from {
-        stroke-dasharray: calc(calc(-10px + 20vw) * 0.8 * 3.1415926535);
-    }
-
-    to {
-        stroke-dashoffset: calc(calc(-10px + 20vw) * 0.8 * 0.07 * 3.1415926535);
-
-    }
-}
-
-@keyframes line3 {
-    from {
-        stroke-dasharray: calc(120px * 0.8 * 3.1415926535);
-    }
-
-    to {
-        stroke-dashoffset: calc(120px * 0.8 * 0.07 * 3.1415926535);
-
-    }
-}
-
-@keyframes line4 {
-    from {
-        stroke-dasharray: calc(160px * 0.8 * 3.1415926535);
-    }
-
-    to {
-        stroke-dashoffset: calc(160px * 0.8 * 0.07 * 3.1415926535);
-    }
-}
-
-@keyframes oo {
+@keyframes ferris_wheel {
     100%{
         transform: rotate(360deg);
     }
 }
+
+@keyframes nyan_hover_tone {
+    0% {
+        color: #ffe1eb;
+    }
+
+    25% {
+        color: #ffaec8;
+    }
+
+    50% {
+        color: $identity;
+    }
+
+    75% {
+        color: #ffaec8;
+    }
+
+    100% {
+        color: #ffe1eb;
+    }
+}
+
 
 // 
 

@@ -194,12 +194,11 @@ window.addEventListener('load', () => {
     }, 6600);
 
 
-
-
-
-
-
     ////===========효과 부여==========////
+
+    function paja(cat, kitty) {
+        cat.innerHTML=cat.textContent.replace(/\S/g, `<span class='${kitty}'>$&</span>`);
+    }
 
 
     //===========header==========//
@@ -214,8 +213,11 @@ window.addEventListener('load', () => {
 
     // 헤더 로고 글자 효과
 
-    header_letter_h3.innerHTML = header_letter_h3.textContent.replace(/\S/g, "<span class='hletter'>$&</span>");
-    header_letter_h4.innerHTML = header_letter_h4.textContent.replace(/\S/g, "<span class='hletter'>$&</span>");
+    paja(header_letter_h3, 'hletter');
+    paja(header_letter_h4, 'hletter');
+
+    // header_letter_h3.innerHTML = header_letter_h3.textContent.replace(/\S/g, "<span class='hletter'>$&</span>");
+    // header_letter_h4.innerHTML = header_letter_h4.textContent.replace(/\S/g, "<span class='hletter'>$&</span>");
 
     let header_letter=document.querySelectorAll('.hletter');
 
@@ -643,11 +645,11 @@ window.addEventListener('load', () => {
 
     setTimeout(()=> {
         intro_images.animate([
-            {transform: 'rotateZ(5deg)'},
-            {transform: 'rotateZ(-5deg)'},
-            {transform: 'rotateZ(5deg)'},
-            {transform: 'rotateZ(15deg)'},
-            {transform: 'rotateZ(5deg)'}
+            {transform: 'rotateZ(5deg)', transformOrigin: 'bottom center'},
+            {transform: 'rotateZ(-5deg)', transformOrigin: 'bottom center'},
+            {transform: 'rotateZ(5deg)', transformOrigin: 'bottom center'},
+            {transform: 'rotateZ(15deg)', transformOrigin: 'bottom center'},
+            {transform: 'rotateZ(5deg)', transformOrigin: 'bottom center'}
         ],
         {
             duration: 3000,
@@ -715,20 +717,22 @@ window.addEventListener('load', () => {
             });
 
             intro_click_hi.innerHTML='Nyan~';
-            intro_click_hi.color=identity$;
+            intro_click_hi.style.color=identity$;
 
             setTimeout(()=>{
                 intro_click_hi.innerHTML='Click Me~';
-                intro_click_hi.color='white';
+                intro_click_hi.style.color='white';
             },1000);
         });
     });
 
     // 메인 인트로 타이틀 애니메이션
     
+    paja(intro_title_h2, 'intro_title_letter');
+    paja(intro_title_h1, 'intro_title_letter');
 
-    intro_title_h2.innerHTML = intro_title_h2.textContent.replace(/\S/g, "<span class='intro_title_letter'>$&</span>");
-    intro_title_h1.innerHTML = intro_title_h1.textContent.replace(/\S/g, "<span class='intro_title_letter'>$&</span>");
+    // intro_title_h2.innerHTML = intro_title_h2.textContent.replace(/\S/g, "<span class='intro_title_letter'>$&</span>");
+    // intro_title_h1.innerHTML = intro_title_h1.textContent.replace(/\S/g, "<span class='intro_title_letter'>$&</span>");
 
     let intro_title_letter=document.querySelectorAll('.intro_title_letter');
     let intro_kitty_stroke=document.querySelector('.intro_kitty_stroke');
@@ -830,7 +834,8 @@ window.addEventListener('load', () => {
 
     let main_h2=document.querySelectorAll('.title_text_area h2');
     [].forEach.call(main_h2, (main_h2, idx)=> {
-        main_h2.innerHTML = main_h2.textContent.replace(/\S/g, `<span class='m${idx}_h2_letter'>$&</span>`);
+        paja(main_h2, `m${idx}_h2_letter`);
+        // main_h2.innerHTML = main_h2.textContent.replace(/\S/g, `<span class='m${idx}_h2_letter'>$&</span>`);
     })
 
     function h2_ani() {
@@ -1028,7 +1033,6 @@ window.addEventListener('load', () => {
     //About me 콘텐츠
 
     let descri_explain=document.querySelectorAll('.descri_explain');
-    let descri_explain_div=document.querySelectorAll('.descri_explain div');
     let am_timer=5000;
 
     [].forEach.call(descri_explain, (cat, idx)=> {
@@ -1083,7 +1087,7 @@ window.addEventListener('load', () => {
 
     const am_h3_changer = (cat2) => {
         idc_h3.innerHTML = am_h3_arr[cat2];
-        idc_h3.innerHTML = idc_h3.textContent.replace(/\S/g, "<span class='idc_letter'>$&</span>");
+        paja(idc_h3, 'idc_letter');
 
         let idc_letter=document.getElementsByClassName('idc_letter');
 
@@ -1125,45 +1129,11 @@ window.addEventListener('load', () => {
 
     am_gauge();
 
-    //about me 세미타이틀
-
-    let rest_list=document.getElementsByClassName('rest_list');
-    [].forEach.call(rest_list, (cat,idx)=> {
-        cat.querySelector('p').classList.add(`rest_list_${idx}`);
-    });
-
-    document.querySelector(`.rest_list_0`).classList.add('common_under');
-
-    let am_idx=0;
-    
-    const am_semi_title = (cat1, cat2) => {
-        document.querySelector(`.rest_list_${cat1}`).classList.remove('common_under');
-        document.querySelector(`.rest_list_${cat2}`).classList.add('common_under');
-    }
-
-
-    const am_contents_changer = () => {
-        
-            if(am_idx==descri_explain.length-1) {
-                am_changer(am_idx, 0);
-                am_semi_title(am_idx, 0);
-                am_idx=0;
-            }
-            else {
-                am_changer(am_idx, am_idx+1);
-                am_semi_title(am_idx, am_idx+1);
-                am_idx++;
-            }
-
-            am_h3_changer(am_idx);
-            am_gauge();
-    }
-
     //정지 및 재생
 
 
     let am_interval=setInterval(am_contents_changer, am_timer);
-    
+
 
     let gauge_toggle=document.querySelector('.gauge_toggle');
     let gauge_toggle_img=gauge_toggle.querySelector('img');
@@ -1189,23 +1159,89 @@ window.addEventListener('load', () => {
         }
     }    
 
+    //about me 세미타이틀
+
+    let rest_list=document.getElementsByClassName('rest_list');
+    [].forEach.call(rest_list, (cat,idx)=> {
+        cat.querySelector('p').classList.add(`rest_list_${idx}`);
+    });
+
+    document.querySelector(`.rest_list_0`).classList.add('common_under');
+
+    let am_idx=0;
+    
+    const am_semi_title = (cat1, cat2) => {
+        document.querySelector(`.rest_list_${cat1}`).classList.remove('common_under');
+        document.querySelector(`.rest_list_${cat2}`).classList.add('common_under');
+    }
+
+
+    function am_contents_changer() {
+        
+            if(am_idx==descri_explain.length-1) {
+                am_changer(am_idx, 0);
+                am_semi_title(am_idx, 0);
+                am_idx=0;
+            }
+            else {
+                am_changer(am_idx, am_idx+1);
+                am_semi_title(am_idx, am_idx+1);
+                am_idx++;
+            }
+
+            am_h3_changer(am_idx);
+            am_gauge();
+    }
+
     //선택 및 재실행
 
-    const semi_click = (current_idx, new_idx) => {
+    // [].forEach.call(rest_list, (cat, idx) => {
+    //     cat.addEventListener('click',() => {
 
-        rest_list[new_idx].addEventListener('click', ()=>{
+    //         gauge_current.style.display='none';
+    //         gauge_toggle_img.src='./img/main/about_me_play.png';
+    //         am_toggle=false;
+    //         clearInterval(am_interval);
+
+    //         first_idx=am_idx;
+    //         new_idx=idx;
+
+    //         descri_explain[first_idx].style.display='none';
+    //         console.log(descri_explain[0])
+    //         descri_explain[new_idx].style.display='block';
+    //         descri_explain[new_idx].style.opacity='1';
+
+    //     })
+    // });
+
+
+
+
+
+
+    // About Me 타이핑효과
+
+    let am_cts = document.querySelector(".descri_comment .descri_content");
+    let am_aut = document.querySelector(".descri_comment .descri_author");
+
+
+    const am_data_url="https://nonwhiskerscat.github.io/kidcat_nyantopia/json/aboutme_desc.json";
+
+    axios.get(am_data_url)
+    .then(
+        (res) => {
+
+            let am_desc=res.data.am_desc;
+
+
             
-            if(new_idx==current_idx) {
-                null;
-            }
+        }
+    ).catch(err=> {
+        console.error('에러발생: ', err);
+    });
 
-            else {
-                am_changer(current_idx, new_idx);
-                am_gauge();
-                am_h3_changer(new_idx);
-            }
-        },false)
-    }
+
+    //My Specs
 
     //화면 너비에 따른 도시 야경 사진 변화
 
@@ -1334,6 +1370,13 @@ window.addEventListener('load', () => {
             mk_coding.innerHTML=mk_skills_cod;
             mk_graphic.innerHTML=mk_skills_gph;
             mk_graphic.style.display='none';
+
+            let mk_skill_zone=document.querySelectorAll('.mk_skill_zone');
+
+            [].forEach.call(mk_skill_zone, (cat)=> {
+                cat.classList.add('ferris_first');
+            })
+
         
             let mk_skill_cod=mk_coding.getElementsByClassName('mk_skill');
             let mk_skill_gph=mk_graphic.getElementsByClassName('mk_skill');
@@ -1395,6 +1438,7 @@ window.addEventListener('load', () => {
             }
         
             let mk_scroll=true;
+
         
             document.addEventListener('scroll',() => {
                 if(mk_scroll) {
@@ -1589,18 +1633,33 @@ window.addEventListener('load', () => {
             [].forEach.call(mk_gnb_all, (cat, idx) => {
                 cat.addEventListener('click', ()=> {
                     mk_gauge_ani_entire();
-        
+                    if(w_width<semi_cat) window.scrollTo({top: main_myskills$.offsetTop+main_myskills$.offsetHeight/2, behavior:'smooth'});
+
                     if(idx) {
+
                         mk_toggle(mk_coding, mk_graphic);
                         mk_kitty_tag(mk_gnb_kitty[0], mk_gnb_kitty[1]);
                         mk_underbar(cat.previousElementSibling, cat);
+                        [].forEach.call(mk_graphic.children,(cat)=> {
+                            cat.animate({opacity: 0, scale: 0}, {
+                                fill: 'forwards',
+                                duration: 0
+                            });
+                        });
                         mk_icons_ani(mk_skill_gph);
+                        
                     }
         
                     else {
                         mk_toggle(mk_graphic, mk_coding);
                         mk_kitty_tag(mk_gnb_kitty[1], mk_gnb_kitty[0]);
                         mk_underbar(cat.nextElementSibling, cat);
+                        [].forEach.call(mk_coding.children,(cat)=> {
+                            cat.animate({opacity: 0, scale: 0}, {
+                                fill: 'forwards',
+                                duration: 0
+                            });
+                        });
                         mk_icons_ani(mk_skill_cod);
         
                     }
@@ -1995,18 +2054,18 @@ window.addEventListener('load', () => {
                         design_note_in.innerHTML=design_note(dnote);
                         document.body.classList.add('not_scroll');
                         document.body.style.top=`-${dn_top}px`;
-    
+
                         let design_bigheads=design_note_in.children;
                         [].forEach.call(design_bigheads, (cat) => {
                             cat.style.opacity= 0;
-    
+
                         })
-    
+
                         design_note_in.animate({scale: 1},{
                             duration: 500,
                             fill: "forwards"
                         });
-    
+
                         setTimeout(() => {
                             [].forEach.call(design_bigheads, (cat, idx) => {
                                 cat.animate({opacity: 1}, {
@@ -2016,12 +2075,12 @@ window.addEventListener('load', () => {
                                     fill: 'forwards'
                                 });
                             });
-    
+
                         }, 500);
-    
+
                         
                         let dn_close_btns=document.querySelectorAll('.design_note .close_flex');
-    
+
                         [].forEach.call(dn_close_btns, (cat) => {
                             cat.addEventListener('click', function() {
                                 document.body.classList.remove('not_scroll');
@@ -2033,7 +2092,7 @@ window.addEventListener('load', () => {
                                         fill: 'forwards'
                                     })
                                 });
-    
+
                                 setTimeout(() => {
                                     design_note_in.animate({scale: 0},{
                                         duration: 500,
@@ -2042,9 +2101,9 @@ window.addEventListener('load', () => {
 
                                     design_note_in.innerHTML='';
                                 }, 200)
-    
+
                                 window.scrollTo({top:dn_top});
-    
+
                             });
                         });
 
@@ -2061,10 +2120,15 @@ window.addEventListener('load', () => {
                             dnote.header.web_link? window.open(dnote.header.web_link) : alert('미완성된 사이트입니다.');
                         });
 
+                        
+
+                
 
                     });
                 });
             }
+
+
 
         }
     ).catch(err=> {
@@ -2206,7 +2270,8 @@ window.addEventListener('load', () => {
 
     let cm_btn_cancel=document.querySelector('.btn_cancel');
 
-    cm_btn_cancel.addEventListener('click', () => {
+    cm_btn_cancel.addEventListener('click', (e) => {
+        e.preventDefault();
         cm_contents_toggle(cm_sub_div, cm_main_div);
     });
 
@@ -2309,10 +2374,6 @@ window.addEventListener('load', () => {
     window.addEventListener('resize', () => {
         ft_set();
     });
-
     //footer 아이콘 
-
-
-
 
 });

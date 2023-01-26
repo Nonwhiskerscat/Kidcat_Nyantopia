@@ -450,46 +450,26 @@ span.mk_highlight {
     transform: translateY(0%);
   }
 }
-@keyframes line1 {
-  from {
-    stroke-dasharray: calc((-20px + 30vw) * 0.8 * 3.1415926535);
-  }
-  to {
-    stroke-dashoffset: calc((-20px + 30vw) * 0.8 * 0.07 * 3.1415926535);
-  }
-}
-@keyframes line2 {
-  from {
-    stroke-dasharray: calc((-10px + 20vw) * 0.8 * 3.1415926535);
-  }
-  to {
-    stroke-dashoffset: calc((-10px + 20vw) * 0.8 * 0.07 * 3.1415926535);
-  }
-}
-@keyframes line3 {
-  from {
-    stroke-dasharray: 301.592894736px;
-  }
-  to {
-    stroke-dashoffset: 21.1115026315px;
-  }
-}
-@keyframes line4 {
-  from {
-    stroke-dasharray: 402.123859648px;
-  }
-  to {
-    stroke-dashoffset: 28.1486701754px;
-  }
-}
-@keyframes oo {
+@keyframes ferris_wheel {
   100% {
     transform: rotate(360deg);
   }
 }
-@keyframes xx {
+@keyframes nyan_hover_tone {
+  0% {
+    color: #ffe1eb;
+  }
+  25% {
+    color: #ffaec8;
+  }
+  50% {
+    color: #e87d9e;
+  }
+  75% {
+    color: #ffaec8;
+  }
   100% {
-    transform: rotate(-360deg);
+    color: #ffe1eb;
   }
 }
 /*=================중단점=================*/
@@ -1528,46 +1508,26 @@ span.mk_highlight {
     transform: translateY(0%);
   }
 }
-@keyframes line1 {
-  from {
-    stroke-dasharray: calc((-20px + 30vw) * 0.8 * 3.1415926535);
-  }
-  to {
-    stroke-dashoffset: calc((-20px + 30vw) * 0.8 * 0.07 * 3.1415926535);
-  }
-}
-@keyframes line2 {
-  from {
-    stroke-dasharray: calc((-10px + 20vw) * 0.8 * 3.1415926535);
-  }
-  to {
-    stroke-dashoffset: calc((-10px + 20vw) * 0.8 * 0.07 * 3.1415926535);
-  }
-}
-@keyframes line3 {
-  from {
-    stroke-dasharray: 301.592894736px;
-  }
-  to {
-    stroke-dashoffset: 21.1115026315px;
-  }
-}
-@keyframes line4 {
-  from {
-    stroke-dasharray: 402.123859648px;
-  }
-  to {
-    stroke-dashoffset: 28.1486701754px;
-  }
-}
-@keyframes oo {
+@keyframes ferris_wheel {
   100% {
     transform: rotate(360deg);
   }
 }
-@keyframes xx {
+@keyframes nyan_hover_tone {
+  0% {
+    color: #ffe1eb;
+  }
+  25% {
+    color: #ffaec8;
+  }
+  50% {
+    color: #e87d9e;
+  }
+  75% {
+    color: #ffaec8;
+  }
   100% {
-    transform: rotate(-360deg);
+    color: #ffe1eb;
   }
 }
 header .header_flex {
@@ -1775,6 +1735,9 @@ header .header_flex .menu_gnb_sh ul.gnb_main li {
 header .header_flex .menu_gnb_sh ul.gnb_main li p {
   display: none;
   color: white;
+}
+header .header_flex .menu_gnb_sh ul.gnb_main li p:hover {
+  animation: nyan_hover_tone 1s linear infinite;
 }
 @media screen and (min-width: 768px) {
   header .header_flex .menu_gnb_sh ul.gnb_main li p {
@@ -2130,46 +2093,26 @@ header .gnb_nyan .gnb_lower .base_bottom .base_img .gnb_kitty {
     transform: translateY(0%);
   }
 }
-@keyframes line1 {
-  from {
-    stroke-dasharray: calc((-20px + 30vw) * 0.8 * 3.1415926535);
-  }
-  to {
-    stroke-dashoffset: calc((-20px + 30vw) * 0.8 * 0.07 * 3.1415926535);
-  }
-}
-@keyframes line2 {
-  from {
-    stroke-dasharray: calc((-10px + 20vw) * 0.8 * 3.1415926535);
-  }
-  to {
-    stroke-dashoffset: calc((-10px + 20vw) * 0.8 * 0.07 * 3.1415926535);
-  }
-}
-@keyframes line3 {
-  from {
-    stroke-dasharray: 301.592894736px;
-  }
-  to {
-    stroke-dashoffset: 21.1115026315px;
-  }
-}
-@keyframes line4 {
-  from {
-    stroke-dasharray: 402.123859648px;
-  }
-  to {
-    stroke-dashoffset: 28.1486701754px;
-  }
-}
-@keyframes oo {
+@keyframes ferris_wheel {
   100% {
     transform: rotate(360deg);
   }
 }
-@keyframes xx {
+@keyframes nyan_hover_tone {
+  0% {
+    color: #ffe1eb;
+  }
+  25% {
+    color: #ffaec8;
+  }
+  50% {
+    color: #e87d9e;
+  }
+  75% {
+    color: #ffaec8;
+  }
   100% {
-    transform: rotate(-360deg);
+    color: #ffe1eb;
   }
 }
 main .main_intro .nyan_1 .first_flex {
@@ -2654,18 +2597,6 @@ main .main_aboutme .nyan_zone .about_me_contents .about_me_illust .about_me_back
     left: 3%;
   }
 }
-main .main_aboutme .nyan_zone .about_me_contents .about_me_illust .about_me_back > img.Seoyong {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-60%);
-}
-@media screen and (min-width: 768px) {
-  main .main_aboutme .nyan_zone .about_me_contents .about_me_illust .about_me_back > img.Seoyong {
-    left: 0;
-    transform: translateX(0%);
-  }
-}
 main .main_aboutme .nyan_zone .about_me_contents .about_me_illust .about_me_back .about_me_front > img {
   position: absolute;
   top: 0;
@@ -2721,16 +2652,19 @@ main .main_aboutme .nyan_zone .about_me_contents .about_me_illust .about_me_back
 }
 main .main_aboutme .nyan_zone .about_me_contents .about_me_descri {
   margin-top: 60px;
+  min-height: 610px;
 }
 @media screen and (min-width: 768px) {
   main .main_aboutme .nyan_zone .about_me_contents .about_me_descri {
     margin-top: 0;
     width: 70%;
+    min-height: 575px;
   }
 }
 @media screen and (min-width: 1200px) {
   main .main_aboutme .nyan_zone .about_me_contents .about_me_descri {
     width: 680px;
+    min-height: none;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -2921,51 +2855,6 @@ main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_commen
 @media screen and (min-width: 1600px) {
   main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_comment h4 {
     font-size: 21px;
-  }
-}
-main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_comment .descri_cursor {
-  display: inline-block;
-  border-radius: 1.5px;
-  height: 3px;
-  width: calc(6px + 2vw);
-  margin-left: 5px;
-  background-color: #e87d9e;
-  animation: cursor_blink 0.5s linear infinite;
-}
-@media screen and (min-width: 768px) {
-  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_comment .descri_cursor {
-    width: calc(8px + 1vw);
-  }
-}
-@media screen and (min-width: 1200px) {
-  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_comment .descri_cursor {
-    width: 24px;
-    height: 4px;
-  }
-}
-@media screen and (min-width: 1600px) {
-  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_comment .descri_cursor {
-    width: 28px;
-  }
-}
-main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_comment .descri_cursor.n2 {
-  margin-left: 3px;
-  background-color: white;
-}
-@media screen and (min-width: 768px) {
-  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_comment .descri_cursor.n2 {
-    width: calc(8px + 1vw);
-  }
-}
-@media screen and (min-width: 1200px) {
-  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_comment .descri_cursor.n2 {
-    width: 24px;
-    height: 4px;
-  }
-}
-@media screen and (min-width: 1600px) {
-  main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_comment .descri_cursor.n2 {
-    width: 28px;
   }
 }
 main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_comment p {
@@ -3167,6 +3056,9 @@ main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_gauge 
   font-size: calc(6px + 2vw);
   text-align: center;
   cursor: pointer;
+}
+main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_gauge .num p:hover {
+  animation: nyan_hover_tone 1s linear infinite;
 }
 @media screen and (min-width: 768px) {
   main .main_aboutme .nyan_zone .about_me_contents .about_me_descri .descri_gauge .num p {
@@ -3943,6 +3835,9 @@ main .main_myskills .my_skills_gnb .mk_gnb_flex li {
   align-items: center;
   cursor: pointer;
 }
+main .main_myskills .my_skills_gnb .mk_gnb_flex li:hover {
+  animation: nyan_hover_tone 1s linear infinite;
+}
 @media screen and (min-width: 768px) {
   main .main_myskills .my_skills_gnb .mk_gnb_flex li {
     font-size: calc(16px + 1vw);
@@ -4519,6 +4414,16 @@ main .main_myskills .mk_main .nyan_zone .mk_icons {
     margin-top: 0;
   }
 }
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .ferris_first {
+    animation: ferris_wheel 90s linear infinite;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill {
+    animation: ferris_wheel 90s linear reverse infinite;
+  }
+}
 main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone {
   display: flex;
   flex-wrap: wrap;
@@ -4526,7 +4431,6 @@ main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone {
 }
 @media screen and (min-width: 1200px) {
   main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone {
-    animation: oo 90s linear infinite;
     width: 720px;
     height: 720px;
     display: block;
@@ -4550,7 +4454,6 @@ main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill {
 }
 @media screen and (min-width: 1200px) {
   main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone .mk_skill {
-    animation: oo 90s infinite linear reverse;
     width: 150px;
     position: absolute;
   }
@@ -4917,6 +4820,9 @@ main .main_projects .proj_gnb .proj_gnb_flex li {
   cursor: pointer;
   width: fit-content;
   text-align: center;
+}
+main .main_projects .proj_gnb .proj_gnb_flex li:hover {
+  animation: nyan_hover_tone 1s linear infinite;
 }
 @media screen and (min-width: 768px) {
   main .main_projects .proj_gnb .proj_gnb_flex li {
