@@ -415,7 +415,6 @@ main {
                                     top: -3%;
                                     right: auto;
                                     left: 3%;
-
                                 }
     
                                 @include responsive(semi-cat) {
@@ -426,27 +425,6 @@ main {
                                     //
                                 }
 
-                            }
-
-                            &.Seoyong {
-                                position: absolute;
-                                top: 0;
-                                left: 50%;
-                                transform: translateX(-60%);
-
-                                @include responsive(tablet-cat) {
-                                    left: 0;
-                                    transform: translateX(0%);
-
-                                }
-    
-                                @include responsive(semi-cat) {
-
-                                }
-    
-                                @include responsive(huge-cat) {
-                                    //
-                                }
                             }
                         }
 
