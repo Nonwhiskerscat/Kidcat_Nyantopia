@@ -307,6 +307,7 @@ window.addEventListener('load', () => {
     gnb_icon.addEventListener('click', () => {
         if(!gnb_nyan.classList.contains('gnb_on'))
             {
+                gnb_nyan.style.display='block';
                 if(innerWidth<tablet_cat) {
                     gnb_nyan.animate({top:0},
                         {duration: 500,
@@ -343,6 +344,10 @@ window.addEventListener('load', () => {
                 gnb_nyan.classList.remove('gnb_on');
                 document.body.classList.remove('not_scroll');
                 gnb_icon.src="./img/header/jelly_front_short.png";
+
+                setTimeout(() =>{
+                    gnb_nyan.style.display='none';
+                },500)
             }
     });
 
@@ -2326,12 +2331,12 @@ window.addEventListener('load', () => {
     let ft_scroll=true;
     let footer_important=document.querySelector('.footer_important');
 
-    function icon_ani(nyan, kitty) {
+    function icon_ani(nyan, kitty, meow) {
         nyan.animate([
             {top: '0'},
-            {top: `${0.4*Math.pow(-1,kitty)}rem`},
+            {top: `${meow*Math.pow(-1,kitty)}rem`},
             {top: '0'},
-            {top: `${-0.4*Math.pow(-1,kitty)}rem`},
+            {top: `${-meow*Math.pow(-1,kitty)}rem`},
             {top: '0'}
         ]
         , {
@@ -2351,7 +2356,7 @@ window.addEventListener('load', () => {
 
                 [].forEach.call(footer_icons, (cat, idx) => {
     
-                    icon_ani(cat, idx);
+                    icon_ani(cat, idx, 0.4);
     
                     cat.addEventListener('click', () => {
                         switch(idx) {

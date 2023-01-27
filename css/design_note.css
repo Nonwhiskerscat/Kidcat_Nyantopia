@@ -594,7 +594,7 @@
 .design_note .design_bighead .design_body .dn_overview .ov_flex .ov_img_area img:last-child {
   position: absolute;
   transform-origin: center bottom;
-  animation: header_gnb_mobile 3s infinite linear;
+  animation: dn_cat_head 3s infinite linear;
 }
 .design_note .design_bighead .design_body .dn_overview .ov_flex .ov1 img:last-child {
   width: 28%;

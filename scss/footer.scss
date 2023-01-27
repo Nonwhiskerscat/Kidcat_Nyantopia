@@ -42,10 +42,9 @@ footer {
         }
 
         .footer_icons {
+            width: 100%;
             position: absolute;
             bottom: 10%;
-            left: 50%;
-            transform: translate(-50%);
 
             @include responsive(tablet-cat) {
                 bottom: 13%;
@@ -59,33 +58,38 @@ footer {
                 //
             }
 
-            img {
-                position: relative;
-                cursor: pointer;
-                width: calc(10px + 3vw);
-                margin-right: $petit_margin_p;
+            .icon_flex {
+                width: fit-content;
+                margin: 0 auto;
 
-                @include responsive(tablet-cat) {
-                    margin-right: $petit_margin_t;
-                    width: calc(20px + 3vw);
-                }
+                img {
+                    position: relative;
+                    cursor: pointer;
+                    width: calc(25px + 3vw);
     
-                @include responsive(semi-cat) {
-                    margin-right: $petit_margin_s;
-                    width: 60px;
-                }
+                    @include responsive(tablet-cat) {
+                        width: calc(30px + 3vw);
+                    }
+        
+                    @include responsive(semi-cat) {
+                        margin-right: $petit_margin_p;
+                        width: 60px;
+                    }
+        
+                    @include responsive(huge-cat) {
+                        margin-right: $petit_margin_t;
+                        width: 80px;
     
-                @include responsive(huge-cat) {
-                    margin-right: $petit_margin_h;
-                    width: 80px;
-
-                }
-
-                &:hover {
-                    rotate: 30deg;
-                    transition: rotate 0.2s linear;
+                    }
+    
+                    &:hover {
+                        rotate: 30deg;
+                        transition: rotate 0.2s linear;
+                    }
                 }
             }
+
+
 
         }
 

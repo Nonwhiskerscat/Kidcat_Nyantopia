@@ -218,10 +218,9 @@ footer .footer_important .footer_kitty {
   z-index: -1;
 }
 footer .footer_important .footer_icons {
+  width: 100%;
   position: absolute;
   bottom: 10%;
-  left: 50%;
-  transform: translate(-50%);
 }
 @media screen and (min-width: 768px) {
   footer .footer_important .footer_icons {
@@ -233,31 +232,33 @@ footer .footer_important .footer_icons {
     bottom: 15%;
   }
 }
-footer .footer_important .footer_icons img {
+footer .footer_important .footer_icons .icon_flex {
+  width: fit-content;
+  margin: 0 auto;
+}
+footer .footer_important .footer_icons .icon_flex img {
   position: relative;
   cursor: pointer;
-  width: calc(10px + 3vw);
-  margin-right: 7px;
+  width: calc(25px + 3vw);
 }
 @media screen and (min-width: 768px) {
-  footer .footer_important .footer_icons img {
-    margin-right: 10px;
-    width: calc(20px + 3vw);
+  footer .footer_important .footer_icons .icon_flex img {
+    width: calc(30px + 3vw);
   }
 }
 @media screen and (min-width: 1200px) {
-  footer .footer_important .footer_icons img {
-    margin-right: 12px;
+  footer .footer_important .footer_icons .icon_flex img {
+    margin-right: 7px;
     width: 60px;
   }
 }
 @media screen and (min-width: 1600px) {
-  footer .footer_important .footer_icons img {
-    margin-right: 15px;
+  footer .footer_important .footer_icons .icon_flex img {
+    margin-right: 10px;
     width: 80px;
   }
 }
-footer .footer_important .footer_icons img:hover {
+footer .footer_important .footer_icons .icon_flex img:hover {
   rotate: 30deg;
   transition: rotate 0.2s linear;
 }

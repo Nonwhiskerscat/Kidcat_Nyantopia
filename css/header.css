@@ -64,19 +64,19 @@
 }
 @keyframes header_gnb_mobile {
   0% {
-    transform: rotateZ(0);
+    transform: rotateZ(0) translateY(0em);
   }
   25% {
-    transform: rotateZ(-5deg);
+    transform: rotateZ(3deg) translateY(1em);
   }
   50% {
-    transform: rotateZ(0);
+    transform: rotateZ(0) translateY(0em);
   }
   75% {
-    transform: rotateZ(5deg);
+    transform: rotateZ(3deg) translateY(-1em);
   }
   100% {
-    transform: rotateZ(0deg);
+    transform: rotateZ(0deg) translateY(0em);
   }
 }
 @keyframes cursor_blink {
@@ -414,6 +414,7 @@ header .gnb_nyan {
   z-index: 2;
   min-height: 100vh;
   width: 100%;
+  overflow-x: hidden;
 }
 @media screen and (min-width: 768px) {
   header .gnb_nyan {
@@ -543,7 +544,7 @@ header .gnb_nyan .gnb_lower {
 }
 header .gnb_nyan .gnb_lower .gaussian_light {
   position: absolute;
-  bottom: -180px;
+  bottom: 0;
   display: block;
   width: 100%;
   max-width: 500px;
@@ -551,7 +552,6 @@ header .gnb_nyan .gnb_lower .gaussian_light {
   transform: translateX(-50%);
   height: 480px;
   background-color: #ffffff;
-  border-radius: 50%;
   background: rgb(255, 255, 255);
   background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.45) 44%, rgba(255, 255, 255, 0) 66%);
 }

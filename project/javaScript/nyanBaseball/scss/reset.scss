@@ -1,0 +1,103 @@
+@import "./style.scss";
+@import "./responsive.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.no {
+    display: none;
+}
+
+.on {
+    display: inline;
+}
+
+
+.bighead {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background:linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(../img/part1/phone_back.png);
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include responsive(semi-cat) {
+        background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(../img/part1/semi_back.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    @include responsive(pc-cat) {
+        background:linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(../img/part1/background.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+html, body {
+    color: white;
+    font-family: 'IBMPlexSansKR-Regular';
+}
+
+h1 {
+    font-family: $highlight;
+}
+
+h2 {
+    font-family: $highlight;
+}
+
+h3 {
+    font-family: $highlight;
+}
+
+h4 {
+    font-family: $highlight;
+}
+
+h5 {
+    font-family: $highlight;
+}
+
+h6 {
+    font-family: $highlight;
+}
+
+table, th,  tr, td {
+    border: none;
+    border-collapse: collapse;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+input, button {
+    outline: none;
+}
+
+.container {
+    // background-color: red;
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    // background-color: royalblue;
+
+    @include responsive(semi-cat) {
+        width: 93.75%;
+        // background-color: fuchsia;
+    }
+
+    @include responsive(pc-cat) {
+        // background-color: darkorange;
+        max-width: 1180px;
+    }
+}
+
+

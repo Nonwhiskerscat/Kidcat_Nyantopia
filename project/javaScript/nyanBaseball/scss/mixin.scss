@@ -1,0 +1,19 @@
+@import "./style.scss";
+
+@mixin h3_fixed {
+    text-align: center;
+    font-size: calc(20px + 1vw);
+
+    @include responsive(semi-cat) {
+
+        font-size: calc(18px + 1vw);
+
+    }
+
+    @include responsive(pc-cat) {
+        text-align: justify;
+        padding-left: 10px;
+        font-size: 30px;
+
+    } 
+}

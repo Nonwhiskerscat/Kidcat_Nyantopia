@@ -364,6 +364,7 @@ header {
 
         min-height: 100vh;
         width: 100%;
+        overflow-x: hidden;
         
 
         @include responsive(tablet-cat) {
@@ -534,7 +535,7 @@ header {
 
             .gaussian_light {
                 position: absolute;
-                bottom: -180px;
+                bottom: -0;
                 display: block;
                 width: 100%;
                 max-width: 500px;
@@ -542,7 +543,6 @@ header {
                 transform: translateX(-50%);
                 height: 480px;
                 background-color: #ffffff;
-                border-radius: 50%;
                 background: rgb(255,255,255);
                 background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.45) 44%, rgba(255,255,255,0) 66%);
 

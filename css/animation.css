@@ -36,19 +36,19 @@
 }
 @keyframes header_gnb_mobile {
   0% {
-    transform: rotateZ(0);
+    transform: rotateZ(0) translateY(0em);
   }
   25% {
-    transform: rotateZ(-5deg);
+    transform: rotateZ(3deg) translateY(1em);
   }
   50% {
-    transform: rotateZ(0);
+    transform: rotateZ(0) translateY(0em);
   }
   75% {
-    transform: rotateZ(5deg);
+    transform: rotateZ(3deg) translateY(-1em);
   }
   100% {
-    transform: rotateZ(0deg);
+    transform: rotateZ(0deg) translateY(0em);
   }
 }
 @keyframes cursor_blink {
@@ -93,5 +93,22 @@
   }
   100% {
     color: #ffe1eb;
+  }
+}
+@keyframes dn_cat_head {
+  0% {
+    transform: rotateZ(0);
+  }
+  25% {
+    transform: rotateZ(5deg);
+  }
+  50% {
+    transform: rotateZ(0);
+  }
+  75% {
+    transform: rotateZ(-5deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
   }
 }

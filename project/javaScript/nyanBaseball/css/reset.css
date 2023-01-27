@@ -1,0 +1,108 @@
+@charset "UTF-8";
+/*====================터닝 포인트====================*/
+/*====================폰트====================*/
+/*====================마진====================*/
+/*====================폰트 사이즈====================*/
+/*====================톤앤 매너====================*/
+/*====================터닝 포인트====================*/
+/*====================폰트====================*/
+/*====================마진====================*/
+/*====================폰트 사이즈====================*/
+/*====================톤앤 매너====================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.no {
+  display: none;
+}
+
+.on {
+  display: inline;
+}
+
+.bighead {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/part1/phone_back.png);
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media screen and (min-width: 900px) {
+  .bighead {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/part1/semi_back.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .bighead {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/part1/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+html, body {
+  color: white;
+  font-family: "IBMPlexSansKR-Regular";
+}
+
+h1 {
+  font-family: "Yeongdo-Rg";
+}
+
+h2 {
+  font-family: "Yeongdo-Rg";
+}
+
+h3 {
+  font-family: "Yeongdo-Rg";
+}
+
+h4 {
+  font-family: "Yeongdo-Rg";
+}
+
+h5 {
+  font-family: "Yeongdo-Rg";
+}
+
+h6 {
+  font-family: "Yeongdo-Rg";
+}
+
+table, th, tr, td {
+  border: none;
+  border-collapse: collapse;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+input, button {
+  outline: none;
+}
+
+.container {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 900px) {
+  .container {
+    width: 93.75%;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .container {
+    max-width: 1180px;
+  }
+}
