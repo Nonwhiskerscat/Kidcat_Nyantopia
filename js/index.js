@@ -207,6 +207,8 @@ window.addEventListener('load', () => {
 
     // 헤더 로고 클릭 시 링크 이동
 
+    let header_h=document.querySelector('header').offsetHeight;
+
     header_logo.addEventListener('click', function() {
         location.href='./index.html';
     })
@@ -215,9 +217,6 @@ window.addEventListener('load', () => {
 
     paja(header_letter_h3, 'hletter');
     paja(header_letter_h4, 'hletter');
-
-    // header_letter_h3.innerHTML = header_letter_h3.textContent.replace(/\S/g, "<span class='hletter'>$&</span>");
-    // header_letter_h4.innerHTML = header_letter_h4.textContent.replace(/\S/g, "<span class='hletter'>$&</span>");
 
     let header_letter=document.querySelectorAll('.hletter');
 
@@ -241,25 +240,24 @@ window.addEventListener('load', () => {
 
     // 헤더 스크롤 시 고정
 
+    window.addEventListener('resize', () => {
+        header_h=document.querySelector('header').offsetHeight;
+    })
+
     window.addEventListener('scroll', () => {
-        if(window.scrollY>0) {
+        if(window.scrollY>header_h) {
             header$.classList.add('header_fix');
-            // [].forEach.call(gnb_main_li,function(gnb_main_li){
-            //     gnb_main_li.style.display='none';
-            // }); 
-            
         }
 
         else {
             header$.classList.remove('header_fix');
-            // [].forEach.call(gnb_main_li,function(gnb_main_li){
-            //     gnb_main_li.style.display='block';
-            // }); 
         }
     });
 
 
     // GNB 슬라이드 효과
+
+
 
     if(window.innerWidth<tablet_cat) {
         gnb_nyan.style.top=`-${gnb_height}px`;
@@ -305,6 +303,8 @@ window.addEventListener('load', () => {
     })
 
     gnb_icon.addEventListener('click', () => {
+        let gnb_top= document.querySelector('html').scrollTop;
+
         if(!gnb_nyan.classList.contains('gnb_on'))
             {
                 gnb_nyan.style.display='block';
@@ -322,7 +322,7 @@ window.addEventListener('load', () => {
                     );
                 }
                 gnb_nyan.classList.add('gnb_on');
-                document.body.classList.add('not_scroll');
+                document.body.style.top=`-${gnb_top}px`;
                 gnb_icon.src="./img/header/jelly_back_short.png";
             }
         
@@ -342,12 +342,13 @@ window.addEventListener('load', () => {
                     );
                 }
                 gnb_nyan.classList.remove('gnb_on');
-                document.body.classList.remove('not_scroll');
                 gnb_icon.src="./img/header/jelly_front_short.png";
 
                 setTimeout(() =>{
                     gnb_nyan.style.display='none';
-                },500)
+                },500);
+
+                window.scrollTo({top:gnb_top});
             }
     });
 
@@ -549,7 +550,8 @@ window.addEventListener('load', () => {
                 window.scrollTo({top:0, behavior:'smooth'});
             }
             else {
-                window.scrollTo({top:main_axis.offsetTop-header$.offsetHeight, behavior:'smooth'});
+                console.log(idx)
+                window.scrollTo({top: main_axis.offsetTop-header$.offsetHeight, behavior:'smooth'});
             }
 
         })
@@ -1711,6 +1713,7 @@ window.addEventListener('load', () => {
     ).catch(err=> {
         console.error('에러발생: ', err);
     });
+
     //Projects
 
     let main_projects$=document.querySelector('.main_projects');
@@ -2046,11 +2049,6 @@ window.addEventListener('load', () => {
             dnSetter(webp_dt);
             webSetter(webp_dt);
 
-
-
-
-
-
             function dn_modal(kitty, meow) {
                 [].forEach.call(kitty, (cat, idx) => {
                     cat.addEventListener('click', function() {
@@ -2124,17 +2122,9 @@ window.addEventListener('load', () => {
                         dn_git_web.addEventListener('click', () => {
                             dnote.header.web_link? window.open(dnote.header.web_link) : alert('미완성된 사이트입니다.');
                         });
-
-                        
-
-                
-
                     });
                 });
             }
-
-
-
         }
     ).catch(err=> {
         console.error('에러발생: ', err);
@@ -2174,7 +2164,6 @@ window.addEventListener('load', () => {
         });
 
     }
-
 
     cm_kitty_set();
     cm_contents_set();
@@ -2371,10 +2360,8 @@ window.addEventListener('load', () => {
 
                 ft_scroll=false;
             }
-
-
         }
-    })
+    });
 
     window.addEventListener('resize', () => {
         ft_set();

@@ -238,6 +238,7 @@
                             }
     
                             p {
+                                @include nyan_common_hover;
                                 font-size: calc(12px + 2vw);
 
                                 @include responsive(tablet-cat) {
