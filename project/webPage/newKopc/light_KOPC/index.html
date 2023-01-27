@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="한국고양이보호협회">
+    <meta name="Author" content="Seoyong Kim">
+    <meta name="title" property="og:title" content="한국고양이보호협회">
+    <meta name="images" property="og:image" content="./img/기타/og.png">
+    <meta name="description" property="og:description" content="인간과 길고양이의 공존을 도모하는 의로운 협회, 저희는 고보협입니다!">
+    <meta name="type" property="og:type" content="article">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="shortcut icon" type="image/icon" href="./img/사이트아이콘.png">
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="./js/BlockMouse.js"></script>
+    <script src="../js/RollingNumber.js"></script>
+    <script src="../js/Rfadein.js"></script>
+    <script src="../js/Lfadein.js"></script>
+    <script src="../js/Tfadein.js"></script>
+    <script src="../js/Bfadein.js"></script>
+    <script src="../js/Fadein.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    
+    <title>KOPC::한국고양이보호협회</title>
+</head>
+<body>
+    <div id="wrapper">
+        <header id="target"> 
+            <img src="./img/메인/메인시작(라이트).png" alt="메인시작_라이트">
+            <div class="container">
+                <div class="ldmode-snslist">
+                    <div class="ldmode">
+                        <div class="lightmode">
+                            <p><a href="./index.html">라이트 모드</a></p>
+                        </div><!--lightmode-->
+                        <div class="darkmode">
+                            <p><a href="../index.html">다크 모드</a></p>
+                        </div><!--darkmode-->
+                    </div><!--ldmode-->
+    
+                    <div class="snslist">
+                        <ul>
+                            <li>
+                                <a target='_blank' href="https://www.youtube.com/c/%ED%95%9C%EA%B5%AD%EA%B3%A0%EC%96%91%EC%9D%B4%EB%B3%B4%ED%98%B8%ED%98%91%ED%9A%8C">
+                                    <img src="./img/헤더/SNS(다크)/유튜브.png" alt="고보협유튜브">
+                                </a>
+                            </li>
+                            <li>
+                                <a target='_blank' href="https://www.facebook.com/profile.php?id=100006312816344">
+                                    <img src="./img/헤더/SNS(다크)/페이스북.png" alt="고보협페이스북">
+                                </a>
+                            </li>
+                            <li>
+                                <a target='_blank' href="https://www.instagram.com/catcare2005/">
+                                    <img src="./img/헤더/SNS(다크)/인스타그램.png" alt="고보협인스타">
+                                </a>
+                            </li>
+                            <li>
+                                <a target='_blank' href="https://twitter.com/kopc2005">
+                                    <img src="./img/헤더/SNS(다크)/트위터.png" alt="고보협트위터">
+                                </a>
+                            </li>
+                            <li>
+                                <a target='_blank' href="https://blog.naver.com/kopcn">
+                                    <img src="./img/헤더/SNS(다크)/블로그.png" alt="고보협블로그">
+                                </a>
+                            </li>
+                        </ul>
+                    </div><!--snslist-->
+                </div><!--ldmode-snslist-->
+    
+                <div class="mainlogo">
+                    <div class="logo-kor">
+                        <h1><a href="#"><img src="./img/헤더/로고/로고(다크).png" alt="다크로고"></a></h1>  
+                    </div>
+                    <div class="logo-eng">
+                        <h1><a href="#"><img src="./img/헤더/로고/로고국제(다크).png" alt="다크로고국제"></a></h1>  
+                    </div>
+                    
+                </div><!--mainlogo-->
+    
+                <div class="search-login">
+                    <div class="search">
+                        <img src="./img/헤더/검색창/검색창돋보기(다크).png" alt="검색창돋보기">
+                        <input type="text" id="searchsection" placeholder="Search">
+                        <a href="https://www.catcare.or.kr/">
+                            <img src="./img/헤더/검색창/검색고양이(다크).png" alt="검색창고양이">
+                        </a>
+                    </div><!--search-->
+    
+                    <div class="login">
+                        <a href="https://www.catcare.or.kr/">
+                            <p>로그인</p>
+                        </a>
+                        <a href="#">
+                            <img src="./img/헤더/로그인(다크).png" alt="로그인">
+                        </a>
+                    </div><!--search-->
+                </div><!--search-login-->
+    
+                <div class="mainmenu">
+                    <div class="menu-flex-box">
+                        <nav class="gnb">
+                            <ul class="dept01">
+                                <li class="rootgnb"><a href="https://www.catcare.or.kr/introasso">단체 소개</a>
+                                    <ul class="dept02">
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/introasso">협회 소개</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/history">연혁</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/intromanager">구성</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/board_lKmL74">주요 활동</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="rootgnb"><a href="https://www.catcare.or.kr/townnot">공지사항</a>
+                                    <ul class="dept02">
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/townnot">공지사항</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/KOPCNewsletter">소식지</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/crdNEWs">카드 뉴스</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/misreport">바로 잡습니다</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="rootgnb"><a href="https://www.catcare.or.kr/dona">회비/후원</a>
+                                    <ul class="dept02">
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/donafreq">CMS 자동이체</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/donaup">회원 등업</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/donaaccs">후원 결산</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/shelter">쉼터/입양센터</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/share">기부 후원</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/goods">후원 살림방</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/donaq">후원 문의</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="rootgnb"><a href="https://www.catcare.or.kr/resofaq">길냥이 사랑</a>
+                                    <ul class="dept02">
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/FAQ">자주묻는 질문</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/resofaq">묻고 답하기</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/actitnr">TNR 신청</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/rgnlTNR">지방 TNR 신청</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/afterTNR">TNR 후기</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/actiasist">치료지원 신청</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/calculate">치료지원 정산게시판</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/rescue">협회구조/지원길냥이</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/actitrap">통덫 대여신청</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/crcage">철제 케어지 대여신청</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/actipherm">약품 신청</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/actiinform">홍보지 신청</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/acti09">사료 공동구매</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="rootgnb"><a href="https://www.catcare.or.kr/townboard">길냥이 마을</a>
+                                    <ul class="dept02">
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/townhi">오늘의 인사</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/townboard">길냥이 쉼터</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/townphoto">길냥이 사진관</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/townadop">입양 임보</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/dmeboard">후원회원게시판</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/townmall">고보협 장터</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/webtoon">칼럼/고보협뉴스</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="rootgnb"><a href="https://www.catcare.or.kr/resoboard">자료실</a>
+                                    <ul class="dept02">
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/index.php?mid=resoboard&category=139">동물 관련 법령</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/index.php?mid=resoboard&category=141">길고양이 알기</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/index.php?mid=resoboard&category=143">길고양이 TNR</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/index.php?mid=resoboard&category=531594">문서 자료</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/index.php?mid=resoboard&category=531596">언론 기사</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/index.php?mid=resoboard&category=531598">유용한 TIP</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/index.php?mid=resoboard&category=22846">동물 학대</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/resobook">동물 관련 서적</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/index.php?mid=resoboard&category=219">기타</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="rootgnb"><a href="https://www.catcare.or.kr/networkgroup">Cat Network</a>
+                                    <ul class="dept02">
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/networkgroup">풀뿌리 소모임</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/networkillegal">불법 행위 고발</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.catcare.or.kr/networkah">동물병원 추천</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav><!--gnb-->
+                    </div><!--menu-flex-box-->
+                </div><!--mainmenu-->
+            </div><!--container-->
+    
+            <div class="container">
+                <article class="intro">
+                    <div class="fade">
+                        <div class="ment">
+                            <h2>인간과 고양이는 <strong class="h2_strong">함께 할 수밖에 없습니다.</strong></h2>
+                            <p>
+                                도심속의 방랑자 <span class="orange">길고양이</span>...<br>
+                                대부분 사람들은 길고양이를 지켜주고자 하는 의지를 보이지만...<br>
+                                <span class="orange">그들에 대한 현대의 냉철한 시선</span>과<br>
+                                <span class="orange">의문사 및 폐사로 연일 생명을 잃는 길고양이</span>들이 끊이지 않고 있습니다.
+                            </p>
+            
+                            <p>
+                                길고양이 보호에 앞장서고 있는 단체.
+                            </p>
+            
+                            <strong class="p_strong">
+                                저희는 고보협입니다!
+                            </strong>
+                        </div><!--ment-->
+
+                        <p class="membertitle">
+                            고보협 회원 수 
+                        </p>
+        
+                        <p class="members">
+                            <span class="dial">NaN</span>&nbsp&nbsp명
+                        </p>
+                    </div><!--fade-->
+                    
+                </article><!--intro-->
+                <div class="usualmenu">
+                    <div class="usualflexmenu">
+                        <div class="usualmenu1">
+                            <a href="https://www.catcare.or.kr/resofaq">
+                                <img src="./img/메인/소개/아이콘/아이콘1.png" alt="길고양이 구조문의">
+                                <p>길고양이 구조문의</p>
+                            </a>
+                        </div><!--usualmenu1-->
+            
+                        <div class="usualmenu2">
+                            <a href="https://www.catcare.or.kr/townboard">
+                                <img src="./img/메인/소개/아이콘/아이콘2.png" alt="길냥이 쉼터">
+                                <p>길냥이 쉼터</p>
+                            </a>
+                        </div><!--usualmenu2-->
+            
+                        <div class="usualmenu3">
+                            <a href="https://www.catcare.or.kr/townmall">
+                                <img src="./img/메인/소개/아이콘/아이콘3.png" alt="고보협 장터">
+                                <p>고보협 장터</p>
+                            </a>
+                        </div><!--usualmenu3-->
+            
+                        <div class="usualmenu4">
+                            <a href="https://www.catcare.or.kr/dmeboard">
+                                <img src="./img/메인/소개/아이콘/아이콘4.png" alt="후원회원 게시판">
+                                <p>후원회원 게시판</p>
+                            </a>
+                        </div><!--usualmenu4-->
+            
+                        <div class="usualmenu5">
+                            <a href="https://www.catcare.or.kr/KOPCNewsletter">
+                                <img src="./img/메인/소개/아이콘/아이콘5.png" alt="고보협 소식지">
+                                <p>고보협 소식</p>
+                            </a>
+                        </div><!--usualmenu5-->
+                    </div><!--usualflexmenu-->
+                </div><!--usualmenu-->
+            </div><!--container-->
+        </header>
+    
+        <main>
+            <!-- <img class="mainstart" src="./img/메인/메인시작(라이트).png" alt="메인시작"> -->
+            <div class="donationer">
+                <div class="container">
+                    <section class="fadeL">
+                        <div class="donate">
+                            <h2>
+                                <span class="wait">잠깐! </span>
+                            </h2>
+                            <h3>
+                                자네 그냥 지나 갈거냥?
+                            </h3>
+                            <p>
+                                그냥 지나가도 뭐라 안 한다냥!<br>
+                                하지만 인간들아! 지금 인간을 향해 구원의 손길을 내미는<br>
+                                <strong class="p_donate">길고양이들의 간절함</strong>이 느껴지지 않는다냥?<br>
+                                그 길고양이들의 손을 잡아 줄 존재는 <br>
+                                고양이 보호 협회 사이트에 두 발로 걸어 들어온<br>
+                                <strong class="p_donate">자네 밖에 없다냥!</strong>
+                            </p>
+                            
+                            <div class="donate-button">
+                                <button class="godonate"><a href="https://mrmweb.hsit.co.kr/v2/Member/MemberJoin.aspx?action=join&server=W84VEl1nLFL/fBi1hLgWsA=="><img src="./img/메인/후원입양/후원(다크).png" alt="후원버튼">후원준비완료!</a></button>
+                                <button class="goadopt"><a href="https://www.catcare.or.kr/index.php?mid=townadop&category=4182"><img src="./img/메인/후원입양/집사(다크).png" alt="입양버튼">입양준비완료!</a></button>
+                            </div><!--donatebutton-->
+                            
+                        </div><!--donate-->
+                    </section>
+                </div><!--container-->
+            </div><!--donationer-->
+            
+
+            <div class="container">
+                <div class="challenges">
+                    <div class="fadeT">
+                        <h2 class="semititle">Challenges for Cat!</h2>
+                        <p class="semidescription">
+                            저희 고양이 보호협회는 길고양이를 위해 다양한 지원활동을 하고 있습니다.<br>
+                            여러분들의 적극적인 협조 및 후원 또한 저희 고보협과 길고양이에 힘이 될 수 있습니다!  
+                        </p>
+                    </div><!--fadeT-->
+                    <div class="fadeE">
+                        <div class="challenges-flex">
+                            <section class="work1">
+                                <div class="rescue">
+                                    <h3>구조 및 치료 지원</h3>
+                                    <a href="https://www.catcare.or.kr/index.php?mid=board_lKmL74&category=3814461">
+                                        <div class="imageframe">
+                                            <img src="./img/메인/역할/역할_규격화/사진a.png" alt="구조">
+                                        </div><!--imageframe-->
+                                    </a>
+                                    <div class="work_textbox">
+                                        <p>
+                                            저희 고보협에서는 전국 각지 회원분들의 신고를 통해 생명에 위태로움을 느껴 도움이 필요한 길고양이들을 여러분들의 후원금으로 구조 및 치료해주고 있습니다. 이처럼 여러분들의 후원과 관심은 길고양이를 위한 사랑이며 든든한 버팀목이 될 수 있습니다.
+                                        </p>    
+                                    </div><!--work_textbox-->  
+                                </div><!--rescue-->
+                            </section><!--work1-->
+            
+                            <section class="work2">
+                                <div class="tnr">
+                                    <h3>TNR 활동 개시</h3>
+                                    <a href="https://www.catcare.or.kr/index.php?mid=board_lKmL74&category=3814459">
+                                        <div class="imageframe">
+                                            <img src="./img/메인/역할/역할_규격화/사진b.png" alt="TNR"> 
+                                        </div><!--imageframe-->
+                                    </a>    
+                                    <div class="work_textbox">
+                                        <p>
+                                            길고양이 수의 기하급수적인 개체수 증가, 이로부터 발생되는 전염병 및 바이러스의 확산, 발정 및 영역 싸움으로 인한 소음 공해를 예방하고자 저희 고보협에서는 전국 길고양이들을 대상으로 인도적인 TNR을 적극 시행하고 있습니다.
+                                        </p>
+                                    </div><!--work_textbox-->
+                                </div><!--tnr-->
+                            </section><!--work2-->
+            
+                            <section class="work3">
+                                <div class="adoptcenter">
+                                    <h3>입양 센터 운영</h3>
+                                    <a href="https://www.catcare.or.kr/index.php?mid=board_lKmL74&category=3814474">
+                                        <div class="imageframe">
+                                            <img src="./img/메인/역할/역할_규격화/사진c.png" alt="입양센터">                                     
+                                        <div><!--imageframe-->
+                                    </a>
+                                    <div class="work_textbox">
+                                        <p>
+                                            매년 버려지는 수 만마리의 고양이의 안락사를 막기 위해 저희 고보협은 구조된 고양이들을 좋은 가족에 입양보내기 위해 입양지원을 철저히 하고 있습니다. 그리고 길고양이들이 입양되기전  잠시 지낼 수 있는 유기묘 쉼터를 자체적으로 운영하고 있습니다. 
+                                        </p>
+                                    </div><!--work_textbox-->
+                                </div><!--adoptcenter-->
+                            </section><!--work3-->
+                        </div><!--challenges-flex-->
+                    </div><!--fadeE-->
+                    
+                </div><!--challenges-->
+            </div><!--container-->
+
+
+
+            <div class="fadeB">
+                <div class="nyanzone">
+                    <div class="container">
+                        <div class="fadeE">
+                            <div class="photozone">
+                                <h2 class="semititle">Photo Zone</h2>
+                                <p class="semidescription">
+                                    여기는 길냥이 사진관이라냥!<br>
+                                    냥상권은 신경 안 써도 되니 마음껏 구경하고 가라냥!
+                                </p>
+                                <div class="photobox">
+                                    <ul>
+                                        <li>
+                                            <div class="photoframe">
+                                                <a href="https://www.catcare.or.kr/townphoto/4824909">
+                                                    <img src="./img/메인/길냥이 사진관/길냥이 사진관_규격화/cat1.png" alt="사진관1">
+                                                    <div class="phototime">
+                                                        <time datetime="2022-09-27T20:17:00">2022.09.27 <span class="smalltime">20:17</span></time>
+                                                    </div><!--phototime-->
+                                                    <span class="photoinfo">
+                                                        <div class="photoinfo-text">
+                                                            <p>by <span class="infoName">유회림_1...</span></p>
+                                                            <div class="photoinfo-flex">
+                                                                <div class="photoinfo-like">
+                                                                    <img src="./img/기타/좋아요(포토존).png" alt="좋아요">
+                                                                    <p class="ph_like">2</p>
+                                                                </div><!--photoinfo-like-->
+                                                                <div class="photoinfo-comment">
+                                                                    <img src="./img/기타/댓글(포토존).png" alt="댓글">
+                                                                    <p class="ph_comment">2</p>
+                                                                </div><!--photoinfo-comment-->
+                                                            </div><!--photoinfo-flex-->
+                                                        </div><!--photoinfo-text--> 
+                                                    </span>
+                                                </a>
+                                            </div><!--photoframe-->
+                                        </li>
+            
+                                        <li>
+                                            <div class="photoframe">
+                                                <a href="https://www.catcare.or.kr/townphoto/4821811">
+                                                    <img src="./img/메인/길냥이 사진관/길냥이 사진관_규격화/cat2.png" alt="사진관2">
+                                                    <div class="phototime">
+                                                        <time datetime="2022-09-17T21:23:00">2022.09.17 <span class="smalltime">21:23</span></time>
+                                                    </div><!--phototime-->
+                                                    <span class="photoinfo">
+                                                        <div class="photoinfo-text">
+                                                            <p>by <span class="infoName">달팽</span></p>
+                                                            <div class="photoinfo-flex">
+                                                                <div class="photoinfo-like">
+                                                                    <img src="./img/기타/좋아요(포토존).png" alt="좋아요">
+                                                                    <p class="ph_like">4</p>
+                                                                </div><!--photoinfo-like-->
+                                                                <div class="photoinfo-comment">
+                                                                    <img src="./img/기타/댓글(포토존).png" alt="댓글">
+                                                                    <p class="ph_comment">3</p>
+                                                                </div><!--photoinfo-comment-->
+                                                            </div><!--photoinfo-flex-->
+                                                        </div><!--photoinfo-text-->
+                                                    </span>
+                                                </a>
+                                            </div><!--photoframe-->
+                                        </li>
+            
+                                        <li>
+                                            <div class="photoframe">
+                                                <a href="https://www.catcare.or.kr/index.php?mid=townphoto&page=2&document_srl=4816351">
+                                                    <img src="./img/메인/길냥이 사진관/길냥이 사진관_규격화/cat3.png" alt="사진관3">
+                                                    <div class="phototime">
+                                                        <time datetime="2022-09-11T21:46:00">2022.09.11 <span class="smalltime">21:46</span></time>
+                                                    </div><!--phototime-->
+                                                    <span class="photoinfo">
+                                                        <div class="photoinfo-text">
+                                                            <p>by <span class="infoName">뀰냥이</span></p>
+                                                            <div class="photoinfo-flex">
+                                                                <div class="photoinfo-like">
+                                                                    <img src="./img/기타/좋아요(포토존).png" alt="좋아요">
+                                                                    <p class="ph_like">4</p>
+                                                                </div><!--photoinfo-like-->
+                                                                <div class="photoinfo-comment">
+                                                                    <img src="./img/기타/댓글(포토존).png" alt="댓글">
+                                                                    <p class="ph_comment">6</p>
+                                                                </div><!--photoinfo-comment-->
+                                                            </div><!--photoinfo-flex-->
+                                                        </div><!--photoinfo-text-->
+                                                    </span>
+                                                </a>
+                                            </div><!--photoframe-->
+                                        </li>
+            
+                                        <li>
+                                            <div class="photoframe">
+                                                <a href="https://www.catcare.or.kr/index.php?mid=townphoto&page=2&document_srl=4816210">
+                                                    <img src="./img/메인/길냥이 사진관/길냥이 사진관_규격화/cat4.png" alt="사진관4">
+                                                    <div class="phototime">
+                                                        <time datetime="2022-09-11T12:26:00">2022.09.11 <span class="smalltime">12:26</span></time>
+                                                    </div><!--phototime-->
+                                                    <span class="photoinfo">
+                                                        <div class="photoinfo-text">
+                                                            <p>by <span class="infoName">냥냥펀치스</span></p>
+                                                            <div class="photoinfo-flex">
+                                                                <div class="photoinfo-like">
+                                                                    <img src="./img/기타/좋아요(포토존).png" alt="좋아요">
+                                                                    <p class="ph_like">7</p>
+                                                                </div><!--photoinfo-like-->
+                                                                <div class="photoinfo-comment">
+                                                                    <img src="./img/기타/댓글(포토존).png" alt="댓글">
+                                                                    <p class="ph_comment">5</p>
+                                                                </div><!--photoinfo-comment-->
+                                                            </div><!--photoinfo-flex-->
+                                                        </div><!--photoinfo-text-->
+                                                    </span>
+                                                </a>
+                                            </div><!--photoframe-->
+                                        </li>
+            
+                                        <li>
+                                            <div class="photoframe">
+                                                <a href="https://www.catcare.or.kr/index.php?mid=townphoto&page=2&document_srl=4815513">
+                                                    <img src="./img/메인/길냥이 사진관/길냥이 사진관_규격화/cat5.png" alt="사진관5">
+                                                    <div class="phototime">
+                                                        <time datetime="2022-09-08T15:38:00">2022.09.08 <span class="smalltime">15:38</span></time>
+                                                    </div><!--phototime-->
+                                                    <span class="photoinfo">
+                                                        <div class="photoinfo-text">
+                                                            <p>by <span class="infoName">이운</span></p>
+                                                            <div class="photoinfo-flex">
+                                                                <div class="photoinfo-like">
+                                                                    <img src="./img/기타/좋아요(포토존).png" alt="좋아요">
+                                                                    <p class="ph_like">9</p>
+                                                                </div><!--photoinfo-like-->
+                                                                <div class="photoinfo-comment">
+                                                                    <img src="./img/기타/댓글(포토존).png" alt="댓글">
+                                                                    <p class="ph_comment">6</p>
+                                                                </div><!--photoinfo-comment-->
+                                                            </div><!--photoinfo-flex-->
+                                                        </div><!--photoinfo-text-->
+                                                    </span>
+                                                </a>
+                                            </div><!--photoframe-->
+                                        </li>
+            
+                                        <li>
+                                            <div class="photoframe">
+                                                <a href="https://www.catcare.or.kr/index.php?mid=townphoto&page=2&document_srl=4812580">
+                                                    <img src="./img/메인/길냥이 사진관/길냥이 사진관_규격화/cat6.png" alt="사진관6">
+                                                    <div class="phototime">
+                                                        <time datetime="2022-09-04T07:48:00">2022.09.04 <span class="smalltime">07:48</span></time>
+                                                    </div><!--phototime-->
+                                                    <span class="photoinfo">
+                                                        <div class="photoinfo-text">
+                                                            <p>by <span class="infoName">서구둥둥</span></p>
+                                                            <div class="photoinfo-flex">
+                                                                <div class="photoinfo-like">
+                                                                    <img src="./img/기타/좋아요(포토존).png" alt="좋아요">
+                                                                    <p class="ph_like">10</p>
+                                                                </div><!--photoinfo-like-->
+                                                                <div class="photoinfo-comment">
+                                                                    <img src="./img/기타/댓글(포토존).png" alt="댓글">
+                                                                    <p class="ph_comment">12</p>
+                                                                </div><!--photoinfo-comment-->
+                                                            </div><!--photoinfo-flex-->
+                                                        </div><!--photoinfo-text-->
+                                                    </span>
+                                                </a>
+                                            </div><!--photoframe-->
+                                        </li>
+                                    </ul>
+        
+                                    <div class="photobutton">
+                                        <a href="#" class="photoleft">
+                                            <img src="./img/기타/L방향(라이트).png" alt="왼쪽화살표">
+                                        </a>
+                                        <a href="#" a class="photoright">
+                                            <img src="./img/기타/R방향(라이트).png" alt="오른쪽화살표">
+                                        </a>
+                                    </div><!--photobutton-->
+            
+                                    <div class="pagemap">
+                                        <a href="#"><img src="./img/기타/페이지맵(라이트).png" alt="페이지맵"></a>
+                                        <a href="#"><img src="./img/기타/페이지맵2(라이트).png" alt="페이지맵2"></a>
+                                        <a href="#"><img src="./img/기타/페이지맵2(라이트).png" alt="페이지맵2"></a>
+                                        <a href="#"><img src="./img/기타/페이지맵2(라이트).png" alt="페이지맵2"></a>
+                                        <a href="#"><img src="./img/기타/페이지맵2(라이트).png" alt="페이지맵2"></a>
+                                        <a href="#"><img src="./img/기타/페이지맵2(라이트).png" alt="페이지맵2"></a>
+                                        <a href="#"><img src="./img/기타/페이지맵2(라이트).png" alt="페이지맵2"></a>
+                                        <a href="#"><img src="./img/기타/페이지맵2(라이트).png" alt="페이지맵2"></a>
+                                        <a href="#"><img src="./img/기타/페이지맵2(라이트).png" alt="페이지맵2"></a>
+                                        <a href="#"><img src="./img/기타/페이지맵2(라이트).png" alt="페이지맵2"></a>
+                                    </div><!--pagemap-->
+                                </div><!--photobox-->
+                            </div><!--photozone-->
+                        </div><!--fadeE-->
+                        
+                        <div class="fadeE">
+                            <div class="newszone">
+                                <h2 class="semititle">News Zone</h2>
+                                <p class="semidescription">
+                                    여기는 길냥이 뉴스존이다냥!<br>
+                                    우리에게 관심 좀 가져달라냥!
+                                </p>
+        
+                                <div class="newsbighead">
+                                    <div class="newsflex">
+                                        <div class="news1">
+                                            <a href="https://www.catcare.or.kr/index.php?mid=webtoon&page=2&document_srl=4808858">
+                                                <div class="newsbox1">
+                                                    <div class="profilearea">
+                                                        <div class="newsprofile">
+                                                            <img src="./img/메인/카드뉴스/프로필.png" alt="프로필사진">
+                                                        </div><!--newsprofile-->
+                                                        <p>운영지원2</p>
+                                                    </div><!--profilearea-->
+                                                    <div class="imagearea">
+                                                            <img src="./img/메인/카드뉴스/카드뉴스_규격화/뉴스1.png" alt="카드뉴스1">
+                                                    </div><!--imagearea-->
+                        
+                                                    <div class="contentarea">
+                                                        <h4>22.08   고보협소식지_입양후기-평생가족을 ...</h4>
+                                                        <p>
+                                                            2022년 7월  평생가족을 만난 단밤, 알밤, 군밤, 수리, 꿀밤! 꿉꿉한 장마기간에도 매일 매일 맑음처럼 지낸 우리 다섯친구들이 가족을 만나고 한달이 지난 지금 얼마나 더 사랑하고 사랑받으며 함께 만나보아요~!...
+                                                        </p>
+                                                    </div><!--contentarea-->
+                                                    
+                                                    <div class="informarea">
+                                                        <time datetime="2022-08-30T14:22">2022.08.30</time>
+                                                        <div class="newsindex">
+                                                            <div class="newslike">
+                                                                <img src="./img/기타/좋아요(뉴스존라이트).png" alt="좋아요">
+                                                                <p class="likecommnet">0</p>
+                                                            </div><!--newslike-->
+                                                            <div class="newscomment">
+                                                                <img src="./img/기타/댓글(뉴스존라이트).png" alt="댓글">
+                                                                <p class="likecommnet">0</p>
+                                                            </div><!--newscomment-->
+                                                        </div><!--newsindex-->
+                                                    </div><!--informarea-->
+                                                </div><!--newsbox1-->
+                                            </a>    
+                                        </div><!--news1-->
+                    
+                                        <div class="news2">
+                                            <a href="https://www.catcare.or.kr/index.php?mid=webtoon&page=2&document_srl=4808762">
+                                                <div class="newsbox2">
+                                                    <div class="profilearea">
+                                                        <div class="newsprofile">
+                                                            <img src="./img/메인/카드뉴스/프로필.png" alt="프로필사진">
+                                                        </div><!--newsprofile-->
+                                                        <p>운영지원</p>
+                                                    </div><!--profilearea-->
+                        
+                                                    <div class="imagearea">
+                                                            <img src="./img/메인/카드뉴스/카드뉴스_규격화/뉴스2.png" alt="카드뉴스1">
+                                                    </div><!--imagearea-->
+                        
+                                                    <div class="contentarea">
+                                                        <h4>22.08   고보협소식지_숫자로 보는 간단 현황</h4>
+                                                        <p>
+                                                            해당 카드뉴스의 내용이 없습니다. 
+                                                        </p>
+                                                    </div><!--contentarea-->
+                        
+                                                    <div class="informarea">
+                                                        <time datetime="2022-08-30T12:27">2022.08.30</time>
+                                                        <div class="newsindex">
+                                                            <div class="newslike">
+                                                                <img src="./img/기타/좋아요(뉴스존라이트).png" alt="좋아요">
+                                                                <p class="likecommnet">1</p>
+                                                            </div><!--newslike-->
+                                                            <div class="newscomment">
+                                                                <img src="./img/기타/댓글(뉴스존라이트).png" alt="댓글">
+                                                                <p class="likecommnet">0</p>
+                                                            </div><!--newscomment-->
+                                                        </div><!--newsindex-->
+                                                    </div><!--informarea-->
+                                                </div><!--newsbox2-->
+                                            </a>    
+                                        </div><!--news2-->
+                    
+                                        <div class="news3">
+                                            <a href="https://www.catcare.or.kr/index.php?mid=webtoon&page=2&document_srl=4807506">
+                                                <div class="newsbox3">
+                                                    <div class="profilearea">
+                                                        <div class="newsprofile">
+                                                            <img src="./img/메인/카드뉴스/프로필.png" alt="프로필사진">
+                                                        </div><!--newsprofile-->
+                                                        <p>관리담당자</p>
+                                                    </div><!--profilearea-->
+                        
+                                                    <div class="imagearea">
+                                                            <img src="./img/메인/카드뉴스/카드뉴스_규격화/뉴스3.png" alt="카드뉴스3">
+                                                    </div><!--imagearea-->
+                        
+                                                    <div class="contentarea">
+                                                        <h4>22.08 고보협소식지_입양홍보-협회구조된...</h4>
+                                                        <p>
+                                                            ▶ 담장이 입양 홍보  [신청서 마감]  > 다른 협회아이들 입양홍보글 보러가기<br><br>
+                    
+                                                            ▶ 담담이 입양 홍보  [신청서 마감]  > 다른 협회아이들 입양홍보글 보러가기
+                                                        </p>
+                                                    </div><!--contentarea-->
+                        
+                                                    <div class="informarea">
+                                                        <time datetime="2022-08-29T09:49">2022.08.29</time>
+                                                        <div class="newsindex">
+                                                            <div class="newslike">
+                                                                <img src="./img/기타/좋아요(뉴스존라이트).png" alt="좋아요">
+                                                                <p class="likecommnet">0</p>
+                                                            </div><!--newslike-->
+                                                            <div class="newscomment">
+                                                                <img src="./img/기타/댓글(뉴스존라이트).png" alt="댓글">
+                                                                <p class="likecommnet">1</p>
+                                                            </div><!--newscomment-->
+                                                        </div><!--newsindex-->
+                                                    </div><!--informarea-->
+                                                </div><!--newsbox3-->
+                                            </a>    
+                                        </div><!--news3-->
+                                    </div><!--newsflex-->
+        
+                                    <div class="newsbutton">
+                                        <a href="#" class="newsleft">
+                                            <img src="./img/기타/L방향(라이트).png" alt="왼쪽화살표">
+                                        </a>
+                                        <a href="#" a class="newsright">
+                                            <img src="./img/기타/R방향(라이트).png" alt="오른쪽화살표">
+                                        </a>
+                                    </div><!--newsbutton-->
+                                    
+                                    <div class="pagemap">
+                                        <a href="#"><img src="./img/기타/페이지맵(라이트).png" alt="페이지맵"></a>
+                                        <a href="#"><img src="./img/기타/페이지맵2(라이트).png" alt="페이지맵2"></a>
+                                        <a href="#"><img src="./img/기타/페이지맵2(라이트).png" alt="페이지맵2"></a>
+                                        <a href="#"><img src="./img/기타/페이지맵2(라이트).png" alt="페이지맵2"></a>
+                                        <a href="#"><img src="./img/기타/페이지맵2(라이트).png" alt="페이지맵2"></a>
+                                        <a href="#"><img src="./img/기타/페이지맵2(라이트).png" alt="페이지맵2"></a>
+                                        <a href="#"><img src="./img/기타/페이지맵2(라이트).png" alt="페이지맵2"></a>
+                                        <a href="#"><img src="./img/기타/페이지맵2(라이트).png" alt="페이지맵2"></a>
+                                        <a href="#"><img src="./img/기타/페이지맵2(라이트).png" alt="페이지맵2"></a>
+                                        <a href="#"><img src="./img/기타/페이지맵2(라이트).png" alt="페이지맵2"></a>
+                                    </div><!--pagemap-->
+                                </div><!--newsbighead-->
+                            </div><!--newszone-->
+                        </div><!--fadeE-->    
+                    </div><!--container-->
+                </div><!--nyanzone-->
+            </div><!--fadeB-->
+        
+            <div class="cagit">
+                <div class="container">
+                    <div class="community">
+                        <div class="fadeT">
+                            <h2 class="semititle">Community Agit!</h2>
+                            <p class="semidescription">
+                                이 공간은 저희 고보협 직원 혹은 회원분들 간에<br> 
+                                담소를 나누고 정보를 공유할 수 있는 공간입니다.
+                            </p>
+                        </div><!--fadeT-->
+
+                        <div class="fadeE">
+                            <div class="agit-flex-box">
+                                <div class="agitbox">
+                                    <div class="agittitle">
+                                        <a href="https://www.catcare.or.kr/townnot">
+                                            <h3>공지사항</h3>
+                                        </a>
+                                    </div><!--agittitle1-->
+                                    <div class="agitentire">
+                                        <div class="agitbest">
+                                            <a href="https://www.catcare.or.kr/index.php?_filter=search&mid=townnot&search_keyword=%EB%8B%A8%ED%92%8D%EB%83%A5%EC%9D%B4&search_target=title_content&document_srl=4820526">
+                                                <section class="bestimg">
+                                                    <img src="./img/메인/3구역/규격화/자유게시판-대표글.png" alt="공지사항대표글">
+                                                </section>
+                                                <section class="bestline">
+                                                    <h4>2022년 단풍냥이 TNR 시작합...</h4>
+                                                    <p class="bestcon">
+                                                        안녕하세요. 한국고양이보호협회입니다. 2022년 단풍냥이 TNR 캠페인 지원안내 드립니다. 넉넉하지 못한 협회 살림에도 불구하고 전국 길고양이들이 발정과 출산...
+                                                    </p>
+                                                    <p class="bestinfo">
+                                                        <time datetime="2022-09-16T18:42">09-16</time> 관리담당자
+                                                    </p>
+                                                </section>
+                                            </a>
+                                        </div><!--agitbest-->
+                                        <div class="agitcontents">
+                                            <a href="https://www.catcare.or.kr/townnot/4808667">
+                                                <p>
+                                                    <time datetime="2022-08-30T11:00">08-30</time> [#든든캠페인_9월] 길고양이의 든든한 한 끼, 캐츠맘...
+                                                </p>
+                                            </a>
+                
+                                            <a href="https://www.catcare.or.kr/townnot/4806097">
+                                                <p>
+                                                    <time datetime="2022-08-26T10:41">08-26</time> [#나눔분배사업프로젝트_비엠스마일 모래] 비엠스,,,
+                                                </p>
+                                            </a>
+                
+                                            <a href="https://www.catcare.or.kr/townnot/4785803">
+                                                <p>
+                                                    <time datetime="2022-07-29T00:00">07-29</time>
+                                                    [마감][#든든캠페인_8월] 길고양이의 든든한 한 끼, ...
+                                                </p>
+                                            </a>
+                
+                                            <a href="https://www.catcare.or.kr/townnot/4785517">
+                                                <p>
+                                                    <time datetime="2022-07-29T00:00">07-29</time>
+                                                    [#고보협치료2022상반기결산] 길고양이들의 삶을 ...
+                                                </p>
+                                            </a>
+                
+                                            <a href="https://www.catcare.or.kr/townnot/4783576">
+                                                <p>
+                                                    <time datetime="2022-07-27T00:00">07-27</time>
+                                                    [#나눔분배사업프로젝트_알모네이쳐] 알모네이쳐와...
+                                                </p>
+                                            </a>
+                
+                                            <a href="https://www.catcare.or.kr/townnot/4772797">
+                                                <p>
+                                                    <time datetime="2022-07-13T00:00">07-13</time>
+                                                    [마감]2023 한국고양이보호협회 달력사진 공모전에...
+                                                </p>
+                                            </a>
+                
+                                            <a href="https://www.catcare.or.kr/townnot/4763913">
+                                                <p>
+                                                    <time datetime="2022-06-30T00:00">06-30</time>
+                                                    [마감][#든든캠페인_7월] 길고양이의 든든한 한 끼, ...
+                                                </p>
+                                            </a>
+                
+                                            <a href="https://www.catcare.or.kr/townnot/4761787">
+                                                <p>
+                                                    <time datetime="2022-06-27T00:00">06-27</time>
+                                                    [#나눔분배사업프로젝트_쿨방석] 폴햄과 함께하는 ...
+                                                </p>
+                                            </a>
+                
+                                            <a href="https://www.catcare.or.kr/townnot/4758962">
+                                                <p>
+                                                    <time datetime="2022-06-22T00:00">06-22</time>
+                                                    [#결연후원_쿠크] 마음입양으로 쿠크의 대가족이 ...
+                                                </p>
+                                            </a>
+                
+                                            <a href="https://www.catcare.or.kr/townnot/4740644">
+                                                <p>
+                                                    <time datetime="2022-05-31T00:00">05-31</time>
+                                                    한국고양이보호협회 회원용 하나멤버스카드 후원금...
+                                                </p>
+                                            </a>
+                                            <a href="https://www.catcare.or.kr/townnot"><p>more</p></a>
+                                        </div><!--agitcontents-->
+                                    </div><!--agitentire-->
+                                    
+                                </div><!--agitbox-->
+            
+                                <div class="agitbox">
+                                    <div class="agittitle">
+                                        <a href="https://www.catcare.or.kr/index.php?mid=townadop&category=264">
+                                            <h3>입양게시판</h3>
+                                        </a>
+                                    </div><!--agittitle-->
+                                    <div class="agitentire">
+                                        <div class="agitbest">
+                                            <a href="https://www.catcare.or.kr/index.php?mid=townadop&category=264&document_srl=4828912">
+                                                <section class="bestimg">
+                                                    <img src="./img/메인/3구역/규격화/입양게시판-대표글.png" alt="입양게시판대표글">
+                                                </section>
+                                                <section class="bestline">
+                                                    <h4>후지마비 고양이 ‘요비’의 평생...</h4>
+                                                    <p class="bestcon">
+                                                        요비는 상명대학교 캠퍼스 내 교통사고를 당한 상명대 고양이였습니다. 상명대학교 동물권 동아리 상냥행에서 구조하고 치료를 받았으나 후지마비 판정을 받았습니다...
+                                                    </p>
+                                                    <p class="bestinfo">
+                                                        <time datetime="2022-09-23T00:00">09-23</time> 
+                                                        상냥행
+                                                    </p>
+                                                </section>
+                                            </a>
+                                        </div><!--agitbest-->
+                                        <div class="agitcontents">
+                                            <a href="https://www.catcare.or.kr/index.php?mid=townadop&category=264&document_srl=4839427">
+                                                <p>
+                                                    <time datetime="2022-09-22T00:00">09-22</time>
+                                                    구청 TNR후 방사예정 고양이 입양가능하신분 찾아요.
+                                                </p>
+                                            </a>
+                
+                                            <a href="https://www.catcare.or.kr/index.php?mid=townadop&category=264&document_srl=4835354">
+                                                <p>
+                                                    <time datetime="2022-09-21T00:00">09-21</time>
+                                                    1개월 아기고양이 입니다
+                                                </p>
+                                            </a>
+                
+                                            <a href="https://www.catcare.or.kr/index.php?mid=townadop&category=264&document_srl=4823974">
+                                                <p>
+                                                    <time datetime="2022-09-20T00:00">09-20</time>
+                                                    2021년 겨울에 구조한 삼순이가 가족을 애타게 기다...
+                                                </p>
+                                            </a>
+                
+                                            <a href="https://www.catcare.or.kr/index.php?mid=townadop&category=264&document_srl=4822157">
+                                                <p>
+                                                    <time datetime="2022-09-18T00:00">09-18</time>
+                                                    (가족찾아요)러시안블루 수컷 4~5세 추정
+                                                </p>
+                                            </a>
+                
+                                            <a href="https://www.catcare.or.kr/index.php?mid=townadop&category=264&document_srl=4822141">
+                                                <p>
+                                                    <time datetime="2022-09-18T00:00">09-18</time>
+                                                    고생을 많이해서 이제는 행복해졌으면 하는 길냥이 ...
+                                                </p>
+                                            </a>
+                
+                                            <a href="https://www.catcare.or.kr/index.php?mid=townadop&category=264&document_srl=4821650">
+                                                <p>
+                                                    <time datetime="2022-09-17T00:00">09-17</time>
+                                                    ♥초코,쿠키의 평생가족을 찾아요♥
+                                                </p>
+                                            </a>
+                
+                                            <a href="https://www.catcare.or.kr/index.php?mid=townadop&category=264&document_srl=4819642">
+                                                <p>
+                                                    <time datetime="2022-09-15T00:00">09-15</time>
+                                                    6남매 아기고양이 들의 가족이 되어주세요
+                                                </p>
+                                            </a>
+                
+                                            <a href="https://www.catcare.or.kr/index.php?mid=townadop&category=264&document_srl=4817874">
+                                                <p>
+                                                    <time datetime="2022-09-13T00:00">09-13</time>
+                                                    왕자와공주의 평생 가족을 찾습니다!!
+                                                </p>
+                                            </a>
+                
+                                            <a href="https://www.catcare.or.kr/index.php?mid=townadop&category=264&document_srl=4817661">
+                                                <p>
+                                                    <time datetime="2022-09-13T00:00">09-13</time>
+                                                    꼬물이 보름이와 루니의 임보 /입양처 구합니다.
+                                                </p>
+                                            </a>
+                
+                                            <a href="https://www.catcare.or.kr/index.php?mid=townadop&category=264&document_srl=4817321">
+                                                <p>
+                                                    <time datetime="2022-09-13T00:00">09-13</time>
+                                                    (전지역) 9월 30일 길에 방생되는 3개월 아깽이와 어...
+                                                </p>
+                                            </a>
+                
+                                            <a href="https://www.catcare.or.kr/index.php?mid=townadop&category=264"><p>more</p></a>
+                                        </div><!--agitcontents-->
+                                    </div><!--agitentire-->
+                                </div><!--agitbox-->
+                                <div class="agitbox">
+                                    <div class="agittitle">
+                                        <a href="https://www.catcare.or.kr/townboard">
+                                            <h3>길냥이 쉼터</h3>
+                                        </a>
+                                    </div><!--agittitle-->
+                                    <div class="agitentire">
+                                        <div class="agitbest">
+                                            <a href="https://www.catcare.or.kr/townboard/4829390">
+                                                <section class="bestimg">
+                                                    <img src="./img/메인/3구역/규격화/길냥이 쉼터-대표글.png" alt="길냥이쉼터대표글">
+                                                </section>
+                                                <section class="bestline">
+                                                    <h4>3주 아가냥이는 따뜻한 가족의...</h4>
+                                                    <p class="bestcon">
+                                                        길고양이 밥 주던 장소에 어미한테 한참 예쁨 받던 아가냥이 네 마리 버려진 것을 보고 급하게 구조 집에서 임보라도 하려고 했으나 원래 키우던 고양이 두 마리가 밥도 안...
+                                                    </p>
+                                                    <p class="bestinfo">
+                                                        <time datetime="2022-09-23T00:00">09-23</time> 
+                                                        냠냐미
+                                                    </p>
+                                                </section>
+                                            </a>
+                                        </div><!--agitbest-->
+                                        <div class="agitcontents">
+                                            <a href="https://www.catcare.or.kr/townboard/4814325">
+                                                <p>
+                                                    <time datetime="2022-09-06T00:00">09-06</time>
+                                                    (인천 청라) 밤색 고등어 + 카오스 고양이를 찾습니...
+                                                </p>
+                                            </a>
+                
+                                            <a href="https://www.catcare.or.kr/townboard/4814261">
+                                                <p>
+                                                    <time datetime="2022-09-06T00:00">09-06</time>
+                                                    부탁드립니다 >>함께 민원 넣어주세요: 부천시 전은...
+                                                </p>
+                                            </a>
+                
+                                            <a href="https://www.catcare.or.kr/townboard/4811968">
+                                                <p>
+                                                    <time datetime="2022-09-02T00:00">09-02</time>
+                                                    전단지배포사진첨부합니다 
+                                                </p>
+                                            </a>
+                
+                                            <a href="https://www.catcare.or.kr/townboard/4809756">
+                                                <p>
+                                                    <time datetime="2022-08-31T00:00">08-31</time>
+                                                    < 동물은 물건이 아니다 > 민법 개정 촉구 사전전_ ...
+                                                </p>
+                                            </a>
+                
+                                            <a href="https://www.catcare.or.kr/townboard/4802385">
+                                                <p>
+                                                    <time datetime="2022-08-22T00:00">08-22</time>
+                                                    고보협 전단 스티커 사용후기
+                                                </p>
+                                            </a>
+                
+                                            <a href="https://www.catcare.or.kr/townboard/4802168">
+                                                <p>
+                                                    <time datetime="2022-08-22T00:00">08-22</time>
+                                                    홍보지 사료 스티커 후기 
+                                                </p>
+                                            </a>
+                
+                                            <a href="https://www.catcare.or.kr/townboard/4801505">
+                                                <p>
+                                                    <time datetime="2022-08-22T00:00">08-22</time>
+                                                    사료 스티커 신청합니다. 
+                                                </p>
+                                            </a>
+                
+                                            <a href="https://www.catcare.or.kr/townboard/4795251">
+                                                <p>
+                                                    <time datetime="2022-08-14T00:00">08-14</time>
+                                                    사료 문의 
+                                                </p>
+                                            </a>
+                
+                                            <a href="https://www.catcare.or.kr/townboard/4795177">
+                                                <p>
+                                                    <time datetime="2022-08-13T00:00">08-13</time>
+                                                    월요일부터 한마리 안보이네요....
+                                                </p>
+                                            </a>
+                
+                                            <a href="https://www.catcare.or.kr/townboard/4792810">
+                                                <p>
+                                                    <time datetime="2022-09-13T00:00">08-10</time>
+                                                    역곡한국아파트 길고양이 급식소 8월31일 철거 요청...
+                                                </p>
+                                            </a>
+                
+                                            <a href="https://www.catcare.or.kr/townboard"><p>more</p></a>
+                                        </div><!--agitcontents-->
+                                    </div><!--agitentire-->  
+                                </div><!--agitbox-->
+                            </div><!--agit-flex-box--> 
+                        </div><!--fadeE-->
+                        
+                    </div><!--community-->
+                </div><!--container-->
+            </div><!--cagit-->   
+        </main>
+        <footer>
+            <div class="nyanstagram">
+                <div class="container">
+                    <h3>
+                        <a href="https://www.instagram.com/catcare2005/">Nyanstagram</a>
+                    </h3>
+                </div><!--container-->
+                <div class="container">
+                    <div class="nyanphoto">
+                        <ul>
+                            <li><a href="https://www.instagram.com/p/Ci2HCpkL2ae/?utm_source=ig_web_copy_link"><img src="./img/footer/냥스타그램/냥스타그램규격화/사진1.png" alt="냥스타1"></a></li>
+                            <li><a href="https://www.instagram.com/p/CiudJodLcEh/?utm_source=ig_web_copy_link"><img src="./img/footer/냥스타그램/냥스타그램규격화/사진2.png" alt="냥스타2"></a></li>
+                            <li><a href="https://www.instagram.com/p/CirtaKzL0Zb/?utm_source=ig_web_copy_link"><img src="./img/footer/냥스타그램/냥스타그램규격화/사진3.png" alt="냥스타3"></a></li>
+                            <li><a href="https://www.instagram.com/p/ChtNALsPFaz/?utm_source=ig_web_copy_link"><img src="./img/footer/냥스타그램/냥스타그램규격화/사진4.png" alt="냥스타4"></a></li>
+                            <li><a href="https://www.instagram.com/p/Cie3ufeJLBJ/?utm_source=ig_web_copy_link"><img src="./img/footer/냥스타그램/냥스타그램규격화/사진5.png" alt="냥스타5"></a></li>
+                        </ul>
+                    </div><!--nyanphoto-->
+                    <div class="pagemap">
+                        <a href="#"><img src="./img/기타/페이지맵(라이트).png" alt="페이지맵"></a>
+                        <a href="#"><img src="./img/기타/페이지맵2(라이트).png" alt="페이지맵2"></a>
+                        <a href="#"><img src="./img/기타/페이지맵2(라이트).png" alt="페이지맵2"></a>
+                        <a href="#"><img src="./img/기타/페이지맵2(라이트).png" alt="페이지맵2"></a>
+                        <a href="#"><img src="./img/기타/페이지맵2(라이트).png" alt="페이지맵2"></a>
+                        <a href="#"><img src="./img/기타/페이지맵2(라이트).png" alt="페이지맵2"></a>
+                        <a href="#"><img src="./img/기타/페이지맵2(라이트).png" alt="페이지맵2"></a>
+                        <a href="#"><img src="./img/기타/페이지맵2(라이트).png" alt="페이지맵2"></a>
+                        <a href="#"><img src="./img/기타/페이지맵2(라이트).png" alt="페이지맵2"></a>
+                        <a href="#"><img src="./img/기타/페이지맵2(라이트).png" alt="페이지맵2"></a>
+                    </div><!--pagemap-->
+                </div><!--container-->
+                <div class="nyastabutton">
+                    <li><a href="#"><img src="./img/기타/L방향(라이트).png" alt="왼쪽화살표"></a></li>
+                    <li><a href="#"><img src="./img/기타/R방향(라이트).png" alt="오른쪽화살표"></a></li>
+                </div>
+            </div><!--nyanstagram-->
+            
+            <div class="footer-alert">
+                <div class="container">
+                    <div class="alert-flex">
+                        <div class="alert-text">
+                            <p>문의 전화 폭주로 전화 응대가 어렵습니다. 빠른 답변을 원하시면 <strong class = "gray">묻고 답하기</strong> 메뉴를 이용해 주세요.(문자,SNS상담불가)</p>
+                        </div><!--alert-text-->
+                        <div class="alert-button">
+                            <button><a href="https://www.catcare.or.kr/resofaq">묻고 답하기</a></button>
+                            <button><a href="https://www.catcare.or.kr/FAQ">FAQ</a></button>
+                        </div><!--footer-button-->
+                    </div><!--alert-flex-->
+                </div><!--container-->
+            </div><!--footer-alert-->
+            <div class="container">
+                <div class="logo-copyright-address-footdonate">
+                    <div class="footer2-flex">
+                        <div class="footer-logo">
+                            <img src="./img/footer/푸터로고/푸터로고(상용).png" alt="footer로고">
+                        </div>
+                        <div class="copyright">
+                            <p class="copyright">
+                                <strong class="copytitle">Copyright(c) 한국고양이보호협회</strong>
+                                (KOPC, Korean Organization for the Protection of Cats) All rights reserved.
+                            </p>
+                        </div>
+                        <div class="address">
+                            <address>
+                                <ul>
+                                    <li>한국고양이보호협회_대표_박선미</li>
+                                    <li>고유증번호_10880_07880</li>
+                                    <li>연락처_070-7426-4888</li>
+                                    <li>메일 kopc@catcare.or.kr</li>
+                                    <li>본부_서울시 동대문구 답십리로 226</li>
+                                </ul>
+                            </address>
+                        </div><!--address-->
+                        <div class="footdonate">
+                            <form action="#" method="post" class="formdonate">
+                                <h3>후원 문의</h3>
+                                <div class="label-input-flex">
+                                    <label for="aname">이름</label>
+                                    <input type="text" id="aname" placeholder="키드캣" required>
+                                </div><!--label-input-flex-->
+
+                                <div class="label-input-flex">
+                                    <label for="amail">이메일</label>
+                                <input type="email" id="amail" placeholder="kidcatlolly@gmail.com" required>
+                                </div><!--label-input-flex-->
+
+                                <div class="label-input-flex">
+                                    <label for="aphone">전화번호</label>
+                                    <input type="text" id="aphone" maxlength="11" placeholder="010-2345-6789" required><br>
+                                </div><!--label-input-flex-->
+                                
+                                <button type="submit">문의하기</button>
+                            </form>
+                        </div>
+                    </div><!--footer2-flex-->
+                </div><!--logo-copyright-address-footdonate-->
+            </div><!--container-->
+    
+            <div class="fixed-button">
+                <a href="#target"><img src="./img/기타/올라가기(라이트).png" alt="올라가기"></a>
+            </div>
+        </footer>
+    </div><!--wrapper-->
+    
+</body>
+</html>

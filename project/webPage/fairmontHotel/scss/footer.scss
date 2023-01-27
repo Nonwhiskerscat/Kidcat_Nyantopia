@@ -1,0 +1,254 @@
+@import "./style.scss";
+@import "./reset.scss";
+@import "./mixin.scss";
+
+footer {
+    padding-top: 30px;
+    background-color: #333333;
+    color: white;
+    align-items: center;
+
+    div{
+        margin-bottom: 40px;
+
+        @include responsive(pc-screens) {
+            margin-bottom: 30px;
+        }
+    }
+    
+    .footer_entire{
+        // background-color: rebeccapurple;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0 auto;
+        width: 89.74358974358974%;
+        
+
+        @include responsive(pc-screens) {
+            width: 93.75%;
+        }
+
+        
+
+        .footer_logo{
+            width: calc(50px + 10vw);
+            order: 1;
+
+            @include responsive(pc-screens) {
+                width: 180px;
+            }
+
+            img{
+                width: 100%;
+            }
+        }
+
+        .subscribe{
+            @include footer_h4;
+            position: relative;
+            width: 100%;
+            order: 3;
+
+            @include responsive(pc-screens){
+                order: 2;
+                width: 20%;
+            }
+
+            form {
+                
+                .form_flex {
+                    display: flex;
+                    margin: 0;
+    
+                    @include responsive(pc-screens) {
+                        display: block;
+                    }
+                    
+    
+                    .form_email {
+                        width: 70%;
+                        margin: 0;
+    
+                        @include responsive(pc-screens) {
+                            width: 100%;
+                        }
+                    }
+                }
+
+                label{
+                    @include footer_label
+                }
+
+                input {
+                    display: block;
+                    border: 0;
+                    width: 100%;
+                    background-color: transparent;
+                    border-bottom: 1px solid white;
+                    padding-bottom: 0.2vw;
+                    margin: 0.5vw 0 0.75vw;
+                    color: white;
+                    outline: none;
+                    @include font_setting;
+
+                    @include responsive(pc-screens) {
+                        margin: 10px 0 15px;
+                        padding-bottom: 3px;
+                    }
+
+                    &:last-child{
+                        width: 100%;
+                    }
+
+                }
+
+                button {
+                    width: 30%;
+                    height: 70px;
+                    background-color: transparent;
+                    color: white;
+                    font-size: calc(0.5em + 1vw);
+                    @include font_setting;
+                    border: 0;
+                    cursor: pointer; 
+                    text-align: right;
+
+
+                    @include responsive(pc-screens) {
+                        width: 100%;
+                        font-size: 22px;
+                    }
+
+                    span{
+                        margin-left: 10px;
+                        position: relative;
+                        display: none;
+
+                        @include responsive(pc-screens) {
+                            display: inline;
+                        }
+
+                        img {
+                            width: 20px;
+                            height: auto;
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                        }
+    
+
+                    }
+                
+                }
+            }
+
+        }
+
+        .navigation {
+            width: 70%;
+            order: 2;
+            @include footer_h4;
+
+            @include responsive(pc-screens){
+                order: 3;
+                width: 25%;
+            }
+
+            .flex_nav {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+
+                li{
+                    width: 50%;
+                    padding-bottom: 2vw;
+                    align-items: center;
+                    position: relative;
+
+                    @include responsive(pc-screens) {
+                        padding-bottom: 20px;
+                    }
+                    
+
+                    span {
+                        display: none;
+                        height: auto;
+                        margin-right: 10px;
+
+                        @include responsive(pc-screens) {
+                            display: inline;
+                        }
+
+                        img {
+                            width: 22px;
+                            height: auto;
+                        }
+
+                    }
+
+                    a{
+                        color: white;
+                        font-size: calc(0.5em + 1vw);
+
+                        @include responsive(pc-screens) {
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .address {
+
+            @include footer_h4;
+
+            width: 100%;
+            order: 4;
+            font-size: calc(0.5em + 1vw);
+            padding-bottom: 2vw;
+
+            @include responsive(pc-screens) {
+                font-size: 16px;
+
+            }
+
+
+            @include responsive(pc-screens){
+                width: 24%;
+                padding-bottom: 20px;
+            }
+
+            span {
+                color: #ffef5a;
+            }
+
+            address{
+                font-style: normal;
+                margin-bottom: 1vw;
+                @include font_setting;
+
+                @include responsive(pc-screens){
+                    margin-bottom: 10px;
+                }
+            }
+
+            .copyright {
+                @include footer_h5;
+            }
+
+            p{
+                line-height: calc(1em + 1vw);
+
+                @include responsive(pc-screens) {
+                    line-height: 24px;
+                }
+            }
+
+        }
+
+
+    }
+}

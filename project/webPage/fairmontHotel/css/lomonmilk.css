@@ -1,0 +1,7 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "LEMONMILK-Light"; /* 폰트 명 */
+  font-style: normal; /* 폰트 스타일 설정 */
+  src: url("../font/LEMONMILK-Light.eot"); /* IE9 미만 */
+  src: local("Kakao-aLt"), url("../font/LEMONMILK-Light.woff2") format("woff2"), url("../font/LEMONMILK-Light.woff") format("woff"), url("../font/LEMONMILK-Light.ttf") format("truetype"), url("../font/LEMONMILK-Light.svg") format("svg"); /* TTF에서도 커버가 안되는 기기들에 대한 대응 */
+}
