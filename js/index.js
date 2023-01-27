@@ -536,19 +536,12 @@ window.addEventListener('load', () => {
 
     [].forEach.call(gnb_list_li, (gnb_list_li, idx) => {
         gnb_list_li.addEventListener('click', () => {
-            if(innerWidth<tablet_cat) {
-                gnb_nyan.animate({top:`-${gnb_height}px`},
-                    {duration: 500,
-                    fill: 'forwards'}
-                );
-            }
 
-            else {
-                gnb_nyan.animate({right:`-${gnb_width}px`},
-                    {duration: 500,
-                    fill: 'forwards'}
-                );
-            }
+            gnb_nyan.animate({right:`-${gnb_width}px`},
+            {duration: 500,
+            fill: 'forwards'}
+        );
+            
             gnb_nyan.classList.remove('gnb_on');
             gnb_icon.src="./img/header/jelly_front_short.png";
             const main_axis = document.getElementById(`main_${idx}`);
@@ -557,7 +550,7 @@ window.addEventListener('load', () => {
                 window.scrollTo({top:0, behavior:'smooth'});
             }
             else {
-                console.log(idx)
+                console.log(idx);
                 window.scrollTo({top: main_axis.offsetTop-header$.offsetHeight, behavior:'smooth'});
             }
 

@@ -534,13 +534,6 @@ header {
                             font-size: calc(18px + 1vw);
                         }
 
-                        &:hover {
-                            color: $identity;
-                        }
-                        
-                        
-
-
                         &::after {
                             display: block;
                             content: '';
