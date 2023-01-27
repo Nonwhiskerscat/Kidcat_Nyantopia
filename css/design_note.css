@@ -357,6 +357,9 @@
 .design_note .design_bighead .design_header .dh_flex .dh_contents .icon_entire .icon_flex p {
   font-size: calc(12px + 2vw);
 }
+.design_note .design_bighead .design_header .dh_flex .dh_contents .icon_entire .icon_flex p:hover {
+  animation: nyan_hover_tone 1s linear infinite;
+}
 @media screen and (min-width: 768px) {
   .design_note .design_bighead .design_header .dh_flex .dh_contents .icon_entire .icon_flex p {
     font-size: calc(16px + 1vw);

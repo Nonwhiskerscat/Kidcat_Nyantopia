@@ -357,23 +357,19 @@ header {
 
     .gnb_nyan {
         position: fixed;
-        left: 0;
-        right: auto;
+        top: 0;
+        left: auto;
         background-color: #000620;
         z-index: 2;
-
-        min-height: 100vh;
         width: 100%;
         max-width: 500px;
+        min-height: 100vh;
         overflow-x: hidden;
         
 
         @include responsive(tablet-cat) {
             width: 50%;
-            max-width: 500px;
-            min-height: 100vh;
-            top: 0;
-            left: auto;
+
         }
 
         @include responsive(semi-cat) {

@@ -32,3 +32,11 @@
         }
     }
 }
+
+@mixin height_responsive($break) { //높이 중단점 480px
+    @if $break == h480 {
+        @media screen and (min-height: $break-480height) {
+            @content;
+        }
+    }
+}

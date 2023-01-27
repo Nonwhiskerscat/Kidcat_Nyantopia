@@ -1,0 +1,17 @@
+.TodoTemplate {
+  width: 512px;
+  overflow: hidden;
+  font-family: HSGooltokki;
+}
+.TodoTemplate .app-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 2.5rem;
+  font-size: 1.2rem;
+  background-color: #000620;
+}
+.TodoTemplate .content {
+  background-color: transparent;
+}

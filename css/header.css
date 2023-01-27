@@ -123,6 +123,23 @@
     color: #ffe1eb;
   }
 }
+@keyframes dn_cat_head {
+  0% {
+    transform: rotateZ(0);
+  }
+  25% {
+    transform: rotateZ(5deg);
+  }
+  50% {
+    transform: rotateZ(0);
+  }
+  75% {
+    transform: rotateZ(-5deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
 header .header_flex {
   display: flex;
   padding-top: 10px;
@@ -408,21 +425,18 @@ header .header_flex .menu_gnb_sh .gnb_base .gnb_over img {
 }
 header .gnb_nyan {
   position: fixed;
-  left: 0;
-  right: auto;
+  top: 0;
+  left: auto;
   background-color: #000620;
   z-index: 2;
-  min-height: 100vh;
   width: 100%;
+  max-width: 500px;
+  min-height: 100vh;
   overflow-x: hidden;
 }
 @media screen and (min-width: 768px) {
   header .gnb_nyan {
     width: 50%;
-    max-width: 500px;
-    min-height: 100vh;
-    top: 0;
-    left: auto;
   }
 }
 @media screen and (min-width: 1200px) {
