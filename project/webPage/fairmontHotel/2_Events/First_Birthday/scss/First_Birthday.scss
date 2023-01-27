@@ -1,9 +1,11 @@
+@import "../../../scss/style.scss";
+@import "../../../scss/mixin.scss";
+
 @import "./style.scss";
 @import "./reset.scss";
 @import "./mixin.scss";
 
-// @import "../../../scss/style.scss";
-// @import "../../../scss/mixin.scss";
+
 // @import "./mixin.scss";
 
 //header
@@ -1445,236 +1447,237 @@ main {
 
 // main=========================================================
 
-// footer {
-//   padding-top: 30px;
-//   background-color: #333333;
-//   color: white;
-//   align-items: center;
+footer {
+  padding-top: 30px;
+  background-color: #333333;
+  color: white;
+  align-items: center;
 
-//   div {
-//     margin-bottom: 40px;
+  div {
+    margin-bottom: 40px;
 
-//     @include responsive(pc-screens) {
-//       margin-bottom: 30px;
-//     }
-//   }
+    @include responsive(pc-screens) {
+      margin-bottom: 30px;
+    }
+  }
 
-//   .footer_entire {
-//     // background-color: rebeccapurple;
-//     display: flex;
-//     width: 89.74358974358974%;
-//     margin: 0 auto;
-//     flex-direction: row;
-//     flex-wrap: wrap;
-//     justify-content: space-between;
+  .footer_entire {
+    // background-color: rebeccapurple;
+    display: flex;
+    width: 89.74358974358974%;
+    margin: 0 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
-//     @include responsive(pc-screens) {
-//       width: 93.75%;
-//     }
+    @include responsive(pc-screens) {
+      width: 93.75%;
+    }
 
-//     .footer_logo {
-//       width: calc(50px + 10vw);
-//       order: 1;
+    .footer_logo {
+      width: calc(50px + 10vw);
+      order: 1;
 
-//       @include responsive(pc-screens) {
-//         width: 180px;
-//       }
+      @include responsive(pc-screens) {
+        width: 180px;
+      }
 
-//       img {
-//         width: 100%;
-//       }
-//     }
+      img {
+        width: 100%;
+      }
+    }
 
-//     .subscribe {
-//       position: relative;
-//       width: 100%;
-//       order: 3;
-//       @include footer_h4;
+    .subscribe {
+      position: relative;
+      width: 100%;
+      order: 3;
+      @include footer_h4;
 
-//       @include responsive(pc-screens) {
-//         width: 20%;
-//         order: 2;
-//       }
+      @include responsive(pc-screens) {
+        width: 20%;
+        order: 2;
+      }
 
-//       form {
-//         .form_flex {
-//           display: flex;
-//           margin: 0;
+      form {
+        .form_flex {
+          display: flex;
+          margin: 0;
 
-//           @include responsive(pc-screens) {
-//             display: block;
-//           }
+          @include responsive(pc-screens) {
+            display: block;
+          }
 
-//           .form_email {
-//             width: 70%;
-//             margin: 0;
+          .form_email {
+            width: 70%;
+            margin: 0;
 
-//             @include responsive(pc-screens) {
-//               width: 100%;
-//             }
-//           }
-//         }
+            @include responsive(pc-screens) {
+              width: 100%;
+            }
+          }
+        }
 
-//         label {
-//           @include footer_label;
-//         }
+        label {
+          @include footer_label;
+        }
 
-//         input {
-//           display: block;
-//           width: 100%;
-//           margin: 0.5vw 0 0.75vw;
-//           border: 0;
-//           background-color: transparent;
-//           border-bottom: 1px solid white;
-//           padding-bottom: 0.2vw;
-//           color: white;
-//           outline: none;
-//           @include font_setting;
+        input {
+          display: block;
+          width: 100%;
+          margin: 0.5vw 0 0.75vw;
+          border: 0;
+          background-color: transparent;
+          border-bottom: 1px solid white;
+          padding-bottom: 0.2vw;
+          color: white;
+          outline: none;
+          @include font_setting;
 
-//           @include responsive(pc-screens) {
-//             margin: 10px 0 15px;
-//             padding-bottom: 3px;
-//           }
+          @include responsive(pc-screens) {
+            margin: 10px 0 15px;
+            padding-bottom: 3px;
+          }
 
-//           &:last-child {
-//             width: 100%;
-//           }
-//         }
+          &:last-child {
+            width: 100%;
+          }
+        }
 
-//         button {
-//           width: 30%;
-//           height: 70px;
-//           background-color: transparent;
-//           color: white;
-//           font-size: calc(0.5em + 1vw);
-//           border: 0;
-//           cursor: pointer;
-//           text-align: right;
-//           @include font_setting;
+        button {
+          width: 30%;
+          height: 70px;
+          background-color: transparent;
+          color: white;
+          font-size: calc(0.5em + 1vw);
+          border: 0;
+          cursor: pointer;
+          text-align: right;
+          @include font_setting;
 
-//           @include responsive(pc-screens) {
-//             width: 100%;
-//             font-size: 22px;
-//           }
+          @include responsive(pc-screens) {
+            width: 100%;
+            font-size: 22px;
+          }
 
-//           span {
-//             display: none;
-//             position: relative;
-//             margin-left: 10px;
+          span {
+            display: none;
+            position: relative;
+            margin-left: 10px;
 
-//             @include responsive(pc-screens) {
-//               display: inline;
-//             }
+            @include responsive(pc-screens) {
+              display: inline;
+            }
 
-//             img {
-//               position: absolute;
-//               right: 0;
-//               bottom: 0;
-//               width: 20px;
-//               height: auto;
-//             }
-//           }
-//         }
-//       }
-//     }
+            img {
+              position: absolute;
+              right: 0;
+              bottom: 0;
+              width: 20px;
+              height: auto;
+            }
+          }
+        }
+      }
+    }
 
-//     .navigation {
-//       width: 70%;
-//       order: 2;
-//       @include footer_h4;
+    .navigation {
+      width: 70%;
+      order: 2;
+      @include footer_h4;
 
-//       @include responsive(pc-screens) {
-//         width: 25%;
-//         order: 3;
-//       }
+      @include responsive(pc-screens) {
+        width: 25%;
+        order: 3;
+      }
 
-//       .flex_nav {
-//         display: flex;
-//         justify-content: space-between;
-//         flex-wrap: wrap;
+      .flex_nav {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
 
-//         li {
-//           position: relative;
-//           width: 50%;
-//           padding-bottom: 2vw;
-//           align-items: center;
+        li {
+          position: relative;
+          width: 50%;
+          padding-bottom: 2vw;
+          align-items: center;
 
-//           @include responsive(pc-screens) {
-//             padding-bottom: 20px;
-//           }
+          @include responsive(pc-screens) {
+            padding-bottom: 20px;
+          }
 
-//           span {
-//             display: none;
-//             height: auto;
-//             margin-right: 10px;
+          span {
+            display: none;
+            height: auto;
+            margin-right: 10px;
 
-//             @include responsive(pc-screens) {
-//               display: inline;
-//             }
+            @include responsive(pc-screens) {
+              display: inline;
+            }
 
-//             img {
-//               width: 22px;
-//               height: auto;
-//               display: inline;
-//             }
-//           }
+            img {
+              width: 22px;
+              height: auto;
+              display: inline;
+            }
+          }
 
-//           a {
-//             color: white;
-//             font-size: calc(0.5em + 1vw);
+          a {
+            color: white;
+            font-size: calc(0.5em + 1vw);
 
-//             @include responsive(pc-screens) {
-//               font-size: 18px;
-//             }
-//           }
-//         }
-//       }
-//     }
+            @include responsive(pc-screens) {
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
 
-//     .address {
-//       width: 100%;
-//       order: 4;
-//       font-size: calc(0.5em + 1vw);
-//       padding-bottom: 2vw;
-//       @include footer_h4;
+    .address {
+      width: 100%;
+      order: 4;
+      font-size: calc(0.5em + 1vw);
+      padding-bottom: 2vw;
+      @include footer_h4;
 
-//       @include responsive(pc-screens) {
-//         font-size: 16px;
-//       }
+      @include responsive(pc-screens) {
+        font-size: 16px;
+      }
 
-//       @include responsive(pc-screens) {
-//         width: 24%;
-//         padding-bottom: 20px;
-//       }
+      @include responsive(pc-screens) {
+        width: 24%;
+        padding-bottom: 20px;
+      }
 
-//       span {
-//         color: #ffef5a;
-//       }
+      span {
+        color: #ffef5a;
+      }
 
-//       address {
-//         font-style: normal;
-//         margin-bottom: 1vw;
-//         @include font_setting;
+      address {
+        font-style: normal;
+        margin-bottom: 1vw;
+        @include font_setting;
 
-//         @include responsive(pc-screens) {
-//           margin-bottom: 10px;
-//         }
-//       }
+        @include responsive(pc-screens) {
+          margin-bottom: 10px;
+        }
+      }
 
-//       .copyright {
-//         @include footer_h5;
-//       }
+      .copyright {
+        @include footer_h5;
+      }
 
-//       p {
-//         line-height: calc(1em + 1vw);
+      p {
+        line-height: calc(1em + 1vw);
 
-//         @include responsive(pc-screens) {
-//           line-height: 24px;
-//         }
-//       }
-//     }
-//   }
-// }
+        @include responsive(pc-screens) {
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}
+
 #modal-wrap {
   display: none;
   position: fixed;

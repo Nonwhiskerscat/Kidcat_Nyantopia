@@ -1750,7 +1750,7 @@ header .header_flex .menu_gnb_sh ul.gnb_main {
 }
 header .header_flex .menu_gnb_sh ul.gnb_main li {
   cursor: pointer;
-  text-align: center;
+  align-items: center;
 }
 @media screen and (min-width: 768px) {
   header .header_flex .menu_gnb_sh ul.gnb_main li {
@@ -1761,6 +1761,8 @@ header .header_flex .menu_gnb_sh ul.gnb_main li {
   header .header_flex .menu_gnb_sh ul.gnb_main li {
     display: block;
     width: 130px;
+    display: flex;
+    flex-direction: row;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -1768,9 +1770,37 @@ header .header_flex .menu_gnb_sh ul.gnb_main li {
     width: 163.3333333333px;
   }
 }
+@media screen and (min-width: 1200px) {
+  header .header_flex .menu_gnb_sh ul.gnb_main li span {
+    display: block;
+    width: fit-content;
+    margin: 0;
+    margin-right: 7px;
+    height: 21px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  header .header_flex .menu_gnb_sh ul.gnb_main li span {
+    height: 24.5px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  header .header_flex .menu_gnb_sh ul.gnb_main li span img {
+    display: block;
+    margin: 0;
+    height: 100%;
+  }
+}
+@media screen and (min-width: 1600px) {
+  header .header_flex .menu_gnb_sh ul.gnb_main li span img {
+    height: 100%;
+  }
+}
 header .header_flex .menu_gnb_sh ul.gnb_main li p {
   display: none;
   color: white;
+  margin: 0;
+  width: fit-content;
 }
 header .header_flex .menu_gnb_sh ul.gnb_main li p:hover {
   animation: nyan_hover_tone 1s linear infinite;
@@ -1858,7 +1888,7 @@ header .gnb_nyan {
   width: 100%;
   max-width: 500px;
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 @media screen and (min-width: 768px) {
   header .gnb_nyan {

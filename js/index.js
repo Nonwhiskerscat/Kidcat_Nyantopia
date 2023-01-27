@@ -29,8 +29,6 @@ window.addEventListener('load', () => {
     let nyan_zone=document.querySelectorAll('.nyan_zone');
     let n_width=nyan_zone[0].offsetWidth;
 
-
-
     //header(logo)
     let header$=document.querySelector('header');
     let header_logo=document.querySelector('.header_logo'); 
@@ -71,11 +69,18 @@ window.addEventListener('load', () => {
     let intro_title_h1 = document.querySelector('.intro_h1 h1');
     let intro_wave=document.querySelector('.intro_wave');
     let intro_waves=document.querySelectorAll('.intro_waves');
-    
+
+    //main(title)
+    let about_me$=document.querySelector('.main_aboutme');
+    let main_myspecs$=document.querySelector('.main_myspecs');
+    let main_myskills$=document.querySelector('.main_myskills');
+    let main_projects$=document.querySelector('.main_projects');
+    let main_contactme$=document.querySelector('.main_contactme');
 
     //main(my_specs)
 
     let my_specs_urban_img=document.querySelector('.my_specs_urban img');
+
 
     //footer(images)
     let footer_road=document.querySelector('.footer_road');
@@ -256,13 +261,8 @@ window.addEventListener('load', () => {
 
 
     // GNB 슬라이드 효과
-
-
-
-    if(window.innerWidth<tablet_cat) {
-        gnb_nyan.style.right=`-${gnb_width}px`;
-    }
-
+    gnb_nyan.style.right=`-${gnb_width}px`;
+    
     window.addEventListener('resize', () => {
         
         gnb_width=gnb_nyan.offsetWidth;
@@ -285,7 +285,6 @@ window.addEventListener('load', () => {
     gnb_icon.addEventListener('click', () => {
         if(!gnb_nyan.classList.contains('gnb_on'))
             {
-                gnb_nyan.style.display='block';
                 gnb_nyan.animate({right:0},
                     {duration: 500,
                     fill: 'forwards'}
@@ -423,34 +422,85 @@ window.addEventListener('load', () => {
     // GNB 크레용 고양이 애니메이션
     const crayon_cat='<img class="cat_img" src="./img/header/gnb_hover.png" alt="gnb_cat"></img>';
 
-    [].forEach.call(gnb_list_li, gnb_list_li => {
-        gnb_list_li.addEventListener('mouseover', () =>{
-            gnb_list_li.firstChild.innerHTML=crayon_cat;
+    let gnb_crayon_ani=[
+        { transform: 'RotateZ(0)', offset: 0},
+        { transform: 'RotateZ(0)', offset: 0.24},
+        { transform: 'RotateZ(5deg)', offset: 0.25},
+        { transform: 'RotateZ(5deg)', offset: 0.49},
+        { transform: 'RotateZ(0)', offset: 0.50},
+        { transform: 'RotateZ(0)', offset: 0.74},
+        { transform: 'RotateZ(-5deg)', offset: 0.75},
+        { transform: 'RotateZ(-5deg)', offset: 0.99},
+        { transform: 'RotateZ(0)', offset: 1}
+    ];
 
-            let gnb_cat = gnb_list_li.querySelector('span');
-            let gnb_crayon_ani=[
-                { transform: 'RotateZ(0)', offset: 0},
-                { transform: 'RotateZ(0)', offset: 0.24},
-                { transform: 'RotateZ(5deg)', offset: 0.25},
-                { transform: 'RotateZ(5deg)', offset: 0.49},
-                { transform: 'RotateZ(0)', offset: 0.50},
-                { transform: 'RotateZ(0)', offset: 0.74},
-                { transform: 'RotateZ(-5deg)', offset: 0.75},
-                { transform: 'RotateZ(-5deg)', offset: 0.99},
-                { transform: 'RotateZ(0)', offset: 1}
-            ];
+    let li_img=document.querySelectorAll('header .li_img');
+    let li_txt=document.querySelectorAll('header .li_txt');
+    console.log(li_img[0])
 
-            gnb_cat.animate( gnb_crayon_ani, {
-                duration: 70,
-                easing: 'linear',
-                iterations: 'Infinity'
-            })
+
+
+    function gnb_cat_push(kitty) {
+        [].forEach.call(li_img, (cat, idx) => {
+            cat.innerHTML='';
+            
+            if(idx%(li_img.length/2)==kitty) {
+                cat.innerHTML = crayon_cat;
+                cat.querySelector('img').animate(gnb_crayon_ani, {
+                    duration: 70,
+                    easing: 'linear',
+                    iterations: 'Infinity'
+                });
+            }
+        });
+
+        [].forEach.call(li_txt, (cat, idx) => {
+            cat.classList.remove('common_under');
+            cat.style.color='white';
+            if(idx%(li_txt.length/2)==kitty) {
+                cat.classList.add('common_under');
+                cat.style.color=identity$;
+            }
         })
+    }
 
-        gnb_list_li.addEventListener('mouseleave', () =>{
-            gnb_list_li.firstChild.innerHTML='';
-        })
+    gnb_cat_push(0);
+
+
+    window.addEventListener('scroll', () => {
+        console.log(this.scrollY)
+        if(this.scrollY<about_me$.offsetTop-header$.offsetHeight) {
+            console.log('Intro');
+            gnb_cat_push(0);
+        }
+
+        else if(this.scrollY<main_myspecs$.offsetTop-header$.offsetHeight) {
+            console.log('About me');
+            gnb_cat_push(1);
+        }
+
+        else if(this.scrollY<main_myskills$.offsetTop-header$.offsetHeight) {
+            console.log('My Specs');
+            gnb_cat_push(2);
+        }
+
+        else if(this.scrollY<main_projects$.offsetTop-header$.offsetHeight) {
+            console.log('My Skills');
+            gnb_cat_push(3);
+        }
+
+        else if(this.scrollY<main_contactme$.offsetTop-header$.offsetHeight) {
+            console.log('Peojects');
+            gnb_cat_push(4);
+
+        }
+
+        else {
+            console.log('Contact Me');
+            gnb_cat_push(5);
+        }
     });
+
 
     // GNB 네비게이션 바 효과
 
@@ -531,21 +581,6 @@ window.addEventListener('load', () => {
             }
         })
     });
-
-    // 메인1 최대 높이 설정
-
-    // let header_fixpad;
-    // if(bighead_width<tablet_cat) header_fixpad=header_margin_mobile$;
-    // else if(bighead_width<semi_cat) header_fixpad=header_margin_tablet$;
-    // else header_fixpad=header_margin_semi$;
-
-    // let header_fixed_solved=window.innerHeight-2*header_fixpad;
-    // main_intro$.style.minHeight=`${header_fixed_solved}px`;
-
-    // window.addEventListener('resize', () => {
-    //     let header_fixed_solved=window.innerHeight-2*header_fixpad;
-    //     main_intro$.style.minHeight=`${header_fixed_solved}px`;
-    // });
     
 
     // 메인 고양이 애니메이션
@@ -695,9 +730,6 @@ window.addEventListener('load', () => {
     paja(intro_title_h2, 'intro_title_letter');
     paja(intro_title_h1, 'intro_title_letter');
 
-    // intro_title_h2.innerHTML = intro_title_h2.textContent.replace(/\S/g, "<span class='intro_title_letter'>$&</span>");
-    // intro_title_h1.innerHTML = intro_title_h1.textContent.replace(/\S/g, "<span class='intro_title_letter'>$&</span>");
-
     let intro_title_letter=document.querySelectorAll('.intro_title_letter');
     let intro_kitty_stroke=document.querySelector('.intro_kitty_stroke');
 
@@ -799,7 +831,6 @@ window.addEventListener('load', () => {
     let main_h2=document.querySelectorAll('.title_text_area h2');
     [].forEach.call(main_h2, (main_h2, idx)=> {
         paja(main_h2, `m${idx}_h2_letter`);
-        // main_h2.innerHTML = main_h2.textContent.replace(/\S/g, `<span class='m${idx}_h2_letter'>$&</span>`);
     })
 
     function h2_ani() {
@@ -862,7 +893,6 @@ window.addEventListener('load', () => {
     //About me
     
     //About me 고양이
-    let about_me$=document.querySelector('.main_aboutme');
     let about_me_back=document.querySelector('.about_me_back');
     let about_me_base=about_me_back.getElementsByClassName('about_me_base');
 
@@ -1222,7 +1252,6 @@ window.addEventListener('load', () => {
 
     // 폭죽 효과
 
-    let main_myspecs$=document.querySelector('.main_myspecs');
     let ms_kitty_img=document.querySelectorAll('.ms_contents_grp img');
     let ms_kitty_txt=document.querySelectorAll('.ms_kitty_txt');
     let ms_contents_fw=document.querySelectorAll('.ms_contents_fw');
@@ -1282,7 +1311,6 @@ window.addEventListener('load', () => {
 
     //my_skills
 
-    let main_myskills$=document.querySelector('.main_myskills');
 
     //아이콘 생성
 
@@ -1673,7 +1701,6 @@ window.addEventListener('load', () => {
 
     //Projects
 
-    let main_projects$=document.querySelector('.main_projects');
     const pj_data_url="https://nonwhiskerscat.github.io/kidcat_nyantopia/json/my_projects.json";
 
 
@@ -2089,7 +2116,6 @@ window.addEventListener('load', () => {
 
     //Contact Me
 
-    let main_contactme$=document.querySelector('.main_contactme');
     let cm_img_area=main_contactme$.querySelector('.cm_img_area');
     let cm_contents_area=main_contactme$.querySelector('.cm_contents_area');
     let cm_main=cm_contents_area.querySelector('.cm_not_hidden');

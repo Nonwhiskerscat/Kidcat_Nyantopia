@@ -256,7 +256,8 @@ header {
 
                 li {
                     cursor: pointer;
-                    text-align: center;
+                    align-items: center;
+
 
                     @include responsive(tablet-cat) {
                         display: none;
@@ -265,15 +266,51 @@ header {
                     @include responsive(semi-cat) {
                         display: block;
                         width: calc(780px/6);
+                        display: flex;
+                        flex-direction: row;
                     }
     
                     @include responsive(huge-cat) {
                         width: calc(980px/6);
                     }
 
+                    span {
+
+                        @include responsive(semi-cat) {
+                            display: block;
+                            width: fit-content;
+                            margin: 0;
+                            margin-right: $petit_margin_p;
+                            height: 21px;
+                        }
+
+                        @include responsive(huge-cat) {
+                            height: 24.5px;
+                        }
+
+                        img {
+
+
+                            @include responsive(semi-cat) {
+                                display: block;
+                                margin: 0;
+                                height: 100%;
+                            }
+
+                            @include responsive(huge-cat) {
+                                height: 100%;
+                            }
+                        }
+
+                    }
+
                     p {
+
                         display: none;
                         color: white;
+                        margin: 0;
+                        width: fit-content;
+                        
 
                         @include nyan_common_hover;
 
@@ -364,7 +401,7 @@ header {
         width: 100%;
         max-width: 500px;
         min-height: 100vh;
-        overflow-x: hidden;
+        overflow: hidden;
         
 
         @include responsive(tablet-cat) {
