@@ -572,6 +572,9 @@ header .gnb_nyan .gnb_list ul li p {
     font-size: calc(18px + 1vw);
   }
 }
+header .gnb_nyan .gnb_list ul li p:hover {
+  color: #e87d9e;
+}
 header .gnb_nyan .gnb_list ul li p::after {
   display: block;
   content: "";

@@ -533,6 +533,10 @@ header {
                         @include responsive(tablet-cat) {
                             font-size: calc(18px + 1vw);
                         }
+
+                        &:hover {
+                            color: $identity;
+                        }
                         
                         
 
