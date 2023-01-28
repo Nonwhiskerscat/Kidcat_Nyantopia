@@ -2743,7 +2743,7 @@ main {
                         width: 55%;
                         rotate: -5deg;
                         transform-origin: bottom center;
-                        animation: header_gnb_mobile 5s linear infinite;
+                        animation: dn_cat_head 5s linear infinite;
 
                         @include responsive(tablet-cat) {
                             width: 110%;

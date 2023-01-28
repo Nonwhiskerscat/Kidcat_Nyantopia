@@ -266,68 +266,83 @@ header {
                     @include responsive(semi-cat) {
                         display: block;
                         width: calc(780px/6);
-                        display: flex;
-                        flex-direction: row;
+
                     }
     
                     @include responsive(huge-cat) {
                         width: calc(980px/6);
                     }
 
-                    span {
+                    .sh_li_flex {
+                        display: flex;
+                        margin: 0 auto;
+                        width: fit-content;
 
-                        @include responsive(semi-cat) {
-                            display: block;
-                            width: fit-content;
-                            margin: 0;
-                            margin-right: $petit_margin_p;
-                            height: 21px;
-                        }
-
-                        @include responsive(huge-cat) {
-                            height: 24.5px;
-                        }
-
-                        img {
-
+                        span {
 
                             @include responsive(semi-cat) {
                                 display: block;
+                                width: fit-content;
                                 margin: 0;
-                                height: 100%;
+                                margin-right: $petit_margin_p;
+                                height: 21px;
                             }
-
+    
                             @include responsive(huge-cat) {
-                                height: 100%;
+                                height: 24.5px;
                             }
+    
+                            img {
+    
+    
+                                @include responsive(semi-cat) {
+                                    display: block;
+                                    margin: 0;
+                                    height: 100%;
+                                }
+    
+                                @include responsive(huge-cat) {
+                                    height: 100%;
+                                }
+                            }
+    
                         }
-
-                    }
-
-                    p {
-
-                        display: none;
-                        color: white;
-                        margin: 0;
-                        width: fit-content;
-                        
-
-                        @include nyan_common_hover;
-
-                        @include responsive(tablet-cat) {
+    
+                        p {
+    
                             display: none;
+                            color: white;
+                            margin: 0;
+                            width: fit-content;
+                            
+    
+                            @include nyan_common_hover;
+    
+                            @include responsive(tablet-cat) {
+                                display: none;
+                            }
+    
+                            @include responsive(semi-cat) {
+                                display: block;
+                                font-size: 18px;
+                            }
+            
+                            @include responsive(huge-cat) {
+                                font-size: 21px;
+                            }
+    
+                            .gnb_sh_huge {
+                                display: none;
+    
+                                @include responsive(huge-cat) {
+                                    display: inline;
+                                }
+                            }
+    
                         }
-
-                        @include responsive(semi-cat) {
-                            display: block;
-                            font-size: 18px;
-                        }
-        
-                        @include responsive(huge-cat) {
-                            font-size: 21px;
-                        }
-
                     }
+
+
                 }
             }
 

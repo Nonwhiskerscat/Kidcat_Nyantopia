@@ -3,13 +3,16 @@
   max-height: 513px;
   overflow-y: over;
 }
+
 .TodoList::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 8px #e87d9e;
   border-radius: 8px;
 }
+
 .TodoList::-webkit-scrollbar {
   width: 8px;
 }
+
 .TodoList::-webkit-scrollbar-thumb {
   background-color: black;
   border-radius: 8px;

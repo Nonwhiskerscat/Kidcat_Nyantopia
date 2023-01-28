@@ -18,6 +18,7 @@
   overflow: hidden;
   min-height: 100vh;
 }
+
 .bighead::before {
   content: "";
   background: url(../img/back/background.png);
@@ -32,7 +33,6 @@
 
 html, body {
   color: white;
-  font-family: "IBMPlexSansKR-Regular";
 }
 
 table, th, tr, td {

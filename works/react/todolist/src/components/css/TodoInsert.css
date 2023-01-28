@@ -2,6 +2,7 @@
   display: flex;
   background-color: #495057;
 }
+
 .TodoInsert input {
   outline: none;
   border: none;
@@ -13,9 +14,11 @@
   font-family: HSGooltokki;
   flex: 1;
 }
+
 .TodoInsert input::placeholder {
   color: #dee2e6;
 }
+
 .TodoInsert button {
   outline: none;
   border: none;
@@ -30,9 +33,11 @@
   cursor: pointer;
   transition: 0.2s color ease-in;
 }
+
 .TodoInsert button:hover {
   color: #e87d93;
 }
+
 .TodoInsert .sub_box {
   font-family: HSGooltokki;
 }

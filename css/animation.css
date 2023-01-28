@@ -23,6 +23,7 @@
     transform: rotateZ(5deg);
   }
 }
+
 @keyframes header_gnb_icon {
   0% {
     transform: translateY(0%);
@@ -34,6 +35,7 @@
     transform: translateY(0%);
   }
 }
+
 @keyframes header_gnb_mobile {
   0% {
     transform: rotateZ(0) translateY(0em);
@@ -51,6 +53,7 @@
     transform: rotateZ(0deg) translateY(0em);
   }
 }
+
 @keyframes cursor_blink {
   0% {
     opacity: 0;
@@ -62,6 +65,7 @@
     opacity: 0;
   }
 }
+
 @keyframes cat_jump {
   0% {
     transform: translateY(0%);
@@ -73,11 +77,13 @@
     transform: translateY(0%);
   }
 }
+
 @keyframes ferris_wheel {
   100% {
     transform: rotate(360deg);
   }
 }
+
 @keyframes nyan_hover_tone {
   0% {
     color: #ffe1eb;
@@ -95,6 +101,7 @@
     color: #ffe1eb;
   }
 }
+
 @keyframes dn_cat_head {
   0% {
     transform: rotateZ(0);

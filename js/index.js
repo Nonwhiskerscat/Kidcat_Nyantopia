@@ -425,12 +425,12 @@ window.addEventListener('load', () => {
     let gnb_crayon_ani=[
         { transform: 'RotateZ(0)', offset: 0},
         { transform: 'RotateZ(0)', offset: 0.24},
-        { transform: 'RotateZ(5deg)', offset: 0.25},
-        { transform: 'RotateZ(5deg)', offset: 0.49},
+        { transform: 'RotateZ(10deg)', offset: 0.25},
+        { transform: 'RotateZ(10deg)', offset: 0.49},
         { transform: 'RotateZ(0)', offset: 0.50},
         { transform: 'RotateZ(0)', offset: 0.74},
-        { transform: 'RotateZ(-5deg)', offset: 0.75},
-        { transform: 'RotateZ(-5deg)', offset: 0.99},
+        { transform: 'RotateZ(-10deg)', offset: 0.75},
+        { transform: 'RotateZ(-10deg)', offset: 0.99},
         { transform: 'RotateZ(0)', offset: 1}
     ];
 

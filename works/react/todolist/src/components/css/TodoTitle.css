@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-around;
 }
+
 .lists_flex > div {
   color: white;
   padding: 0.6rem 0;

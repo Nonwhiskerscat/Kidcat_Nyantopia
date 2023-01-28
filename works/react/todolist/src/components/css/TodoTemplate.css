@@ -3,6 +3,7 @@
   overflow: hidden;
   font-family: HSGooltokki;
 }
+
 .TodoTemplate .app-title {
   display: flex;
   justify-content: center;
@@ -12,6 +13,7 @@
   font-size: 1.2rem;
   background-color: #000620;
 }
+
 .TodoTemplate .content {
   background-color: transparent;
 }

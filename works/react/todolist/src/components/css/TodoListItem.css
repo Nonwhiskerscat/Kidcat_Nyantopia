@@ -1,6 +1,7 @@
 .TodoListItem-virtualized {
   background-color: #26293a;
 }
+
 .TodoListItem-virtualized:nth-child(even) {
   background-color: #000620;
 }
@@ -11,31 +12,38 @@
   padding: 0.5rem;
   border-top: 1px dashed #535768;
 }
+
 .TodoListItem:nth-child(even) {
   background-color: #000620;
 }
+
 .TodoListItem .checkbox {
   display: flex;
   flex: 1;
   align-items: center;
   cursor: pointer;
 }
+
 .TodoListItem .checkbox svg {
   font-size: 1.5rem;
   color: aliceblue;
 }
+
 .TodoListItem .checkbox .text {
   flex: 1;
   margin-left: 0.5rem;
   color: aliceblue;
 }
+
 .TodoListItem .checkbox.checked svg {
   color: #e87d93;
 }
+
 .TodoListItem .checkbox.checked .text {
   color: #e87d93;
   text-decoration: line-through;
 }
+
 .TodoListItem .del_box {
   font-size: 18px;
   border-radius: 10px;
@@ -44,9 +52,11 @@
   display: flex;
   align-items: center;
 }
+
 .TodoListItem .del_box:hover {
   color: #ff8787;
 }
+
 .TodoListItem .mod_box {
   font-size: 18px;
   border-radius: 10px;
@@ -55,9 +65,11 @@
   display: flex;
   align-items: center;
 }
+
 .TodoListItem .mod_box:hover {
   color: #fbff87;
 }
+
 .TodoListItem .remove, .TodoListItem .modify {
   margin-left: 10px;
 }
