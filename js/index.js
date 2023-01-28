@@ -1372,17 +1372,48 @@ window.addEventListener('load', () => {
         });
     }
 
+    let ms_contents_grp=document.querySelectorAll('.ms_contents_grp');
+
+
+    function nekofw_ani(nyan, kitty, meow) {
+        nyan.animate([
+            {transform: 'translateY(0)'},
+            {transform: `translateY(${meow*Math.pow(-1,kitty)}rem)`},
+            {transform: 'translateY(0)'},
+            {transform: `translateY(${-meow*Math.pow(-1,kitty)}rem)`},
+            {transform: 'translateY(0)'}
+
+        ]
+        , {
+            iterations: "Infinity",
+            duration: 10000,
+            easing: 'linear'
+        });
+    }
+
+
+    function fw_swing() {
+        [].forEach.call(ms_contents_grp, (cat, idx)=> {
+            nekofw_ani(cat, idx, 1);
+        })
+    }
+
+
 
     
     
 
     let ms_scroll=true;
 
+
+
+
     window.addEventListener('scroll', ()=> {
         if(ms_scroll) {
             if(window.scrollY+w_height>main_myspecs$.offsetTop+main_myspecs$.offsetHeight/2) {
             [].forEach.call(ms_kitty_img, (cat, idx) => {
                     setTimeout(()=>{spec_fireworks(idx)}, idx*500);
+                    setTimeout(fw_swing, 4000);
             });
             ms_scroll=false;
             }
