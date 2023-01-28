@@ -1413,7 +1413,7 @@ window.addEventListener('load', () => {
             if(window.scrollY+w_height>main_myspecs$.offsetTop+main_myspecs$.offsetHeight/2) {
             [].forEach.call(ms_kitty_img, (cat, idx) => {
                     setTimeout(()=>{spec_fireworks(idx)}, idx*500);
-                    setTimeout(fw_swing, 4000);
+                    setTimeout(fw_swing, 5000);
             });
             ms_scroll=false;
             }
