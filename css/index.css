@@ -118,7 +118,7 @@ html, body {
 }
 
 body {
-  background-color: #000620;
+  background-color: #1a003b;
   color: white;
   height: 100%;
 }
@@ -364,6 +364,14 @@ html .design_note::-webkit-scrollbar-thumb {
   right: 0;
   width: 100%;
   background-color: rgba(0, 6, 32, 0.3);
+}
+
+.idc_span, .cmt_span {
+  position: relative;
+}
+
+.descri_explains .descri_explain > div > p {
+  position: relative;
 }
 
 span.mk_highlight {
@@ -10206,7 +10214,7 @@ html, body {
 }
 
 body {
-  background-color: #000620;
+  background-color: #1a003b;
   color: white;
   height: 100%;
 }

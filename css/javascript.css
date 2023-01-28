@@ -53,6 +53,14 @@
   background-color: rgba(0, 6, 32, 0.3);
 }
 
+.idc_span, .cmt_span {
+  position: relative;
+}
+
+.descri_explains .descri_explain > div > p {
+  position: relative;
+}
+
 span.mk_highlight {
   color: #e54d26;
 }

@@ -39,6 +39,18 @@
     }
 }
 
+.idc_span, .cmt_span{
+    position: relative;
+}
+
+.descri_explains {
+    .descri_explain {
+        &>div>p{
+            position: relative;
+        }
+    }
+}
+
 span.mk_highlight {
     color: $html;
 }

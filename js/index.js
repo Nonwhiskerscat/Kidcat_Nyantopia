@@ -10,6 +10,8 @@ window.addEventListener('load', () => {
     //===========톤앤매너==========//
     const identity$='#e87d9e';
     const background$='#000620'; 
+    const evening$='#240052';
+    const dawn$= '#c7edff';
 
     //===========헤더 padding==========//
     const header_margin_mobile$=10;
@@ -196,6 +198,12 @@ window.addEventListener('load', () => {
         createTiles();
         tilesBlink();
         
+        document.body.animate({
+            background: background$
+        }, {
+            fill: 'forwards',
+            duration: 2000
+        })
     }, 6600);
 
 
@@ -436,7 +444,6 @@ window.addEventListener('load', () => {
 
     let li_img=document.querySelectorAll('header .li_img');
     let li_txt=document.querySelectorAll('header .li_txt');
-    console.log(li_img[0])
 
 
 
@@ -468,42 +475,33 @@ window.addEventListener('load', () => {
 
 
     window.addEventListener('scroll', () => {
-        console.log(this.scrollY)
         if(this.scrollY<about_me$.offsetTop-header$.offsetHeight) {
-            console.log('Intro');
             gnb_cat_push(0);
         }
 
         else if(this.scrollY<main_myspecs$.offsetTop-header$.offsetHeight) {
-            console.log('About me');
             gnb_cat_push(1);
         }
 
         else if(this.scrollY<main_myskills$.offsetTop-header$.offsetHeight) {
-            console.log('My Specs');
             gnb_cat_push(2);
         }
 
         else if(this.scrollY<main_projects$.offsetTop-header$.offsetHeight) {
-            console.log('My Skills');
             gnb_cat_push(3);
         }
 
         else if(this.scrollY<main_contactme$.offsetTop-header$.offsetHeight) {
-            console.log('Peojects');
             gnb_cat_push(4);
 
         }
 
         else {
-            console.log('Contact Me');
             gnb_cat_push(5);
         }
     });
 
-
     // GNB 네비게이션 바 효과
-
 
     gnb_over.style.width=`${(window_y_axis)*100/(html_height)}%`;
 
@@ -955,47 +953,347 @@ window.addEventListener('load', () => {
         },3000)
     }
 
-    //about_me 콘텐츠 박스
-    let about_me_descri=document.querySelector('.about_me_descri');
+    //about me 생성
 
-    function am_minHeight() {
-        if(w_width<tablet_cat) {
-            about_me_descri.style.minHeight=`${about_me_descri.offsetHeight+20}px`;
-        }
+    function am_idc(cat) {
+
+        let kitty=
+        `
+            <div class="idc_h3_entire">
+                <h3 class="idc_h3">${cat.mtp}</h3>
+                <span class="idc_frame1"></span>
+                <span class="idc_frame2"></span>
+                <span class="idc_frame3"></span>
+                <span class="idc_frame4"></span>
+            </div>
+            <div class="idc_rest">
+                <p class="idc_developer">같은 개발자,</p>
+                <p class="idc_seoyong">김서용<span class="omit">입니다</span>!</p>
+            </div>
     
-        else if(w_width<semi_cat) {
-            about_me_descri.style.minHeight=`${about_me_descri.offsetHeight+40}px`;
-        }
+        `;
     
-        else {
-            about_me_descri.style.minHeight=`none`;
-        }
+        return kitty;
     }
     
-    am_minHeight();
+    function am_comment(cat) {
+        let kitty=
+        `
+        <h4><span class="descri_author">${cat.author}</span></h4>
+        <p><span class="descri_quote">"${cat.quote}"</span></p>
+        `;
+    
+        return kitty;
+    }
+    
+    function am_explains(cat) {
+        let kitty=
+        `
+        <div class="descri_explain">
+            <div class="explain_title">
+                <p>
+                    ${cat.title}
+                </p>
+            </div>
+    
+            <div class="explain_contents">
+                <p>
+                    ${cat.desc}
+                </p>
+            </div>
+        </div>
+        `;
+    
+        return kitty;
+    }
+    
+    function am_gauge_en() {
+        let kitty=
+        `
+        <div class="gauge_toggle">
+            <img src="./img/main/about_me_pause.png" alt="재생/정지">
+        </div>
+    
+        <div class="gauge">
+            <div class="gauge_entire">
+                <div class="gauge_current"></div>
+            </div>
+        </div>
+        
+        <div class="rest_num">
+        </div>
+        `;
+    
+        return kitty;
+    }
+    
+    function am_rest(neko, meow) {
+        let kitty='';
+        for(let i=0;i<meow;i++) {
+            kitty+=`
+            <div class="num rest_list">
+                <p>${neko[i].mtp}</p>
+            </div>
+            `
+            if(i+1<meow) kitty+=`<div class="gauge_line"></div>`;
+        }
+    
+        return kitty;
+    }
+
+
+    let about_me_descri=document.querySelector('.about_me_descri');
+    let am_idc_in=about_me_descri.querySelector('.descri_idc');
+    let am_comment_in=about_me_descri.querySelector('.descri_comment');
+    let am_explains_in=about_me_descri.querySelector('.descri_explains');
+    let am_gauge_in=about_me_descri.querySelector('.descri_gauge');
+
+    function am_generator(cat, neko, meow) {
+        am_idc_in.innerHTML=am_idc(cat);
+        am_comment_in.innerHTML=am_comment(cat);
+        am_explains_in.innerHTML=am_explains(cat);
+        am_gauge_in.innerHTML=am_gauge_en();
+        let am_rest_in=am_gauge_in.querySelector('.rest_num');
+        am_rest_in.innerHTML=am_rest(neko, meow);
+    }
+
+
+    let am_data_url='https://nonwhiskerscat.github.io/kidcat_nyantopia/json/about_me.json';
+    axios.get(am_data_url)
+    .then(
+        (res) => {
+            let am_data=res.data.am_contents;
+            let am_data_l=am_data.length;
+
+            let am_object={
+                timer: 5000,
+                idx:0
+            }
+
+            am_generator(am_data[am_object.idx], am_data ,am_data_l);
+
+            let idc_h3=am_idc_in.querySelector('h3');
+
+
+            let am_h3_ani = [
+                {top: '-0.0em', rotate: '0deg'},
+                {top: '-0.5em', rotate: '-10deg'},
+                {top: '-0.5em', rotate: '-0deg'},
+                {top: '-0.5em', rotate: '10deg'},
+                {top: '-0.5em', rotate: '0deg'},
+                {top: '-0.5em', rotate: '-10deg'},
+                {top: '-0.5em', rotate: '0deg'},
+                {top: '0', rotate: '0deg'}
+            ];
+
+            function h3Ani() {
+                paja(idc_h3, 'idc_span');
+                let idc_span=am_idc_in.querySelectorAll('.idc_span');
+                [].forEach.call(idc_span, (cat, idx) => {
+                    cat.style.display='inline-block';
+                    cat.animate(am_h3_ani, {
+                        duration: 500,
+                        delay: 200*idx
+                    })
+                })                
+            }
+
+
+
+            let am_cmt_ani = [
+                {top: '-4em', rotate: '-90deg', opacity: 0},
+                {top: '-3em', rotate: '-90deg', opacity: 0.1},
+                {top: '-2em', rotate: '-75deg', opacity: 0.2},
+                {top: '-1em', rotate: '-50deg', opacity: 0.3},
+                {top: '-0.5em', rotate: '-25deg', opacity: 0.5},
+                {top: '-0.25em', rotate: '-10deg', opacity: 0.8},
+                {top: '0', rotate: '0deg', opacity: 1}
+            ];
+
+            let am_author=am_comment_in.querySelector('.descri_author');
+            let am_quote=am_comment_in.querySelector('.descri_quote');
+
+            function cmtAni() {
+
+                paja(am_author, 'cmt_span');
+                paja(am_quote, 'cmt_span');
+
+                let cmt_span=document.querySelectorAll('.cmt_span');
+
+                [].forEach.call(cmt_span, (cat, idx) => {
+                    cat.style.opacity=0;
+                    cat.style.display='inline-block';
+                    cat.animate(am_cmt_ani, {
+                        fill: 'forwards',
+                        duration: 500,
+                        delay: idx*50
+                    })
+                })
+            }
+
+            let descri_explain=am_explains_in.querySelector('.descri_explain');
+            let descri_explain_div=descri_explain.querySelectorAll('p');
+            let am_exp_ani=[
+                {top: '3em', opacity: '0'},
+                {top: '0', opacity: '1'}
+            ]
+
+            function expAni(kitty) { // kitty: normal 혹은 reverse
+                [].forEach.call(descri_explain_div, (cat, idx) => {
+                    cat.animate(am_exp_ani, {
+                        duration: 500,
+                        delay: 500*idx,
+                        fill: 'forwards',
+                        direction: kitty
+                    })
+                })
+            }
+
+            function expOpc() { // kitty: normal 혹은 reverse
+                [].forEach.call(descri_explain_div, (cat, idx) => {
+                    cat.animate([
+                        {opacity: 1},
+                        {opacity: 0}
+                    ], {
+                        duration: 300,
+                        delay: 200*idx,
+                        fill: 'forwards',
+                    })
+                })
+            }
+        
+            function am_changer(cat) {
+                idc_h3.innerHTML=cat.mtp;
+                am_author.innerHTML=cat.author;
+                am_quote.innerHTML=cat.quote;
+                [].forEach.call(descri_explain_div, (cat2, idx) => {
+                    if(idx==0) cat2.innerHTML=cat.title;
+                    else cat2.innerHTML=cat.desc;
+                });
+            }
+            
+            function am_change_ani(kitty) {
+                expOpc();
+                setTimeout(()=> {
+                    am_gauge_ani();
+                    am_changer(am_data[kitty]);
+                    cmtAni();
+                    h3Ani();
+                    expAni('normal');
+                },500)
+
+            }
+
+            let am_times=setInterval(()=> {
+                am_object.idx++;
+                am_change_ani((am_object.idx)%3);
+                amSpot(am_object.idx%3);
+
+            }, am_object.timer);
+
+            let am_gauge_crt=am_gauge_in.querySelector('.gauge_current');
+
+            function am_gauge_ani() {
+                am_gauge_crt.animate([
+                    {width: '0%'},
+                    {width: '100%'}
+                ], {
+                    duration: am_object.timer,
+                    easing: 'linear'
+                })
+            }
+
+            am_gauge_ani();
+
+            let am_gauge_tgl=am_gauge_in.querySelector('.gauge_toggle img');
+
+            am_gauge_tgl.addEventListener('click', () => {
+                am_gauge_tgl.classList.toggle('am_play');
+                if(am_gauge_tgl.classList.contains('am_play')) {
+                    am_gauge_tgl.src='./img/main/about_me_play.png';
+
+                    clearTimeout(am_times);
+                    am_gauge_crt.style.display='none';
+                }
+
+                else {
+                    am_gauge_tgl.src='./img/main/about_me_pause.png';
+                    am_gauge_ani();
+                    am_times=setInterval(()=> {
+                        am_object.idx++;
+                        am_change_ani((am_object.idx)%3);
+                        amSpot(am_object.idx%3);
+                    }, am_object.timer);
+                    am_gauge_crt.style.display='block';
+                    
+                }
+            })
+
+            let am_rest_in=am_gauge_in.querySelector('.rest_num');
+            let rest_list=am_rest_in.querySelectorAll('.rest_list');
+            
+            function amSpot(kitty) {
+                [].forEach.call(rest_list, (cat,idx) => {
+                    cat.querySelector('p').classList.remove('common_under');
+                    if(idx==kitty%3) {
+                        cat.querySelector('p').classList.add('common_under');
+                    }
+                })
+            }
+
+            amSpot(0);
+
+            [].forEach.call(rest_list, (cat, newidx)=> {
+                cat.addEventListener('click', () => {
+                    clearInterval(am_times);
+                    am_gauge_ani();
+                    am_changer(am_data[newidx]);
+                    amSpot(newidx);
+
+                    am_times=setInterval(()=> {
+                        newidx++;
+                        am_change_ani((newidx)%3);
+                        amSpot(newidx%3);
+
+                    }, am_object.timer);
+                })
+            })
+
+        }
+    ).catch(err=> {
+        console.error('에러발생: ', err);
+    });
+
+    //about_me 콘텐츠 박스
+    let about_me_descri_div=about_me_descri.children;
 
 
     function about_me_descri_set() {
         let about_me_descri_w=about_me_descri.offsetWidth;
-        about_me_descri.style.position=`relative`;
-        about_me_descri.style.right=`${-about_me_descri_w}px`;
-        about_me_descri.style.opacity=`0`
+        [].forEach.call(about_me_descri_div, (cat) => {
+            cat.style.position=`relative`;
+            cat.style.right=`${-about_me_descri_w}px`;
+            cat.style.opacity=`0`;
+        })
+
     }
 
     function about_me_descri_move() {
-        about_me_descri.animate({
-            right: 0, opacity: 1
-        },
-        {
-            duration: 1000,
-            easing: 'ease-in',
-            fill: 'forwards'
-        })
+        [].forEach.call(about_me_descri_div, (cat, idx) => {
+            cat.animate({
+                right: 0, opacity: 1
+            },
+            {
+                duration: 1000,
+                easing: 'linear',
+                fill: 'forwards',
+                delay: 200*idx
+            })
+        })    
     }
 
     about_me_descri_set();
     
-
     //화면 너비 변경에 따른 about_me 위치 재선정
     window.addEventListener('resize', ()=>{
         about_me_kitty_set();
@@ -1010,198 +1308,12 @@ window.addEventListener('load', () => {
             if(window.scrollY+w_height>about_me$.offsetTop+about_me$.offsetHeight/2) {
                 about_me_back_fadein();
                 about_me_kitty_move();
-                about_me_descri_move();
+                setInterval(about_me_descri_move,500);
                 am_scroll=false;
             }
         }
 
     });
-
-    //About me 콘텐츠
-
-    let descri_explain=document.querySelectorAll('.descri_explain');
-    let am_timer=5000;
-
-    [].forEach.call(descri_explain, (cat, idx)=> {
-        cat.classList.add(`de${idx}`);
-    });
-
-    
-    let idc_h3_entire=document.querySelector('.idc_h3_entire');
-    let idc_h3=idc_h3_entire.querySelector('h3');
-    
-    function am_changer(cat1, cat2) {
-        let current=document.querySelector(`.de${cat1}`);
-        let current_sub=current.querySelectorAll('div');
-
-        let next=document.querySelector(`.de${cat2}`);
-        let next_sub=next.querySelectorAll('div');
-
-        [].forEach.call(next_sub, (cat) => {
-            cat.classList.add('next_style');
-        });
-
-        [].forEach.call(current_sub, (cat, idx) => {
-            cat.animate([
-                {top: '0', opacity:1},
-                {top: '2em', opacity:0}
-            ],
-            {
-                duration: 500,
-                delay: 500*idx,
-                fill: 'forwards'
-            });
-        });
-
-        setTimeout(()=> {
-            current.style.display='none';
-            next.style.display='block';
-        },1000);
-
-        setTimeout(()=> {
-            [].forEach.call(next_sub, (cat, idx) => {
-                cat.animate({top:'0', opacity:1},
-                {
-                    duration: 500,
-                    delay: 500*idx,
-                    fill: 'forwards'
-                });
-            });
-        },1000)
-    }
-
-    const am_h3_arr=['접착제', '두더지', '일개미'];
-
-    const am_h3_changer = (cat2) => {
-        idc_h3.innerHTML = am_h3_arr[cat2];
-        paja(idc_h3, 'idc_letter');
-
-        let idc_letter=document.getElementsByClassName('idc_letter');
-
-        [].forEach.call(idc_letter, (cat, idx)=> {
-            cat.style.position='relative';
-            cat.style.display='inline-block';
-            cat.animate([
-                {top: '-0.0em', rotate: '0deg'},
-                {top: '-0.5em', rotate: '-10deg'},
-                {top: '-0.5em', rotate: '-0deg'},
-                {top: '-0.5em', rotate: '10deg'},
-                {top: '-0.5em', rotate: '0deg'},
-                {top: '-0.5em', rotate: '-10deg'},
-                {top: '-0.5em', rotate: '0deg'},
-                {top: '0', rotate: '0deg'}
-            ]
-            , {
-                duration: 500,
-                delay: 200*idx
-            })
-        });
-
-    }
-
-    //about me 게이지
-
-    let gauge_current=document.querySelector('.gauge_current');
-    
-
-    const am_gauge = () => {
-        gauge_current.animate([
-            {width: '0%'},
-            {width: '100%'} 
-        ],
-        {
-            duration: am_timer
-        })
-    }
-
-    am_gauge();
-
-    //정지 및 재생
-
-
-    let am_interval=setInterval(am_contents_changer, am_timer);
-
-
-    let gauge_toggle=document.querySelector('.gauge_toggle');
-    let gauge_toggle_img=gauge_toggle.querySelector('img');
-
-    let am_toggle=true;
-
-
-    
-    gauge_toggle.addEventListener('click',function(e) {
-        if(am_toggle) {
-            gauge_current.style.display='none';
-            clearInterval(am_interval);
-            gauge_toggle_img.src='./img/main/about_me_play.png';
-            am_toggle=false;
-        }
-        
-        else {
-            gauge_current.style.display='block';
-            am_gauge();
-            am_interval=setInterval(am_contents_changer, am_timer);
-            gauge_toggle_img.src='./img/main/about_me_pause.png';
-            am_toggle=true;
-        }
-    })
-
-    //about me 세미타이틀
-
-    let rest_list=document.getElementsByClassName('rest_list');
-    [].forEach.call(rest_list, (cat,idx)=> {
-        cat.querySelector('p').classList.add(`rest_list_${idx}`);
-    });
-
-    document.querySelector(`.rest_list_0`).classList.add('common_under');
-
-    let am_idx=0;
-    
-    const am_semi_title = (cat1, cat2) => {
-        document.querySelector(`.rest_list_${cat1}`).classList.remove('common_under');
-        document.querySelector(`.rest_list_${cat2}`).classList.add('common_under');
-    }
-
-
-    function am_contents_changer() {
-        
-            if(am_idx==descri_explain.length-1) {
-                am_changer(am_idx, 0);
-                am_semi_title(am_idx, 0);
-                am_idx=0;
-            }
-            else {
-                am_changer(am_idx, am_idx+1);
-                am_semi_title(am_idx, am_idx+1);
-                am_idx++;
-            }
-
-            am_h3_changer(am_idx);
-            am_gauge();
-    }
-
-    //선택 및 재실행
-    let am_semi_click=false;
-
-    [].forEach.call(rest_list, (cat, idx) => {
-        cat.addEventListener('click',() => {
-            clearInterval(am_interval);
-            // 시간 정지
-            gauge_current.style.display='none';
-            gauge_toggle_img.src='./img/main/about_me_play.png';
-            am_toggle=false;
-
-            am_changer(am_idx, idx);
-            gauge_current.style.display='none';
-            gauge_toggle_img.src='./img/main/about_me_pause.png';
-            setInterval(am_interval);
-
-                        // idx 재설정
-            // am_new_index=idx;
-
-        })
-    });
-
 
     //My Specs
 
@@ -1271,7 +1383,7 @@ window.addEventListener('load', () => {
             if(window.scrollY+w_height>main_myspecs$.offsetTop+main_myspecs$.offsetHeight/2) {
             [].forEach.call(ms_kitty_img, (cat, idx) => {
                     setTimeout(()=>{spec_fireworks(idx)}, idx*500);
-                });
+            });
             ms_scroll=false;
             }
         }
@@ -1977,6 +2089,416 @@ window.addEventListener('load', () => {
 
             pj_ani_entire(pj_scroll);
 
+            function design_note(cat) {
+                let kitty='';
+                kitty+=
+                `
+                <div class="design_note dn_${cat.tag_name}">
+                <div class="dn_matte" />
+                <div class="nyan_zone">
+                    <div class="close_flex">
+                        <svg data-name="레이어 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 47.59">
+                            <path class="tone_kitty" d="M47.74,14.65c-.39-4.56-1.85-13.73-5.83-14.58-3.3-.7-7.6,3.75-10.39,7.23,0,0,0,0,0,0-.66-.07-1.27-.14-1.85-.2-.6-.06-1.16-.11-1.72-.15-.69-.05-1.37-.09-2.09-.1-.28,0-.56,0-.85,0h0c-.29,0-.58,0-.85,0-.73,.02-1.41,.05-2.1,.1-.56,.04-1.12,.1-1.72,.16-.57,.06-1.18,.13-1.84,.2,0,0,0,0,0,0C15.69,3.82,11.39-.63,8.08,.07,4.1,.92,2.65,10.09,2.26,14.65,.88,18.63,.12,21.78,0,27.21c-.27,13.31,11.19,20.38,24.99,20.38h0c13.8,0,25.26-7.07,24.99-20.38-.11-5.43-.87-8.58-2.25-12.56Z"/>
+                        </svg>
+                        <h4>CLOSE</h4>
+                    </div>
+                    <div class="design_bighead">
+                            <div class="design_header" style="background-color:${cat.backtone}">
+                                <div class="semi_nyan_zone">
+                                    <div class="dh_flex">
+            
+                                        <div class="dh_contents">
+                                            <h5>Website</h5>
+                                            <div class="dh_h4_flex">
+                                                <h4 style="color: ${cat.color}">${cat.header.title}</h4>
+                                                <span class="kitty_dhicon">${cat_svg(cat.color)}</span>
+                                            </div>
+                                            <div class="icon_entire">
+                                                <div class="icon_flex link_git">
+                                                    <img src="./img/Design_note/design_github.png" alt="디자인 깃허브">
+                                                    <p>Github</p>
+                                                </div>
+            
+                                                <div class="icon_flex link_web">
+                                                    <img src="./img/Design_note/design_link.png" alt="디자인 웹링크">
+                                                    <p>Weblink</p>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+            
+                                        <div class="dh_img">
+                                            <img src="./img/main/pj_${cat.tag_name}_mockup.png" alt="목업이미지">
+                                        </div>
+                                    </div>    
+                                </div>
+            
+                            </div>
+            
+                            <div class="design_body">
+                                <div class="dn_overview dover_${cat.tag_name}">
+                                    <div class="main_h2">
+                                        <div class="semi_nyan_zone">
+                                            <div class="nyan_h2_flex">
+                                                <div class="title_trace_area">
+                                                    <img src="./img/Design_note/title_trace_dn.svg" alt="고양이 발자국">
+                                                    <img src="./img/Design_note/title_trace_dn.svg" alt="고양이 발자국">
+                                                    <img src="./img/Design_note/title_trace_dn.svg" alt="고양이 발자국">
+                                                </div>
+                                                <div class="title_text_area">
+                                                    <h2>Overview</h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+            
+                                    <div class="semi_nyan_zone">
+                                        <div class="ov_flex">
+                                            <div class="ov_img_area ov${cat.dn_id}">
+                                                <img src="./img/Design_note/overview_${cat.dn_id}_bd.png" alt="#">
+                                                <img src="./img/Design_note/overview_${cat.dn_id}_hd.png" alt="#">
+                                            </div>
+            
+                                            <div class="ov_cts_area">
+                                                <div class="ov_h4_flex">
+                                                    <div class="h4_left"></div>
+                                                    <h4>Period</h4>
+                                                </div>
+                                                <p class="ov_period">${cat.ov.period[0]} ~ ${cat.ov.period[1]}(${cat.ov.date}일)</p>
+            
+                                                <div class="ov_h4_flex">
+                                                    <div class="h4_left"></div>
+                                                    <h4>Mission</h4>
+                                                </div>
+                                                <p class="ov_mission">${cat.ov.mission}</p>
+            
+                                                <div class="ov_h4_flex">
+                                                    <div class="h4_left"></div>
+                                                    <h4>Tools</h4>
+                                                </div>
+                                                <p class="ov_tool">${cat.ov.tools}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+            
+                                </div>
+            
+                                <div class="dn_tnm dtnm_${cat.tag_name}" style="display: ${cat.tnm.contain};">
+                                    <div class="main_h2">
+                                        <div class="semi_nyan_zone">
+                                            <div class="nyan_h2_flex">
+                                                <div class="title_trace_area">
+                                                    <img src="./img/Design_note/title_trace_dn.svg" alt="고양이 발자국">
+                                                    <img src="./img/Design_note/title_trace_dn.svg" alt="고양이 발자국">
+                                                    <img src="./img/Design_note/title_trace_dn.svg" alt="고양이 발자국">
+                                                </div>
+                                                <div class="title_text_area">
+                                                    <h2>Tone</h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+            
+                                    <div class="semi_nyan_zone">
+                                        <div class="dn_tone_entire">
+                                            ${put_dtnm(cat.tnm.count, cat.tnm)}
+                                        </div>
+                                    </div>
+                                    
+            
+            
+                                </div>
+            
+                                <div class="dn_font dfont_${cat.tag_name}" style="display: ${cat.font.contain};">
+                                    <div class="main_h2">
+                                        <div class="semi_nyan_zone">
+                                            <div class="nyan_h2_flex">
+                                                <div class="title_trace_area">
+                                                    <img src="./img/Design_note/title_trace_dn.svg" alt="고양이 발자국">
+                                                    <img src="./img/Design_note/title_trace_dn.svg" alt="고양이 발자국">
+                                                    <img src="./img/Design_note/title_trace_dn.svg" alt="고양이 발자국">
+                                                </div>
+                                                <div class="title_text_area">
+                                                    <h2>Font</h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+            
+                                    <div class="semi_nyan_zone">
+                                        <div class="dn_font_entire">
+            
+                                            ${put_dfont(cat.font.count, cat.font)}
+            
+                                        </div>
+            
+            
+                                    </div>
+                                </div>
+            
+                                <div class="dn_grid dgrid_${cat.tag_name}" style="display: ${cat.grid.contain};">
+                                    <div class="main_h2">
+                                        <div class="semi_nyan_zone">
+                                            <div class="nyan_h2_flex">
+                                                <div class="title_trace_area">
+                                                    <img src="./img/Design_note/title_trace_dn.svg" alt="고양이 발자국">
+                                                    <img src="./img/Design_note/title_trace_dn.svg" alt="고양이 발자국">
+                                                    <img src="./img/Design_note/title_trace_dn.svg" alt="고양이 발자국">
+                                                </div>
+                                                <div class="title_text_area">
+                                                    <h2>Grid System</h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="semi_nyan_zone">
+                                        <div class="dn_grid_entire">
+            
+                                        ${put_dgrid(cat.grid.count, cat.grid)}
+            
+                                        </div>
+            
+                                    </div>
+                                </div>
+            
+                                <div class="dn_bi dbi_${cat.tag_name}" style="display: ${cat.bi.contain};">
+                                    <div class="main_h2">
+                                        <div class="semi_nyan_zone">
+                                            <div class="nyan_h2_flex">
+                                                <div class="title_trace_area">
+                                                    <img src="./img/Design_note/title_trace_dn.svg" alt="고양이 발자국">
+                                                    <img src="./img/Design_note/title_trace_dn.svg" alt="고양이 발자국">
+                                                    <img src="./img/Design_note/title_trace_dn.svg" alt="고양이 발자국">
+                                                </div>
+                                                <div class="title_text_area">
+                                                    <h2>Bi / Ci</h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="semi_nyan_zone">
+                                        <div class="dn_logo_entire">
+            
+                                        ${put_dbi(cat, cat.bi.count, cat.bi)}
+            
+                                        </div>
+            
+                                    </div>
+            
+                                </div>
+            
+                                <div class="dn_result dres_${cat.tag_name}">
+                                    <div class="main_h2">
+                                        <div class="semi_nyan_zone">
+                                            <div class="nyan_h2_flex">
+                                                <div class="title_trace_area">
+                                                    <img src="./img/Design_note/title_trace_dn.svg" alt="고양이 발자국">
+                                                    <img src="./img/Design_note/title_trace_dn.svg" alt="고양이 발자국">
+                                                    <img src="./img/Design_note/title_trace_dn.svg" alt="고양이 발자국">
+                                                </div>
+                                                <div class="title_text_area">
+                                                    <h2>Result</h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+            
+                                    <div class="semi_nyan_zone">
+            
+                                        <div class="dn_result_entire">
+                                            ${put_dres(cat, cat.result.count, cat.result)}
+            
+                                        </div>
+            
+                                    </div>
+            
+                                </div>
+                            </div>
+            
+                            <div class="design_end" style="background-color: ${cat.backtone}">
+                                <div class="de_flex">
+                                    <h4 style="color: ${cat.color}">Kidcat Nyantopia</h4>
+                                </div>
+            
+                            </div>
+                    </div>
+            
+                    <div class="close_flex">
+                        <svg data-name="레이어 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 47.59">
+                            <path class="tone_kitty" d="M47.74,14.65c-.39-4.56-1.85-13.73-5.83-14.58-3.3-.7-7.6,3.75-10.39,7.23,0,0,0,0,0,0-.66-.07-1.27-.14-1.85-.2-.6-.06-1.16-.11-1.72-.15-.69-.05-1.37-.09-2.09-.1-.28,0-.56,0-.85,0h0c-.29,0-.58,0-.85,0-.73,.02-1.41,.05-2.1,.1-.56,.04-1.12,.1-1.72,.16-.57,.06-1.18,.13-1.84,.2,0,0,0,0,0,0C15.69,3.82,11.39-.63,8.08,.07,4.1,.92,2.65,10.09,2.26,14.65,.88,18.63,.12,21.78,0,27.21c-.27,13.31,11.19,20.38,24.99,20.38h0c13.8,0,25.26-7.07,24.99-20.38-.11-5.43-.87-8.58-2.25-12.56Z"/>
+                        </svg>
+                        <h4>CLOSE</h4>
+                    </div>
+                </div>
+            </div>
+            
+                `;
+            
+                return kitty;
+            }
+            
+            
+            function put_dtnm(meow, felis) { // meow: 루프 횟수, cat: 데이터 push 위치, felis: 데이터 이름
+                let kitty='';
+                for(let neko=0;neko<meow;neko++) {
+                    
+                    kitty+=`
+                    <div class="dn_tone_flex dtnm_${neko}">
+                        <div class="dn_tone_cat">
+                            <svg id="dn_tone_cat_${neko}" data-name="레이어 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 47.59">
+                                <path style="fill: ${felis.colors[neko].hex}; stroke-width: 2px; stroke-linejoin:'round'" class="tone_kitty" d="M47.74,14.65c-.39-4.56-1.85-13.73-5.83-14.58-3.3-.7-7.6,3.75-10.39,7.23,0,0,0,0,0,0-.66-.07-1.27-.14-1.85-.2-.6-.06-1.16-.11-1.72-.15-.69-.05-1.37-.09-2.09-.1-.28,0-.56,0-.85,0h0c-.29,0-.58,0-.85,0-.73,.02-1.41,.05-2.1,.1-.56,.04-1.12,.1-1.72,.16-.57,.06-1.18,.13-1.84,.2,0,0,0,0,0,0C15.69,3.82,11.39-.63,8.08,.07,4.1,.92,2.65,10.09,2.26,14.65,.88,18.63,.12,21.78,0,27.21c-.27,13.31,11.19,20.38,24.99,20.38h0c13.8,0,25.26-7.07,24.99-20.38-.11-5.43-.87-8.58-2.25-12.56Z"/>
+                            </svg>
+                            <h5 class="dn_hex" style="color: ${felis.colors[neko].let_color};">${felis.colors[neko].hex}</h5>
+                        </div>
+            
+                        <div class="dn_tone_txt">
+                            <h4>${felis.colors[neko].kor}</h4>
+                            <h5>${felis.colors[neko].eng}</h5>
+                            <p class="dn_rgb">RGB(${felis.colors[neko].rgb[0]}, ${felis.colors[neko].rgb[1]}, ${felis.colors[neko].rgb[2]})</p>
+                            <p class="dn_hsb">HSB(${felis.colors[neko].hsb[0]}, ${felis.colors[neko].hsb[1]}, ${felis.colors[neko].hsb[2]})</p>
+                        </div>
+                    </div>
+                    `;
+                }
+            
+                return kitty;
+            
+            }
+            
+            function put_dfont(meow, felis) {
+                let kitty='';
+                for(let neko=0;neko<meow;neko++) {
+                    kitty+=
+                    `
+                    <div class="dn_font_kit dfont_${neko}">
+                        <div class="ov_h4_flex">
+                            <div class="h4_left"></div>
+                            <h4>${felis.family[neko].title}</h4>
+                        </div>
+                
+                        <div class="kit_font" style="font-family: '${felis.family[neko].name}';">
+                            <div class="kit_title">
+                                <p class="dn_kit_title">${felis.family[neko].title}</p>
+                            </div>
+                
+                            <div class="kit_sub">
+                                <p class="dn_kit_kor">다람쥐 헌 쳇바퀴에 타고파</p>
+                                <p class="dn_kit_spc">1234567890&nbsp&nbsp!@#$%^&*₩</p>
+                                <p class="dn_kit_eng">The quick brown fox jumps over a lazy dog.</p>
+                            </div>
+                        </div>
+                    </div>
+                    `;
+                }
+            
+                return kitty;
+            
+                
+            }
+            
+            function put_dgrid(meow, felis) {
+                let kitty='';
+                for(let neko=0;neko<meow;neko++) {
+                    kitty+=
+                    `
+                    <div class="dn_grid_kit dgrid_${neko}">
+                        <div class="ov_h4_flex">
+                            <div class="h4_left"></div>
+                            <h4>${felis.grid_entire[neko].screen}</h4>
+                        </div>
+            
+                        <div class="kit_grid">
+                            <div class="kit_grid_flex dgrid_${neko}">
+                                <div class="grid_break">
+                                    <p class="grid_title">
+                                        Break
+                                    </p>
+                                    <p class="grid_cts">
+                                        <span class="gird_break_val">${felis.grid_entire[neko].break[0]}</span>${felis.grid_entire[neko].break[1]}
+                                    </p>
+                                </div>
+                                <div class="grid_col">
+                                    <p class="grid_title">
+                                        Column
+                                    </p>
+                                    <p class="grid_cts">
+                                        <span class="gird_col_val">${felis.grid_entire[neko].col[0]}</span>${felis.grid_entire[neko].col[1]}
+                                    </p>
+                                </div>
+                                <div class="grid_gut">
+                                    <p class="grid_title">
+                                        Gutter
+                                    </p>
+                                    <p class="grid_cts">
+                                        <span class="gird_gut_val">${felis.grid_entire[neko].gut[0]}</span>${felis.grid_entire[neko].gut[1]}
+                                    </p>
+                                </div>
+                                <div class="grid_cols">
+                                    <p class="grid_title">
+                                        Columns
+                                    </p>
+                                    <p class="grid_cts">
+                                        <span class="gird_cols_val">${felis.grid_entire[neko].cols[0]}</span>${felis.grid_entire[neko].cols[1]}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+            
+                    </div>
+            
+                    `;
+                }
+            
+                return kitty;
+            
+                
+            }
+            
+            function put_dbi(cat, meow, felis) {
+                let kitty='';
+                for(let neko=0;neko<meow;neko++) {
+                    kitty+=
+                    `
+                    <div class="dn_logo_kit dbi_${neko}">
+                        <div class="ov_h4_flex">
+                            <div class="h4_left"></div>
+                            <h4>${felis.bi_tag[neko]}</h4>
+                        </div>
+                    
+                        <div class="dn_logo_img">
+                            <img src="./img/Design_note/${cat.tag_name}/${felis.bi_tag[neko]}_logo.png" alt="로고1">
+                        </div>
+                    
+                    </div>
+                    `;
+                }
+            
+                return kitty;
+            }
+            
+            function put_dres(cat, meow, felis) {
+                let kitty='';
+                for(let neko=0;neko<meow;neko++) {
+                    kitty+=
+                    `
+                    <div class="dn_result_kit dbi_${neko}">
+                        <div class="ov_h4_flex">
+                            <div class="h4_left"></div>
+                            <h4>${felis.result_tag[neko]} Page</h4>
+                        </div>
+            
+                        <div class="dn_result_img">
+                            <img src="./img/Design_note/${cat.tag_name}/${felis.result_tag[neko]}_result.png" alt="결과1">
+                        </div>
+                    </div>
+                    `
+                }
+            
+                return kitty;
+            }
+
             let design_note_in=document.querySelector('.design_note');
             design_note_in.style.scale=0;
 
@@ -2306,8 +2828,6 @@ window.addEventListener('load', () => {
                         }
                     })
                 });
-
-                ft_scroll=false;
             }
         }
     });
@@ -2315,6 +2835,30 @@ window.addEventListener('load', () => {
     window.addEventListener('resize', () => {
         ft_set();
     });
+
+    setTimeout(() => {
+        window.addEventListener('scroll', () => {
+            if(window.scrollY+w_height>footer_important.offsetTop+footer_important.offsetHeight/2) {
+                document.body.animate(
+                    {backgroundColor: dawn$}
+                , {
+                    duration: 2000,
+                    fill: 'forwards'
+                });
+            }
+    
+            else {
+                document.body.animate(
+                    {backgroundColor: background$}
+                , {
+                    duration: 2000,
+                    fill: 'forwards'
+                });
+            }
+        });
+    },7000)
+
+
     //footer 아이콘 
 
 });

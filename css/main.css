@@ -4658,6 +4658,22 @@ main .main_contactme .cm_flex .cm_contents_area .cm_not_hidden .cm_btn_grp > but
   }
 }
 
+@media screen and (min-width: 768px) {
+  main .main_contactme .cm_flex .cm_contents_area .cm_not_hidden .cm_btn_grp button:last-child .btn_mob {
+    display: none;
+  }
+}
+
+main .main_contactme .cm_flex .cm_contents_area .cm_not_hidden .cm_btn_grp button:last-child .btn_pc {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  main .main_contactme .cm_flex .cm_contents_area .cm_not_hidden .cm_btn_grp button:last-child .btn_pc {
+    display: block;
+  }
+}
+
 main .main_contactme .cm_flex .cm_contents_area .cm_hidden {
   margin-top: 60px;
 }
@@ -5193,5 +5209,21 @@ main .main_contactme .cm_flex .cm_contents_area .cm_hidden .cm_hd_main form .cmh
 @media screen and (min-width: 768px) {
   main .main_contactme .cm_flex .cm_contents_area .cm_hidden .cm_hd_main form .cmh_btn_grp button:last-child {
     width: 57.5%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  main .main_contactme .cm_flex .cm_contents_area .cm_hidden .cm_hd_main form .cmh_btn_grp button:last-child .btn_mob {
+    display: none;
+  }
+}
+
+main .main_contactme .cm_flex .cm_contents_area .cm_hidden .cm_hd_main form .cmh_btn_grp button:last-child .btn_pc {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  main .main_contactme .cm_flex .cm_contents_area .cm_hidden .cm_hd_main form .cmh_btn_grp button:last-child .btn_pc {
+    display: block;
   }
 }
