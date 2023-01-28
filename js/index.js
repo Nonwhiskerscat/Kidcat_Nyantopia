@@ -1129,7 +1129,7 @@ window.addEventListener('load', () => {
 
 
     
-    gauge_toggle.onclick=function(e) {
+    gauge_toggle.addEventListener('click',function(e) {
         if(am_toggle) {
             gauge_current.style.display='none';
             clearInterval(am_interval);
@@ -1144,7 +1144,7 @@ window.addEventListener('load', () => {
             gauge_toggle_img.src='./img/main/about_me_pause.png';
             am_toggle=true;
         }
-    }    
+    })
 
     //about me 세미타이틀
 
@@ -1181,50 +1181,25 @@ window.addEventListener('load', () => {
     }
 
     //선택 및 재실행
+    let am_semi_click=false;
 
-    // [].forEach.call(rest_list, (cat, idx) => {
-    //     cat.addEventListener('click',() => {
+    [].forEach.call(rest_list, (cat, idx) => {
+        cat.addEventListener('click',() => {
+            clearInterval(am_interval);
+            // 시간 정지
+            gauge_current.style.display='none';
+            gauge_toggle_img.src='./img/main/about_me_play.png';
+            am_toggle=false;
 
-    //         gauge_current.style.display='none';
-    //         gauge_toggle_img.src='./img/main/about_me_play.png';
-    //         am_toggle=false;
-    //         clearInterval(am_interval);
+            am_changer(am_idx, idx);
+            gauge_current.style.display='none';
+            gauge_toggle_img.src='./img/main/about_me_pause.png';
+            setInterval(am_interval);
 
-    //         first_idx=am_idx;
-    //         new_idx=idx;
+                        // idx 재설정
+            // am_new_index=idx;
 
-    //         descri_explain[first_idx].style.display='none';
-    //         console.log(descri_explain[0])
-    //         descri_explain[new_idx].style.display='block';
-    //         descri_explain[new_idx].style.opacity='1';
-
-    //     })
-    // });
-
-
-
-
-
-
-    // About Me 타이핑효과
-
-    let am_cts = document.querySelector(".descri_comment .descri_content");
-    let am_aut = document.querySelector(".descri_comment .descri_author");
-
-
-    const am_data_url="https://nonwhiskerscat.github.io/kidcat_nyantopia/json/aboutme_desc.json";
-
-    axios.get(am_data_url)
-    .then(
-        (res) => {
-
-            let am_desc=res.data.am_desc;
-
-
-            
-        }
-    ).catch(err=> {
-        console.error('에러발생: ', err);
+        })
     });
 
 
@@ -1547,8 +1522,6 @@ window.addEventListener('load', () => {
                 })
             }
 
-
-        
             //hover
         
             let mkd_name=document.querySelector('.mkd_name');
