@@ -1462,9 +1462,10 @@ window.addEventListener('load', () => {
                     delay: idx*50
                 });
             })
-        }, 5000)
+        }, 3000)
 
     }
+
 
     //아이콘 생성
 
@@ -2817,10 +2818,11 @@ window.addEventListener('load', () => {
         cm_contents_toggle(cm_sub_div, cm_main_div);
     });
 
-    window.addEventListener('resize', () => {
-        cm_kitty_set();
-        cm_contents_set();
-    })
+    
+    // window.addEventListener('resize', () => {
+    //     cm_kitty_set();
+    //     cm_contents_set();
+    // })
 
     //==============footer==============//
 
