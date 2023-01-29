@@ -1270,6 +1270,7 @@ window.addEventListener('load', () => {
                         am_gauge_tgl.src='./img/main/about_me_play.png';
                         am_gauge_crt.style.display='none';
                         clearInterval(am_times);
+                        am_gauge_tgl.classList.remove('am_play');
                     }
 
                     am_changer(am_data[newidx]);
