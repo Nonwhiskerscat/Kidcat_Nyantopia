@@ -226,7 +226,7 @@ window.addEventListener('load', () => {
     let header_h=document.querySelector('header').offsetHeight;
 
     header_logo.addEventListener('click', function() {
-        location.href='./index.html';
+        location.href='http://kidcatnyantopia.net/';
     })
 
     // 헤더 로고 글자 효과
