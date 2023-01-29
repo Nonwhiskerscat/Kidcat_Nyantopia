@@ -31,7 +31,7 @@ window.addEventListener('load', function() {
 
     [].forEach.call(kidcatpage, function(kidcatpage){
         kidcatpage.addEventListener('click', function() {
-            location.href='http://nonwhiskerscat.dothome.co.kr/'
+            location.href='http://kidcatnyantopia.net/'
         });
     });
 
