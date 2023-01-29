@@ -1514,6 +1514,33 @@ main {
             }
         }
 
+        .mk_click {
+            width: fit-content;
+            margin: 0 auto;
+            @include nyan_small_margin;
+
+            p {
+                font-size: calc(8px + 2vw);
+
+                @include responsive(tablet-cat) {
+                    font-size: calc(12px + 1vw);
+                }
+    
+                @include responsive(semi-cat) {
+                    font-size: 24px;
+                }
+    
+                @include responsive(huge-cat) {
+                    font-size: 28px;
+                }
+
+                .mk_p_letter {
+                    display: inline-block;
+                }
+            }
+            
+        }
+
         .mk_main {
 
             position: relative;
@@ -2034,8 +2061,14 @@ main {
                     }
 
                     .mk_skill {
+
                         @include responsive(semi-cat) {
                             animation: ferris_wheel 90s linear reverse infinite;
+                        }
+
+                        &:hover {
+                            rotate: 15deg;
+                            transition: rotate 0.5s linear;
                         }
                     }
     

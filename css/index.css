@@ -4467,6 +4467,56 @@ main .main_myskills .my_skills_gnb .mk_gnb_flex li .mk_gnb_kitty img {
   }
 }
 
+main .main_myskills .mk_click {
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 25px;
+}
+
+@media screen and (min-width: 768px) {
+  main .main_myskills .mk_click {
+    margin-top: 35px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_click {
+    margin-top: 40px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  main .main_myskills .mk_click {
+    margin-top: 50px;
+  }
+}
+
+main .main_myskills .mk_click p {
+  font-size: calc(8px + 2vw);
+}
+
+@media screen and (min-width: 768px) {
+  main .main_myskills .mk_click p {
+    font-size: calc(12px + 1vw);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  main .main_myskills .mk_click p {
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  main .main_myskills .mk_click p {
+    font-size: 28px;
+  }
+}
+
+main .main_myskills .mk_click p .mk_p_letter {
+  display: inline-block;
+}
+
 main .main_myskills .mk_main {
   position: relative;
 }
@@ -5115,6 +5165,11 @@ main .main_myskills .mk_main .nyan_zone .mk_icons {
   main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill {
     animation: ferris_wheel 90s linear reverse infinite;
   }
+}
+
+main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill:hover {
+  rotate: 15deg;
+  transition: rotate 0.5s linear;
 }
 
 main .main_myskills .mk_main .nyan_zone .mk_icons .mk_skill_zone {

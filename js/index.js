@@ -176,21 +176,24 @@ window.addEventListener('load', () => {
 
     let mit_timer=null;
 
-    window.addEventListener('resize', ()=> {
-        let kit_width=bighead$.offsetWidth;
-        let kit_height=bighead$.offsetHeight;
+    setTimeout(()=> {
+        window.addEventListener('resize', ()=> {
+            let kit_width=bighead$.offsetWidth;
+            let kit_height=bighead$.offsetHeight;
+    
+            clearTimeout(mit_timer);
+            kit_width=bighead$.offsetWidth;
+            kit_height=bighead$.offsetHeight;
+            kit.style.height=`${kit_height}px`;
+            removeTiles();
+    
+            mit_timer=setTimeout(()=> {
+                createTiles();
+                tilesBlink();
+            },500)
+        });
+    }, 6600)
 
-        clearTimeout(mit_timer);
-        kit_width=bighead$.offsetWidth;
-        kit_height=bighead$.offsetHeight;
-        kit.style.height=`${kit_height}px`;
-        removeTiles();
-
-        mit_timer=setTimeout(()=> {
-            createTiles();
-            tilesBlink();
-        },500)
-    });
 
 
     setTimeout(()=> {
@@ -1417,11 +1420,6 @@ window.addEventListener('load', () => {
         })
     }
 
-
-
-    
-    
-
     let ms_scroll=true;
 
 
@@ -1441,6 +1439,32 @@ window.addEventListener('load', () => {
 
     //my_skills
 
+    let mk_click_p=document.querySelector('.mk_click_p');
+    paja(mk_click_p, 'mk_p_letter');
+    let mk_p_letter=document.querySelectorAll('.mk_p_letter');
+
+    let mk_click_ani = [
+        { transform: 'translate(0, 0)'},
+        { transform: 'translate(0, -100%)'},
+        { transform: 'translate(0, -80%)'},
+        { transform: 'translate(0, -50%)'},
+        { transform: 'translate(0, -20%)'},
+        { transform: 'translate(0, -0%)'}
+    ];
+
+    function mkClick() {
+
+        setInterval(()=> {
+            [].forEach.call(mk_p_letter, (cat, idx)=> {
+                cat.animate(mk_click_ani, {
+                    fill: 'forwards',
+                    duration: 500,
+                    delay: idx*50
+                });
+            })
+        }, 5000)
+
+    }
 
     //아이콘 생성
 
@@ -1449,6 +1473,7 @@ window.addEventListener('load', () => {
 
     let mk_skills_cod='';
     let mk_skills_gph='';
+
 
     const mk_data_url="https://nonwhiskerscat.github.io/kidcat_nyantopia/json/my_skills.json";
 
@@ -1568,6 +1593,7 @@ window.addEventListener('load', () => {
                         if(window.scrollY+w_height>main_myskills$.offsetTop+main_myskills$.offsetHeight/2+mk_skills_kitty.offsetHeight) {
                             mk_icons_ani(mk_skill_cod);
                             mk_gauge_ani_entire();
+                            mkClick();
                             mk_scroll=false;
                         }
                     }
@@ -1576,6 +1602,7 @@ window.addEventListener('load', () => {
                         if(window.scrollY+w_height>main_myskills$.offsetTop+main_myskills$.offsetHeight/2) {
                             mk_icons_ani(mk_skill_cod);
                             mk_gauge_ani_entire();
+                            mkClick();
                             mk_scroll=false;
                         }
                     }
