@@ -1265,6 +1265,7 @@ window.addEventListener('load', () => {
 
             [].forEach.call(rest_list, (cat, newidx)=> {
                 cat.addEventListener('click', () => {
+                    
                     if(am_gauge_tgl.classList.contains('am_play')) {
                         am_gauge_tgl.src='./img/main/about_me_play.png';
                         am_gauge_crt.style.display='none';
