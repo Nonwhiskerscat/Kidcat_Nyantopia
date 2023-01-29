@@ -269,6 +269,7 @@ window.addEventListener('load', () => {
 
 
     // GNB 슬라이드 효과
+    gnb_nyan.style.display='none';
     gnb_nyan.style.right=`-${gnb_width}px`;
     
     window.addEventListener('resize', () => {
@@ -286,6 +287,15 @@ window.addEventListener('load', () => {
             gnb_nyan.style.top=0;
             gnb_nyan.style.left='auto';
             gnb_nyan.style.right=0;
+
+            if(w_width<semi_cat) {
+                gnb_nyan.style.display='block';
+
+            }
+
+            else {
+                gnb_nyan.style.display='none';
+            }
         }
 
     })
@@ -293,6 +303,8 @@ window.addEventListener('load', () => {
     gnb_icon.addEventListener('click', () => {
         if(!gnb_nyan.classList.contains('gnb_on'))
             {
+                gnb_nyan.style.display='block';
+
                 gnb_nyan.animate({right:0},
                     {duration: 500,
                     fill: 'forwards'}
@@ -304,6 +316,7 @@ window.addEventListener('load', () => {
         
         else 
             {
+                gnb_nyan.style.display='block';
                 gnb_nyan.animate({right:`-${gnb_width}px`},
                 {duration: 500,
                 fill: 'forwards'}
@@ -311,8 +324,12 @@ window.addEventListener('load', () => {
                 gnb_nyan.classList.remove('gnb_on');
                 gnb_icon.src="./img/header/jelly_front_short.png";
 
-
+                setTimeout(() => {
+                    gnb_nyan.style.display='none';
+                }, 500);
             }
+
+
     });
 
     // GNB 애니메이션
@@ -1067,7 +1084,8 @@ window.addEventListener('load', () => {
 
             let am_object={
                 timer: 5000,
-                idx:0
+                idx:0,
+                newidx: 0
             }
 
             am_generator(am_data[am_object.idx], am_data ,am_data_l);
@@ -1206,9 +1224,9 @@ window.addEventListener('load', () => {
             am_gauge_ani();
 
             let am_gauge_tgl=am_gauge_in.querySelector('.gauge_toggle img');
+            am_gauge_tgl.classList.add('am_play');
 
             am_gauge_tgl.addEventListener('click', () => {
-                am_gauge_tgl.classList.toggle('am_play');
                 if(am_gauge_tgl.classList.contains('am_play')) {
                     am_gauge_tgl.src='./img/main/about_me_play.png';
 
@@ -1227,6 +1245,8 @@ window.addEventListener('load', () => {
                     am_gauge_crt.style.display='block';
                     
                 }
+
+                am_gauge_tgl.classList.toggle('am_play');
             })
 
             let am_rest_in=am_gauge_in.querySelector('.rest_num');
@@ -1245,17 +1265,14 @@ window.addEventListener('load', () => {
 
             [].forEach.call(rest_list, (cat, newidx)=> {
                 cat.addEventListener('click', () => {
-                    clearInterval(am_times);
-                    am_gauge_ani();
+                    if(am_gauge_tgl.classList.contains('am_play')) {
+                        am_gauge_tgl.src='./img/main/about_me_play.png';
+                        am_gauge_crt.style.display='none';
+                        clearInterval(am_times);
+                    }
+
                     am_changer(am_data[newidx]);
                     amSpot(newidx);
-
-                    am_times=setInterval(()=> {
-                        newidx++;
-                        am_change_ani((newidx)%3);
-                        amSpot(newidx%3);
-
-                    }, am_object.timer);
                 })
             })
 
