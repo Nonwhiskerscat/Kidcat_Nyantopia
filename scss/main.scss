@@ -1520,6 +1520,7 @@ main {
             @include nyan_small_margin;
 
             p {
+                color: $second;
                 font-size: calc(8px + 2vw);
 
                 @include responsive(tablet-cat) {

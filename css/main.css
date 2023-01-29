@@ -2264,6 +2264,7 @@ main .main_myskills .mk_click {
 }
 
 main .main_myskills .mk_click p {
+  color: #fcf8ac;
   font-size: calc(8px + 2vw);
 }
 
