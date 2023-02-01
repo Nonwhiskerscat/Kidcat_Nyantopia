@@ -35,13 +35,13 @@ function alertResult(cat, escore, earr, etry) {
     
     if(lolly==1) {
         rstH4.innerHTML=`CLEAR`;
-        rstImg.src='../img/alert/catclear.png';
+        rstImg.src='./img/alert/catclear.png';
         rstNtc.innerHTML=`축하드립니다. <br>공격에 성공하셨습니다.`;
     }
 
     else if(lolly==6) { 
         rstH4.innerHTML=`Out Field`;
-        rstImg.src='../img/alert/cat.png';
+        rstImg.src='./img/alert/cat.png';
         rstNtc.innerHTML=`${com[n1]}, ${com[n2]}`;
         rstScr.style.display="none";
         outres.querySelector('.store_btn').classList.add('sold');
@@ -53,7 +53,7 @@ function alertResult(cat, escore, earr, etry) {
 
     else if(lolly==7) {
         rstH4.innerHTML=`In Field`;
-        rstImg.src='../img/alert/cat.png';
+        rstImg.src='./img/alert/cat.png';
         rstNtc.innerHTML=`${arrKor[n1]} 번째 숫자는 ${com[n1]}`;
         rstScr.style.display="none";
         inneres.querySelector('.store_btn').classList.add('sold');
@@ -64,7 +64,7 @@ function alertResult(cat, escore, earr, etry) {
 
     else if(lolly==8) {
         rstH4.innerHTML=`Table Seat`;
-        rstImg.src='../img/alert/cat.png';
+        rstImg.src='./img/alert/cat.png';
         rstNtc.innerHTML=`
         ${arrKor[n1]} 번째 숫자는 ${com[n1]}<br>
         ${arrKor[n2]} 번째 숫자는 ${com[n2]}<br>
