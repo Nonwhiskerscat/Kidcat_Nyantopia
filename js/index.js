@@ -278,7 +278,6 @@ window.addEventListener('load', () => {
     window.addEventListener('resize', () => {
         
         gnb_width=gnb_nyan.offsetWidth;
-        // gnb_height=gnb_nyan.offsetHeight;
 
         if(w_width<semi_cat) {
             gnb_nyan.style.display='block';
@@ -319,7 +318,6 @@ window.addEventListener('load', () => {
         
         else 
             {
-                gnb_nyan.style.display='block';
                 gnb_nyan.animate({right:`-${gnb_width}px`},
                 {duration: 500,
                 fill: 'forwards'}
