@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Nyan Baseball">
+    <meta name="Author" content="Seoyong Kim">
+    <meta name="title" property="og:title" content="숫자야구게임">
+    <meta name="images" property="og:image" content="./img/head/og_img.png">
+    <meta name="description" property="og:description" content="Nonwhiskerscat의 신작! 남녀노소 누구나 쉽게 즐길 수 있는 숫자 야구게임. 지금 접속하세요!">
+    <meta name="type" property="og:type" content="article">
+    <link rel="shortcut icon" href="./img/head/favicon.png">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/webfont.css">
+    <link rel="stylesheet" href="./css/scroll.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/inputMaker.js"></script>
+    <script src="./js/startCheck.js"></script>
+    <script src="./js/randNumber.js"></script>
+    <script src="./js/gameLauncher.js"></script>
+    <script src="./js/attackNumber.js"></script>
+    <script src="./js/gameBoard.js"></script>
+    <script src="./js/clearInput.js"></script>
+    <script src="./js/autofocus.js"></script>
+    <script src="./js/randomValue.js"></script>
+    <script src="./js/totalScore.js"></script>
+    <script src="./js/countMaker.js"></script>
+    <script src="./js/scoreBoard.js"></script>
+    <script src="./js/strikeScore.js"></script>
+    <script src="./js/countScore.js"></script>
+    <script src="./js/storeScore.js"></script>
+    <script src="./js/outScore.js"></script>
+    <script src="./js/ballCount.js"></script>
+    <script src="./js/strikeCount.js"></script>
+    <script src="./js/outCount.js"></script>
+    <script src="./js/dashBoard.js"></script>
+    <script src="./js/countLight.js"></script>
+    <script src="./js/scoreCalculator.js"></script>
+    <script src="./js/endGame.js"></script>
+    <script src="./js/keyPress.js"></script>
+    <script src="./js/alertCustom.js"></script>
+    <script src="./js/confirmCustom.js"></script>
+    <script src="./js/scoreReset.js"></script>
+    <script src="./js/resetScore.js"></script>
+    <title>숫자야구게임</title>
+</head>
+<body>
+    <div class="bighead">
+
+        <div class="alerts">
+            <div id="result_alt" class="no">
+                <div class="alertbx">
+                    <h4><!--여기에는 게임 결과 타이틀이 들어갑니다.--></h4>
+                    <img src="#" alt="#">
+                    <p class="notice"><!--여기에는 게임 결과 안내문이 들어갑니다.--></p>
+                    
+                    <div class="scorebox">
+    
+                        <div class="tr">
+                            <h5>Result</h5>
+                            <p><!--여기에는 결과값이 들어갑니다.--></p>
+                        </div>
+    
+                        <div class="tt">
+                            <h5>Trial</h5>
+                            <p><!--여기에는 시도 횟수가 들어갑니다.--></p>
+                        </div>
+    
+                        <div class="ts">
+                            <h5>Score</h5>
+                            <p><!--여기에는 스코어가 들어갑니다.--></p>
+                        </div>
+    
+                    </div>
+    
+                    <div class="cls">
+                        <h6>Close!</h6>
+                    </div>
+                </div>          
+            </div>
+    
+            <div id="common_alt" class="no">
+                <div class="alertbx">
+                    <h4><!--여기에는 타이틀이 들어갑니다.--></h4>
+                    <img src="./img/alert/catcommon.png" alt="#">
+                    <p class="notice"><!--여기에는 안내문이 들어갑니다.--></p>
+                    <p class="store"><!--여기에는 힌트가 들어갑니다.--></p>
+                    <div class="cls">
+                        <h6>Close!</h6>
+                    </div>
+                </div>          
+            </div>
+
+        </div>
+
+        <div class="confirms">
+            <div id="common_con" class="no">
+                <div class="contbx">
+                    <h4><!--여기에는 타이틀이 들어갑니다.--></h4>
+                    <img src="./img/alert/catcommon.png" alt="#">
+                    <p class="notice1"><!--여기에는 안내문이 들어갑니다.--></p>
+                    <p class="notice2"><!--여기에는 안내문 2가 들어갑니다.--></p>
+                    <div class="con_btn">
+                        <h6 class="yes">Yes!</h6>
+                        <h6 class="nope">Nope!</h6>
+                    </div>
+                </div>          
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="first_screen">
+                <h1>숫자 야구 게임</h1>
+                <div class="part1">
+                    <div class="first_flex">
+                        <div class="first_title">
+                            <p>자릿수를 선택하세요!</p>
+                        </div>
+                        <div id="cat">
+                            <button name="goyang" value="2">2</button>
+                            <button name="goyang" value="3">3</button>
+                            <button name="goyang" value="4">4</button>
+                            <button name="goyang" value="5">5</button>
+                            <button name="goyang" value="6">6</button>
+                            <button name="goyang" value="7">7</button>
+                            <button name="goyang" value="8">8</button>
+                            <button name="goyang">R</button>
+                        </div>
+                    </div><!--first_flex-->
+
+                    <div class="first_btn">
+                        <div class="btn1 how">
+                            <div class="btn1_flex">
+                                <img src="./img/part1/how_icon.png" alt="#">
+                                <p>게임 방법</p>
+                            </div>
+                        </div>
+
+                        <div class="btn1 ind kidcatpage">
+                            <div class="btn1_flex">
+                                <img src="./img/part1/ind_icon.png" alt="#">
+                                <p>개발자 페이지</p>
+                            </div>
+                        </div>
+
+
+                    </div>
+    
+                </div> <!--part1-->
+            </div><!--first_screen-->
+    
+            <div class="second_screen">
+                <div class="htp">
+                    <h2>게임 방법</h2>
+                    <ul>
+                        <li>하나, 공격 시작 전, 숫자의 자릿수를 선정하세요. (<span class="highlight">자릿수가 높을수록 난이도가 급상승</span>합니다.)</li>
+
+                        <li>둘, 공격 시작 이후, 선정한 자릿수에 따른 임의의 숫자를 입력하면서 <span class="highlight">상대방의 숫자를 예측</span> 해보세요!</li>
+
+                        <li>
+                            셋, 공격 숫자가 <span class="highlight">상대방의 숫자와만 일치할 경우 볼</span> 카운트, <span class="highlight">숫자와 위치 모두 일치할 경우 스트라이크</span> 카운트, <span class="highlight">숫자가 일치하지 않을 경우 아웃 카운트</span>가 올라갑니다.
+
+                            <div class="ex_photos">
+                                <div class="ex_photo_flex">
+                                    <div class="imggrp1">
+                                        <img src="./img/part2/ex1.png" alt="예시1">
+                                        <p><span class="ex_bold">예시 1</span> 숫자 1개, 자리 1개 일치</p>
+                                    </div>
+
+                                    <div class="imggrp2">
+                                        <img src="./img/part2/ex2.png" alt="예시2">
+                                        <p><span class="ex_bold">예시 2</span> 숫자 1개, 자리 2개 일치</p>
+                                    </div>
+
+                                    <div class="imggrp3">
+                                        <img src="./img/part2/ex3.png" alt="예시3">
+                                        <p><span class="ex_bold">예시 3</span> 모든 숫자 불일치</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </li>
+
+                        <li>
+                            넷, 게임을 중도에 포기할 경우, 남아있는 점수가 0 이하인 경우, 3아웃 판정을 받은 경우, <span class="highlight">스코어가 모두 소멸되어 게임이 종료</span> 됩니다.
+                        </li>
+
+                        <li>
+                            다섯, 게임이 더럽게 안 풀리면 힌트를 사용하여 숫자를 더욱 더 쉽게 추적해 보세요!(<span class="highlight">상점 요금은 후불이며 다음 공격 시 함께 지불</span>됩니다.)
+                        </li>
+
+                        <li>
+                            여섯, 스트라이크를 잡을 경우 <span class="highlight">보너스 점수가 부여</span>되며, 아웃 판정을 받을 경우 <span class="highlight">보유 점수의 절반 이상이 소멸</span>됩니다. 
+                        </li>
+                    </ul>
+
+                    <div class="second_btn">
+                        <div class="btn2 lobby">
+                            <div class="btn2_flex">
+                                <img src="./img/part1/how_icon.png" alt="#">
+                                <p>처음 화면</p>
+                            </div>
+                        </div>
+
+                        <div class="btn2 ind kidcatpage">
+                            <div class="btn2_flex">
+                                <img src="./img/part1/ind_icon.png" alt="#">
+                                <p>개발자 페이지</p>
+                            </div>
+                        </div>
+                </div>
+                
+            </div><!--second_screen-->
+    
+
+    
+        </div><!--container-->
+
+        <div class="third_screen">
+
+            <div class="part1">
+                <h2>숫자를 입력해 주세요.</h2>
+                <h6><span>주의</span>숫자가 아닌 문자, 공백 문자, 중복값은<br> X(이도 저도 아닌 숫자)로 인식됩니다!</h6>
+
+                <div class="third_flex">
+                    <div class="kitty">
+                        <!--이곳에는 숫자 입력을 받는 input이 들어갑니다.-->
+                    </div>
+                    <div class="btn">
+                        <button id="kidcat2">공격!</button>
+                    </div>
+                    <div class="ctn no">
+                        <button id="kidcat3">다시!</button>
+                    </div>
+                </div><!--"third_flex"-->
+            </div>
+    
+            <div class="part3">
+                <div class="output_box">
+                    <div class="output_flex">
+                        <div class="attack">
+                            <h3>Input</h3>
+                            <p><!--input이 들어감-->-</p>
+                        </div>
+
+                        <div>
+                            <h3>Out</h3>
+                            <ul class="out_count">
+                                <li class="circle" id="ocircle_1"></li>
+                                <li class="circle" id="ocircle_2"></li>
+                                <li class="circle" id="ocircle_3"></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>Ball</h3>
+                            <ul class="ball_count">
+
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>Strike</h3>
+                            <ul class="strike_count">
+
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div> <!--part30-->
+
+            <div class="info">
+                <div class="part4">
+                    <h3>기록실</h3>
+                    <div class="result_box">
+                        <table class="result_t">
+                            <colgroup>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+
+                            <thead>
+                                <tr>
+                                    <th scope="col">횟수</th>
+                                    <th scope="col" class="feline">입력숫자</th>
+                                    <th scope="col">BALL</th>
+                                    <th scope="col">STRIKE</th>
+                                    <th scope="col">OUT</th>                            
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <!-- <tr>
+                                    <td>횟수</td>
+                                    <td>입력된 수</td>
+                                    <td>Ball</td>
+                                    <td>Strike</td>
+                                    <td>Out</td>
+                                </tr> -->
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div> <!--part4-->
+
+                <div class="semi_info">
+                    <div class="part5">
+                        <h3>힌트보기</h3>
+                        <div class="store">
+                            <div id="outer">
+                                <h4>외야석</h4>
+                                <div class="store_btn"><span class="price">-5000점</span><span class="sold_out no">Sold Out!</span></div>
+                            </div>
+
+                            <div id="inner">
+                                <h4>내야석</h4>
+                                <div class="store_btn"><span class="price">-8000점</span><span class="sold_out no">Sold Out!</span></div>
+                            </div>
+
+                            <div id="table">
+                                <h4>테이블석</h4>
+                                <div class="store_btn"><span class="price">-20000점</span><span class="sold_out no">Sold Out!</span></div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="part6">
+                        <h3>포기하기</h3>
+                        <div id="kidcat">
+                            <div class="giveup_flex" id="kidcat4">
+                                <img src="./img/part3/give_up.png" alt="#">
+                                <p>여기까지 왔잖아.~<br>
+                                포기는 아직 이르다고 ㅠㅠ</p>
+                            </div>
+                        </div>
+
+                    </div> <!--part6-->
+                </div>
+
+            </div>
+    
+
+
+            <div class="part7">
+                <div class="sc_board">
+                    <h5>score</h5>
+                    <div class="score">
+                    </div>
+                </div>
+            </div><!--part7-->
+
+            <div class="part8">
+                <span class="retire"></span>
+                <span class="outst"></span>
+                <span class="inst"></span>
+                <span class="tabst"></span>
+            </div>
+
+
+
+
+        </div><!--third_screen-->
+
+
+
+    </div>
+</body>
+</html>
