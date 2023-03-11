@@ -1,3 +1,0 @@
-function storeMin(cat) {
-    
-}
