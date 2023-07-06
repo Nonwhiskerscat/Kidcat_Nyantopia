@@ -1,600 +1,634 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="Description" content="Kidcat Nyantopia">
-    <meta name="Author" content="Seoyong Kim">
-    <meta name="title" property="og:title" content="Kidcat Nyantopia">
-    <meta name="images" property="og:image" content="./img/favicon_og/og_img.png"> <!--OG 이미지 링크-->
-    <meta name="description" property="og:description" content="수염 없는 고양이 Kidcat의 Nyantopia에 온 것을 진심으로 환영한다냥!">
-    <meta name="type" property="og:type" content="article">
-    <title>키드캣 냥토피아::Kidcat Nyantopia</title>
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Pacifico" />
-    <link rel="shortcut icon" href="./img/favicon_og/favicon.png"> <!--파비콘 이미지 링크-->
-    <link rel="stylesheet" href="./css/index.css">
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="./js/svg.js"></script>
-    <script src="./js/index.js" defer></script>
-</head>
-<body>
-    <div class="tile_back">
-
-    </div>
-    <div class="under_320">
-        <div class="under_320_contents">
-            <h2>경고!</h2>
-            <div class="img_320">
-                <img src="./img/etc/under_320.png" alt="#">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="Description" content="Kidcat Nyantopia" />
+        <meta name="Author" content="Seoyong Kim" />
+        <meta name="title" property="og:title" content="Kidcat Nyantopia" />
+        <meta name="images" property="og:image" content="./img/favicon_og/og_img.png" />
+        <!--OG 이미지 링크-->
+        <meta
+            name="description"
+            property="og:description"
+            content="수염 없는 고양이 Kidcat의 Nyantopia에 온 것을 진심으로 환영한다냥!"
+        />
+        <meta name="type" property="og:type" content="article" />
+        <title>키드캣 냥토피아::Kidcat Nyantopia</title>
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Pacifico" />
+        <link rel="shortcut icon" href="./img/favicon_og/favicon.png" />
+        <!--파비콘 이미지 링크-->
+        <link rel="stylesheet" href="./css/index.css" />
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="./js/svg.js"></script>
+        <script src="./js/index.js" defer></script>
+    </head>
+    <body>
+        <div class="tile_back"></div>
+        <div class="under_320">
+            <div class="under_320_contents">
+                <h2>경고!</h2>
+                <div class="img_320">
+                    <img src="./img/etc/under_320.png" alt="#" />
+                </div>
+                <p>해당 디바이스에서는<br />지원되지 않습니다.</p>
             </div>
-            <p>해당 디바이스에서는<br>지원되지 않습니다.</p>
         </div>
-    </div>
 
-    <div class="bighead">
-        <header>
-            <div class="nyan_zone">
-                <div class="header_flex">
-                    <div class="header_logo">
-                        <div class="img_area">
-                            <img src="./img/header/header_logo_img.png" alt="#">
-                        </div>
-                        <div class="text_area">
-                            <h3>KIDCAT</h3>
-                            <h4>NYANTOPIA</h4>
-                        </div>
-            
-                    </div>
-        
-                    <div class="menu_gnb_mt">
-                        <img class="gnb_icon" src="./img/header/jelly_front_short.png" alt="gnb">
-                    </div>
-        
-                    <div class="menu_gnb_sh">
-                        <ul class="gnb_main">
-                            <li>
-                                <div class="sh_li_flex">
-                                    <span class="li_img"></span><p class="li_txt">Intro</p>
-                                </div> 
-                            </li>
-                            <li>
-                                <div class="sh_li_flex">
-                                    <span class="li_img"></span><p class="li_txt">About Me</p>
-                                </div> 
-                            </li>
-                            <li>
-                                <div class="sh_li_flex">
-                                    <span class="li_img"></span><p class="li_txt">My Specs</p>
-                                </div> 
-                            </li>
-                            <li>
-                                <div class="sh_li_flex">
-                                    <span class="li_img"></span><p class="li_txt">My Skills</p>
-                                </div> 
-                            </li>
-                            <li>
-                                <div class="sh_li_flex">
-                                    <span class="li_img"></span><p class="li_txt">Project</p>
-                                </div> 
-                            </li>
-                            <li>
-                                <div class="sh_li_flex">
-                                    <span class="li_img"></span><p class="li_txt">Contact <span class="gnb_sh_huge">Me</span></p>
-                                </div> 
-                            </li>
-
-                        </ul>
-    
-                        <div class="gnb_base">
-                            <div class="gnb_over">
-                                <img src="./img/header/gnb_dial.png" alt="다이얼">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="gnb_nyan">
-                <div class="gnb_mobile">
-                    <img class="mob1" src="./img/header/mobile_star.png" alt="mobile_star">
-                    <img class="mob2" src="./img/header/mobile_fish.png" alt="mobile_fish">
-                    <img class="mob3" src="./img/header/mobile_moon.png" alt="mobile_moon">
-                    <img class="mob4" src="./img/header/mobile_cloud.png" alt="mobile_cloud">
-                    <img class="mob5" src="./img/header/mobile_cat.png" alt="mobile_cat">
-                </div>
-                
-
-                <div class="gnb_list">
-                    <ul>
-                        <li><span class="li_img"></span><p class="li_txt">Intro</p></li>
-                        <li><span class="li_img"></span><p class="li_txt">About Me</p></li>
-                        <li><span class="li_img"></span><p class="li_txt">My Specs</p></li>
-                        <li><span class="li_img"></span><p class="li_txt">My Skills</p></li>
-                        <li><span class="li_img"></span><p class="li_txt">Project</p></li>
-                        <li><span class="li_img"></span><p class="li_txt">Contact Me</p></li>
-                    </ul>
-                </div>
-
-                <div class="gnb_lower">
-                    <div class="gaussian_light">
-                    </div>
-                    <div class="base_bottom">
-    
-                        <div class="base_img">
-                            <img class="gnb_bead" src="./img/header/gnb_bead.png" alt="#">
-                            <img class="gnb_kitty" src="./img/header/gnb_kitty.png" alt="#">
-                        </div>
-                    </div>
-                </div>
-
-                
-            </div>
-        </header>
-
-        <main>
-            <div class="rending no" id="main_a">
-                
-            </div>
-
-            <div class="intro_matte">
-
-            </div>
-
-            <div class="main_intro" id="main_0">
-                <div class="nyan_zone nyan_1">
-                    <div class="first_flex">
-                        <div class="intro_images">
-                            <img class="intro_kitty" src="./img/main/intro_kitty.png" alt="인트로 고양이">
-                            <div class="intro_lines">
-                                <img class="intro_line_1" src="./img/main/intro_kitty_line_1.png" alt="인트로 라인1">
-                                <img class="intro_line_2" src="./img/main/intro_kitty_line_1.png" alt="인트로 라인2">
-                                <img class="intro_line_3" src="./img/main/intro_kitty_line_1.png" alt="인트로 라인3">
-                            </div>
-
-                            <div class="intro_click">
-                                <p class="intro_click_hi">Click Me~</p>
-                            </div>
-                            
-
-                            <div class="intro_wave">
-                                <div class="intro_waves intro_wave1">
-                                
-                                </div>
-
-                                <div class="intro_waves intro_wave2">
-                                
-                                </div>
-                            </div>
-
-                        </div>
-        
-                        <div class="intro_title">
-                            <div class="intro_h2">
-                                <h2>Thank You For Visiting</h2>
-                            </div>
-    
-                            <div class="intro_h1">
-                                <h1>Kidcat Nyantopia</h1>
-                                <div class="img_area">
-                                    <img class="intro_kitty_stroke" src="./img/main/intro_kitty_picto.png" alt="인트로 픽토1">
-                                </div>
-    
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="main_aboutme" id="main_1">
-                <div class="main_h2">
-                    <div class="nyan_zone">
-                        <div class="nyan_h2_flex">
-                            <div class="title_trace_area">
-                                <img src="./img/main/title_trace.png" alt="고양이 발자국">
-                                <img src="./img/main/title_trace.png" alt="고양이 발자국">
-                                <img src="./img/main/title_trace.png" alt="고양이 발자국">
-                            </div>
-                            <div class="title_text_area">
-                                <h2>About Me</h2>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="nyan_zone">
-                        <div class="about_me_contents">
-                            <div class="about_me_illust">
-                                <div class="about_me_back">
-                                    <img class="about_me_base" src="./img/main/about_me_back.png" alt="어바웃 미 배경">
-                                    <img class="about_me_base" src="./img/main/about_me_line.png" alt="어바웃 미 라인">
-
-                                    <div class="about_me_front">
-                                        <img src="./img/main/about_me_kitty.png" alt="어바웃 미 고양이">
-                                        <img src="./img/main/about_me_line_1.png" alt="어바웃 미 선1">
-                                        <img src="./img/main/about_me_line_2.png" alt="어바웃 미 선2">
-                                        <img src="./img/main/about_me_line_3.png" alt="어바웃 미 선3">
-                                    </div>
-                                    
-                                </div>
-
-
-                            </div>
-
-                            <div class="about_me_descri">
-                                <div class="descri_idc"></div>
-                                <div class="descri_comment"></div>
-                                <div class="descri_explains"></div>
-                                <div class="descri_gauge"></div>
-                            </div>
-                        </div>
-                    </div>
-                    
-
-                </div>
-            </div>
-
-            <div class="main_myspecs" id="main_2">
-                <div class="main_h2">
-                    <div class="nyan_zone">
-                        <div class="nyan_h2_flex">
-                            <div class="title_trace_area">
-                                <img src="./img/main/title_trace.png" alt="고양이 발자국">
-                                <img src="./img/main/title_trace.png" alt="고양이 발자국">
-                                <img src="./img/main/title_trace.png" alt="고양이 발자국">
-                            </div>
-                            <div class="title_text_area">
-                                <h2>My Specs</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="my_specs_back">
-                    <div class="ms_back b1">
-                        <img src="./img/main/my_specs_back_1.png" alt="백1">
-                        <img src="./img/main/my_specs_back_1_line.png" alt="백라인1">
-                    </div>
-
-                    <div class="ms_back b2">
-                        <img src="./img/main/my_specs_back_2.png" alt="백2">
-                        <img src="./img/main/my_specs_back_2_line.png" alt="백라인1">
-                    </div>
-
-                    <div class="ms_back b3">
-                        <img src="./img/main/my_specs_back_3.png" alt="백3">
-                        <img src="./img/main/my_specs_back_3_line.png" alt="백라인1">
-                    </div>
-                </div>
-
+        <div class="bighead">
+            <header>
                 <div class="nyan_zone">
-                    <div class="my_specs_contents">
-                        <div class="ms_contents_grp">
-                            <img src="./img/main/my_specs_kitty.png" alt="스펙 고양이">
-                            <div class="ms_contents_txt n1">
-                                <div class="ms_kitty_txt">
-                                    <h4>Name</h4>
-                                    <p>김서용(Seo Yong Kim)</p>
-                                    <h4 class="h4_even">Birthday</h4>
-                                    <p>1997.09.09</p>
-                                </div>
-
-                                <div class="ms_contents_fw"></div>
+                    <div class="header_flex">
+                        <div class="header_logo">
+                            <div class="img_area">
+                                <img src="./img/header/header_logo_img.png" alt="#" />
+                            </div>
+                            <div class="text_area">
+                                <h3>KIDCAT</h3>
+                                <h4>NYANTOPIA</h4>
                             </div>
                         </div>
-    
-                        <div class="ms_contents_grp">
-                            <img src="./img/main/my_specs_kitty.png" alt="스펙 고양이">
-                            <div class="ms_contents_txt n2">
-                                <div class="ms_kitty_txt">
-                                    <h4>E-mail</h4>
-                                    <p>nonwhiskerscat<br>@gmail.com</p>
-                                    <h4 class="h4_even">Cellphone</h4>
-                                    <p>01090849222</p>
-                                </div>
 
-                                <div class="ms_contents_fw"></div>
-                            </div>
+                        <div class="menu_gnb_mt">
+                            <img class="gnb_icon" src="./img/header/jelly_front_short.png" alt="gnb" />
                         </div>
-    
-                        <div class="ms_contents_grp">
-                            <img src="./img/main/my_specs_kitty.png" alt="스펙 고양이">
-                            <div class="ms_contents_txt n3">
-                                <div class="ms_kitty_txt">
-                                    <h4>Education I</h4>
-                                    <h5>2022.08 ~ 2023.01</h5>
-                                    <p>방송국제교육원<br>웹퍼블리싱&프론트앤드</p>
+
+                        <div class="menu_gnb_sh">
+                            <ul class="gnb_main">
+                                <li>
+                                    <div class="sh_li_flex">
+                                        <span class="li_img"></span>
+                                        <p class="li_txt">Intro</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="sh_li_flex">
+                                        <span class="li_img"></span>
+                                        <p class="li_txt">About Me</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="sh_li_flex">
+                                        <span class="li_img"></span>
+                                        <p class="li_txt">My Specs</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="sh_li_flex">
+                                        <span class="li_img"></span>
+                                        <p class="li_txt">My Skills</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="sh_li_flex">
+                                        <span class="li_img"></span>
+                                        <p class="li_txt">Project</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="sh_li_flex">
+                                        <span class="li_img"></span>
+                                        <p class="li_txt">Contact <span class="gnb_sh_huge">Me</span></p>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div class="gnb_base">
+                                <div class="gnb_over">
+                                    <img src="./img/header/gnb_dial.png" alt="다이얼" />
                                 </div>
-
-                                <div class="ms_contents_fw"></div>
-                            </div>
-                        </div>
-    
-                        <div class="ms_contents_grp">
-                            <img src="./img/main/my_specs_kitty.png" alt="스펙 고양이">
-                            <div class="ms_contents_txt n4">
-                                <div class="ms_kitty_txt">
-                                    <h4>Education II</h4>
-                                    <h5>2016.02 ~ 2022.08</h5>
-                                    <p>아주대학교 미디어학과<br>심화과정 졸업</p>
-                                </div>
-
-                                <div class="ms_contents_fw"></div>
-                            </div>
-                        </div>
-    
-                        <div class="ms_contents_grp">
-                            <img src="./img/main/my_specs_kitty.png" alt="스펙 고양이">
-                            <div class="ms_contents_txt n5">
-                                <div class="ms_kitty_txt">
-                                    <h4>Career I</h4>
-                                    <h5>2021.06 ~ 2021.08</h5>
-                                    <p>강남 패스트뷰<br>디자인&광고팀</p>
-                                </div>
-    
-                                <div class="ms_contents_fw"></div>
-                            </div>
-                        </div>
-    
-                        <div class="ms_contents_grp">
-                            <img src="./img/main/my_specs_kitty.png" alt="스펙 고양이">
-                            <div class="ms_contents_txt n6">
-                                <div class="ms_kitty_txt">
-                                    <h4>Career II</h4>
-                                    <h5>2023.04 ~ 재직 중</h5>
-                                    <p>동아닷컴<br>CTS팀 사원</p>
-                                </div>
-
-                                <div class="ms_contents_fw"></div>
-                            </div>
-                        </div>
-    
-                    </div>  
-                </div>
-
-                <div class="my_specs_urban">
-                    <img src="./img/main/msurbanpc.png" alt="도시">
-                    <div class="urban_gradient"></div>
-                </div>
-
-            </div>
-
-            <div class="main_myskills" id="main_3">
-                <div class="main_h2">
-                    <div class="nyan_zone">
-                        <div class="nyan_h2_flex">
-                            <div class="title_trace_area">
-                                <img src="./img/main/title_trace.png" alt="고양이 발자국">
-                                <img src="./img/main/title_trace.png" alt="고양이 발자국">
-                                <img src="./img/main/title_trace.png" alt="고양이 발자국">
-                            </div>
-                            <div class="title_text_area">
-                                <h2>My Skills</h2>
                             </div>
                         </div>
                     </div>
-                </div>    
-
-                <div class="my_skills_gnb">
-                    
-                    <ul class="mk_gnb_flex">
-                        <li><span class="mk_gnb_kitty"><img src="./img/main/my_skills_gnb_cat.png" alt=""></span>Coding</li>
-                        <li><span class="mk_gnb_kitty"></span>Graphic</li>
-                    </ul>
-
                 </div>
 
-                <div class="mk_click">
-                    <p class="mk_click_p">아이콘을 아무거나 클릭하세요!</p>
-                </div>
+                <div class="gnb_nyan">
+                    <div class="gnb_mobile">
+                        <img class="mob1" src="./img/header/mobile_star.png" alt="mobile_star" />
+                        <img class="mob2" src="./img/header/mobile_fish.png" alt="mobile_fish" />
+                        <img class="mob3" src="./img/header/mobile_moon.png" alt="mobile_moon" />
+                        <img class="mob4" src="./img/header/mobile_cloud.png" alt="mobile_cloud" />
+                        <img class="mob5" src="./img/header/mobile_cat.png" alt="mobile_cat" />
+                    </div>
 
-                <div class="mk_main">
-                    <div class="mk_skills_kitty">
-                        <div class="mk_skills_big">
-                            <div class="mk_skills_img">
-                                <img src="./img/main/my_specs_kitty.png" alt="스킬 배경">
+                    <div class="gnb_list">
+                        <ul>
+                            <li>
+                                <span class="li_img"></span>
+                                <p class="li_txt">Intro</p>
+                            </li>
+                            <li>
+                                <span class="li_img"></span>
+                                <p class="li_txt">About Me</p>
+                            </li>
+                            <li>
+                                <span class="li_img"></span>
+                                <p class="li_txt">My Specs</p>
+                            </li>
+                            <li>
+                                <span class="li_img"></span>
+                                <p class="li_txt">My Skills</p>
+                            </li>
+                            <li>
+                                <span class="li_img"></span>
+                                <p class="li_txt">Project</p>
+                            </li>
+                            <li>
+                                <span class="li_img"></span>
+                                <p class="li_txt">Contact Me</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="gnb_lower">
+                        <div class="gaussian_light"></div>
+                        <div class="base_bottom">
+                            <div class="base_img">
+                                <img class="gnb_bead" src="./img/header/gnb_bead.png" alt="#" />
+                                <img class="gnb_kitty" src="./img/header/gnb_kitty.png" alt="#" />
                             </div>
-                            <div class="mk_detail">
-                                <h4 class="mkd_name">Tool 이름</h4>
-                                <div class="skills_gauge">
-                                    
-                                    <div class="gauge_first">
-                                        <p>숙련도</p>
-                                        <div class="gauge_entire">
-                                            <div class="gauge_colored mkd_bcolor"></div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="gauge_second">
-                                        <p>사용 빈도</p>
-                                        <div class="gauge_entire">
-                                            <div class="gauge_colored mkd_bcolor"></div>
-                                        </div>
-                                    </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
 
+            <main>
+                <div class="rending no" id="main_a"></div>
+
+                <div class="intro_matte"></div>
+
+                <div class="main_intro" id="main_0">
+                    <div class="nyan_zone nyan_1">
+                        <div class="first_flex">
+                            <div class="intro_images">
+                                <img class="intro_kitty" src="./img/main/intro_kitty.png" alt="인트로 고양이" />
+                                <div class="intro_lines">
+                                    <img
+                                        class="intro_line_1"
+                                        src="./img/main/intro_kitty_line_1.png"
+                                        alt="인트로 라인1"
+                                    />
+                                    <img
+                                        class="intro_line_2"
+                                        src="./img/main/intro_kitty_line_1.png"
+                                        alt="인트로 라인2"
+                                    />
+                                    <img
+                                        class="intro_line_3"
+                                        src="./img/main/intro_kitty_line_1.png"
+                                        alt="인트로 라인3"
+                                    />
                                 </div>
-                                
-                                <div class="skills_descri">
-                                    <div class="mk_works">
-                                        <h5>주요 작업</h5>
-                                        <p class="mkd_work">이 부분에는 주요 작업 내용이 들어갑니다.</p>
-                                    </div>
-                                    
-                                    <div class="mk_summary">
-                                        <h5>요약</h5>
-                                        <p class="mkd_summ">이 부분에는 요약이 들어갑니다.</p>
+
+                                <div class="intro_click">
+                                    <p class="intro_click_hi">Click Me~</p>
+                                </div>
+
+                                <div class="intro_wave">
+                                    <div class="intro_waves intro_wave1"></div>
+
+                                    <div class="intro_waves intro_wave2"></div>
+                                </div>
+                            </div>
+
+                            <div class="intro_title">
+                                <div class="intro_h2">
+                                    <h2>Thank You For Visiting</h2>
+                                </div>
+
+                                <div class="intro_h1">
+                                    <h1>Kidcat Nyantopia</h1>
+                                    <div class="img_area">
+                                        <img
+                                            class="intro_kitty_stroke"
+                                            src="./img/main/intro_kitty_picto.png"
+                                            alt="인트로 픽토1"
+                                        />
                                     </div>
                                 </div>
-                                <h6 class="mk_close">CLOSE</h6>                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="main_aboutme" id="main_1">
+                    <div class="main_h2">
+                        <div class="nyan_zone">
+                            <div class="nyan_h2_flex">
+                                <div class="title_trace_area">
+                                    <img src="./img/main/title_trace.png" alt="고양이 발자국" />
+                                    <img src="./img/main/title_trace.png" alt="고양이 발자국" />
+                                    <img src="./img/main/title_trace.png" alt="고양이 발자국" />
+                                </div>
+                                <div class="title_text_area">
+                                    <h2>About Me</h2>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="mk_kitty_entire">
-                            <img class="mk_skills_kitty" src="./img/main/my_skills_kitty.png" alt="스킬 고양이">
-                            <p class="fi_p">Z</p>
-                            <p class="sc_p">Z</p>
-                            <p class="th_p">Z</p>
+                        <div class="nyan_zone">
+                            <div class="about_me_contents">
+                                <div class="about_me_illust">
+                                    <div class="about_me_back">
+                                        <img
+                                            class="about_me_base"
+                                            src="./img/main/about_me_back.png"
+                                            alt="어바웃 미 배경"
+                                        />
+                                        <img
+                                            class="about_me_base"
+                                            src="./img/main/about_me_line.png"
+                                            alt="어바웃 미 라인"
+                                        />
+
+                                        <div class="about_me_front">
+                                            <img src="./img/main/about_me_kitty.png" alt="어바웃 미 고양이" />
+                                            <img src="./img/main/about_me_line_1.png" alt="어바웃 미 선1" />
+                                            <img src="./img/main/about_me_line_2.png" alt="어바웃 미 선2" />
+                                            <img src="./img/main/about_me_line_3.png" alt="어바웃 미 선3" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="about_me_descri">
+                                    <div class="descri_idc"></div>
+                                    <div class="descri_comment"></div>
+                                    <div class="descri_explains"></div>
+                                    <div class="descri_gauge"></div>
+                                </div>
+                            </div>
                         </div>
-                        
-                        <div class="mk_back_img">
-                            <img src="./img/main/my_skills_back.png" alt="mk_back">
+                    </div>
+                </div>
+
+                <div class="main_myspecs" id="main_2">
+                    <div class="main_h2">
+                        <div class="nyan_zone">
+                            <div class="nyan_h2_flex">
+                                <div class="title_trace_area">
+                                    <img src="./img/main/title_trace.png" alt="고양이 발자국" />
+                                    <img src="./img/main/title_trace.png" alt="고양이 발자국" />
+                                    <img src="./img/main/title_trace.png" alt="고양이 발자국" />
+                                </div>
+                                <div class="title_text_area">
+                                    <h2>My Specs</h2>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
+                    <div class="my_specs_back">
+                        <div class="ms_back b1">
+                            <img src="./img/main/my_specs_back_1.png" alt="백1" />
+                            <img src="./img/main/my_specs_back_1_line.png" alt="백라인1" />
+                        </div>
+
+                        <div class="ms_back b2">
+                            <img src="./img/main/my_specs_back_2.png" alt="백2" />
+                            <img src="./img/main/my_specs_back_2_line.png" alt="백라인1" />
+                        </div>
+
+                        <div class="ms_back b3">
+                            <img src="./img/main/my_specs_back_3.png" alt="백3" />
+                            <img src="./img/main/my_specs_back_3_line.png" alt="백라인1" />
+                        </div>
+                    </div>
 
                     <div class="nyan_zone">
-                        <div class="mk_icons">
-                            <div class="mk_skill_zone mcl">
+                        <div class="my_specs_contents">
+                            <div class="ms_contents_grp">
+                                <img src="./img/main/my_specs_kitty.png" alt="스펙 고양이" />
+                                <div class="ms_contents_txt n1">
+                                    <div class="ms_kitty_txt">
+                                        <h4>Name</h4>
+                                        <p>김서용(Seo Yong Kim)</p>
+                                        <h4 class="h4_even">Birthday</h4>
+                                        <p>1997.09.09</p>
+                                    </div>
 
-                                <!-- <div class="mk_skill">
+                                    <div class="ms_contents_fw"></div>
+                                </div>
+                            </div>
+
+                            <div class="ms_contents_grp">
+                                <img src="./img/main/my_specs_kitty.png" alt="스펙 고양이" />
+                                <div class="ms_contents_txt n2">
+                                    <div class="ms_kitty_txt">
+                                        <h4>E-mail</h4>
+                                        <p>nonwhiskerscat<br />@gmail.com</p>
+                                        <h4 class="h4_even">Cellphone</h4>
+                                        <p>01090849222</p>
+                                    </div>
+
+                                    <div class="ms_contents_fw"></div>
+                                </div>
+                            </div>
+
+                            <div class="ms_contents_grp">
+                                <img src="./img/main/my_specs_kitty.png" alt="스펙 고양이" />
+                                <div class="ms_contents_txt n3">
+                                    <div class="ms_kitty_txt">
+                                        <h4>Education I</h4>
+                                        <h5>2022.08 ~ 2023.01</h5>
+                                        <p>방송국제교육원<br />웹퍼블리싱&프론트앤드</p>
+                                    </div>
+
+                                    <div class="ms_contents_fw"></div>
+                                </div>
+                            </div>
+
+                            <div class="ms_contents_grp">
+                                <img src="./img/main/my_specs_kitty.png" alt="스펙 고양이" />
+                                <div class="ms_contents_txt n4">
+                                    <div class="ms_kitty_txt">
+                                        <h4>Education II</h4>
+                                        <h5>2016.02 ~ 2022.08</h5>
+                                        <p>아주대학교 미디어학과<br />심화과정 졸업</p>
+                                    </div>
+
+                                    <div class="ms_contents_fw"></div>
+                                </div>
+                            </div>
+
+                            <div class="ms_contents_grp">
+                                <img src="./img/main/my_specs_kitty.png" alt="스펙 고양이" />
+                                <div class="ms_contents_txt n5">
+                                    <div class="ms_kitty_txt">
+                                        <h4>Career I</h4>
+                                        <h5>2021.06 ~ 2021.08</h5>
+                                        <p>강남 패스트뷰<br />디자인&광고팀</p>
+                                    </div>
+
+                                    <div class="ms_contents_fw"></div>
+                                </div>
+                            </div>
+
+                            <div class="ms_contents_grp">
+                                <img src="./img/main/my_specs_kitty.png" alt="스펙 고양이" />
+                                <div class="ms_contents_txt n6">
+                                    <div class="ms_kitty_txt">
+                                        <h4>Career II</h4>
+                                        <h5>2023.04 ~ 재직 중</h5>
+                                        <p>동아닷컴<br />CTS팀 사원</p>
+                                    </div>
+
+                                    <div class="ms_contents_fw"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="my_specs_urban">
+                        <img src="./img/main/msurbanpc.png" alt="도시" />
+                        <div class="urban_gradient"></div>
+                    </div>
+                </div>
+
+                <div class="main_myskills" id="main_3">
+                    <div class="main_h2">
+                        <div class="nyan_zone">
+                            <div class="nyan_h2_flex">
+                                <div class="title_trace_area">
+                                    <img src="./img/main/title_trace.png" alt="고양이 발자국" />
+                                    <img src="./img/main/title_trace.png" alt="고양이 발자국" />
+                                    <img src="./img/main/title_trace.png" alt="고양이 발자국" />
+                                </div>
+                                <div class="title_text_area">
+                                    <h2>My Skills</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="my_skills_gnb">
+                        <ul class="mk_gnb_flex">
+                            <li>
+                                <span class="mk_gnb_kitty"><img src="./img/main/my_skills_gnb_cat.png" alt="" /></span
+                                >Coding
+                            </li>
+                            <li><span class="mk_gnb_kitty"></span>Graphic</li>
+                        </ul>
+                    </div>
+
+                    <div class="mk_click">
+                        <p class="mk_click_p">아이콘을 아무거나 클릭하세요!</p>
+                    </div>
+
+                    <div class="mk_main">
+                        <div class="mk_skills_kitty">
+                            <div class="mk_skills_big">
+                                <div class="mk_skills_img">
+                                    <img src="./img/main/my_specs_kitty.png" alt="스킬 배경" />
+                                </div>
+                                <div class="mk_detail">
+                                    <h4 class="mkd_name">Tool 이름</h4>
+                                    <div class="skills_gauge">
+                                        <div class="gauge_first">
+                                            <p>숙련도</p>
+                                            <div class="gauge_entire">
+                                                <div class="gauge_colored mkd_bcolor"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="gauge_second">
+                                            <p>사용 빈도</p>
+                                            <div class="gauge_entire">
+                                                <div class="gauge_colored mkd_bcolor"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="skills_descri">
+                                        <div class="mk_works">
+                                            <h5>주요 작업</h5>
+                                            <p class="mkd_work">이 부분에는 주요 작업 내용이 들어갑니다.</p>
+                                        </div>
+
+                                        <div class="mk_summary">
+                                            <h5>요약</h5>
+                                            <p class="mkd_summ">이 부분에는 요약이 들어갑니다.</p>
+                                        </div>
+                                    </div>
+                                    <h6 class="mk_close">CLOSE</h6>
+                                </div>
+                            </div>
+
+                            <div class="mk_kitty_entire">
+                                <img class="mk_skills_kitty" src="./img/main/my_skills_kitty.png" alt="스킬 고양이" />
+                                <p class="fi_p">Z</p>
+                                <p class="sc_p">Z</p>
+                                <p class="th_p">Z</p>
+                            </div>
+
+                            <div class="mk_back_img">
+                                <img src="./img/main/my_skills_back.png" alt="mk_back" />
+                            </div>
+                        </div>
+
+                        <div class="nyan_zone">
+                            <div class="mk_icons">
+                                <div class="mk_skill_zone mcl">
+                                    <!-- <div class="mk_skill">
                                     <img src="./img/main/my_skills_kitty_mobile.png" alt="#">
                                 </div> -->
-                                
-                            </div>
+                                </div>
 
-                            <div class="mk_skill_zone mgl no">
+                                <div class="mk_skill_zone mgl no"></div>
                             </div>
                         </div>
-
-
                     </div>
-
                 </div>
-                
 
-
-                
-
-            </div>
-
-            <div class="main_projects" id="main_4">
-                <div class="main_h2">
-                    <div class="nyan_zone">
-                        <div class="nyan_h2_flex">
-                            <div class="title_trace_area">
-                                <img src="./img/main/title_trace.png" alt="고양이 발자국">
-                                <img src="./img/main/title_trace.png" alt="고양이 발자국">
-                                <img src="./img/main/title_trace.png" alt="고양이 발자국">
-                            </div>
-                            <div class="title_text_area">
-                                <h2>Projects</h2>
+                <div class="main_projects" id="main_4">
+                    <div class="main_h2">
+                        <div class="nyan_zone">
+                            <div class="nyan_h2_flex">
+                                <div class="title_trace_area">
+                                    <img src="./img/main/title_trace.png" alt="고양이 발자국" />
+                                    <img src="./img/main/title_trace.png" alt="고양이 발자국" />
+                                    <img src="./img/main/title_trace.png" alt="고양이 발자국" />
+                                </div>
+                                <div class="title_text_area">
+                                    <h2>Projects</h2>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>  
-                
-                <div class="proj_gnb">
-                    <ul class="proj_gnb_flex">
-                        <li><span class="proj_gnb_kitty"></span>Webpage</li>
-                        <li><span class="proj_gnb_kitty"></span>Javascript</li>
-                        <li><span class="proj_gnb_kitty"></span>React</li>
-                    </ul>
+
+                    <div class="proj_gnb">
+                        <ul class="proj_gnb_flex">
+                            <li><span class="proj_gnb_kitty"></span>Webpage</li>
+                            <li><span class="proj_gnb_kitty"></span>Javascript</li>
+                            <li><span class="proj_gnb_kitty"></span>React</li>
+                        </ul>
+                    </div>
+                    <div class="big_nyan">
+                        <div class="nyan_zone">
+                            <div class="projs"></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="big_nyan">
-                    <div class="nyan_zone">
-                        <div class="projs"></div>
-                    </div>
-                </div>  
-            </div>
 
-            <div class="main_contactme" id="main_5">
-                <div class="main_h2">
-                    <div class="nyan_zone">
-                        <div class="nyan_h2_flex">
-                            <div class="title_trace_area">
-                                <img src="./img/main/title_trace.png" alt="고양이 발자국">
-                                <img src="./img/main/title_trace.png" alt="고양이 발자국">
-                                <img src="./img/main/title_trace.png" alt="고양이 발자국">
-                            </div>
-                            <div class="title_text_area">
-                                <h2>Contact Me</h2>
+                <div class="main_contactme" id="main_5">
+                    <div class="main_h2">
+                        <div class="nyan_zone">
+                            <div class="nyan_h2_flex">
+                                <div class="title_trace_area">
+                                    <img src="./img/main/title_trace.png" alt="고양이 발자국" />
+                                    <img src="./img/main/title_trace.png" alt="고양이 발자국" />
+                                    <img src="./img/main/title_trace.png" alt="고양이 발자국" />
+                                </div>
+                                <div class="title_text_area">
+                                    <h2>Contact Me</h2>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div> 
 
-                <div class="nyan_zone">
-                    <div class="cm_flex">
-                        <div class="cm_img_area">
-                            <img src="./img/main/contact_me_kitty.png" alt="우산냥이">
-                            <img src="./img/main/contact_me_umbrella.png" alt="우산">
-                        </div>
-    
-                        <div class="cm_contents_area">
-                            
-                            <div class="cm_not_hidden">
-                                <div class="cm_title">
-                                    <h2 class="cm_upper">여기까지 읽어 주셔서</h2>
-                                    <div class="cm_lower">
-                                        <div class="cm_lower_flex">
-                                            <h2 class="cm_lower_h2">대단히 감사합니다.</h2>
-                                            <img src="./img/main/intro_kitty_picto_pink.png" alt="냥이">
+                    <div class="nyan_zone">
+                        <div class="cm_flex">
+                            <div class="cm_img_area">
+                                <img src="./img/main/contact_me_kitty.png" alt="우산냥이" />
+                                <img src="./img/main/contact_me_umbrella.png" alt="우산" />
+                            </div>
+
+                            <div class="cm_contents_area">
+                                <div class="cm_not_hidden">
+                                    <div class="cm_title">
+                                        <h2 class="cm_upper">여기까지 읽어 주셔서</h2>
+                                        <div class="cm_lower">
+                                            <div class="cm_lower_flex">
+                                                <h2 class="cm_lower_h2">대단히 감사합니다.</h2>
+                                                <img src="./img/main/intro_kitty_picto_pink.png" alt="냥이" />
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="cm_greet">
-                                    <p>
-                                        KIDCAT NYANTOPIA에 대해 궁금한 점이 있거나 이해가 가지 않는 부분 혹은 웹 페이지에 피드백이 있다면 <span class="cm_highlight">nonwhiskerscat@gmail.com</span> 또는 <span class="cm_highlight">Contact Me</span>를 통해 언제든지 질문해 주십시오. <span class="cm_highlight">항상 친절하게 답변</span>해 드리겠습니다.
-                                    </p>
-                                </div>
+                                    <div class="cm_greet">
+                                        <p>
+                                            KIDCAT NYANTOPIA에 대해 궁금한 점이 있거나 이해가 가지 않는 부분 혹은 웹
+                                            페이지에 피드백이 있다면
+                                            <span class="cm_highlight">nonwhiskerscat@gmail.com</span> 또는
+                                            <span class="cm_highlight">Contact Me</span>를 통해 언제든지 질문해
+                                            주십시오. <span class="cm_highlight">항상 친절하게 답변</span>해
+                                            드리겠습니다.
+                                        </p>
+                                    </div>
 
-                                <div class="cm_btn_grp">
-                                    <button class="btn_send_email">
-                                        <p class="btn_txt">이메일 보내기</p>
-                                        <span class="btn_after">
-                                            <p class="btn_txt">Send Email</p>
-                                        </span>
-                                    </button>
-
-                                    <button class="btn_question">
-                                        <p class="btn_txt"><span class="btn_mob">질문하기</span><span class="btn_pc">Contact Me 실행</span></p>
+                                    <div class="cm_btn_grp">
+                                        <button class="btn_send_email">
+                                            <p class="btn_txt">이메일 보내기</p>
                                             <span class="btn_after">
-                                                <p><span class="btn_mob">질문하기</span><span class="btn_pc">Contact Me 실행</span></p>
+                                                <p class="btn_txt">Send Email</p>
                                             </span>
-                                    </button>
+                                        </button>
 
-                                </div>
-                            </div>
-    
-                            <div class="cm_hidden">
-                                <div class="cm_hd_title">
-                                    <h3>Contact Me</h3>
-                                    <div class="cm_hd_kitty">
-                                        <img src="./img/main/cm_hd_kitty.png" alt="타이틀 고양이">
+                                        <button class="btn_question">
+                                            <p class="btn_txt">
+                                                <span class="btn_mob">질문하기</span
+                                                ><span class="btn_pc">Contact Me 실행</span>
+                                            </p>
+                                            <span class="btn_after">
+                                                <p>
+                                                    <span class="btn_mob">질문하기</span
+                                                    ><span class="btn_pc">Contact Me 실행</span>
+                                                </p>
+                                            </span>
+                                        </button>
                                     </div>
                                 </div>
+
+                                <div class="cm_hidden">
+                                    <div class="cm_hd_title">
+                                        <h3>Contact Me</h3>
+                                        <div class="cm_hd_kitty">
+                                            <img src="./img/main/cm_hd_kitty.png" alt="타이틀 고양이" />
+                                        </div>
+                                    </div>
                                     <div class="cm_hd_main">
                                         <form action="https://formsubmit.co/nonwhiskerscat@gmail.com" method="POST">
                                             <div class="cm_form_flex">
                                                 <div class="cm_name">
                                                     <p>Name</p>
-                                                    <input type="text" name="Name" placeholder="이름을 입력하세요!" required>
+                                                    <input
+                                                        type="text"
+                                                        name="Name"
+                                                        placeholder="이름을 입력하세요!"
+                                                        required
+                                                    />
                                                 </div>
 
                                                 <div class="cm_email">
                                                     <p>E-mail</p>
-                                                    <input type="email" name="Email" placeholder="이메일을 입력하세요!">
+                                                    <input
+                                                        type="email"
+                                                        name="Email"
+                                                        placeholder="이메일을 입력하세요!"
+                                                    />
                                                 </div>
                                             </div>
 
-
                                             <div class="cm_message">
                                                 <p>Message</p>
-                                                <textarea name="Message" style="resize: none" type="text" placeholder="어떤 내용이든지 마음껏 질문해 주세요. 저는 언제든지 답변 할 준비가 되어있습니다 :)" required></textarea>
+                                                <textarea
+                                                    name="Message"
+                                                    style="resize: none"
+                                                    type="text"
+                                                    placeholder="어떤 내용이든지 마음껏 질문해 주세요. 저는 언제든지 답변 할 준비가 되어있습니다 :)"
+                                                    required
+                                                ></textarea>
                                             </div>
-                                            
+
                                             <div class="cmh_btn_grp">
                                                 <button class="btn_cancel">
                                                     <p class="btn_txt">Cancel</p>
-                                                    <span class="btn_after">                                                
+                                                    <span class="btn_after">
                                                         <p class="btn_txt">취소하기</p>
                                                     </span>
                                                 </button>
-            
+
                                                 <button type="submit" class="btn_submit">
                                                     <p class="btn_txt">submit</p>
                                                     <span class="btn_after">
@@ -610,45 +644,39 @@
                     </div>
                 </div>
 
-                <div class="design_note">
-                            
-                </div>
-        </main>
-        <footer>
+                <div class="design_note"></div>
+            </main>
+            <footer>
+                <div class="footer_trace"></div>
 
-            <div class="footer_trace">
-            </div>
+                <div class="footer_important">
+                    <img class="footer_road" src="./img/footer/footer_road.png" alt="" />
+                    <img class="footer_kitty" src="./img/footer/footer_kitty.png" alt="footer kitty" />
+                    <div class="road_gradient"></div>
 
-            <div class="footer_important">
-                <img class=footer_road src="./img/footer/footer_road.png" alt="">
-                <img class=footer_kitty src="./img/footer/footer_kitty.png" alt="footer kitty">
-                <div class="road_gradient"></div>
+                    <div class="footer_icons">
+                        <div class="icon_flex">
+                            <img src="./img/footer/icon_github.png" alt="아이콘 깃허브" />
+                            <img src="./img/footer/icon_kakao.png" alt="아이콘 카카오" />
+                            <img src="./img/footer/icon_cellphone.png" alt="아이콘 전화" />
+                            <img src="./img/footer/icon_home.png" alt="아이콘 홈" />
+                            <img src="./img/footer/icon_tstory.png" alt="아이콘 티스토리" />
+                        </div>
+                    </div>
 
-                <div class="footer_icons">
-                    <div class="icon_flex">
-                        <img src="./img/footer/icon_github.png" alt="아이콘 깃허브">
-                        <img src="./img/footer/icon_kakao.png" alt="아이콘 카카오">
-                        <img src="./img/footer/icon_cellphone.png" alt="아이콘 전화">
-                        <img src="./img/footer/icon_home.png" alt="아이콘 홈">
-                        <img src="./img/footer/icon_tstory.png" alt="아이콘 티스토리">
+                    <div class="footer_gradient"></div>
+
+                    <div class="footer_information">
+                        <p>
+                            <em class="copyright">COPYRIGHT ⓒ2022 All Rights Reserved</em>
+                            <q
+                                >Portfolio Created By Nonwhiskerscat<br />
+                                whose name is Seoyong Kim!</q
+                            >
+                        </p>
                     </div>
                 </div>
-
-                <div class="footer_gradient">
-
-                </div>
-
-                <div class="footer_information">
-                    <p>
-                        <em class="copyright">COPYRIGHT ⓒ2022 All Rights Reserved</em>
-                        <q>Portfolio Created By Nonwhiskerscat<br> whose name is Seoyong Kim!</q>
-                    </p>
-                </div>
-            </div>
-
-        </footer>
-
-    </div>
-
-</body>
+            </footer>
+        </div>
+    </body>
 </html>
